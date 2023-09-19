@@ -1,0 +1,29 @@
+name: Update index.txt
+
+on:
+  workflow_dispatch:
+    inputs:
+      content:
+        description: 'Enter your custom content'
+        required: true
+        default: 'No content provided.'
+
+jobs:
+  update_index:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Update index.txt
+      run: |
+        echo "${{ github.event.inputs.datetime }}" > index.txt
+        echo "${{ github.event.inputs.content }}" >> index.txt
+
+    - name: Commit and push changes
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add index.txt
+        git commit -m "Update index.txt"
+        git push
