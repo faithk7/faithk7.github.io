@@ -3,6 +3,10 @@ name: Update index.txt
 on:
   workflow_dispatch:
     inputs:
+      datetime:
+        description: 'Timestamp'
+        required: true
+        default: 'No timestamp provided.'
       content:
         description: 'Enter your custom content'
         required: true
