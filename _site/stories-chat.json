@@ -1,0 +1,132 @@
+
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "@muan's stories for Chat",
+  "icon": "https://github.com/muan.png",
+  "home_page_url": "https://muan.co/stories.json",
+  "description": "Stories about Chat.",
+  "_open_stories": {
+    "version": "0.0.9"
+  },
+  "items": [
+    {
+      "id": "d179038f-8876-4239-4aa6-0783288cb500",
+      "date_published": "2023-09-04T20:34:19-04:00", 
+      "tags": ["Life", "Highlight", "Chat"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/d179038f-8876-4239-4aa6-0783288cb500/public' alt='a chat conversation about how meeting the love of your life doesn’t mean one won’t want to die'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/d179038f-8876-4239-4aa6-0783288cb500",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/d179038f-8876-4239-4aa6-0783288cb500/public",
+        "alt": "a chat conversation about how meeting the love of your life doesn’t mean one won’t want to die",
+        "caption": "I talked to my fellow depressed friends a lot 😟.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/d179038f-8876-4239-4aa6-0783288cb500"]
+        }
+      }
+    },
+    {
+      "id": "f2569e36-d1f3-484d-77aa-8b8b91b9bd00",
+      "date_published": "2023-08-27T21:11:55-04:00", 
+      "tags": ["Life", "Highlight", "Chat"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/f2569e36-d1f3-484d-77aa-8b8b91b9bd00/public' alt='a speech bubble: yeah that’s the thing with drugs. they giveth and they taketh.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/f2569e36-d1f3-484d-77aa-8b8b91b9bd00",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/f2569e36-d1f3-484d-77aa-8b8b91b9bd00/public",
+        "alt": "a speech bubble: yeah that’s the thing with drugs. they giveth and they taketh.",
+        "caption": "trip consultation with my amsterdam friends.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/f2569e36-d1f3-484d-77aa-8b8b91b9bd00"]
+        }
+      }
+    },
+    {
+      "id": "fa23c63d-e0e4-48ba-8fa6-aca7b9c05500",
+      "date_published": "2023-08-25T11:31:38-04:00", 
+      "tags": ["Life", "Highlight", "Chat"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/fa23c63d-e0e4-48ba-8fa6-aca7b9c05500/public' alt='me: “he’s single.” my friend: “whattttt sounds great!”'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/fa23c63d-e0e4-48ba-8fa6-aca7b9c05500",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/fa23c63d-e0e4-48ba-8fa6-aca7b9c05500/public",
+        "alt": "me: “he’s single.” my friend: “whattttt sounds great!”",
+        "caption": "can the bar be lower?",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/fa23c63d-e0e4-48ba-8fa6-aca7b9c05500"]
+        }
+      }
+    },
+    {
+      "id": "ac6e16e6-865a-4951-3af3-a146c9ea5500",
+      "date_published": "2023-08-17T10:36:07-04:00", 
+      "tags": ["Life", "Highlight", "Chat"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/ac6e16e6-865a-4951-3af3-a146c9ea5500/public' alt='a screenshot of a chat screen with two bubbles. blue: why are boys like this? gray: they are very simple organisms.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/ac6e16e6-865a-4951-3af3-a146c9ea5500",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/ac6e16e6-865a-4951-3af3-a146c9ea5500/public",
+        "alt": "a screenshot of a chat screen with two bubbles. blue: why are boys like this? gray: they are very simple organisms.",
+        "caption": "gray bubble was once a boy like that. thanks James for the contribution to my otherwise lack of either open or closed stories in life.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/ac6e16e6-865a-4951-3af3-a146c9ea5500"]
+        }
+      }
+    },
+    {
+      "id": "20a696a5-c304-437f-8b13-46f2a1751200",
+      "date_published": "2023-08-11T09:10:44-04:00", 
+      "tags": ["Life", "Highlight", "Chat"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/20a696a5-c304-437f-8b13-46f2a1751200/public' alt='a screenshot of a chat: gray bubble: Why do I keep finding the frea- (redacted) men; blue bubble: You pick them up like strays lol The most boring men. Like I do with cats( ???); gray bubble: Omg best analogy; blue bubble: (I disagree but just so you understand my point) Hahaahaha'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/20a696a5-c304-437f-8b13-46f2a1751200",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/20a696a5-c304-437f-8b13-46f2a1751200/public",
+        "alt": "a screenshot of a chat: gray bubble: Why do I keep finding the frea- (redacted) men; blue bubble: You pick them up like strays lol The most boring men. Like I do with cats( ???); gray bubble: Omg best analogy; blue bubble: (I disagree but just so you understand my point) Hahaahaha",
+        "caption": "“a decent man.” lulz. stop saying my cat friends are boring!",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/20a696a5-c304-437f-8b13-46f2a1751200"]
+        }
+      }
+    },
+    {
+      "id": "4d6c9d68-b620-4160-d536-bb3249776d00",
+      "date_published": "2023-08-05T05:29:16-04:00", 
+      "tags": ["Life", "Highlight", "Chat"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/4d6c9d68-b620-4160-d536-bb3249776d00/public' alt='a screenshot of a text exchange'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/4d6c9d68-b620-4160-d536-bb3249776d00",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/4d6c9d68-b620-4160-d536-bb3249776d00/public",
+        "alt": "a screenshot of a text exchange",
+        "caption": "well, is that “pleasant” version of “me” the real “me” though?",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/4d6c9d68-b620-4160-d536-bb3249776d00"]
+        }
+      }
+    },
+    {
+      "id": "e979a4c2-4d48-4e84-6319-c24b9ed19600",
+      "date_published": "2022-09-04T07:14:52-04:00", 
+      "tags": ["Life", "Highlight", "Chat"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/e979a4c2-4d48-4e84-6319-c24b9ed19600/public' alt='instagram story reply. “u ok?” “no but better now. u ok? wann chat and overshare? lol” “let’s”'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/e979a4c2-4d48-4e84-6319-c24b9ed19600",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/e979a4c2-4d48-4e84-6319-c24b9ed19600/public",
+        "alt": "instagram story reply. “u ok?” “no but better now. u ok? wann chat and overshare? lol” “let’s”",
+        "caption": "I call this Depression Diplomacy.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/e979a4c2-4d48-4e84-6319-c24b9ed19600"]
+        }
+      }
+    }
+  ]
+}

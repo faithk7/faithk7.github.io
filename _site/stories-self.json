@@ -1,0 +1,149 @@
+
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "@muan's stories for Self",
+  "icon": "https://github.com/muan.png",
+  "home_page_url": "https://muan.co/stories.json",
+  "description": "Stories about Self.",
+  "_open_stories": {
+    "version": "0.0.9"
+  },
+  "items": [
+    {
+      "id": "f7421b40-d713-4497-624b-22f057499700",
+      "date_published": "2023-09-07T04:02:59-04:00", 
+      "tags": ["Life", "Highlight", "Self"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/f7421b40-d713-4497-624b-22f057499700/public' alt='a person taking a selfie in a mirror with a bottle of club mate in hand'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/f7421b40-d713-4497-624b-22f057499700",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/f7421b40-d713-4497-624b-22f057499700/public",
+        "alt": "a person taking a selfie in a mirror with a bottle of club mate in hand",
+        "caption": "“hey! no drinking” every response from instagram. no I have club mate, better than alcohol!",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/f7421b40-d713-4497-624b-22f057499700"]
+        }
+      }
+    },
+    {
+      "id": "960c9038-cc46-4135-4719-7dfc76b6da00",
+      "date_published": "2023-08-19T07:46:36-04:00", 
+      "tags": ["Life", "Highlight", "Self"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/960c9038-cc46-4135-4719-7dfc76b6da00/public' alt='a person taking a selfie with long wavy hair and face partially covered by phone and battery pack'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/960c9038-cc46-4135-4719-7dfc76b6da00",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/960c9038-cc46-4135-4719-7dfc76b6da00/public",
+        "alt": "a person taking a selfie with long wavy hair and face partially covered by phone and battery pack",
+        "caption": "sup",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/960c9038-cc46-4135-4719-7dfc76b6da00"]
+        }
+      }
+    },
+    {
+      "id": "dc9009a0-c3ed-46b8-5cc4-84ab52ae2200",
+      "date_published": "2023-05-27T04:59:09-04:00", 
+      "tags": ["Life", "Highlight", "Self"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/dc9009a0-c3ed-46b8-5cc4-84ab52ae2200/public' alt='a person taking a selfie with their head out of frame holding a bouquet of flowers wearing a read.cv tote bag'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/dc9009a0-c3ed-46b8-5cc4-84ab52ae2200",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/dc9009a0-c3ed-46b8-5cc4-84ab52ae2200/public",
+        "alt": "a person taking a selfie with their head out of frame holding a bouquet of flowers wearing a read.cv tote bag",
+        "caption": "",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/dc9009a0-c3ed-46b8-5cc4-84ab52ae2200"]
+        }
+      }
+    },
+    {
+      "id": "dd61757d-4d77-4107-0b2d-27497eb1a400",
+      "date_published": "2023-04-30T01:03:08-04:00", 
+      "tags": ["Life", "Highlight", "Self"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/dd61757d-4d77-4107-0b2d-27497eb1a400/public' alt='selfie of me holding a phone and looking at the phone I have long hair and look asian I guess alt text is hard'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/dd61757d-4d77-4107-0b2d-27497eb1a400",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/dd61757d-4d77-4107-0b2d-27497eb1a400/public",
+        "alt": "selfie of me holding a phone and looking at the phone I have long hair and look asian I guess alt text is hard",
+        "caption": "hi it’s me, i am the problem",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/dd61757d-4d77-4107-0b2d-27497eb1a400"]
+        }
+      }
+    },
+    {
+      "id": "00f70d30-778e-406f-92f6-b410dfc09a00",
+      "date_published": "2022-10-30T06:46:00-04:00", 
+      "tags": ["Life", "Travel", "Highlight", "Self"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/00f70d30-778e-406f-92f6-b410dfc09a00/public' alt='Selfie in front of a mirror shop sign on the street that says: All I see is you, Under the cover.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/00f70d30-778e-406f-92f6-b410dfc09a00",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/00f70d30-778e-406f-92f6-b410dfc09a00/public",
+        "alt": "Selfie in front of a mirror shop sign on the street that says: All I see is you, Under the cover.",
+        "caption": "All I see is you.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/00f70d30-778e-406f-92f6-b410dfc09a00"]
+        }
+      }
+    },
+    {
+      "id": "d3906ae0-e4c3-4e00-de29-711252ef1500",
+      "date_published": "2022-10-16T21:24:34-04:00", 
+      "tags": ["Life", "Highlight", "Self", "Oven"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/d3906ae0-e4c3-4e00-de29-711252ef1500/public' alt='me with my face off the frame showing only a smile, in front of a risen dough'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/d3906ae0-e4c3-4e00-de29-711252ef1500",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/d3906ae0-e4c3-4e00-de29-711252ef1500/public",
+        "alt": "me with my face off the frame showing only a smile, in front of a risen dough",
+        "caption": ":)",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/d3906ae0-e4c3-4e00-de29-711252ef1500"]
+        }
+      }
+    },
+    {
+      "id": "5465ffa1-8efa-4b8f-cb25-f0b560d62700",
+      "date_published": "2022-09-08T11:10:29-04:00", 
+      "tags": ["Life", "Highlight", "Self"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/5465ffa1-8efa-4b8f-cb25-f0b560d62700/public' alt='Selfie with squash gear/attire against a reflective window with a park in the back ground.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/5465ffa1-8efa-4b8f-cb25-f0b560d62700",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/5465ffa1-8efa-4b8f-cb25-f0b560d62700/public",
+        "alt": "Selfie with squash gear/attire against a reflective window with a park in the back ground.",
+        "caption": "Double checked with doc if it’s ok for the me to play squash while not being able to walk straight half of the time–“as long as it makes you happy. just remember you are playing cause it makes you happy, not playing to be good, let some balls go.” but, but, but if I’m not good, how can I be happy?",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/5465ffa1-8efa-4b8f-cb25-f0b560d62700"]
+        }
+      }
+    },
+    {
+      "id": "68e1f04d-1ea4-45fa-3e9f-3ea608ae2a00",
+      "date_published": "2022-08-31T23:48:34-04:00", 
+      "tags": ["Life", "Highlight", "Self"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/68e1f04d-1ea4-45fa-3e9f-3ea608ae2a00/public' alt='Selfie of a reflection of myself sitting on squash court.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/68e1f04d-1ea4-45fa-3e9f-3ea608ae2a00",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/68e1f04d-1ea4-45fa-3e9f-3ea608ae2a00/public",
+        "alt": "Selfie of a reflection of myself sitting on squash court.",
+        "caption": "I want a personal squash court now.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/68e1f04d-1ea4-45fa-3e9f-3ea608ae2a00"]
+        }
+      }
+    }
+  ]
+}

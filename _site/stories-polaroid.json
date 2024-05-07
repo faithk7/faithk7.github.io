@@ -1,0 +1,166 @@
+
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "@muan's stories for Polaroid",
+  "icon": "https://github.com/muan.png",
+  "home_page_url": "https://muan.co/stories.json",
+  "description": "Stories about Polaroid.",
+  "_open_stories": {
+    "version": "0.0.9"
+  },
+  "items": [
+    {
+      "id": "41fd4540-dec3-4768-7936-b8ed1cd86a00",
+      "date_published": "2023-08-27T21:18:01-04:00", 
+      "tags": ["Life", "Highlight", "Polaroid"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/41fd4540-dec3-4768-7936-b8ed1cd86a00/public' alt='blurry polaroid of a cat looking at the camera'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/41fd4540-dec3-4768-7936-b8ed1cd86a00",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/41fd4540-dec3-4768-7936-b8ed1cd86a00/public",
+        "alt": "blurry polaroid of a cat looking at the camera",
+        "caption": "For vibes.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/41fd4540-dec3-4768-7936-b8ed1cd86a00"]
+        }
+      }
+    },
+    {
+      "id": "8d06257a-5892-46a8-e00d-ddf510900f00",
+      "date_published": "2023-08-26T09:25:57-04:00", 
+      "tags": ["Life", "Highlight", "Polaroid"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/8d06257a-5892-46a8-e00d-ddf510900f00/public' alt='a cat sitting on the ground eating from a bowl'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/8d06257a-5892-46a8-e00d-ddf510900f00",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/8d06257a-5892-46a8-e00d-ddf510900f00/public",
+        "alt": "a cat sitting on the ground eating from a bowl",
+        "caption": "Don’t mind me, still just here wasting precious film.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/8d06257a-5892-46a8-e00d-ddf510900f00"]
+        }
+      }
+    },
+    {
+      "id": "6cb4f448-5969-4630-dc91-2dc95e920b00",
+      "date_published": "2023-08-26T09:20:37-04:00", 
+      "tags": ["Life", "Highlight", "Polaroid"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/6cb4f448-5969-4630-dc91-2dc95e920b00/public' alt='a cat sitting on a wood surface turned to face the camera'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/6cb4f448-5969-4630-dc91-2dc95e920b00",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/6cb4f448-5969-4630-dc91-2dc95e920b00/public",
+        "alt": "a cat sitting on a wood surface turned to face the camera",
+        "caption": "this boy scratched me today so I am ignoring him.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/6cb4f448-5969-4630-dc91-2dc95e920b00"]
+        }
+      }
+    },
+    {
+      "id": "632ca038-23e9-4302-8919-f30536da5600",
+      "date_published": "2023-08-26T09:19:06-04:00", 
+      "tags": ["Life", "Highlight", "Polaroid"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/632ca038-23e9-4302-8919-f30536da5600/public' alt='a person smiling in a room'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/632ca038-23e9-4302-8919-f30536da5600",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/632ca038-23e9-4302-8919-f30536da5600/public",
+        "alt": "a person smiling in a room",
+        "caption": "julia and the mess I call a dining table.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/632ca038-23e9-4302-8919-f30536da5600"]
+        }
+      }
+    },
+    {
+      "id": "f42f6735-3377-4018-8332-57685def1000",
+      "date_published": "2023-08-19T00:28:03-04:00", 
+      "tags": ["Life", "Highlight", "Polaroid", "Friends"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/f42f6735-3377-4018-8332-57685def1000/public' alt='two men posing for a picture'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/f42f6735-3377-4018-8332-57685def1000",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/f42f6735-3377-4018-8332-57685def1000/public",
+        "alt": "two men posing for a picture",
+        "caption": "talented friends on team Taiwan ♡",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/f42f6735-3377-4018-8332-57685def1000"]
+        }
+      }
+    },
+    {
+      "id": "42f17334-7a80-4bb2-086a-4e8ad8234a00",
+      "date_published": "2023-08-08T08:58:07-04:00", 
+      "tags": ["Life", "Highlight", "Polaroid"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/42f17334-7a80-4bb2-086a-4e8ad8234a00/public' alt='a building with square inset windows and blue sky gradient'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/42f17334-7a80-4bb2-086a-4e8ad8234a00",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/42f17334-7a80-4bb2-086a-4e8ad8234a00/public",
+        "alt": "a building with square inset windows and blue sky gradient",
+        "caption": "I love the circle 600 films.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/42f17334-7a80-4bb2-086a-4e8ad8234a00"]
+        }
+      }
+    },
+    {
+      "id": "45d796d1-63b5-41ef-714f-33359c57e100",
+      "date_published": "2023-08-08T08:56:02-04:00", 
+      "tags": ["Life", "Highlight", "Polaroid"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/45d796d1-63b5-41ef-714f-33359c57e100/public' alt='a black Labrador enjoying life rolling on a beach with waves crashing on the shore'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/45d796d1-63b5-41ef-714f-33359c57e100",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/45d796d1-63b5-41ef-714f-33359c57e100/public",
+        "alt": "a black Labrador enjoying life rolling on a beach with waves crashing on the shore",
+        "caption": "here’s a black Labrador rolling on the beach. the sun is a deadly laser.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/45d796d1-63b5-41ef-714f-33359c57e100"]
+        }
+      }
+    },
+    {
+      "id": "eb331050-0231-48ad-ba0b-1d85fa3b1000",
+      "date_published": "2023-08-08T08:53:45-04:00", 
+      "tags": ["Life", "Highlight", "Polaroid"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/eb331050-0231-48ad-ba0b-1d85fa3b1000/public' alt='a person with a backpack and beanie on a sunny day posing with their bicycle'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/eb331050-0231-48ad-ba0b-1d85fa3b1000",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/eb331050-0231-48ad-ba0b-1d85fa3b1000/public",
+        "alt": "a person with a backpack and beanie on a sunny day posing with their bicycle",
+        "caption": "Coby.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/eb331050-0231-48ad-ba0b-1d85fa3b1000"]
+        }
+      }
+    },
+    {
+      "id": "7f0188a6-e5b8-43c4-045a-376009a1f500",
+      "date_published": "2023-08-08T08:47:28-04:00", 
+      "tags": ["Life", "Highlight", "Polaroid"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/7f0188a6-e5b8-43c4-045a-376009a1f500/public' alt='polaroid of a person taking a picture of herself in a mirror'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/7f0188a6-e5b8-43c4-045a-376009a1f500",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/7f0188a6-e5b8-43c4-045a-376009a1f500/public",
+        "alt": "polaroid of a person taking a picture of herself in a mirror",
+        "caption": "So it began, my unnecessary and expensive hobby, with this vintage SX-70.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/7f0188a6-e5b8-43c4-045a-376009a1f500"]
+        }
+      }
+    }
+  ]
+}

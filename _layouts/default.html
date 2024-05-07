@@ -1,0 +1,315 @@
+{% if page.path contains "zh-TW" %}
+  {% assign lang = "zh-TW" %}
+{% else %}
+  {% assign lang = "en" %}
+{% endif %}
+<!doctype html>
+<html lang="{{ lang }}">
+  <head>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="me" href="https://micro.blog/muan">
+    <link rel="alternate" type="application/rss+xml" href="/notes.xml">
+    <link rel="icon" href="/assets/fav.svg" type="image/svg+xml" sizes="24x24">
+    <!--link rel="icon" href="/assets/fav.png" type="image/png" sizes="96x96"-->
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/old-english-five" rel="stylesheet"> <!-- old english font added by me -->
+    <link href="/assets/new.css" rel="stylesheet" type="text/css">
+    {% if page.collection == "posts" %}
+      <link href="/assets/syntax.css" rel="stylesheet" type="text/css">
+    {% endif %}
+    {% if page.collection == "posts" or page.collection == "pages" or page.collection == "notes" or page.collection == "stories" %}
+      <title>{{ page.title }} - {{ site.title }}</title>
+      <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+      <meta content="{{ page.content | strip_html | strip_newlines | truncate: 120 }}" name="description">
+      {% if page.collection == "posts" %}
+      <meta content="article" property="og:type">
+      <meta content="@muanchiou" property="twitter:site">
+      <meta name="twitter:card" content="summary_large_image">
+      {% endif %}
+      {% if page.image %}
+        <meta content="https://muan.co/images/{{ page.image }}" property="og:image">
+        <meta content="https://muan.co/images/{{ page.image }}" property="twitter:image">
+      {% elsif page.image_text %}
+        <meta content="https://muan-text-image.herokuapp.com/title?v=2&text={{ page.image_text | strip | url_encode }}" property="og:image">
+        <meta content="https://muan-text-image.herokuapp.com/title?v=2&text={{ page.image_text | strip | url_encode }}" property="twitter:image">
+      {% else %}
+        <meta content="summary" name="twitter:card">
+        <meta content="https://muan.co/assets/logo.png" name="twitter:image">
+        <meta content="https://muan.co/assets/logo.png" property="og:image">
+      {% endif %}
+      <meta content="{{ page.title }} - {{ site.title }}" property="og:title">
+      <meta content="{{ page.title }} - {{ site.title }}" name="twitter:title">
+    {% else %}
+    <title>{{ site.title }}</title>
+      <meta content="summary" name="twitter:card">
+      <meta content="https://muan.co/assets/logo.png" property="twitter:image">
+      <meta content="{{ site.title }}" name="twitter:title">
+      <meta content="https://muan.co/assets/logo.png" property="og:image">
+      <meta content="{{ site.title }}" property="og:title">
+      <meta content="{{ site.description }}" name="description">
+      <meta content="blog" property="og:type">
+
+    {% endif %}
+  </head>
+
+  <body class="{% if page.root != true %}post-body{% endif %} col-{{ page.collection }} grid-layout" data-page-type="{{ page.type }}">
+    <!-- <div class="logo-container-mine">
+      {% if page.root != true %}
+        <a href="/{% if page.collection == "notes" %}notes{% endif %}" aria-label="Home" class="back-link">&leftarrow;</a>
+      {% endif %}
+      <svg class="logo" viewBox="0 0 196 169" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <title>安</title>
+        <path d="M8 92.7061H188" stroke="#cccccc" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M53 50.3528H143" stroke="#cccccc" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M83.0002 8H113" stroke="#cccccc" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M53.3782 160.773C64.4534 151.592 86.0271 133.546 97.4226 133.546C112.866 133.546 113.373 160.773 126.168 160.773C138.963 160.773 150.185 155.479 150.185 155.479" stroke="#cccccc" stroke-width="16" stroke-linecap="round"/>
+      </svg>
+      {% if page.root != true %}
+        <span class="font">Mu-An Chiou</span>
+      {% endif %}
+    </div> -->
+
+    <div class="navigation-bar">
+      <div class="navigation-bar-wrapper">
+        <a href="/index.html" class="nav-item">
+            <img src="/assets/icons/home-icon.svg" class="icon" alt="Home" />
+        </a>
+        <hr class="divider">
+        <a href="/photos.html" class="nav-item">
+            <img src="/assets/icons/camera-icon.svg" class="icon" alt="Photos" />
+        </a>
+        <hr class="divider">
+        <a href="/notes.html" class="nav-item">
+            <img src="/assets/icons/note-icon.svg" class="icon" alt="Notes" />
+        </a>
+        <hr class="divider">
+        <a href="/collections.html" class="nav-item">
+            <img src="/assets/icons/list-icon.svg" class="icon" alt="Collections" />
+        </a>
+        <hr class="divider">
+        <a href="/about.html" class="nav-item">
+            <img src="/assets/icons/profile-icon.svg" class="icon" alt="About" />
+        </a>
+      </div>
+  </div>
+
+    <div class="main-content">
+    <header>
+      <div class="logo-container">
+        {% if page.root != true %}
+          <a href="/{% if page.collection == "notes" %}notes{% endif %} aria-label="Home" class="back-link">&leftarrow;</a>
+        {% endif %}
+        <svg class="logo-static" viewBox="-20 -20 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <title>安</title>
+          <!-- Top Edge -->
+          <path d="M 53 8 L 113 8" stroke="#cccccc" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Right Edge -->
+          <path d="M 158 53 L 158 113" stroke="#cccccc" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Bottom Edge -->
+          <path d="M 113 158 L 53 158" stroke="#cccccc" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Left Edge -->
+          <path d="M 8 113 L 8 53" stroke="#cccccc" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Drawing the Diagonal -->
+          <path d="M -2 -2 L 168 168" stroke="#cccccc" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Drawing the Anti-diagonal -->
+          <path d="M 168 -2 L -2 168" stroke="#cccccc" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        {% if page.root != true %}
+          <span class="font">Kai Qu</span>
+        {% endif %}
+      </div>
+      <h1 class="h1">
+        <span lang="{{lang}}">{{ page.title }}</span>
+      </h1>
+      {% if page.root == true %}
+        <div class="desc" lang="en" data-status-loading hidden><span data-status-text></span> <span data-status-datetime></span></div>
+      {% endif %}
+      {% if page.collection == "posts" %}<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %e, %Y" }}</time>{% endif %}
+      {% if page.collection == "notes" or page.collection == "stories" %}<time datetime="{{ page.date }}">{{ page.date | date: "%Y/%m/%d %H:%M" }}</time>{% endif %}
+      <div class="desc">{{ page.header_content }}</div>
+    </header>
+    <main>
+      {% capture content_and_then_some do %}
+        {% if page.type == "photos" %}
+          <input type="radio" name="layout" value="y-scroll" id="y-scroll" checked>
+          <label for="y-scroll">
+            <svg width="15" height="15" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><title>vertical scroll</title><path d="M55 0a5 5 0 0 1 5 5v31a5 5 0 0 1-5 5H5a5 5 0 0 1-5-5V5a5 5 0 0 1 5-5h50ZM55 47a5 5 0 0 1 5 5v8H0v-8a5 5 0 0 1 5-5h50Z" fill="#D9D9D9"/></svg>
+          </label>
+          <input type="radio" name="layout" value="x-scroll" id="x-scroll">
+          <label for="x-scroll">
+            <svg width="15" height="15" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><title>horizontal scroll</title><path d="M0 5a5 5 0 0 1 5-5h30a5 5 0 0 1 5 5v50a5 5 0 0 1-5 5H5a5 5 0 0 1-5-5V5ZM47 5a5 5 0 0 1 5-5h8v60h-8a5 5 0 0 1-5-5V5Z" fill="#D9D9D9"/></svg>
+          </label>
+          <input type="radio" name="layout" value="grid2fr" id="grid2fr">
+          <label for="grid2fr">
+            <svg width="15" height="15" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><title>grid 2 columns</title><path d="M0 37c0-2 2-4 4-4h19c2 0 4 2 4 4v19c0 2-2 4-4 4H4c-2 0-4-2-4-4V37zM0 4c0-2 2-4 4-4h19c2 0 4 2 4 4v19c0 2-2 4-4 4H4c-2 0-4-2-4-4V4zM33 37c0-2 2-4 4-4h19c2 0 4 2 4 4v19c0 2-2 4-4 4H37c-2 0-4-2-4-4V37zM33 4c0-2 2-4 4-4h19c2 0 4 2 4 4v19c0 2-2 4-4 4H37c-2 0-4-2-4-4V4z" fill="#D9D9D9"/></svg>
+          </label>
+          </label>
+          <input type="radio" name="layout" value="grid3fr" id="grid3fr">
+          <label for="grid3fr">
+            <svg width="15" height="15" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><title>grid 3 columns</title><path d="M22 4c0-2 2-4 4-4h8c2 0 4 2 4 4v8c0 2-2 4-4 4h-8c-2 0-4-2-4-4V4zM0 26c0-2 2-4 4-4h8c2 0 4 2 4 4v8c0 2-2 4-4 4H4c-2 0-4-2-4-4v-8zM22 26c0-2 2-4 4-4h8c2 0 4 2 4 4v8c0 2-2 4-4 4h-8c-2 0-4-2-4-4v-8zM0 48c0-2 2-4 4-4h8c2 0 4 2 4 4v8c0 2-2 4-4 4H4c-2 0-4-2-4-4v-8zM44 26c0-2 2-4 4-4h8c2 0 4 2 4 4v8c0 2-2 4-4 4h-8c-2 0-4-2-4-4v-8zM22 48c0-2 2-4 4-4h8c2 0 4 2 4 4v8c0 2-2 4-4 4h-8c-2 0-4-2-4-4v-8zM44 48c0-2 2-4 4-4h8c2 0 4 2 4 4v8c0 2-2 4-4 4h-8c-2 0-4-2-4-4v-8zM0 4c0-2 2-4 4-4h8c2 0 4 2 4 4v8c0 2-2 4-4 4H4c-2 0-4-2-4-4V4zM44 4c0-2 2-4 4-4h8c2 0 4 2 4 4v8c0 2-2 4-4 4h-8c-2 0-4-2-4-4V4z" fill="#D9D9D9"/></svg>
+          </label>
+        {% endif %}
+        {{ content }}
+      {% endcapture %}
+      {% if page.collection == "posts" or page.collection == "pages" %}
+        <article>
+          {{ content_and_then_some }}
+        </article>
+      {% elsif page.collection == "notes" %}
+        {{ content_and_then_some }}
+      {% else %}
+        {{ content_and_then_some }}
+      {% endif %}
+      {% if page.feature == 1 or page.open_heart %}
+        <hr class="hr">
+        <div class="smol">
+          <div class="monospace">
+            <div id="like-prompt">Like this {% if page.collection == "posts" %}post{% elsif page.collection == "notes" %}note{% else %}page{% endif %}? let me know!</div>
+            &gt;<open-heart class="text-open-heart" href="https://likes.muan.dev/?id={{ page.url }}" emoji="❤️" aria-labelledby="like-prompt">
+              <span class="on">Liked.<br>(Thanks!)</span><span class="off">Sure. <kbd>⏎</kbd></span>
+            </open-heart>
+          </div>
+        </div>
+      {% endif %}
+    </main>
+
+    <hr class="hr">
+
+    <footer> <!--TODO: make the footer section svg more compact & less distracting, also there is code repetition in the svg sections-->
+      <a title="88×31" href="{% link _pages/banners.md %}">
+        <svg class="logo-dynamic" viewBox="-20 -20 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <title>K</title>
+          <style>
+              @keyframes draw {
+                  0% {
+                      stroke-dasharray: 1, 200;
+                      stroke-dashoffset: 0;
+                  }
+                  50% {
+                      stroke-dasharray: 100, 200;
+                      stroke-dashoffset: -15;
+                  }
+                  100% {
+                      stroke-dasharray: 100, 200;
+                      stroke-dashoffset: -125;
+                  }
+              }
+
+              .logo-dynamic {
+                  /* Initial styles for SVG when animation is paused/stopped */
+                  animation-play-state: paused;
+                  width: 31px;
+                  height: 31px;
+                  margin-top: 10px;
+                  margin-right: 40px;
+              }
+
+              .logo-dynamic.start-animation {
+                  /* Styles to play/start the SVG animation */
+                  animation-play-state: running;
+              }
+
+              path {
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+              }
+
+              svg {
+                  cursor: pointer;
+              }
+
+              .path1, .path2, .path3, .path4 {
+                  animation: draw 2s linear infinite;
+              }
+
+              .path1 {animation-delay: 0s;}   /* Top Edge */
+              .path2 {animation-delay: 0s;}   /* Right Edge */
+              .path3 {animation-delay: 0s;}   /* Bottom Edge */
+              .path4 {animation-delay: 0s;}   /* Left Edge */
+          </style>
+
+          <!-- Top Edge -->
+          <path d="M 53 8 L 113 8" class="path1" stroke="#cccccc" stroke-width="16"/>
+          <!-- Right Edge -->
+          <path d="M 158 53 L 158 113" class="path2" stroke="#cccccc" stroke-width="16"/>
+          <!-- Bottom Edge -->
+          <path d="M 113 158 L 53 158" class="path3" stroke="#cccccc" stroke-width="16"/>
+          <!-- Left Edge -->
+          <path d="M 8 113 L 8 53" class="path4" stroke="#cccccc" stroke-width="16"/>
+          <!-- Drawing the Diagonal -->
+          <path d="M -2 -2 L 168 168" class="path5" stroke="#cccccc" stroke-width="16"/>
+          <!-- Drawing the Anti-diagonal -->
+          <path d="M 168 -2 L -2 168" class="path6" stroke="#cccccc" stroke-width="16"/>
+        </svg>
+      </a>
+      {% capture label %}{% if page.path == 'index-zh-TW.html' %}查看原始碼{% else %}View source{% endif %}{% endcapture %}
+      <text class="footer-name">Lastk7 | Faithk7 | Erotick7 | K7</text>
+      <text class="footer-quote">「死神はリンゴしか食べないから」</text>
+    </footer>
+
+  <script>
+    const bannerObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add('start-animation'); // Add a CSS class to start the animation
+            observer.unobserve(entry.target); // Stop observing the target
+        }
+      });
+    });
+    bannerObserver.observe(document.querySelector('.logo'));
+  </script>
+
+
+    {% if page.root %}
+    <script type="module" src="/assets/site.js"></script>
+    <script type="module" src="https://unpkg.com/open-stories-element@latest"></script>
+    {% endif %}
+    {% if page.feature == 1 or page.open_heart or page.url == "/notes" or page.url == "/photos" %}
+    <script type="module" src="https://unpkg.com/open-heart-element@latest"></script>
+    <script>
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(async (entry) => {
+          await customElements.whenDefined('open-heart')
+          if (entry.target instanceof OpenHeartElement && entry.isIntersecting) {
+            entry.target.getCount()
+            observer.unobserve(entry.target)
+          }
+        })
+      })
+
+      for (const oh of document.querySelectorAll('open-heart')) {
+        observer.observe(oh)
+      }
+    </script>
+    {% endif %}
+    {% if page.type == "photos" %}
+      <script>
+        const photos = document.querySelector('#photos')
+        const xScroll = document.querySelector('#x-scroll')
+
+        // move scroll area into viewport and user focus
+        document.addEventListener('change', function(event) {
+          if (xScroll.checked) {
+            photos.scrollIntoView()
+            photos.setAttribute('tabindex', '-1')
+            photos.focus()
+
+            photos.addEventListener('blur', function() {
+              photos.blur()
+            }, {once: true})
+          }
+        })
+
+        // return focus
+        document.addEventListener('keydown', function(event) {
+          if (event.key === 'Escape' && xScroll.checked && photos.contains(event.target)) {
+            xScroll.focus()
+            window.scrollTo(0, 0)
+          }
+        })
+      </script>
+    {% endif %}
+    </div>
+  </body>
+</html>

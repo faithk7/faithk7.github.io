@@ -1,0 +1,166 @@
+
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "@muan's stories for Cook",
+  "icon": "https://github.com/muan.png",
+  "home_page_url": "https://muan.co/stories.json",
+  "description": "Stories about Cook.",
+  "_open_stories": {
+    "version": "0.0.9"
+  },
+  "items": [
+    {
+      "id": "ba4f0a61-aded-456c-d481-7a2f7ef39d00",
+      "date_published": "2023-04-04T23:43:54-04:00", 
+      "tags": ["Life", "Highlight", "Cook"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/ba4f0a61-aded-456c-d481-7a2f7ef39d00/public' alt='two glasses of coffee on an aluminum counter, one coffee with half milk in a shallow glass, one coffee with tonic in a deep glass.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/ba4f0a61-aded-456c-d481-7a2f7ef39d00",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/ba4f0a61-aded-456c-d481-7a2f7ef39d00/public",
+        "alt": "two glasses of coffee on an aluminum counter, one coffee with half milk in a shallow glass, one coffee with tonic in a deep glass.",
+        "caption": "muan HQ morning coffee menu. I am such a good host. ;)",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/ba4f0a61-aded-456c-d481-7a2f7ef39d00"]
+        }
+      }
+    },
+    {
+      "id": "8b2faacf-c6ed-4671-9ee9-2dc5d665ca00",
+      "date_published": "2022-11-03T03:34:08-04:00", 
+      "tags": ["Life", "Highlight", "Cook"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/8b2faacf-c6ed-4671-9ee9-2dc5d665ca00/public' alt='Chinese borscht in a cabbage bowl on a wooden chopping board.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/8b2faacf-c6ed-4671-9ee9-2dc5d665ca00",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/8b2faacf-c6ed-4671-9ee9-2dc5d665ca00/public",
+        "alt": "Chinese borscht in a cabbage bowl on a wooden chopping board.",
+        "caption": "I sick I borscht.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/8b2faacf-c6ed-4671-9ee9-2dc5d665ca00"]
+        }
+      }
+    },
+    {
+      "id": "319aeb71-f08f-4f60-aa02-200c6235ec00",
+      "date_published": "2022-10-19T13:34:18-04:00", 
+      "tags": ["Life", "Highlight", "Cook"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/319aeb71-f08f-4f60-aa02-200c6235ec00/public' alt='egg wrap/dan bing on a stool'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/319aeb71-f08f-4f60-aa02-200c6235ec00",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/319aeb71-f08f-4f60-aa02-200c6235ec00/public",
+        "alt": "egg wrap/dan bing on a stool",
+        "caption": "flour, water, oil, salt, egg, scallion.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/319aeb71-f08f-4f60-aa02-200c6235ec00"]
+        }
+      }
+    },
+    {
+      "id": "ec5cb8a5-0665-4ce1-2193-96268286a900",
+      "date_published": "2022-10-19T13:12:39-04:00", 
+      "tags": ["Life", "Highlight", "Cook"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/ec5cb8a5-0665-4ce1-2193-96268286a900/public' alt='Frittata, plates, on a coffee table.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/ec5cb8a5-0665-4ce1-2193-96268286a900",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/ec5cb8a5-0665-4ce1-2193-96268286a900/public",
+        "alt": "Frittata, plates, on a coffee table.",
+        "caption": "Frittata with jlord!",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/ec5cb8a5-0665-4ce1-2193-96268286a900"]
+        }
+      }
+    },
+    {
+      "id": "509592d7-b13a-4224-9bbc-15d5be57b200",
+      "date_published": "2022-10-08T07:05:35-04:00", 
+      "tags": ["Life", "Highlight", "Cook"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/509592d7-b13a-4224-9bbc-15d5be57b200/public' alt='Plates of food on a wooden table. Something fish, something pork, a pan fried fish, stir fried cabbage with mushrooms, beautiful green bowls and chopsticks.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/509592d7-b13a-4224-9bbc-15d5be57b200",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/509592d7-b13a-4224-9bbc-15d5be57b200/public",
+        "alt": "Plates of food on a wooden table. Something fish, something pork, a pan fried fish, stir fried cabbage with mushrooms, beautiful green bowls and chopsticks.",
+        "caption": "I cooked, to show love. I guess. Ate sitting on a yoga block.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/509592d7-b13a-4224-9bbc-15d5be57b200"]
+        }
+      }
+    },
+    {
+      "id": "50fd0567-b626-4281-8706-fac9a04ee000",
+      "date_published": "2022-09-07T08:30:40-04:00", 
+      "tags": ["Life", "Highlight", "Cook"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/50fd0567-b626-4281-8706-fac9a04ee000/public' alt='Me holding 3 bags of flour, each 1 kg, and a bag of instant yeast. Photo was shot from under my chin so the only visible part of me is my long wavy hair.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/50fd0567-b626-4281-8706-fac9a04ee000",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/50fd0567-b626-4281-8706-fac9a04ee000/public",
+        "alt": "Me holding 3 bags of flour, each 1 kg, and a bag of instant yeast. Photo was shot from under my chin so the only visible part of me is my long wavy hair.",
+        "caption": "3KG OF FLOUR GONE ALREADY.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/50fd0567-b626-4281-8706-fac9a04ee000"]
+        }
+      }
+    },
+    {
+      "id": "130fd3be-8811-486b-68ae-d97a6b9a4300",
+      "date_published": "2022-09-01T00:48:40-04:00", 
+      "tags": ["Life", "Highlight", "Cook"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/130fd3be-8811-486b-68ae-d97a6b9a4300/public' alt='Two green ceramic bowl and two pairs of partially painted green chopsticks on a stool.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/130fd3be-8811-486b-68ae-d97a6b9a4300",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/130fd3be-8811-486b-68ae-d97a6b9a4300/public",
+        "alt": "Two green ceramic bowl and two pairs of partially painted green chopsticks on a stool.",
+        "caption": "Have I mentioned I love green?",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/130fd3be-8811-486b-68ae-d97a6b9a4300"]
+        }
+      }
+    },
+    {
+      "id": "42110ab8-7437-45f4-891b-4293bfb81500",
+      "date_published": "2022-08-21T23:24:35-04:00", 
+      "tags": ["Life", "Cook", "Highlight"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/42110ab8-7437-45f4-891b-4293bfb81500/public' alt='7-11 lunch, nicely plated. Soba, grilled salmon, and egg cute cubes, on a wooden platform.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/42110ab8-7437-45f4-891b-4293bfb81500",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/42110ab8-7437-45f4-891b-4293bfb81500/public",
+        "alt": "7-11 lunch, nicely plated. Soba, grilled salmon, and egg cute cubes, on a wooden platform.",
+        "caption": "These are from 7-11. ”C’est ce qui fait qu’un jour est différent des autres jours, une heure, des autres heures.”",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/42110ab8-7437-45f4-891b-4293bfb81500"]
+        }
+      }
+    },
+    {
+      "id": "61eb36f6-db05-422b-423f-ae680403d600",
+      "date_published": "2022-08-17T02:01:55-04:00", 
+      "tags": ["Life", "Cook", "Highlight"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/61eb36f6-db05-422b-423f-ae680403d600/public' alt='Danbing on a white plate with soy sauce and chill paste.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/61eb36f6-db05-422b-423f-ae680403d600",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/61eb36f6-db05-422b-423f-ae680403d600/public",
+        "alt": "Danbing on a white plate with soy sauce and chill paste.",
+        "caption": "蛋餅好吃。",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/61eb36f6-db05-422b-423f-ae680403d600"]
+        }
+      }
+    }
+  ]
+}

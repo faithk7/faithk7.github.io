@@ -1,0 +1,62 @@
+<!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 88 31"><title>Mu-An Chiou @ muan.co</title><style>@media (prefers-reduced-motion) {path { animation: none !important;stroke-dasharray:unset !important;}} @keyframes grow{0%{opacity:0}20%{opacity:1;transform:rotateX(40deg)}40%{transform:rotateX(0deg)}70%,to{stroke-dasharray:100px 0}} svg{cursor:pointer}path{stroke-dashoffset:1px;stroke-dasharray:1px 130px;animation:grow 4s ease-in-out forwards infinite;transform-origin:center;stroke:#fdfdfd}.path1{animation-delay:0s}.path2{animation-delay:.5s}.path3{animation-delay:.8s}.path4{animation-delay:1.4s}rect{fill:#303030}@media (prefers-color-scheme:dark){rect{fill:#fdfdfd}path{stroke:#303030}}</style><rect width="88" height="31" fill="#1C1C1C" rx="2" ry="2"/><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5126" d="M43.25 9h2.5" class="path1"/><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5126" d="M40.75 12.5294h7.5" class="path2"/><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5126" d="M37 16.0588h15" class="path3"/><path stroke="#fff" stroke-linecap="round" stroke-width="1.5126" d="M40.7815 21.7311c.923-.7651 2.7208-2.2689 3.6704-2.2689 1.2869 0 1.3292 2.2689 2.3955 2.2689 1.0662 0 2.0013-.4412 2.0013-.4412" class="path4"/></svg> -->
+
+<svg class="logo" viewBox="-20 -20 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <title>K</title>
+    <style>
+        @keyframes draw {
+            0% {
+                stroke-dasharray: 1, 200;
+                stroke-dashoffset: 0;
+            }
+            50% {
+                stroke-dasharray: 100, 200;
+                stroke-dashoffset: -15;
+            }
+            100% {
+                stroke-dasharray: 100, 200;
+                stroke-dashoffset: -125;
+            }
+        }
+
+        .logo {
+            /* Initial styles for SVG when animation is paused/stopped */
+            animation-play-state: paused;
+        }
+
+        .logo.start-animation {
+            /* Styles to play/start the SVG animation */
+            animation-play-state: running;
+        }
+
+        path {
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        svg {
+            cursor: pointer;
+        }
+
+        .path1, .path2, .path3, .path4 {
+            animation: draw 2s linear infinite;
+        }
+
+        .path1 {animation-delay: 0s;}   /* Top Edge */
+        .path2 {animation-delay: 0s;}   /* Right Edge */
+        .path3 {animation-delay: 0s;}   /* Bottom Edge */
+        .path4 {animation-delay: 0s;}   /* Left Edge */
+    </style>
+
+    <!-- Top Edge -->
+    <path d="M 53 8 L 113 8" class="path1" stroke="#cccccc" stroke-width="16"/>
+    <!-- Right Edge -->
+    <path d="M 158 53 L 158 113" class="path2" stroke="#cccccc" stroke-width="16"/>
+    <!-- Bottom Edge -->
+    <path d="M 113 158 L 53 158" class="path3" stroke="#cccccc" stroke-width="16"/>
+    <!-- Left Edge -->
+    <path d="M 8 113 L 8 53" class="path4" stroke="#cccccc" stroke-width="16"/>
+    <!-- Drawing the Diagonal -->
+    <path d="M -2 -2 L 168 168" class="path5" stroke="#cccccc" stroke-width="16"/>
+    <!-- Drawing the Anti-diagonal -->
+    <path d="M 168 -2 L -2 168" class="path6" stroke="#cccccc" stroke-width="16"/>
+</svg>

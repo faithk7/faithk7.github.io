@@ -1,1 +1,78 @@
-<span>KQ7</span>
+---
+title: Kai Qu
+layout: default
+root: true
+---
+
+<p>
+  Currently work as a software engineer in test at MathWorks.
+</p>
+<p>
+  Based in Boston, MA<span class="time" data-timestamp-text=", where it's {time} now"></span>. Previous home bases include Atlanta, Beijing, and Charlottesville, VA.
+</p>
+
+<nav aria-label="Social links">
+  <a href="https://github.com/faithk7" rel="me">GitHub</a> / <a href="https://read.cv/lastk7" rel="me">Read.cv</a>
+</nav>
+<nav aria-label="Additional content">
+  <a href="https://k7books.notion.site/28163bbc1d50481da1bb107545442ca5?v=49d761480a2a4b12a8c6e172f997d1d4&pvs=4">Library</a> /
+  <a href="https://open.spotify.com/user/315ytnpf5bjnkst6vx3yu5eo7xxu" rel="me">Spotify</a> / <a href="https://vsco.co/photok7/gallery" rel="me">Vsco</a> /
+  <a href="https://www.duolingo.com/profile/lastk7" rel="me">Duolingo</a> / <a href="https://bangumi.tv/user/535734" rel="me">Bangumi</a>
+</nav>
+<!-- TODO: change the lang classes to a switcher -->
+<div class="lang">
+  <a href="/zh-TW/">Light 昼</a><a href="/" aria-current="true">Night 夜</a>
+</div>
+
+<div class="tilde-separator"></div>
+
+<h2 class="text">Stories</h2> <a href="/stories.xml" class="styled-link">RSS</a> <a href="https://github.com/dddddddddzzzz/OpenStories" class="styled-link">What are these?</a>
+
+{% include stories.html lang="en" %}
+
+<div class="tilde-separator"></div>
+
+<h2 class="text">Photos</h2><a href="/photos" class="styled-link">All photos</a> <a href="/photos.xml" class="styled-link">RSS</a>
+<div class="photos">
+{% assign photos = site.data.photos | slice: 0, 5 %}
+{% for photo in photos %}
+  <a href="/photos#P{{ photo.guid}}" class="image-link">
+    <img src="{{ photo.path }}/thumbnail" height="200" alt="{{ photo.alt }}" loading="lazy" style="aspect-ratio: {{ photo.ratio }};">
+  </a>
+{% endfor %}
+</div>
+
+Film:
+<a href="/pages/film-roll-01">Roll #1</a>,
+<a href="/pages/film-roll-02">Roll #2</a>,
+<a href="/pages/film-roll-03">Roll #3</a>,
+<a href="/pages/film-roll-04">Roll #4</a>,
+<a href="/pages/film-roll-05">Roll #5</a>,
+<a href="/pages/film-roll-06">Roll #6</a>
+
+<div class="tilde-separator"></div>
+
+{% assign note = site.notes | last %}
+<h2 class="text">Notes</h2><a href="/notes" class="styled-link">Recent notes</a> <a href="/notes.xml" class="styled-link">RSS</a>
+<div class="note">
+  <div class="note-heading">
+    Latest: {{ note.date | date: "%B %e, %Y" }}
+  </div>
+  {{ note.content | markdownify }}
+</div>
+
+<div class="tilde-separator"></div>
+
+<h2 class="text">Posts</h2><a href="/posts" class="styled-link">Previous posts</a> <a href="/feed.xml" class="styled-link">RSS</a>
+<ul aria-label="posts" class="terminal">
+{% assign pages = site.pages | where: "feature", 1 %}
+{% for post in pages %}
+  <li class="line"><a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+
+{% assign posts = site.posts | where: "feature", 1 %}
+{% for post in posts %}
+  <li class="line"><a href="{{ post.url }}">{{ post.title }}</a><br>
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %e, %Y" }}</time></li>
+{% endfor %}
+</ul>

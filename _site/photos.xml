@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>@muan's photos</title>
+    <description>Photos.</description>
+    
+    <lastBuildDate>Tue, 01 Aug 2023 08:06:12 -0400</lastBuildDate>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000/photos.xml</link>
+    
+      
+      <item>
+        <title>Taipei is green.
+</title>
+        <description>
+          
+          
+            &lt;a href=&quot;https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/82d23722-bff9-4222-673e-63d8f5809d00//public&quot;&gt;
+              &lt;img src=&quot;https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/82d23722-bff9-4222-673e-63d8f5809d00//public&quot; width=&quot;100%&quot; alt=&quot;A sidewalk with trees and a bus stop.&quot;/&gt;
+            &lt;/a&gt;
+          
+        &lt;br&gt;&lt;a href=&quot;https://muan.co/pages/like?id=photo-PC6500AA5-386E-479E-85CA-39DE4384D518&quot;&gt;Like&lt;/a&gt;&lt;br&gt;&lt;small&gt;&lt;a href=&quot;https://github.com/dddddddddzzzz/OpenHeart&quot;&gt;(Backed by OpenHeart protocol)&lt;/a&gt;&lt;/small&gt;
+      
+        </description>
+        <pubDate>Tue, 01 Aug 2023 08:06:12 -0400</pubDate>
+        <link>http://localhost:4000/photos#PC6500AA5-386E-479E-85CA-39DE4384D518</link>
+        <guid isPermaLink="true">http://localhost:4000/photos#PC6500AA5-386E-479E-85CA-39DE4384D518</guid>
+      </item>
+    
+  </channel>
+</rss>

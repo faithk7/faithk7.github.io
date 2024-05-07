@@ -1,0 +1,225 @@
+
+pre, code {
+  font-family: 'Menlo', monospace;
+}
+
+code {
+  font-size: 0.85em;
+}
+
+pre code {
+  font-size: 0.9em;
+}
+
+:root {
+  --syntaxBackground: #ffffff;
+  --hll: #ffffcc;
+  --c: #999988;
+  --err: #a61717;
+  --errBackground: #e3d2d2;
+  --k: #000000;
+  --o: #000000;
+  --cm: #999988;
+  --cp: #999999;
+  --c1: #999988;
+  --cs: #999999;
+  --gd: #000000;
+  --ge: #000000;
+  --gr: #aa0000;
+  --gh: #999999;
+  --gi: #000000;
+  --go: #888888;
+  --gp: #555555;
+  --gu: #aaaaaa;
+  --gt: #aa0000;
+  --kc: #000000;
+  --kd: #000000;
+  --kn: #000000;
+  --kp: #000000;
+  --kr: #000000;
+  --kt: #445588;
+  --m: #009999;
+  --s: #d01040;
+  --na: #008080;
+  --nb: #0086B3;
+  --nc: #445588;
+  --no: #008080;
+  --nd: #3c5d5d;
+  --ni: #800080;
+  --ne: #990000;
+  --nf: #990000;
+  --nl: #990000;
+  --nn: #555555;
+  --nt: #000080;
+  --nv: #008080;
+  --ow: #000000;
+  --w: #bbbbbb;
+  --mf: #009999;
+  --mh: #009999;
+  --mi: #009999;
+  --mo: #009999;
+  --sb: #d01040;
+  --sc: #d01040;
+  --sd: #d01040;
+  --s2: #d01040;
+  --se: #d01040;
+  --sh: #d01040;
+  --si: #d01040;
+  --sx: #d01040;
+  --sr: #009926;
+  --s1: #d01040;
+  --ss: #990073;
+  --bp: #999999;
+  --vc: #008080;
+  --vg: #008080;
+  --vi: #008080;
+  --il: #009999;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --syntaxBackground: #121615;
+    --hll: #002b36;
+    --c: #586e75;
+    --err: #e3d2d2;
+    --errBackground: #a61717;
+    --k: #859900;
+    --o: #859900;
+    --cm: #586e75;
+    --c1: #586e75;
+    --gd: #ffdddd;
+    --ge: #2aa198;
+    --gh: #cb4b16;
+    --gi: #ddffdd;
+    --gu: #cb4b16;
+    --m: #74b9b9;
+    --s: #9faf74;
+    --kc: #cb4b16;
+    --kd: #2aa198;
+    --kn: #2aa198;
+    --kp: #2aa198;
+    --kr: #2aa198;
+    --nb: #b58900;
+    --no: #cb4b16;
+    --ni: #cb4b16;
+    --ne: #cb4b16;
+    --nf: #cb4b16;
+    --nl: #cb4b16;
+    --nt: #7aa1ad;
+    --ow: #2aa198;
+    --sb: #586e75;
+    --sc: #586e75;
+    --sd: #586e75;
+    --s2: #586e75;
+    --se: #586e75;
+    --sh: #586e75;
+    --si: #586e75;
+    --sx: #586e75;
+  }
+}
+
+div.highlight {
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  background-color: var(--syntaxBackground);
+  padding: .6em 1em;
+  border-radius: 6px;
+  tab-size: 2;
+}
+
+.highlight .gutter {
+  padding-right: 1em;
+  color: #aaa;
+  border-right: 3px solid var(--syntaxBackground);
+}
+
+.highlight .code {
+  padding-left: 1em;
+}
+
+.highlight pre {
+  overflow: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+code {
+  background: var(--syntaxBackground);
+  padding: .2em .6em;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+p code {
+  vertical-align: inherit;
+}
+
+pre code {
+  padding: 0;
+  word-wrap: initial;
+  background: transparent;
+}
+
+.hll { background-color: var(--hll) }
+.c { color: var(--c); font-style: italic } /* Comment */
+.err { color: var(--err); background-color: var(--errBackground) } /* Error */
+.k { color: var(--k); font-weight: bold } /* Keyword */
+.o { color: var(--o); font-weight: bold } /* Operator */
+.cm { color: var(--cm); font-style: italic } /* Comment.Multiline */
+.cp { color: var(--cp); font-weight: bold; font-style: italic } /* Comment.Preproc */
+.c1 { color: var(--c1); font-style: italic } /* Comment.Single */
+.cs { color: var(--cs); font-weight: bold; font-style: italic } /* Comment.Special */
+.gd { color: var(--k); background-color: var(--gd) } /* Generic.Deleted */
+.ge { color: var(--ge); font-style: italic } /* Generic.Emph */
+.gr { color: var(--gr) } /* Generic.Error */
+.gh { color: var(--gh) } /* Generic.Heading */
+.gi { color: var(--k); background-color: var(--gi) } /* Generic.Inserted */
+.go { color: var(--go) } /* Generic.Output */
+.gp { color: var(--gp) } /* Generic.Prompt */
+.gs { font-weight: bold } /* Generic.Strong */
+.gu { color: var(--gu) } /* Generic.Subheading */
+.gt { color: var(--gt) } /* Generic.Traceback */
+.kc { color: var(--kc); font-weight: bold } /* Keyword.Constant */
+.kd { color: var(--kd); font-weight: bold } /* Keyword.Declaration */
+.kn { color: var(--kn); font-weight: bold } /* Keyword.Namespace */
+.kp { color: var(--kp); font-weight: bold } /* Keyword.Pseudo */
+.kr { color: var(--kr); font-weight: bold } /* Keyword.Reserved */
+.kt { color: var(--kt); font-weight: bold } /* Keyword.Type */
+.m { color: var(--m) } /* Literal.Number */
+.s { color: var(--s) } /* Literal.String */
+.na { color: var(--na) } /* Name.Attribute */
+.nb { color: var(--nb) } /* Name.Builtin */
+.nc { color: var(--nc); font-weight: bold } /* Name.Class */
+.no { color: var(--no) } /* Name.Constant */
+.nd { color: var(--nd); font-weight: bold } /* Name.Decorator */
+.ni { color: var(--ni) } /* Name.Entity */
+.ne { color: var(--ne); font-weight: bold } /* Name.Exception */
+.nf { color: var(--nf); font-weight: bold } /* Name.Function */
+.nl { color: var(--nl); font-weight: bold } /* Name.Label */
+.nn { color: var(--nn) } /* Name.Namespace */
+.nt { color: var(--nt) } /* Name.Tag */
+.nv { color: var(--nv) } /* Name.Variable */
+.ow { color: var(--ow); font-weight: bold } /* Operator.Word */
+.w { color: var(--w) } /* Text.Whitespace */
+.mf { color: var(--mf) } /* Literal.Number.Float */
+.mh { color: var(--mh) } /* Literal.Number.Hex */
+.mi { color: var(--mi) } /* Literal.Number.Integer */
+.mo { color: var(--mo) } /* Literal.Number.Oct */
+.sb { color: var(--sb) } /* Literal.String.Backtick */
+.sc { color: var(--sc) } /* Literal.String.Char */
+.sd { color: var(--sd) } /* Literal.String.Doc */
+.s2 { color: var(--s2) } /* Literal.String.Double */
+.se { color: var(--se) } /* Literal.String.Escape */
+.sh { color: var(--sh) } /* Literal.String.Heredoc */
+.si { color: var(--si) } /* Literal.String.Interpol */
+.sx { color: var(--sx) } /* Literal.String.Other */
+.sr { color: var(--sr) } /* Literal.String.Regex */
+.s1 { color: var(--s1) } /* Literal.String.Single */
+.ss { color: var(--ss) } /* Literal.String.Symbol */
+.bp { color: var(--bp) } /* Name.Builtin.Pseudo */
+.vc { color: var(--vc) } /* Name.Variable.Class */
+.vg { color: var(--vg) } /* Name.Variable.Global */
+.vi { color: var(--vi) } /* Name.Variable.Instance */
+.il { color: var(--il) } /* Literal.Number.Integer.Long */
+

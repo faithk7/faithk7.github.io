@@ -1,0 +1,353 @@
+
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "@muan's stories for Books",
+  "icon": "https://github.com/muan.png",
+  "home_page_url": "https://muan.co/stories.json",
+  "description": "Stories about Books.",
+  "_open_stories": {
+    "version": "0.0.9"
+  },
+  "items": [
+    {
+      "id": "08b819da-7511-40d6-be39-b613534c0400",
+      "date_published": "2023-08-27T21:16:28-04:00", 
+      "tags": ["Life", "Highlight", "Books"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/08b819da-7511-40d6-be39-b613534c0400/public' alt='page in a book roughly saying that human spend their whole life try to deny mortality, with handwritten text by the side “WHO?!”'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/08b819da-7511-40d6-be39-b613534c0400",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/08b819da-7511-40d6-be39-b613534c0400/public",
+        "alt": "page in a book roughly saying that human spend their whole life try to deny mortality, with handwritten text by the side “WHO?!”",
+        "caption": "This book gets on my nerves so much but I am forcing myself to finish it. It’s called Optimistic Nihilism. ",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/08b819da-7511-40d6-be39-b613534c0400"]
+        }
+      }
+    },
+    {
+      "id": "277ae7ef-10f7-46bb-d9aa-8ff1db9e1700",
+      "date_published": "2023-08-20T09:50:52-04:00", 
+      "tags": ["Life", "Highlight", "Books"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/277ae7ef-10f7-46bb-d9aa-8ff1db9e1700/public' alt='text: For everyone who has wanted to want more'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/277ae7ef-10f7-46bb-d9aa-8ff1db9e1700",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/277ae7ef-10f7-46bb-d9aa-8ff1db9e1700/public",
+        "alt": "text: For everyone who has wanted to want more",
+        "caption": "",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/277ae7ef-10f7-46bb-d9aa-8ff1db9e1700"]
+        }
+      }
+    },
+    {
+      "id": "88f08993-0c4d-4000-722f-d833d1009600",
+      "date_published": "2023-08-12T00:38:57-04:00", 
+      "tags": ["Life", "Highlight", "Books"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/88f08993-0c4d-4000-722f-d833d1009600/public' alt='a hand holding a book called the art of dating'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/88f08993-0c4d-4000-722f-d833d1009600",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/88f08993-0c4d-4000-722f-d833d1009600/public",
+        "alt": "a hand holding a book called the art of dating",
+        "caption": "my dad gave me this book called the art of dating, what a diss. -300hp.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/88f08993-0c4d-4000-722f-d833d1009600"]
+        }
+      }
+    },
+    {
+      "id": "dfb86ce9-eff4-4dc2-5d63-e08e35669a00",
+      "date_published": "2023-07-18T21:05:52-04:00", 
+      "tags": ["Life", "Highlight", "Books"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/dfb86ce9-eff4-4dc2-5d63-e08e35669a00/public' alt='hand holding a book in traditional Chinese with part of the text highlighted'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/dfb86ce9-eff4-4dc2-5d63-e08e35669a00",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/dfb86ce9-eff4-4dc2-5d63-e08e35669a00/public",
+        "alt": "hand holding a book in traditional Chinese with part of the text highlighted",
+        "caption": "Some positivity from Schopenhauer heyo.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/dfb86ce9-eff4-4dc2-5d63-e08e35669a00"]
+        }
+      }
+    },
+    {
+      "id": "920415a3-35a8-4d0d-ca91-720986d6c400",
+      "date_published": "2023-06-10T20:31:49-04:00", 
+      "tags": ["Life", "Highlight", "Books"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/920415a3-35a8-4d0d-ca91-720986d6c400/public' alt='a hand holding a dark green hardcover book titled Miguel Milá A Life in Design, By Kiko Gaspar Quevedo, Introduction by Jasper Morrison, published by apartamento.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/920415a3-35a8-4d0d-ca91-720986d6c400",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/920415a3-35a8-4d0d-ca91-720986d6c400/public",
+        "alt": "a hand holding a dark green hardcover book titled Miguel Milá A Life in Design, By Kiko Gaspar Quevedo, Introduction by Jasper Morrison, published by apartamento.",
+        "caption": "The overpriced green book.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/920415a3-35a8-4d0d-ca91-720986d6c400"]
+        }
+      }
+    },
+    {
+      "id": "d6327bdf-76a7-4be2-6b65-b35caf5fcd00",
+      "date_published": "2023-06-08T21:06:51-04:00", 
+      "tags": ["Life", "Highlight", "Books"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/d6327bdf-76a7-4be2-6b65-b35caf5fcd00/public' alt='a book cover with a cartoon of a person sitting on the floor'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/d6327bdf-76a7-4be2-6b65-b35caf5fcd00",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/d6327bdf-76a7-4be2-6b65-b35caf5fcd00/public",
+        "alt": "a book cover with a cartoon of a person sitting on the floor",
+        "caption": "《活著覺得麻煩的人》. easy to digest. somewhat therapeutic in a validating way.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/d6327bdf-76a7-4be2-6b65-b35caf5fcd00"]
+        }
+      }
+    },
+    {
+      "id": "21ed40a5-baf8-43f4-96de-140b02036a00",
+      "date_published": "2023-06-04T07:33:20-04:00", 
+      "tags": ["Life", "Highlight", "Books"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/21ed40a5-baf8-43f4-96de-140b02036a00/public' alt='a page of a book in traditional Chinese with two sentences highlighted “希望戀愛不會有結果”, “修成正果就麻煩了”.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/21ed40a5-baf8-43f4-96de-140b02036a00",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/21ed40a5-baf8-43f4-96de-140b02036a00/public",
+        "alt": "a page of a book in traditional Chinese with two sentences highlighted “希望戀愛不會有結果”, “修成正果就麻煩了”.",
+        "caption": "👩🏻‍🍳😘. If only.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/21ed40a5-baf8-43f4-96de-140b02036a00"]
+        }
+      }
+    },
+    {
+      "id": "a69b797e-5845-46e2-5847-33b30b876500",
+      "date_published": "2023-06-01T18:55:37-04:00", 
+      "tags": ["Life", "Highlight", "Books"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/a69b797e-5845-46e2-5847-33b30b876500/public' alt='a person holding a a book with the following sentence highlighted “既然這麼辛苦，不要生下自己不就好了？”'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/a69b797e-5845-46e2-5847-33b30b876500",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/a69b797e-5845-46e2-5847-33b30b876500/public",
+        "alt": "a person holding a a book with the following sentence highlighted “既然這麼辛苦，不要生下自己不就好了？”",
+        "caption": "《活著覺得麻煩的人》",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/a69b797e-5845-46e2-5847-33b30b876500"]
+        }
+      }
+    },
+    {
+      "id": "b9596c86-2978-4bff-96c1-1e87e1848800",
+      "date_published": "2023-05-17T21:36:29-04:00", 
+      "tags": ["Life", "Highlight", "Books"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/b9596c86-2978-4bff-96c1-1e87e1848800/public' alt='a hand holding a book titled Ito Junji’s cat diary.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/b9596c86-2978-4bff-96c1-1e87e1848800",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/b9596c86-2978-4bff-96c1-1e87e1848800/public",
+        "alt": "a hand holding a book titled Ito Junji’s cat diary.",
+        "caption": "cute cats! and what an excellent wife he has. lucky man.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/b9596c86-2978-4bff-96c1-1e87e1848800"]
+        }
+      }
+    },
+    {
+      "id": "17d276b9-cc51-4a1d-671f-9cb155fddc00",
+      "date_published": "2023-04-27T18:53:02-04:00", 
+      "tags": ["Life", "Highlight", "Books"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/17d276b9-cc51-4a1d-671f-9cb155fddc00/public' alt='Hand holding a book named CAT by spinning books.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/17d276b9-cc51-4a1d-671f-9cb155fddc00",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/17d276b9-cc51-4a1d-671f-9cb155fddc00/public",
+        "alt": "Hand holding a book named CAT by spinning books.",
+        "caption": "Leaning into my inner cat lady vibe.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/17d276b9-cc51-4a1d-671f-9cb155fddc00"]
+        }
+      }
+    },
+    {
+      "id": "e36c06e3-f214-4835-c475-6ca3a1ce2500",
+      "date_published": "2023-04-23T21:53:30-04:00", 
+      "tags": ["Life", "Highlight", "Books"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/e36c06e3-f214-4835-c475-6ca3a1ce2500/public' alt='Split images of hand holding a book. 三體、性別打結、gender knot、A civic technologist’s practice guide。'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/e36c06e3-f214-4835-c475-6ca3a1ce2500",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/e36c06e3-f214-4835-c475-6ca3a1ce2500/public",
+        "alt": "Split images of hand holding a book. 三體、性別打結、gender knot、A civic technologist’s practice guide。",
+        "caption": "h/t Rae, Jessica, KJ, and Annie.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/e36c06e3-f214-4835-c475-6ca3a1ce2500"]
+        }
+      }
+    },
+    {
+      "id": "3ada60a8-e4d7-4641-d566-934006c98d00",
+      "date_published": "2023-04-18T09:51:13-04:00", 
+      "tags": ["Life", "Highlight", "Books"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/3ada60a8-e4d7-4641-d566-934006c98d00/public' alt='hand holding a yellow book titled One Hundred Cool Things In Twenty Twenty Two and a yellow smiley sticker with Y and S as eyes.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/3ada60a8-e4d7-4641-d566-934006c98d00",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/3ada60a8-e4d7-4641-d566-934006c98d00/public",
+        "alt": "hand holding a yellow book titled One Hundred Cool Things In Twenty Twenty Two and a yellow smiley sticker with Y and S as eyes.",
+        "caption": "From @bonjouryannick ♡. Delightful little read.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/3ada60a8-e4d7-4641-d566-934006c98d00"]
+        }
+      }
+    },
+    {
+      "id": "3aeaa55d-7096-47c0-26a7-80fc87627a00",
+      "date_published": "2023-03-23T22:27:50-04:00", 
+      "tags": ["Life", "Highlight", "Books"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/3aeaa55d-7096-47c0-26a7-80fc87627a00/public' alt='hand holding a book called Arcade Game Typography by Toshi Omagari'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/3aeaa55d-7096-47c0-26a7-80fc87627a00",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/3aeaa55d-7096-47c0-26a7-80fc87627a00/public",
+        "alt": "hand holding a book called Arcade Game Typography by Toshi Omagari",
+        "caption": "beautiful",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/3aeaa55d-7096-47c0-26a7-80fc87627a00"]
+        }
+      }
+    },
+    {
+      "id": "15d6971d-4b69-40b1-b8db-9f7c241d2500",
+      "date_published": "2023-03-09T23:51:39-05:00", 
+      "tags": ["Life", "Books", "Highlight"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/15d6971d-4b69-40b1-b8db-9f7c241d2500/public' alt='Shadow selfie of me sitting on the balcony reading a book. To the right monstera indoor behind a window and to the left wooden panels.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/15d6971d-4b69-40b1-b8db-9f7c241d2500",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/15d6971d-4b69-40b1-b8db-9f7c241d2500/public",
+        "alt": "Shadow selfie of me sitting on the balcony reading a book. To the right monstera indoor behind a window and to the left wooden panels.",
+        "caption": "Recovery: The Lost Art of Convalescence. Very good.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/15d6971d-4b69-40b1-b8db-9f7c241d2500"]
+        }
+      }
+    },
+    {
+      "id": "4bfd48f5-ac44-40a6-fdc1-13d885bb6900",
+      "date_published": "2023-01-27T21:17:42-05:00", 
+      "tags": ["Life", "Books", "Highlight"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/4bfd48f5-ac44-40a6-fdc1-13d885bb6900/public' alt='An IKEA style manual names “SINGLE”. Page shows furniture assembled by two people from the IKEA manual on one side, on the other side an illustrated version of the same furniture being assembled by one person who had to grip the sides with their teeth.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/4bfd48f5-ac44-40a6-fdc1-13d885bb6900",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/4bfd48f5-ac44-40a6-fdc1-13d885bb6900/public",
+        "alt": "An IKEA style manual names “SINGLE”. Page shows furniture assembled by two people from the IKEA manual on one side, on the other side an illustrated version of the same furniture being assembled by one person who had to grip the sides with their teeth.",
+        "caption": "SINGLE.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/4bfd48f5-ac44-40a6-fdc1-13d885bb6900"]
+        }
+      }
+    },
+    {
+      "id": "dcc7e73e-231f-4b84-b035-6a4eeff3a600",
+      "date_published": "2022-10-14T23:28:13-04:00", 
+      "tags": ["Life", "Books", "Highlight"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/dcc7e73e-231f-4b84-b035-6a4eeff3a600/public' alt='page in a book, highlighted: …it is such a wonderful metaphor for religiosity. In a sense, we are all like Alvin Ford, each facing our imminent mortality and with a choice whether to acknowledge it. Alvin can take a pill to face his while we can join a religion to deny ours.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/dcc7e73e-231f-4b84-b035-6a4eeff3a600",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/dcc7e73e-231f-4b84-b035-6a4eeff3a600/public",
+        "alt": "page in a book, highlighted: …it is such a wonderful metaphor for religiosity. In a sense, we are all like Alvin Ford, each facing our imminent mortality and with a choice whether to acknowledge it. Alvin can take a pill to face his while we can join a religion to deny ours.",
+        "caption": "",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/dcc7e73e-231f-4b84-b035-6a4eeff3a600"]
+        }
+      }
+    },
+    {
+      "id": "7f3e9559-10ee-4cf7-ffbd-36eec7ab5400",
+      "date_published": "2022-09-02T21:42:08-04:00", 
+      "tags": ["Life", "Books", "Highlight"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/7f3e9559-10ee-4cf7-ffbd-36eec7ab5400/public' alt='Three books on a stool. In love by Amy Bloom, captioned “i don’t remember who told me to get this but ty?” What Strange Paradise, ht Rob Brackett, How to do nothing recommended by gjtorikian.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/7f3e9559-10ee-4cf7-ffbd-36eec7ab5400",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/7f3e9559-10ee-4cf7-ffbd-36eec7ab5400/public",
+        "alt": "Three books on a stool. In love by Amy Bloom, captioned “i don’t remember who told me to get this but ty?” What Strange Paradise, ht Rob Brackett, How to do nothing recommended by gjtorikian.",
+        "caption": "I have a semi-serious book debt now.",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/7f3e9559-10ee-4cf7-ffbd-36eec7ab5400"]
+        }
+      }
+    },
+    {
+      "id": "108ed4a7-1c64-40ef-52dc-1380b7a69500",
+      "date_published": "2022-08-29T08:56:20-04:00", 
+      "tags": ["Life", "Books", "Highlight"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/108ed4a7-1c64-40ef-52dc-1380b7a69500/public' alt='Hand holding a book 按下暫停鍵也沒關係：在憂鬱症中掙扎了一年，我學到的事 with overlaying message bubbles—Sent: Ray, I’ve been very depressed. Received: ! Sent: Can we meet some time? Received: Yes. I am free tonight.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/108ed4a7-1c64-40ef-52dc-1380b7a69500",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/108ed4a7-1c64-40ef-52dc-1380b7a69500/public",
+        "alt": "Hand holding a book 按下暫停鍵也沒關係：在憂鬱症中掙扎了一年，我學到的事 with overlaying message bubbles—Sent: Ray, I’ve been very depressed. Received: ! Sent: Can we meet some time? Received: Yes. I am free tonight.",
+        "caption": "♥︎ 可靠的朋友",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/108ed4a7-1c64-40ef-52dc-1380b7a69500"]
+        }
+      }
+    },
+    {
+      "id": "497c45b9-5448-4b62-f0d2-3073bb03e500",
+      "date_published": "2022-08-11T02:13:53-04:00", 
+      "tags": ["Life", "Books", "Highlight"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/497c45b9-5448-4b62-f0d2-3073bb03e500/public' alt='Cards and books, Assembly by Natasha Brown, and This Little Art by Kate Briggs, along with some bookmarks and stickers on a stool. Message bubbles overlay the photo, including a short conversation about how Coventry and Milton Keynes are boring with @jlord, another one a recommendation for This Little Art from @gjtorikian.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/497c45b9-5448-4b62-f0d2-3073bb03e500",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/497c45b9-5448-4b62-f0d2-3073bb03e500/public",
+        "alt": "Cards and books, Assembly by Natasha Brown, and This Little Art by Kate Briggs, along with some bookmarks and stickers on a stool. Message bubbles overlay the photo, including a short conversation about how Coventry and Milton Keynes are boring with @jlord, another one a recommendation for This Little Art from @gjtorikian.",
+        "caption": "An excellent mail day!",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/497c45b9-5448-4b62-f0d2-3073bb03e500"]
+        }
+      }
+    },
+    {
+      "id": "f92b2e6c-4c38-4041-e976-c450d4dc8100",
+      "date_published": "2022-08-07T22:43:40-04:00", 
+      "tags": ["Life", "Books", "Highlight"],
+      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/f92b2e6c-4c38-4041-e976-c450d4dc8100/public' alt='Four books by Natalia Ginzburg on a stool. 1. Happiness, as such.  2. The Dry Heart. 3. Voices In the Evening. 3. The Little Virtue.'>",
+      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "url": "http://localhost:4000/stories/f92b2e6c-4c38-4041-e976-c450d4dc8100",
+      "_open_stories": {
+        "mime_type": "image/jpeg",
+        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/f92b2e6c-4c38-4041-e976-c450d4dc8100/public",
+        "alt": "Four books by Natalia Ginzburg on a stool. 1. Happiness, as such.  2. The Dry Heart. 3. Voices In the Evening. 3. The Little Virtue.",
+        "caption": "Color me very excited about these books!!!",
+        "reactions": {
+          "open_heart_urls": ["https://likes.muan.dev/?id=/stories/f92b2e6c-4c38-4041-e976-c450d4dc8100"]
+        }
+      }
+    }
+  ]
+}

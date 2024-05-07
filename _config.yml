@@ -1,0 +1,32 @@
+title:            Kai Qu
+description:      Kai Qu's home page on the World Wide Web.
+url:              https://muan.co
+permalink:        /posts/:title
+timezone:         America/New_York
+kramdown:
+  hard_wrap: true
+sass:
+  sass_dir: assets
+  style: :compressed
+collections:
+  notes:
+    output: true
+  pages:
+    output: true
+  stories:
+    output: true
+i18n:
+  Travel: 旅行
+  Animals: 動物
+  Taiwan: 台灣
+  Books: 書籍
+  Cook: 廚房
+  Plants: 植物
+  24h: 今天
+  Mails: 郵件
+  Friends: 朋友
+  Oven: 烤箱
+  Self: 本人
+  Polaroid: Polaroid
+  Chat: 對話
+include: [".well-known"]

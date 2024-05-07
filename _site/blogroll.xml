@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>@muan's blogroll</title>
+    <description>Links to other people's great blogs/websites.</description>
+    
+    <lastBuildDate>Wed, 23 Nov 2022 11:00:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:4000/blogroll.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000/blogroll.xml</link>
+    
+      <item>
+        <title>Jessica Lord</title>
+        <link>https://jlord.us/</link>
+        <pubDate>Mon, 10 Apr 2023 05:14:00 -0400</pubDate>
+        <guid isPermaLink="true">https://jlord.us/</guid>
+      </item>
+    
+      <item>
+        <title>Ayman Nadeem</title>
+        <link>https://www.aymannadeem.com/</link>
+        <pubDate>Sun, 27 Nov 2022 21:32:00 -0500</pubDate>
+        <guid isPermaLink="true">https://www.aymannadeem.com/</guid>
+      </item>
+    
+      <item>
+        <title>Robert Heaton</title>
+        <link>https://robertheaton.com/</link>
+        <pubDate>Wed, 23 Nov 2022 11:00:00 -0500</pubDate>
+        <guid isPermaLink="true">https://robertheaton.com/</guid>
+      </item>
+    
+      <item>
+        <title>原田梨沙</title>
+        <link>https://buttondown.email/risacan/archive/</link>
+        <pubDate>Wed, 23 Nov 2022 11:00:00 -0500</pubDate>
+        <guid isPermaLink="true">https://buttondown.email/risacan/archive/</guid>
+      </item>
+    
+      <item>
+        <title>Monica Dinculescu</title>
+        <link>https://meowni.ca/</link>
+        <pubDate>Wed, 23 Nov 2022 11:00:00 -0500</pubDate>
+        <guid isPermaLink="true">https://meowni.ca/</guid>
+      </item>
+    
+      <item>
+        <title>Timothy Guan-tin Chien</title>
+        <link>https://blog.timdream.org/</link>
+        <pubDate>Wed, 23 Nov 2022 11:00:00 -0500</pubDate>
+        <guid isPermaLink="true">https://blog.timdream.org/</guid>
+      </item>
+    
+      <item>
+        <title>Brian J Brennan</title>
+        <link>https://bjb.dev/</link>
+        <pubDate>Wed, 23 Nov 2022 11:00:00 -0500</pubDate>
+        <guid isPermaLink="true">https://bjb.dev/</guid>
+      </item>
+    
+      <item>
+        <title>Garen J. Torikian</title>
+        <link>https://www.gjtorikian.com/</link>
+        <pubDate>Wed, 23 Nov 2022 11:00:00 -0500</pubDate>
+        <guid isPermaLink="true">https://www.gjtorikian.com/</guid>
+      </item>
+    
+      <item>
+        <title>Zach Holman</title>
+        <link>https://zachholman.com/</link>
+        <pubDate>Wed, 23 Nov 2022 11:00:00 -0500</pubDate>
+        <guid isPermaLink="true">https://zachholman.com/</guid>
+      </item>
+    
+      <item>
+        <title>Hidde de Vries</title>
+        <link>https://hidde.blog/</link>
+        <pubDate>Wed, 23 Nov 2022 11:00:00 -0500</pubDate>
+        <guid isPermaLink="true">https://hidde.blog/</guid>
+      </item>
+    
+  </channel>
+</rss>

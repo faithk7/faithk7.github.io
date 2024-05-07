@@ -1,0 +1,35 @@
+---
+layout: default
+type: photos
+title: Photos
+---
+
+<div class="photos-wrapper" id="photos">
+{% assign photos = site.data.photos %}
+{% for photo in photos %}
+<figure id="P{{ photo.guid }}" class="figure-{{ photo.orientation }}">
+  <a href="{{ photo.path }}/public" class="image-link">
+    <img 
+      src="{{ photo.path }}/public"
+      height="{{ photo.height }}"
+      style="aspect-ratio: {{ photo.ratio }}"
+      alt="{{ photo.alt }}"
+      title="{{ photo.alt }}"
+      class="{{ photo.orientation }}"
+      loading="lazy">
+  </a>
+  <figcaption>
+    <div class="desc photo-metadata">
+      <div>{{ photo.createdAt | date: "%Y/%m/%d (%a)" }}</div>
+
+      <open-heart class="text-open-heart monospace" href="https://likes.muan.dev/?id=photo-P{{ photo.guid }}" emoji="❤️" aria-labelledby="like-prompt">
+        <span class="on">Liked ♥︎.</span><span class="off">Like?</span>
+      </open-heart>
+    </div>
+    {% capture caption %}{{ photo.caption | strip }}{% endcapture %}
+    {% if caption != "-" and caption != "" %}{{ caption | markdownify }}{% endif %}
+  </figcaption>
+</figure>
+{% endfor %}
+
+</div>
