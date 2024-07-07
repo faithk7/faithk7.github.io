@@ -1,2 +1,0 @@
-bundle
-bundle exec jekyll server -w --future
