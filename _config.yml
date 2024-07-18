@@ -1,2 +1,7 @@
 sass:
-  sass_dir: assets
+  sass_dir: _assets
+  style: compressed
+
+collections:
+  assets:
+    output: true
