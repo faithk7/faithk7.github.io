@@ -259,7 +259,6 @@ DEPENDENCIES
   github-pages
   jekyll-commonmark
   jekyll-commonmark-ghpages (~> 0.2)
-  jekyll-sass-converter
   webrick (~> 1.8)
 
 BUNDLED WITH

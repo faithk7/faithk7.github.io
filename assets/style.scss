@@ -1,4 +1,5 @@
 /* General Styles */
+
 body {
     background-color: #121212;
     color: #ffffff;
@@ -34,6 +35,73 @@ main {
     margin-top: 100px; /* To account for the fixed header */
     padding: 20px;
     text-align: center;
+}
+
+.l-container {
+    display: grid;
+    grid-template-columns: 3fr 6fr 3fr;
+    width: 100%;
+    height: 100%;
+}
+
+.l-grid {
+    padding: 20px;
+}
+
+.l-left {
+    background-color: #2c2c2c;
+}
+
+.l-center {
+    background-color: #333333;
+    padding: 20px;
+}
+
+.l-right {
+    background-color: #2c2c2c;
+    position: relative;
+}
+
+.c-navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 200px;
+    background-color: #2c2c2c;
+}
+
+.c-navbar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.c-line {
+    width: 2px;
+    height: 100px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.c-navbar-items {
+    list-style: none;
+    padding: 0;
+}
+
+.o-navbar-item {
+    margin: 15px 0;
+}
+
+.o-navbar-item a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.o-navbar-item a:hover {
+    color: #bbbbbb;
 }
 
 /* Home Page Styles */
@@ -82,3 +150,4 @@ main {
     align-items: center;
     justify-content: center;
 }
+
