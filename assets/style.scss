@@ -37,6 +37,7 @@ main {
     text-align: center;
 }
 
+// Layout Styles
 .l-container {
     display: grid;
     grid-template-columns: 3fr 6fr 3fr;
@@ -62,6 +63,8 @@ main {
     position: relative;
 }
 
+
+// Navbar styles
 .c-navbar {
     position: fixed;
     top: 0;

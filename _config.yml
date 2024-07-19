@@ -2,6 +2,6 @@ sass:
   sass_dir: assets
   style: compressed
 
-# collections:
-#   sass_dir:
-#     output: true
+collections:
+  sass_dir:
+    output: true

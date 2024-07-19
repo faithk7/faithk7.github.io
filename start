@@ -1,2 +1,3 @@
 bundle
+sass assets/style.scss assets/style.css
 bundle exec jekyll server -w --future --verbose
