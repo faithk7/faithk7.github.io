@@ -4,13 +4,13 @@
     margin: 20px;
 }
 
-.c-writing-item {
+.c-writing-item-container {
     margin-bottom: 20px;
 }
 
 .c-writing-note-container {
-    background-color: #444444;
-    padding: 15px;
+    /* background-color: #444444; */
+    padding: 15px 0px;
     border-radius: 5px;
 }
 
