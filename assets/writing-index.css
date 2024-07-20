@@ -12,6 +12,7 @@
     /* background-color: #444444; */
     padding: 15px 0px;
     border-radius: 5px;
+    display: inline-block;
 }
 
 .o-writing-title {
