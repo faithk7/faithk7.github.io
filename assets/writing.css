@@ -1,0 +1,36 @@
+/* Styles specific to writing.html */
+
+.c-writing-post-meta-container {
+    margin: 20px;
+}
+
+.o-writing-post-title {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.c-writing-post-date {
+    font-size: 16px;
+    color: #bbbbbb;
+    margin-bottom: 10px;
+}
+
+.c-writing-post-hashtag-container {
+    margin: 10px 0px;
+}
+
+.o-writing-post-hashtag {
+    display: inline-block;
+    background-color: #555555;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.o-writing-post-text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #dddddd;
+}
