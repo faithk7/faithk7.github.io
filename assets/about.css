@@ -1,0 +1,31 @@
+/* Styles specific to about.html */
+
+.c-about-container {
+    margin: 20px;
+}
+
+.o-about-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.o-about-item {
+    margin-bottom: 20px;
+}
+
+.o-about-item-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.o-about-item-subtitle {
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+
+.o-about-content {
+    font-size: 18px;
+    color: #dddddd;
+    margin-bottom: 10px;
+}
