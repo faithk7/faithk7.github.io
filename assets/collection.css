@@ -1,0 +1,45 @@
+/* Styles specific to collection.html */
+
+.c-collection-container {
+    margin: 20px;
+}
+
+.o-collection-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.c-collection-nav-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.o-collection-nav-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.c-collection-tile-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border: 1px solid #555555;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.o-collection-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.c-collection-item-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.o-collection-item {
+    font-size: 18px;
+    color: #dddddd;
+    margin-bottom: 5px;
+}
