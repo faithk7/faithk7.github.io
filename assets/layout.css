@@ -1,0 +1,62 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    width: 200px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    margin: 10px 0;
+}
+
+nav li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+main {
+    margin-top: 100px; /* To account for the fixed header */
+    padding: 20px;
+    text-align: center;
+}
+
+
+.l-container {
+    display: grid;
+    grid-template-columns: 3fr 6fr 3fr;
+    width: 100%;
+    height: 100%;
+}
+
+.l-grid {
+    padding: 20px;
+}
+
+.l-left {
+    background-color: #2c2c2c;
+}
+
+.l-center {
+    background-color: #333333;
+    padding: 20px;
+}
+
+.l-right {
+    background-color: #2c2c2c;
+    position: relative;
+}
