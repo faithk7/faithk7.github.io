@@ -46,8 +46,19 @@
     font-size: 18px;
 }
 
+@keyframes a-underline-text {
+    0% {
+        text-decoration: none;
+    }
+    100% {
+        text-decoration: underline;
+    }
+}
+
 .o-navbar-item a:hover {
     color: #bbbbbb;
+    /* text-decoration: underline; */
+    animation: a-underline-text 1s;
 }
 
 .c-setting-container {
