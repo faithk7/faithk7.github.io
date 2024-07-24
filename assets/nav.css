@@ -49,3 +49,13 @@
 .o-navbar-item a:hover {
     color: #bbbbbb;
 }
+
+.c-setting-container {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.o-setting-icon {
+    margin-left: 5px;
+    font-size: 20px;
+}
