@@ -29,7 +29,7 @@
 }
 
 .o-navbar-item {
-    margin: 15px 0;
+    margin: 16px 0;
 }
 
 .o-navbar-item:nth-of-type(1) {
@@ -43,7 +43,7 @@
 .o-navbar-item a {
     text-decoration: none;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 @keyframes a-underline-text {
