@@ -8,12 +8,12 @@
 }
 
 .c-navbar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: block;
+    /* flex-direction: column; */
+    /* align-items: center; */
     margin-top: 20px;
     border-left: 1px solid #ffffff;
-    padding-left: 0px;
+    padding-left: 10px;
 }
 
 .c-line {
@@ -31,6 +31,16 @@
 .o-navbar-item {
     margin: 15px 0;
 }
+
+.o-navbar-item:nth-of-type(1) {
+    margin-top: 0px;
+}
+
+.o-navbar-item:nth-last-of-type(1) {
+    margin-bottom: 0px;
+}
+
+
 
 .o-navbar-item a {
     text-decoration: none;
