@@ -48,11 +48,11 @@
 
 @keyframes a-underline-text {
     0% {
-        background-size: 0% 2px;
+        background-size: 0% 1px;
         background-position: 0% 100%;
     }
     100% {
-        background-size: 100% 2px;
+        background-size: 100% 1px;
         background-position: 0% 100%;
     }
 }
@@ -71,6 +71,7 @@
     color: #bbbbbb;
     animation: a-underline-text 0.5s forwards;
 }
+/*  for the settings*/
 .c-setting-container {
     display: inline-block;
     margin-left: 30px;
