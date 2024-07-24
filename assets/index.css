@@ -24,6 +24,12 @@
     margin-top: 20px;
 }
 
+.c-info-card-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
 .o-social {
     background-color: #333;
     /* margin: 10px; */
@@ -40,8 +46,8 @@
 .o-moment-item {
     display: inline-block;
     background-color: #25020233;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     text-align: center;
     padding: 15px;
     margin-right: 20px;
