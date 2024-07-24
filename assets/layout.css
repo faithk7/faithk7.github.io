@@ -4,6 +4,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 header {
@@ -27,12 +28,6 @@ nav li {
 nav li a {
     color: #ffffff;
     text-decoration: none;
-}
-
-main {
-    margin-top: 100px; /* To account for the fixed header */
-    padding: 20px;
-    text-align: center;
 }
 
 
