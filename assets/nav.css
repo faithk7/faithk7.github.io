@@ -48,19 +48,29 @@
 
 @keyframes a-underline-text {
     0% {
-        text-decoration: none;
+        background-size: 0% 2px;
+        background-position: 0% 100%;
     }
     100% {
-        text-decoration: underline;
+        background-size: 100% 2px;
+        background-position: 0% 100%;
     }
+}
+
+.o-navbar-item a {
+    color: #ffffff;
+    text-decoration: none;
+    background-image: linear-gradient(to right, #bbbbbb, #bbbbbb);
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    background-position: 0% 100%;
+    transition: color 0.5s;
 }
 
 .o-navbar-item a:hover {
     color: #bbbbbb;
-    /* text-decoration: underline; */
-    animation: a-underline-text 1s;
+    animation: a-underline-text 0.5s forwards;
 }
-
 .c-setting-container {
     display: inline-block;
     margin-left: 30px;
