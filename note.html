@@ -9,26 +9,13 @@ title: Recent Notes
 
 <div class="c-note-container">
     <h1 class="o-note-title">Recent Notes</h1>
+    {% assign sorted_notes = site.notes | sort: 'date' | reverse %}
+    {% for note in sorted_notes %}
     <div class="c-note-item-container">
-        <div class="o-note-date">July 12, 2014</div>
-        <div class="o-note-text">This is sample text</div>
+        <div class="o-note-date">{{ note.date | date: "%B %d, %Y" }}</div>
+        <div class="o-note-text">{{ note.content | markdownify }}</div>
     </div>
-    <div class="c-note-item-container">
-        <div class="o-note-date">July 12, 2014</div>
-        <div class="o-note-text">This is sample text</div>
-    </div>
-    <div class="c-note-item-container">
-        <div class="o-note-date">July 12, 2014</div>
-        <div class="o-note-text">This is sample text</div>
-    </div>
-    <div class="c-note-item-container">
-        <div class="o-note-date">July 12, 2014</div>
-        <div class="o-note-text">This is sample text</div>
-    </div>
-    <div class="c-note-item-container">
-        <div class="o-note-date">July 12, 2014</div>
-        <div class="o-note-text">This is sample text</div>
-    </div>
+    {% endfor %}
     <div class="o-note-footer">
         Only the most recent 100 notes are shown
     </div>

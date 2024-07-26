@@ -5,3 +5,7 @@ sass:
 collections:
   sass_dir:
     output: true
+  notes:
+    output: true
+  posts:
+    output: true
