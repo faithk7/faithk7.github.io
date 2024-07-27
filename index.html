@@ -4,12 +4,15 @@ title: Home
 ---
 
 <head>
+    <script type="module" src="/assets/index.js"></script>
     <link rel="stylesheet" href="{{ '/assets/index.css' | relative_url }}">
 </head>
 
 <div class="c-name-card-container">
     <div class="o-name">Kai Qu</div>
-    <div class="o-name-quote">believes in himself. (updated xx days ago)</div>
+    <div class="o-status-quo" data-status-loading hidden>
+        <span data-status-text></span> <span data-status-datetime></span>
+    </div>
     <div class="o-summary">A software engineer based in Boston, Massachusetts.
         <br>
         Loves reading and anime.
