@@ -6,4 +6,9 @@ layout: writing
 permalink: /writing/sample_post_1.html
 ---
 
-This is the content of the first sample post.
+This is the content of the first sample post. This is the content of the first sample post. This is the content of the first sample post. This is the content of the first sample post.
+This is the content of the first sample post. This is the content of the first sample post.
+This is the content of the first sample post. This is the content of the first sample post.
+This is the content of the first sample post. This is the content of the first sample post.
+This is the content of the first sample post. This is the content of the first sample post.
+This is the content of the first sample post. This is the content of the first sample post.
