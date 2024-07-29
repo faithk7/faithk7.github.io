@@ -1,9 +1,16 @@
 /* Home Page Styles */
-.c-name-card-container, .c-info-card-container, .c-moment-container {
-    text-align: left;
+
+.c-index-container {
+    width: 400px;
     margin-left: auto;
     margin-right: auto;
-    width: 400px;
+    display: block;
+    height: 100%;
+}
+
+.c-name-card-container, .c-info-card-container, .c-moment-container {
+    text-align: left;
+    width: 100%;
     display: block;
 }
 
