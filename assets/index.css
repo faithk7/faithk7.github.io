@@ -1,10 +1,19 @@
 /* Home Page Styles */
+
+.c-index-container {
+    width: 400px;
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin: auto;
+    display: block;
+}
+
 .c-name-card-container, .c-info-card-container, .c-moment-container {
     text-align: left;
-    width: 400px;
+    width: 100%;
+    height: 100%;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    position: relative
 }
 
 .o-name {
@@ -64,4 +73,19 @@
     border-radius: 50%;
     align-items: center;
     justify-content: center;
+}
+
+.c-quote-container {
+    position: absolute;
+    top: 30%;
+    right: 2%;
+    width: 200px;
+}
+
+.o-quote {
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
 }
