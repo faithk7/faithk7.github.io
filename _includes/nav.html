@@ -14,7 +14,7 @@
             <ul class="c-navbar-items">
                 <li class="o-navbar-item"><a href="{{ '/' | relative_url }}">Home</a>
                     <div class="c-setting-container">
-                        <i class="o-setting-icon">☾</i>
+                        <button class="o-setting-icon" id="dark-mode-toggle">☾</button>
                         <a href="/feed.xml" class="o-setting-icon">
                             <i class="fa fa-rss">rss</i>
                         </a>
@@ -27,6 +27,21 @@
             </ul>
         </div>
     </nav>
+
+    <script>
+        // JavaScript to toggle dark mode
+        const toggleButton = document.getElementById('dark-mode-toggle');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            document.querySelectorAll('.l-left, .l-center, .l-right, .c-navbar').forEach(el => {
+                el.classList.toggle('light-mode');
+            });
+            document.querySelectorAll('.o-navbar-item a, .o-tag-button').forEach(el => {
+                el.classList.toggle('light-mode');
+            });
+        });
+    </script>
+
 </body>
 
 </html>
