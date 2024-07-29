@@ -74,3 +74,18 @@
     align-items: center;
     justify-content: center;
 }
+
+.c-quote-container {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 200px;
+}
+
+.o-quote {
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
