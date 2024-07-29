@@ -260,6 +260,7 @@ DEPENDENCIES
   jekyll (~> 3.9)
   jekyll-commonmark
   jekyll-commonmark-ghpages (~> 0.2)
+  jekyll-feed (~> 0.15)
   jekyll-sass-converter
   webrick (~> 1.8)
 

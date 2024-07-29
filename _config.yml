@@ -2,6 +2,9 @@ sass:
   sass_dir: assets
   style: compressed
 
+plugins:
+  - jekyll-feed
+
 collections:
   sass_dir:
     output: true
@@ -9,3 +12,7 @@ collections:
     output: true
   posts:
     output: true
+
+feed:
+  path: feed.xml
+  custom_path: _includes/custom_feed.xml

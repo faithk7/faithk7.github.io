@@ -7,6 +7,8 @@ gem 'jekyll-sass-converter'
 
 gem "webrick", "~> 1.8"
 
+gem 'jekyll-feed', '~> 0.15'
+
 group :jekyll_plugins do
   gem "jekyll-commonmark"
   gem "jekyll-commonmark-ghpages", "~> 0.2"
