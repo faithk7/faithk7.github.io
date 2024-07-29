@@ -2,16 +2,18 @@
 
 .c-index-container {
     width: 400px;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin: auto;
     display: block;
-    height: 100%;
 }
 
 .c-name-card-container, .c-info-card-container, .c-moment-container {
     text-align: left;
     width: 100%;
+    height: 100%;
     display: block;
+    position: relative
 }
 
 .o-name {
