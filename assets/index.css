@@ -6,6 +6,9 @@
     margin-right: auto; */
     margin: auto;
     display: block;
+    position: absolute;
+    top: 33%;
+    left: 40%;
 }
 
 .c-name-card-container, .c-info-card-container, .c-moment-container {
@@ -43,7 +46,6 @@
 .c-info-card-container {
     margin-top: 50px;
     margin-bottom: 50px;
-
 }
 
 .o-social {
