@@ -28,11 +28,6 @@
     border-radius: 5px;
 }
 
-.o-collection-title {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
 .c-collection-item-container {
     display: flex;
     flex-direction: column;

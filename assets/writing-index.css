@@ -16,8 +16,8 @@
 }
 
 .o-writing-title {
-    font-size: 24px;
-    margin: 0 0 10px 0;
+    font-size: 32px;
+    margin-bottom: 20px 0;
 }
 
 .o-writing-note-date {
@@ -38,6 +38,12 @@
     color: #ffffff;
     font-size: 14px;
 }
+
+.o-post-title {
+    font-size: 24px;
+    margin-bottom: 20px 0;
+}
+
 
 .o-writing-footer {
     text-align: center;
