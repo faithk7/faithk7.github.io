@@ -22,8 +22,8 @@ title: Writing
         {% assign tags = tags | append: tag | append: "," %}
         {% endfor %}
         {% endfor %}
-        {% assign unique_tags = tags | split: "," | uniq %}
-        {% for tag in unique_tags %}
+        {% assign unique_tags = tags | split: "," | uniq | sort %}
+        {% for tag in unique_tags reversed %}
         {% if tag != "" %}
         <button class="o-tag-button" onclick="filterPosts('{{ tag }}')">{{ tag }}</button>
         {% endif %}
