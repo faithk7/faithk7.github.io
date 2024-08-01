@@ -2,18 +2,24 @@
 
 .c-writing-container {
     margin: 20px;
+    border-bottom: 1px solid #555555;
 }
 
 .c-writing-item-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: start;
+    justify-content: flex-start; /* Start items at the top */
+    align-items: center; /* Center the container horizontally */
+    text-align: left; /* Align text to the left inside the container */
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
+    max-width: 800px; /* Optional: Set a max width for the container */
+    padding: 15px;
+    box-sizing: border-box; /* Include padding in the width calculation */
 }
+
 
 .c-writing-note-container {
     /* background-color: #444444; */
