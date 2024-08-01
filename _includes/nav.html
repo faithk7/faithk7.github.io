@@ -14,7 +14,13 @@
             <ul class="c-navbar-items">
                 <li class="o-navbar-item"><a href="{{ '/' | relative_url }}">Home</a>
                     <div class="c-setting-container">
-                        <button class="o-setting-icon" id="dark-mode-toggle">☾</button>
+                        <button class="o-setting-icon" rel="icon" href="{{ '/assets/night.svg' | relative_url }}"
+                            id="dark-mode-toggle">
+                        </button>
+                        <img src="{{ '/assets/night.svg' | relative_url }}" alt="Icon Description"
+                            class="o-setting-icon" />
+                        <img src="{{ '/assets/rss.svg' | relative_url }}" alt="Icon Description"
+                            class="o-setting-icon" />
                         <a href="/feed.xml" class="o-setting-icon">
                             <i class="fa fa-rss">rss</i>
                         </a>
