@@ -1,9 +1,9 @@
 ---
 title: "兽爪"
-date: 2024-07-21
-tags: [review]
+date: 2021-11-13
+tags: [review, 2021]
 layout: writing
-permalink: /writing/sample_post_2.html
+permalink: /writing/kemonozume_review.html
 ---
 
 https://en.wikipedia.org/wiki/Kemonozume
