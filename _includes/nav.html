@@ -15,12 +15,14 @@
                 <li class="o-navbar-item"><a href="{{ '/' | relative_url }}">Home</a>
                     <div class="c-setting-container">
                         <button id="dark-mode-toggle">
-                            <img src="{{ '/assets/night.svg' | relative_url }}" alt="Icon Description"
-                                class="o-setting-icon" />
+                            <!-- <img src="{{ '/assets/night.svg' | relative_url }}" alt="Icon Description"
+                                class="o-setting-icon" /> -->
+                            {% include svg_switch.html %}
                         </button>
                         <a href="/feed.xml">
-                            <img src="{{ '/assets/rss.svg' | relative_url }}" alt="Icon Description"
-                                class="o-setting-icon" />
+                            <!-- <img src="{{ '/assets/rss.svg' | relative_url }}" alt="Icon Description"
+                                class="o-setting-icon" /> -->
+                            {% include svg_rss.html %}
                         </a>
 
                         {% include svg_switch.html %}
