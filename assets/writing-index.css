@@ -5,7 +5,14 @@
 }
 
 .c-writing-item-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
     margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .c-writing-note-container {

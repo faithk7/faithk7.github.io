@@ -31,7 +31,7 @@ title: Writing
     </div>
 
     {% for post in sorted_posts %}
-    <div class="c-writing-item" data-tags="{{ post.tags | join: ' ' }}">
+    <div class="c-writing-item-container" data-tags="{{ post.tags | join: ' ' }}">
         <h2 class="o-post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
         <div class="o-writing-note-date">{{ post.date | date: "%B %d, %Y" }}</div>
         <div class="c-hashtag-container">
