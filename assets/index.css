@@ -1,14 +1,18 @@
 /* Home Page Styles */
 
+.c-center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 .c-index-container {
     width: 400px;
     /* margin-left: auto;
     margin-right: auto; */
     margin: auto;
     display: block;
-    position: absolute;
-    top: 33%;
-    left: 40%;
 }
 
 .c-name-card-container, .c-info-card-container, .c-moment-container {
