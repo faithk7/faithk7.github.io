@@ -35,6 +35,11 @@
     color: #bbbbbb;
 }
 
+.o-tag-button::before {
+    content: "#"; /* Insert the # symbol before the content */
+    margin-right: 1px; /* Add some space between the # and the text */
+}
+
 .c-tag-container {
     margin-top: 10px;
 }
@@ -47,6 +52,11 @@
     border-radius: 3px;
     color: #ffffff;
     font-size: 14px;
+}
+
+.o-tag-item::before {
+    content: "#"; /* Insert the # symbol before the content */
+    margin-right: 1px; /* Add some space between the # and the text */
 }
 
 .o-post-title {
