@@ -6,24 +6,20 @@
 }
 
 .c-writing-item-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Start items at the top */
-    align-items: center;
-    text-align: left;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: 800px; /* Optional: Set a max width for the container */
-    padding: 15px;
+    display: block; /* Treat the container as a block-level element */
+    margin: 0 auto; /* Center the container horizontally */
+    margin-bottom: 50px;
+    width: 50%;
     box-sizing: border-box; /* Include padding in the width calculation */
+    text-align: left; /* Ensure contents inside are left-aligned */
 }
 
-.c-writing-note-container, .o-writing-note-date, .o-writing-footer {
-    width: 100%;
-    display: block;
-    position: relative;
+.c-writing-note-container,
+.o-writing-note-date,
+.o-writing-footer {
+    width: 100%; /* Make these elements span the full width */
+    display: block; /* Block display ensures elements stack vertically */
+    margin-bottom: 10px; /* Add some spacing between elements, if needed */
 }
 
 .c-writing-note-container {

@@ -52,7 +52,7 @@ title: Writing
         posts.forEach(function (post) {
             var tags = post.getAttribute('data-tags').split(' ');
             if (tags.includes(tag)) {
-                post.style.display = 'flex';
+                post.style.display = 'block';
             } else {
                 post.style.display = 'none';
             }
