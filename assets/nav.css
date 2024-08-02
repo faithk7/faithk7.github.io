@@ -80,7 +80,9 @@
 #dark-mode-toggle {
     width: 32px;
     height: 32px;
-    background: none;
+    background-color: transparent; /* No background color */
+    border: none; /* Remove border */
+    outline: none;
 }
 
 svg.o-setting-icon {
