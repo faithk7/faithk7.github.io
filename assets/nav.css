@@ -90,8 +90,3 @@ svg.o-setting-icon {
     width: 32px;
     height: 32px;
 }
-
-img.o-setting-icon::nth-last-of-type(1) {
-    width: 40px;
-    height: 40px;
-}
