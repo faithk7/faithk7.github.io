@@ -9,8 +9,8 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* Start items at the top */
-    align-items: center; /* Center the container horizontally */
-    text-align: left; /* Align text to the left inside the container */
+    align-items: center;
+    text-align: left;
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -20,7 +20,7 @@
     box-sizing: border-box; /* Include padding in the width calculation */
 }
 
-.c-writing-note-container, .o-writing-title, .o-writing-note-date, .o-post-title, .o-writing-footer {
+.c-writing-note-container, .o-writing-note-date, .o-writing-footer {
     width: 100%;
     display: block;
     position: relative;
@@ -33,12 +33,8 @@
     display: inline-block;
 }
 
-.o-writing-title {
-    font-size: 32px;
-    margin-bottom: 20px 0;
-}
-
 .o-writing-note-date {
+    margin: 5px 0;
     font-size: 14px;
     color: #bbbbbb;
 }
