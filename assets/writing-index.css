@@ -20,6 +20,11 @@
     box-sizing: border-box; /* Include padding in the width calculation */
 }
 
+.c-writing-note-container, .o-writing-title, .o-writing-note-date, .o-post-title, .o-writing-footer {
+    width: 100%;
+    display: block;
+    position: relative;
+}
 
 .c-writing-note-container {
     /* background-color: #444444; */
