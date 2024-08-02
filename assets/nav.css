@@ -79,8 +79,8 @@
 }
 
 #dark-mode-toggle {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     background-color: transparent; /* No background color */
     border: none; /* Remove border */
     outline: none;
@@ -89,4 +89,9 @@
 
 .o-setting-icon {
     display: inline-block;
+}
+
+a.o-setting-icon {
+    height: 36px;
+    width: 36px;
 }
