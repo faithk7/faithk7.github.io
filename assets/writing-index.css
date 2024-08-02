@@ -35,17 +35,13 @@
     color: #bbbbbb;
 }
 
-.o-tag-button::before {
-    content: "#"; /* Insert the # symbol before the content */
-    margin-right: 1px; /* Add some space between the # and the text */
-}
 
 .c-tag-container {
     margin-top: 10px;
     margin-bottom: 30px;
 }
 
-.o-tag-item {
+.o-tag-item, .o-tag-button {
     display: inline-block;
     margin-right: 5px;
     border-radius: 3px;
@@ -53,10 +49,21 @@
     font-size: 14px;
 }
 
+button.o-tag-button {
+    background-color: transparent;
+    border: 0px;
+}
+
+.o-tag-button::before {
+    content: "#"; /* Insert the # symbol before the content */
+    margin-right: 1px; /* Add some space between the # and the text */
+}
 .o-tag-item::before {
     content: "#"; /* Insert the # symbol before the content */
     margin-right: 1px; /* Add some space between the # and the text */
 }
+
+
 
 .o-post-title {
     font-size: 24px;
