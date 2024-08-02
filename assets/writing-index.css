@@ -35,11 +35,11 @@
     color: #bbbbbb;
 }
 
-.c-hashtag-container {
+.c-tag-container {
     margin-top: 10px;
 }
 
-.o-hashtag-item {
+.o-tag-item {
     display: inline-block;
     margin-right: 10px;
     background-color: #555555;
