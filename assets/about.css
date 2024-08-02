@@ -19,9 +19,19 @@
     margin-bottom: 10px;
 }
 
+.o-about-item-title::before {
+    content: "#";
+    margin-right: 1px;
+}
+
 .o-about-item-subtitle {
     font-size: 20px;
     margin-bottom: 5px;
+}
+
+.o-about-item-subtitle::before {
+    content: "|";
+    margin-right: 1px;
 }
 
 .o-about-content {
