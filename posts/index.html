@@ -27,16 +27,13 @@ paginate: true
     <ul>
         {% if paginator.previous_page %}
         <li><a href="{{ paginator.previous_page_path }}" class="previous">Previous</a></li>
-        {% else %}
-        <li><span class="previous">nothing</span></li>
         {% endif %}
-        {{ paginator.total_pages }}
         {% for page in (1..paginator.total_pages) %}
         <li>
             {% if page == paginator.page %}
             <span class="current-page">{{ page }}</span>
             {% else %}
-            <a href="{{ paginator.baseurl }}page{{ page }}/">{{ page }}</a>
+            <a href="{{ paginator.baseurl }}/page{{ page }}/">{{ page }}</a>
             {% endif %}
         </li>
         {% endfor %}
