@@ -75,3 +75,37 @@ button.o-tag-button {
     border-top: 1px solid #555555;
     padding-top: 10px;
 }
+
+/* css styling for pagination */
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.pagination ul {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+}
+
+.pagination li {
+    display: inline;
+    margin: 0 5px;
+}
+
+.pagination a, .pagination .current-page {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    color: #555;
+}
+
+.pagination a:hover {
+    background-color: #ddd;
+}
+
+.pagination .current-page {
+    font-weight: bold;
+    background-color: #f0f0f0;
+}
