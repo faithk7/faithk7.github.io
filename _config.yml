@@ -1,9 +1,9 @@
 sass:
   sass_dir: assets
   style: compressed
-
 plugins:
   - jekyll-feed
+  - jekyll-paginate
 
 collections:
   sass_dir:
