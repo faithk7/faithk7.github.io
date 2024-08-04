@@ -46,3 +46,12 @@ title: About
         </p>
     </div>
 </div>
+
+<script>
+    console.log(window.location.pathname);
+    document.addEventListener("DOMContentLoaded", function () {
+        if (window.location.pathname.includes('/about')) {
+            document.body.classList.add('about-page');
+        }
+    });
+</script>

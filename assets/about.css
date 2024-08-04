@@ -1,8 +1,19 @@
 /* Styles specific to about.html */
 
+body.about-page {
+    background: url("{{ '/assets/kokoro.svg' | relative_url }}") no-repeat center center fixed;
+    background-size: cover;
+    /* Additional styles */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+
 .c-about-container {
     margin: 20px;
     border-bottom: 1px solid #555555;
+    z-index: 1;
 }
 
 .o-about-title {
