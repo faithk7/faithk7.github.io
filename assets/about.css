@@ -1,7 +1,8 @@
 /* Styles specific to about.html */
 
 body.about-page {
-    background: url("{{ '/assets/kokoro.svg' | relative_url }}") no-repeat center center fixed;
+    /* background: url("{{ '/assets/kokoro.svg' | relative_url }}") no-repeat center center fixed; */
+    background: url(/assets/kokoro.svg) no-repeat center center fixed;
     background-size: cover;
     /* Additional styles */
     margin: 0;
