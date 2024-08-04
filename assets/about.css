@@ -15,6 +15,13 @@
     border-bottom: 1px solid #555555;
     /* z-index: 1; */
     background: url(/assets/kokoro.svg) no-repeat center center fixed;
+    --webkit-background-composite: multiply;
+}
+
+@media (prefers-color-scheme: dark) {
+    .c-about-container  {
+        background: url(/assets/kokoro.svg) no-repeat center center fixed;
+    }
 }
 
 .o-about-title {
