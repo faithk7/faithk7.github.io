@@ -17,7 +17,8 @@
 <div class="stories">
     <open-stories src="/stories.json" show-metadata><span>
             {% if include.lang == "en" %}24h{% else %}{{ site.i18n[include.lang]["24h"] }}{% endif %}
-        </span></open-stories>
+        </span>
+    </open-stories>
 
     {% for type in new_categories_arr %}
     {% unless categories contains type %}{% continue %}{% endunless %}
