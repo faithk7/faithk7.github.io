@@ -7,9 +7,6 @@ title: About
     <link rel="stylesheet" href="{{ '/assets/about.css' | relative_url }}">
 </head>
 
-<div class="background-container">
-    <img src="/assets/kokoro.svg" class="background">
-</div>
 <div class="c-about-container">
     <h1 class="o-about-title">About</h1>
     <div class="o-about-item">
@@ -58,3 +55,20 @@ title: About
         }
     });
 </script> -->
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Select the element with the class 'c-about-container'
+        var aboutContainer = document.querySelector('.c-about-container');
+
+        // Ensure the element exists before applying styles
+        if (aboutContainer) {
+            // Apply styles dynamically
+            aboutContainer.style.margin = "20px";
+            aboutContainer.style.borderBottom = "1px solid #555555";
+            aboutContainer.style.setProperty("background", "url('/assets/kokoro.svg') no-repeat center center fixed", "important");
+            aboutContainer.style.setProperty("--webkit-background-composite", "multiply", "important");
+        }
+    });
+</script>
