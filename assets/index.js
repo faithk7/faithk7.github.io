@@ -23,6 +23,7 @@ function relativeDate(date) {
     const hour = 1000 * 60 * 60
     const day = hour * 24
     const week = day * 7
+    const month = day * 30
     const rtf = new Intl.RelativeTimeFormat('en', { style: 'narrow' })
 
     if (diff < hour) {
@@ -31,6 +32,8 @@ function relativeDate(date) {
         return rtf.format(-Math.floor(diff / hour), 'hour')
     } else if (diff < week) {
         return rtf.format(-Math.floor(diff / day), 'day')
+    } else if (diff < month) {
+        return rtf.format(-Math.floor(diff / week), 'week')
     } else {
         return
     }
