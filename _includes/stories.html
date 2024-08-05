@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="{{ '/assets/stories.css' | relative_url }}">
+</head>
+
 {% assign categories = "Life,Taiwan" | split: "," %}
 {% assign stories = site.data.stories | sort: "uploaded" | reverse %}
 {% assign new_categories_arr = "" | split: "" | compact %}
