@@ -9,6 +9,10 @@
     z-index: 1000;
 } */
 
+p {
+    line-height: 1.3em;
+}
+
 .c-about-container {
     margin: 20px;
     border-bottom: 1px solid #555555;
