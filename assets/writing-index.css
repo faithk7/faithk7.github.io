@@ -6,20 +6,27 @@
 }
 
 .c-writing-item-container {
-    display: block; /* Treat the container as a block-level element */
-    margin: 0 auto; /* Center the container horizontally */
+    display: block;
+    /* Treat the container as a block-level element */
+    margin: 0 auto;
+    /* Center the container horizontally */
     margin-bottom: 50px;
-    width: 50%;
-    box-sizing: border-box; /* Include padding in the width calculation */
-    text-align: left; /* Ensure contents inside are left-aligned */
+    width: 30%;
+    box-sizing: border-box;
+    /* Include padding in the width calculation */
+    text-align: left;
+    /* Ensure contents inside are left-aligned */
 }
 
 .c-writing-note-container,
 .o-writing-note-date,
 .o-writing-footer {
-    width: 100%; /* Make these elements span the full width */
-    display: block; /* Block display ensures elements stack vertically */
-    margin-bottom: 10px; /* Add some spacing between elements, if needed */
+    width: 100%;
+    /* Make these elements span the full width */
+    display: block;
+    /* Block display ensures elements stack vertically */
+    margin-bottom: 10px;
+    /* Add some spacing between elements, if needed */
 }
 
 .c-writing-note-container {
@@ -41,7 +48,8 @@
     margin-bottom: 30px;
 }
 
-.o-tag-item, .o-tag-button {
+.o-tag-item,
+.o-tag-button {
     display: inline-block;
     margin-right: 5px;
     border-radius: 3px;
@@ -55,12 +63,17 @@ button.o-tag-button {
 }
 
 .o-tag-button::before {
-    content: "#"; /* Insert the # symbol before the content */
-    margin-right: 1px; /* Add some space between the # and the text */
+    content: "#";
+    /* Insert the # symbol before the content */
+    margin-right: 1px;
+    /* Add some space between the # and the text */
 }
+
 .o-tag-item::before {
-    content: "#"; /* Insert the # symbol before the content */
-    margin-right: 1px; /* Add some space between the # and the text */
+    content: "#";
+    /* Insert the # symbol before the content */
+    margin-right: 1px;
+    /* Add some space between the # and the text */
 }
 
 .o-post-title {
