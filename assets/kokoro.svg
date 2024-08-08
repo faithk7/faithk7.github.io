@@ -5,6 +5,16 @@
  width="1200.000000pt" height="400.000000pt" viewBox="0 0 1200.000000 400.000000"
  preserveAspectRatio="xMidYMid meet">
 
+<style>
+    path {
+        stroke: black;
+        stroke-opacity: 0.3;
+        fill-opacity: 0.1;
+        -webkit-filter: invert(100%);
+        filter: invert(100%);
+    }
+</style>
+
 <g transform="translate(0.000000,400.000000) scale(0.100000,-0.100000)"
 fill="#000000" stroke="none">
 <path d="M5920 3998 c0 -2 -9 -50 -21 -108 -11 -58 -24 -130 -29 -160 -24
