@@ -9,6 +9,10 @@
     z-index: 1000;
 } */
 
+p {
+    line-height: 1.3em;
+}
+
 .c-about-container {
     margin: 20px;
     border-bottom: 1px solid #555555;
@@ -19,8 +23,9 @@
 }
 
 @media (prefers-color-scheme: dark) {
-    .c-about-container  {
+    .c-about-container {
         background: url(/assets/kokoro.svg) no-repeat center center fixed !important;
+        object-fit: contain;
     }
 }
 
