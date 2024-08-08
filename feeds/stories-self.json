@@ -7,8 +7,8 @@ type: "self"
   "version": "https://jsonfeed.org/version/1.1",
   "title": "@muan's stories for {{ page.type }}",
   "icon": "https://github.com/muan.png",
-  "home_page_url": "https://muan.co/",
-  "feed_url": "https://muan.co/stories-taiwan.json",
+  "home_page_url": "http://localhost:4000/",
+  "feed_url": "http://localhost:4000/stories-self.json",
   "description": "Stories about {{ page.type }}.",
   "_open_stories": {
     "version": "0.0.9"
@@ -18,12 +18,12 @@ type: "self"
       "id": "{{ story.id }}",
       "date_published": "{{ story.uploaded | date_to_xmlschema }}", {% assign date_expired = story.uploaded | date: "%s" | plus: 86400 | date_to_xmlschema %}
       "tags": [{% for tag in story.meta.tags %}"{{ tag }}"{% if tag != story.meta.tags.last %}, {% endif %}{% endfor %}],
-      "content_html": "<img src='https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/{{ story.id }}/public' alt='{{ story.meta.alt }}'>",
-      "authors": [{"name": "Mu-An Chiou", "url": "https://muan.co"}],
+      "content_html": "<img src='https://pk7.k7n.co/pk7/{{ story.id }}.jpg' alt='{{ story.meta.alt }}'>",
+      "authors": [{"name": "Kai Qu", "url": "https://k7n.co"}],
       "url": "{{ site.url }}/stories/{{ story.id }}",
       "_open_stories": {
         "mime_type": "image/jpeg",
-        "url": "https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/{{ story.id }}/public",
+        "url": "https://pk7.k7n.co/pk7/{{ story.id }}.jpg",
         "alt": "{{ story.meta.alt }}",
         "caption": "{{ story.meta.caption }}",
         "reactions": {
