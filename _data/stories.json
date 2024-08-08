@@ -1,25 +1,6 @@
 [
     {
         "uploaded": "2022-08-04T14:53:55.831Z",
-        "id": "b48b30c0-3ff9-416b-644f-8c91bb56a200",
-        "filename": "4BAB9B0C-5460-4B63-A860-5D183C8930DD.jpeg",
-        "meta": {
-            "alt": "Shadow of palm leaves casting on the ground.",
-            "caption": "Shadows.",
-            "tags": [
-                "Life",
-                "Taiwan",
-                "Highlight"
-            ]
-        },
-        "requireSignedURLs": false,
-        "variants": [
-            "https://imagedelivery.net/-wp_VgtWlgmh1JURQ8t1mg/b48b30c0-3ff9-416b-644f-8c91bb56a200/public",
-            "https://imagedelivery.net/-wp_VgtWlgmh1JURQ8t1mg/b48b30c0-3ff9-416b-644f-8c91bb56a200/thumbnail"
-        ]
-    },
-    {
-        "uploaded": "2022-08-04T14:53:55.831Z",
         "id": "k-a",
         "filename": "4BAB9B0C-5460-4B63-A860-5D183C8930DD.jpeg",
         "meta": {
@@ -27,7 +8,6 @@
             "caption": "living to die",
             "tags": [
                 "self",
-                "Taiwan",
                 "Highlight"
             ]
         },
@@ -45,7 +25,6 @@
             "caption": "the fuckin' problem",
             "tags": [
                 "self",
-                "Taiwan",
                 "Highlight"
             ]
         },
@@ -54,4 +33,142 @@
             "https://pk7.k7n.co/pk7/k.jpg"
         ]
     },
+    {
+        "_comment": "Start of travel",
+        "uploaded": "2022-08-05T14:53:55.831Z",
+        "id": "wa-b",
+        "filename": "4BAB9B0C-5460-4B63-A860-5D183C8930DD.jpeg",
+        "meta": {
+            "alt": "Shadow of palm leaves casting on the ground.",
+            "caption": "the fuckin' problem",
+            "tags": [
+                "travel",
+                "Highlight"
+            ]
+        },
+        "requireSignedURLs": false,
+        "variants": [
+            "https://pk7.k7n.co/pk7/k.jpg"
+        ]
+    },
+    {
+        "uploaded": "2022-08-05T14:53:55.831Z",
+        "id": "wa_wheel",
+        "filename": "4BAB9B0C-5460-4B63-A860-5D183C8930DD.jpeg",
+        "meta": {
+            "alt": "Shadow of palm leaves casting on the ground.",
+            "caption": "the fuckin' problem",
+            "tags": [
+                "travel",
+                "Highlight"
+            ]
+        },
+        "requireSignedURLs": false,
+        "variants": [
+            "https://pk7.k7n.co/pk7/k.jpg"
+        ]
+    },
+    {
+        "uploaded": "2022-08-05T14:53:55.831Z",
+        "id": "chi-tunnel",
+        "filename": "4BAB9B0C-5460-4B63-A860-5D183C8930DD.jpeg",
+        "meta": {
+            "alt": "Shadow of palm leaves casting on the ground.",
+            "caption": "the fuckin' problem",
+            "tags": [
+                "travel",
+                "Highlight"
+            ]
+        },
+        "requireSignedURLs": false,
+        "variants": [
+            "https://pk7.k7n.co/pk7/k.jpg"
+        ]
+    },
+    {
+        "uploaded": "2022-08-05T14:53:55.831Z",
+        "id": "chi-night",
+        "filename": "4BAB9B0C-5460-4B63-A860-5D183C8930DD.jpeg",
+        "meta": {
+            "alt": "Shadow of palm leaves casting on the ground.",
+            "caption": "the fuckin' problem",
+            "tags": [
+                "travel",
+                "Highlight"
+            ]
+        },
+        "requireSignedURLs": false,
+        "variants": [
+            "https://pk7.k7n.co/pk7/k.jpg"
+        ]
+    },
+    {
+        "uploaded": "2022-08-05T14:53:55.831Z",
+        "id": "chi-cloud",
+        "filename": "4BAB9B0C-5460-4B63-A860-5D183C8930DD.jpeg",
+        "meta": {
+            "alt": "Shadow of palm leaves casting on the ground.",
+            "caption": "the fuckin' problem",
+            "tags": [
+                "travel",
+                "Highlight"
+            ]
+        },
+        "requireSignedURLs": false,
+        "variants": [
+            "https://pk7.k7n.co/pk7/k.jpg"
+        ]
+    },
+    {
+        "_comment": "The start of Boston",
+        "uploaded": "2022-08-05T14:53:55.831Z",
+        "id": "b-snow",
+        "filename": "4BAB9B0C-5460-4B63-A860-5D183C8930DD.jpeg",
+        "meta": {
+            "alt": "Shadow of palm leaves casting on the ground.",
+            "caption": "the fuckin' problem",
+            "tags": [
+                "boston",
+                "Highlight"
+            ]
+        },
+        "requireSignedURLs": false,
+        "variants": [
+            "https://pk7.k7n.co/pk7/k.jpg"
+        ]
+    },
+    {
+        "uploaded": "2022-08-05T14:53:55.831Z",
+        "id": "b-dusk",
+        "filename": "4BAB9B0C-5460-4B63-A860-5D183C8930DD.jpeg",
+        "meta": {
+            "alt": "Shadow of palm leaves casting on the ground.",
+            "caption": "the fuckin' problem",
+            "tags": [
+                "boston",
+                "Highlight"
+            ]
+        },
+        "requireSignedURLs": false,
+        "variants": [
+            "https://pk7.k7n.co/pk7/k.jpg"
+        ]
+    },
+    {
+        "uploaded": "2022-08-05T14:53:55.831Z",
+        "id": "b-b",
+        "filename": "4BAB9B0C-5460-4B63-A860-5D183C8930DD.jpeg",
+        "meta": {
+            "alt": "Shadow of palm leaves casting on the ground.",
+            "caption": "the fuckin' problem",
+            "tags": [
+                "boston",
+                "Highlight"
+            ]
+        },
+        "requireSignedURLs": false,
+        "variants": [
+            "https://pk7.k7n.co/pk7/k.jpg"
+        ]
+    }
 ]
