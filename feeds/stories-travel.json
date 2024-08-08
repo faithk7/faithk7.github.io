@@ -1,14 +1,14 @@
 ---
-permalink: /stories-self.json
-type: "self"
+permalink: /stories-travel.json
+type: "travel"
 ---
 {% assign stories = site.data.stories | where_exp: "story", "story.meta.tags contains page.type" | where_exp: "story", "story.meta.tags contains 'Highlight'" %}
 {
   "version": "https://jsonfeed.org/version/1.1",
   "title": "@muan's stories for {{ page.type }}",
   "icon": "https://github.com/muan.png",
-  "home_page_url": "https://k7n.co/",
-  "feed_url": "https://k7n.co/stories-self.json",
+  "home_page_url": "http://localhost:4000/",
+  "feed_url": "http://localhost:4000/stories-boston.json",
   "description": "Stories about {{ page.type }}.",
   "_open_stories": {
     "version": "0.0.9"
