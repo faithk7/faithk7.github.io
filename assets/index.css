@@ -118,6 +118,12 @@
     /* Optional padding for spacing */
     pointer-events: none;
     /* Prevents interaction with the SVG */
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
 }
 
 .c-index-art-container img {
