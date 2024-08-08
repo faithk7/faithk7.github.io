@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="{{ '/assets/stories.css' | relative_url }}">
 </head>
 
-{% assign categories = "Life,Taiwan" | split: "," %}
+{% assign categories = "Life,Taiwan,boston,travel,self," | split: "," %}
 {% assign stories = site.data.stories | sort: "uploaded" | reverse %}
 {% assign new_categories_arr = "" | split: "" | compact %}
 {% for story in stories %}
