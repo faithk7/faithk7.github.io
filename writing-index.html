@@ -16,6 +16,7 @@ title: Writing
     {% endif %}
 
     <div id="tag-container" class="c-tag-container">
+        <button class="o-tag-button" onclick="filterPosts('')">all</button>
         {% assign tags = "" %}
         {% for post in site.posts %}
         {% for tag in post.tags %}
@@ -36,10 +37,11 @@ title: Writing
         <div class="o-writing-note-date">{{ post.date | date: "%B %d, %Y" }}</div>
         <div class="c-tag-container">
             {% for tag in post.tags %}
-            <span class="o-tag-item">{{ tag }}</span>
+            <span class="o-tag-item" onclick="filterPosts('{{ tag }}')">{{ tag }}</span>
             {% endfor %}
         </div>
-        <!-- <div class="o-writing-text">{{ post.content | markdownify }}</div> -->
+        <!-- <div class=" o-writing-text">{{ post.content | markdownify }}
+        </div> -->
     </div>
     {% endfor %}
 </div>
@@ -49,7 +51,7 @@ title: Writing
         var posts = document.querySelectorAll('.c-writing-item-container');
         posts.forEach(function (post) {
             var tags = post.getAttribute('data-tags').split(' ');
-            if (tags.includes(tag)) {
+            if (tags.includes(tag) || tag === '') {
                 post.style.display = 'block';
             } else {
                 post.style.display = 'none';
