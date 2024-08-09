@@ -46,9 +46,7 @@ title: Writing
 
 <script>
     function filterPosts(tag) {
-        console.log("invoked");
         var posts = document.querySelectorAll('.c-writing-item-container');
-        console.log("posts", posts);
         posts.forEach(function (post) {
             var tags = post.getAttribute('data-tags').split(' ');
             if (tags.includes(tag)) {
