@@ -5,6 +5,14 @@ body {
     padding: 0;
     overflow: hidden;
     /* Prevent double scrollbars */
+    user-select: text;
+    /* Allow selection */
+    -webkit-user-select: text;
+    /* For WebKit-based browsers */
+    -moz-user-select: text;
+    /* For Firefox */
+    -ms-user-select: text;
+    /* For Internet Explorer/Edge */
 }
 
 body {
