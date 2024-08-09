@@ -53,13 +53,13 @@
     display: inline-block;
     margin-right: 5px;
     border-radius: 3px;
-    color: #ffffff;
     font-size: 14px;
 }
 
 button.o-tag-button {
-    background-color: transparent;
     border: 0px;
+    background: none;
+    color: inherit;
 }
 
 .o-tag-button::before {
