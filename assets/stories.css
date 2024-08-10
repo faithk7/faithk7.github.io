@@ -36,6 +36,15 @@
     }
 }
 
+.stories {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    overflow: auto;
+    padding: 10px;
+    margin: -10px;
+}
+
 open-stories {
     .count {
         font-size: 0.8em;
