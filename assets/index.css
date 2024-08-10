@@ -92,8 +92,9 @@
 .c-quote-container {
     position: absolute;
     top: 35%;
-    right: 10%;
+    right: 0%;
     z-index: 100;
+    width: 200px;
 }
 
 .o-quote {
