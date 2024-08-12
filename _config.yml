@@ -6,8 +6,8 @@ plugins:
   - jekyll-feed
 
 collections:
-  sass_dir:
-    output: true
+  # sass_dir:
+  #   output: true
   notes:
     output: true
   posts:
