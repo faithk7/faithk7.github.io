@@ -34,6 +34,7 @@
         --langShadowColor: #0b0c0b 33;
         --logoColor: #555;
         --photoBackground: #1a1a1a;
+        --storyHoverColor: #d8b4ff;
     }
 }
 
@@ -80,7 +81,7 @@ open-stories::part(button) {
 
 open-stories:not(:defined):hover,
 open-stories::part(button):hover {
-    background: var(--storyHoverColor);
+    background: #d8b4ff;
     color: var(--backgroundColor);
     transform: scale(1.05);
 }
