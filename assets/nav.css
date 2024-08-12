@@ -78,8 +78,11 @@
 }
 
 .o-setting-icon {
-    margin-left: 5px;
+    margin-left: 10px;
+    padding-bottom: 20px;
     font-size: 20px;
+    position: absolute;
+    top: 10px;
 }
 
 #dark-mode-toggle {
