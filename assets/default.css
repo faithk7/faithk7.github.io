@@ -67,8 +67,8 @@ nav li a {
     /* background-color: #333333; */
     background-color: #2c2c2c;
     padding: 20px;
-    border-left: 1px solid #ffffff;
-    border-right: 1px solid #ffffff;
+    /* border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff; */
 }
 
 .l-right {
@@ -84,39 +84,3 @@ nav li a {
     font-size: 32px;
     margin-bottom: 20px;
 } */
-
-
-/* light mode style */
-/* Light mode styles */
-body.light-mode {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-.l-left.light-mode,
-.l-center.light-mode,
-.l-right.light-mode,
-.c-navbar.light-mode {
-    background-color: #f0f0f0;
-}
-
-.c-line.light-mode {
-    background-color: #000000;
-}
-
-.o-navbar-item a.light-mode {
-    color: #000000;
-}
-
-.o-navbar-item a.light-mode:hover {
-    color: #333333;
-}
-
-.o-tag-button.light-mode {
-    background-color: #dddddd;
-    color: #000000;
-}
-
-.o-tag-button.light-mode:hover {
-    background-color: #cccccc;
-}
