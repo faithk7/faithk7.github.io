@@ -97,6 +97,12 @@
     width: 200px;
 }
 
+@media (max-width: 550px) {
+    .c-quote-container {
+        display: none;
+    }
+}
+
 .o-quote {
     font-size: 16px;
     color: #ffffff;
