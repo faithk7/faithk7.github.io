@@ -1,3 +1,7 @@
+:root {
+    --paragraphFontSize: 1.0em;
+}
+
 html,
 body {
     height: 100%;
