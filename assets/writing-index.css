@@ -44,8 +44,8 @@
 
 
 .c-tag-container {
-    margin-top: 10px;
-    margin-bottom: 30px;
+    margin-top: 5px;
+    margin-bottom: 20px;
 }
 
 .o-tag-item,
@@ -53,7 +53,8 @@
     display: inline-block;
     margin-right: 5px;
     border-radius: 3px;
-    font-size: 14px;
+    font-size: 1.0em;
+    line-height: 1.5em;
 }
 
 button.o-tag-button {
@@ -66,6 +67,7 @@ button.o-tag-button {
 
 .o-tag-button {
     color: #ffffff;
+    font-family: serif, Times;
     text-decoration: none;
     background-image: linear-gradient(to top, #bbbbbb, #bbbbbb);
     background-size: 100% 0%;
