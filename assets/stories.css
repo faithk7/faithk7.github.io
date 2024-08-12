@@ -81,7 +81,7 @@ open-stories::part(button) {
 
 open-stories:not(:defined):hover,
 open-stories::part(button):hover {
-    background: #d8b4ff;
+    background: var(--storyHoverColor);
     color: var(--backgroundColor);
     transform: scale(1.05);
 }
