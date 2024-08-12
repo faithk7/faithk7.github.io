@@ -34,8 +34,20 @@
     margin-right: 10px;
 }
 
+.o-writing-post-tag::before {
+    content: "#";
+    /* Insert the # symbol before the content */
+    margin-right: 1px;
+    /* Add some space between the # and the text */
+}
+
+
 .o-writing-post-text {
     font-size: 16px;
     line-height: 1.6;
     color: #dddddd;
+
+    margin-bottom: 20px;
+    border-bottom: 1px solid #555555;
+    padding-bottom: 10px;
 }

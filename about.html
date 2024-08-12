@@ -11,38 +11,101 @@ title: About
     <h1 class="o-about-title">About</h1>
     <div class="o-about-item">
         <h2 class="o-about-item-title"> Info</h2>
-        <p class="o-about-content">Chinese Name: 瞿锴 (QuKai) | English Name: Kai
-            I was Born in Hangzhou, but grew up in Beijing
-            Speak Chinese (native), English (fluent) and Japanese (moderate).</p>
+        <p class="o-about-content">Chinese Name: 瞿锴 (QuKai) <span style="margin-left: 5px; margin-right: 5px"> |
+            </span> English Name: Kai
+            <br><br>
+            I was born in Hangzhou, a city in the southern part of China, but grew up in Beijing.
+            <br><br>
+            Speak Chinese (native), English (fluent) and Japanese (moderate).
+        </p>
+        <br>
     </div>
     <div class="o-about-item">
         <h2 class="o-about-item-title"> Interest</h2>
         <h3 class="o-about-item-subtitle"> Running</h3>
-        I enjoy jogging in my spare time. I started running as an attempt to lose weight in high school, but soon the
-        feeling of euphoria after a long run and my growing ability to control pace and rhythm gradually got me
-        interested in this activity. Finished my first half marathon at Charlottesville Marathon in 2019 and now run
-        about 4 miles per day to keep the habit of running.
+        <p class="o-about-content">
+            I enjoy jogging in my spare time. Started running as an attempt to lose weight in high school, but soon the
+            feeling of euphoria after a long run and my growing ability to control pace and rhythm gradually got me
+            interested in this activity.
+            <br><br>
+            Finished my first half marathon at <a
+                href="https://results.sporthive.com/events/6519024352588254464/races/4">Charlottesville Marathon</a> in
+            2019
+            and now
+            run
+            about 4 miles per day to keep the habit of running.
+        </p>
+        <br>
         <h3 class="o-about-item-subtitle"> Music</h3>
-        For most of the time listen to J-pop. Favorite singer: Aimer. Her voice is powerful and comforting. I remembered
-        the feeling of lonliness but also the joy of inner peace when listening to Polaris by Aimer, walking along in
-        the campus at night.
+        <p class="o-about-content">
+            For most of the time listen to J-pop. Favorite singer: <a
+                href="https://en.wikipedia.org/wiki/Aimer">Aimer</a>.
+            Her voice is powerful and comforting. I
+            remembered
+            the feeling of lonliness but also the joy of inner peace when listening to <a
+                href="https://www.youtube.com/watch?v=K1kjy1XLx7I">Polaris</a>, walking
+            along in
+            the campus at night.
+            <br><br>
+            Recently grow fond of <a href="https://en.wikipedia.org/wiki/Aimyon">Aimyon</a> also.
+        </p>
+    </div>
+    <br>
+    <div class="o-about-item">
         <h3 class="o-about-item-title"> Anime</h3>
-        A big fan of anime. Started watching anime since high school and fell in love with this world with
-        boundless imagination and creativity immediately. It poses a big influence on me and is also the reason I get
-        deeply interested in Japanese culture.
-
-        Favorite anime for now: Samurai Champloo, as its vision of life as a series of adventures, resilient attitudes
-        toward challenges, contemporary artistic styles with the historical setting, and the ambient soundtrack
-        captivate me.
+        <p class="o-about-content">
+            A big fan of anime. Started watching anime since high school and fell in love with this world with
+            boundless imagination and creativity immediately. It poses a big influence on me and is also the reason I
+            get
+            deeply interested in Japanese culture.
+            <br><br>
+            Favorite anime for now: <a href="https://en.wikipedia.org/wiki/Samurai_Champloo">Samurai Champloo</a>, as
+            its
+            vision of life as a series of adventures, resilient
+            attitudes toward challenges, contemporary artistic styles with the historical setting, and the ambient
+            soundtrack captivate me.
+        </p>
+        <br>
     </div>
     <div class="o-about-item">
         <h2 class="o-about-item-title"> Reading</h2>
         <p class="o-about-content">
-            Enjoy reading all kinds of books. Nowadays read by genre. Started by reading the detective novels, and Edgar
-            Allen Poe and Edogawa Ranpo are my favorite authors in this genre. Then switched to all categories. By
-            reading many books I realized that the minds of humans are limitless, while we are bound by our bodies and
-            actions. One of the favorite novels: From the new world. “Imagination changes everything.” And reading opens
+            Enjoy reading all kinds of books. Through reading I realized that the minds of humans are limitless,
+            while we are bounded by
+            our
+            courage and
+            actions. Like said in the end of <a href="https://en.wikipedia.org/wiki/From_the_New_World_(novel)">From
+                the
+                New World</a> by <a href="https://en.wikipedia.org/wiki/Yusuke_Kishi">Yusuke Kishi
+            </a> , <i>“Imagination changes everything.”</i> And extensive reading opens
             up the world of imagination.
         </p>
     </div>
+    <br>
 </div>
+
+<!-- <script>
+    console.log(window.location.pathname);
+    document.addEventListener("DOMContentLoaded", function () {
+        if (window.location.pathname.includes('/about')) {
+            document.body.classList.add('about-page');
+        }
+    });
+</script> -->
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Select the element with the class 'c-about-container'
+        var aboutContainer = document.querySelector('.c-about-container');
+
+        // Ensure the element exists before applying styles
+        if (aboutContainer) {
+            // Apply styles dynamically
+            aboutContainer.style.margin = "20px";
+            aboutContainer.style.borderBottom = "1px solid #555555";
+            aboutContainer.style.setProperty("background", "url('/assets/kokoro.svg') no-repeat center center fixed", "important");
+            aboutContainer.style.setProperty("--webkit-background-composite", "multiply", "important");
+        }
+    });
+</script>

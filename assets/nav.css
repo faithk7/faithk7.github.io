@@ -46,6 +46,7 @@
         background-size: 0% 1px;
         background-position: 0% 100%;
     }
+
     100% {
         background-size: 100% 1px;
         background-position: 0% 100%;
@@ -66,11 +67,14 @@
     color: #bbbbbb;
     animation: a-underline-text 0.5s forwards;
 }
+
 /*  for the settings*/
 .c-setting-container {
     display: inline-block;
     margin-left: 30px;
+    margin-bottom: 0px;
     vertical-align: middle;
+    height: 16px;
 }
 
 .o-setting-icon {
@@ -79,10 +83,12 @@
 }
 
 #dark-mode-toggle {
-    width: 36px;
-    height: 36px;
-    background-color: transparent; /* No background color */
-    border: none; /* Remove border */
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    /* No background color */
+    border: none;
+    /* Remove border */
     outline: none;
     cursor: pointer;
 }
@@ -92,6 +98,6 @@
 }
 
 a.o-setting-icon {
-    height: 36px;
-    width: 36px;
+    height: 16px;
+    width: 16px;
 }
