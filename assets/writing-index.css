@@ -64,30 +64,26 @@ button.o-tag-button {
     margin-right: 0px;
 }
 
+.o-tag-button {
+    color: #ffffff;
+    text-decoration: none;
+    background-image: linear-gradient(to top, #bbbbbb, #bbbbbb);
+    background-size: 100% 0%;
+    background-repeat: no-repeat;
+    background-position: 0% 100%;
+    transition: color 0.5s;
+}
+
 @keyframes a-underline-text {
     0% {
-        background-size: 0% 1px;
+        background-size: 100% 0%;
         background-position: 0% 100%;
     }
 
     100% {
-        background-size: 100% 1px;
-        background-position: 0% 100%;
+        background-size: 100% 100%;
+        background-position: 0% 0%;
     }
-}
-
-.o-tag-button {
-    border: 0px;
-    background: none;
-    color: inherit;
-    margin-left: 0px;
-    margin-right: 0px;
-    text-decoration: none;
-    background-image: linear-gradient(to right, #bbbbbb, #bbbbbb);
-    background-size: 0% 2px;
-    background-repeat: no-repeat;
-    background-position: 0% 100%;
-    transition: color 0.5s;
 }
 
 .o-tag-button:hover {
