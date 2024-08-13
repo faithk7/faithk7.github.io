@@ -74,15 +74,14 @@
     margin-left: 30px;
     margin-bottom: 0px;
     vertical-align: middle;
-    height: 16px;
 }
 
 .o-setting-icon {
-    margin-left: 10px;
-    padding-bottom: 20px;
-    font-size: 20px;
-    position: absolute;
-    top: 10px;
+    display: inline-block;
+    height: 16px; /* Adjust height as needed */
+    width: 16px;  /* Adjust width as needed */
+    vertical-align: middle; /* Align with text */
+    margin-left: 5px; /* Adjust spacing as needed */
 }
 
 #dark-mode-toggle {
@@ -94,10 +93,6 @@
     /* Remove border */
     outline: none;
     cursor: pointer;
-}
-
-.o-setting-icon {
-    display: inline-block;
 }
 
 a.o-setting-icon {
