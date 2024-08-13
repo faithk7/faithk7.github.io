@@ -44,8 +44,8 @@
 
 
 .c-tag-container {
-    margin-top: 10px;
-    margin-bottom: 30px;
+    margin-top: 5px;
+    margin-bottom: 20px;
 }
 
 .o-tag-item,
@@ -53,7 +53,8 @@
     display: inline-block;
     margin-right: 5px;
     border-radius: 3px;
-    font-size: 14px;
+    font-size: 1.0em;
+    line-height: 1.5em;
 }
 
 button.o-tag-button {
@@ -62,6 +63,34 @@ button.o-tag-button {
     color: inherit;
     margin-left: 0px;
     margin-right: 0px;
+}
+
+.o-tag-button {
+    color: #ffffff;
+    font-family: serif, Times;
+    text-decoration: none;
+    background-image: linear-gradient(to top, #bbbbbb, #bbbbbb);
+    background-size: 100% 0%;
+    background-repeat: no-repeat;
+    background-position: 0% 100%;
+    transition: color 0.5s;
+}
+
+@keyframes a-underline-text {
+    0% {
+        background-size: 100% 0%;
+        background-position: 0% 100%;
+    }
+
+    100% {
+        background-size: 100% 100%;
+        background-position: 0% 0%;
+    }
+}
+
+.o-tag-button:hover {
+    color: #bbbbbb;
+    animation: a-underline-text 0.5s forwards;
 }
 
 .o-tag-button::before {
