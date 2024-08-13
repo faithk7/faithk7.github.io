@@ -26,12 +26,20 @@
 
 .o-writing-post-tag {
     display: inline-block;
+    margin-right: 5px;
+    border-radius: 3px;
+    font-size: 1.0em;
+    line-height: 1.5em;
     background-color: #555555;
     padding: 5px 10px;
-    border-radius: 3px;
     color: #ffffff;
-    font-size: 14px;
-    margin-right: 10px;
+    font-family: serif, Times;
+    text-decoration: none;
+    background-image: linear-gradient(to top, #bbbbbb, #bbbbbb);
+    background-size: 100% 0%;
+    background-repeat: no-repeat;
+    background-position: 0% 100%;
+    transition: color 0.5s;
 }
 
 .o-writing-post-tag::before {
