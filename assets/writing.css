@@ -36,10 +36,10 @@
     transition: color 0.5s;
 }
 
-.o-writing-post-tag::before {
+/* .o-writing-post-tag::before {
     content: "#";
     margin-right: 1px;
-}
+} */
 
 .o-writing-post-text {
     font-size: 16px;
