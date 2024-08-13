@@ -68,34 +68,24 @@
     animation: a-underline-text 0.5s forwards;
 }
 
-/*  for the settings*/
-.c-setting-container {
-    display: inline-block;
-    margin-left: 30px;
-    margin-bottom: 0px;
-    vertical-align: middle;
-}
-
-.o-setting-icon {
-    display: inline-block;
-    height: 16px; /* Adjust height as needed */
-    width: 16px;  /* Adjust width as needed */
-    vertical-align: middle; /* Align with text */
-    margin-left: 5px; /* Adjust spacing as needed */
-}
-
 #dark-mode-toggle {
-    width: 16px;
+    position: absolute;
+    top: 5%;
+    /* transform: translateY(-50%); */
+    right: 40px;
     height: 16px;
+    width: 16px;
     background-color: transparent;
-    /* No background color */
     border: none;
-    /* Remove border */
     outline: none;
     cursor: pointer;
 }
 
 a.o-setting-icon {
+    position: absolute;
+    top: 5%;
+    /* transform: translateY(-50%); */
+    right: 10px;
     height: 16px;
     width: 16px;
 }
