@@ -70,9 +70,9 @@
 
 #dark-mode-toggle {
     position: absolute;
-    top: 5%;
+    top: 17px;
     /* transform: translateY(-50%); */
-    right: 40px;
+    right: 100px;
     height: 16px;
     width: 16px;
     background-color: transparent;
@@ -83,9 +83,9 @@
 
 a.o-setting-icon {
     position: absolute;
-    top: 5%;
+    top: 15px;
     /* transform: translateY(-50%); */
-    right: 10px;
+    right: 65px;
     height: 16px;
     width: 16px;
 }
