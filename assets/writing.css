@@ -30,25 +30,16 @@
     border-radius: 3px;
     font-size: 1.0em;
     line-height: 1.5em;
-    background-color: #555555;
-    padding: 5px 10px;
     color: #ffffff;
     font-family: serif, Times;
     text-decoration: none;
-    background-image: linear-gradient(to top, #bbbbbb, #bbbbbb);
-    background-size: 100% 0%;
-    background-repeat: no-repeat;
-    background-position: 0% 100%;
     transition: color 0.5s;
 }
 
 .o-writing-post-tag::before {
     content: "#";
-    /* Insert the # symbol before the content */
     margin-right: 1px;
-    /* Add some space between the # and the text */
 }
-
 
 .o-writing-post-text {
     font-size: 16px;
