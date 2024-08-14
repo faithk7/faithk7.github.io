@@ -26,6 +26,10 @@
     color: #dddddd;
 }
 
+.o-note-text[data-theme="light"] {
+    color: #000000;
+}
+
 .o-note-footer {
     text-align: center;
     margin-top: 20px;
