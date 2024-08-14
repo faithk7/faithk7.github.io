@@ -58,6 +58,13 @@ nav li a {
     overflow: auto;
 }
 
+/* for mobile, to make the main content rendered more */
+@media (max-width: 767px) {
+    .l-container {
+        grid-template-columns: 2fr 6fr 2fr;
+    }
+}
+
 .l-grid {
     padding: 20px;
     height: 100vh;
