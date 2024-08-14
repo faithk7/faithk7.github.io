@@ -22,6 +22,10 @@
     padding-left: 10px;
 }
 
+.c-navbar-container[data-theme="light"] {
+    border-left: 1px solid #000000;
+}
+
 .c-line {
     width: 2px;
     height: 100px;
