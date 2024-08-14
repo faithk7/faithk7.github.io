@@ -20,6 +20,13 @@
     display: block;
 }
 
+
+@media (max-width: 767px) {
+    .c-index-container {
+        z-index: 100;
+    }
+}
+
 .c-name-card-container,
 .c-info-card-container,
 .c-moment-container {
