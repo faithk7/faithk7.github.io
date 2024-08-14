@@ -106,6 +106,13 @@
     width: 200px;
 }
 
+@media (max-width: 768px) {
+    .c-quote-container {
+        width: 75px; /* to be consistent with that of c-navbar media rule */
+    }
+}
+
+
 @media (max-width: 550px) {
     .c-quote-container {
         display: none;
