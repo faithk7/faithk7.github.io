@@ -37,6 +37,11 @@
     transition: color 0.5s;
 }
 
+
+.o-writing-post-tag[data-theme="light"] {
+    color: #000000;
+}
+
 /* .o-writing-post-tag::before {
     content: "#";
     margin-right: 1px;
