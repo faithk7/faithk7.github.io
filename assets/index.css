@@ -118,12 +118,16 @@
     }
 }
 
-.o-quote {
+.o-quote, .o-quote[data-theme="dark"] {
     font-size: 1em;
     color: #ffffff;
     text-align: center;
     writing-mode: vertical-rl;
     text-orientation: upright;
+}
+
+.o-quote[data-theme="light"] {
+    color: #000000;
 }
 
 
