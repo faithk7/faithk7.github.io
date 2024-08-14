@@ -37,7 +37,7 @@ title: Writing
         <div class="o-writing-note-date">{{ post.date | date: "%B %d, %Y" }}</div>
         <div class="c-tag-container">
             {% for tag in post.tags %}
-            <span class="o-tag-button" onclick="filterPosts('{{ tag }}')">{{ tag }}</span>
+            <button class="o-tag-button" onclick="filterPosts('{{ tag }}')">{{ tag }}</span>
             {% endfor %}
         </div>
         <!-- <div class=" o-writing-text">{{ post.content | markdownify }}
