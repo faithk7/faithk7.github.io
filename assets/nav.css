@@ -7,6 +7,12 @@
     background-color: #2c2c2c;
 }
 
+@media (max-width: 767px) {
+    .c-navbar {
+        width: 75px; /* Adjust the width as needed for mobile screens */
+    }
+}
+
 .c-navbar-container {
     display: block;
     /* flex-direction: column; */
@@ -84,8 +90,22 @@
 a.o-setting-icon {
     position: absolute;
     top: 15px;
-    /* transform: translateY(-50%); */
     right: 65px;
     height: 16px;
     width: 16px;
+}
+
+@media (max-width: 767px) {
+    #dark-mode-toggle {
+        position: fixed;
+        top: 95%;
+        left: 42%;
+    }
+    a.o-setting-icon {
+        position: fixed;
+        top: 95%;
+        left: 50%;
+        width: 24px; /* Adjust size as needed */
+        height: 24px; /* Adjust size as needed */
+    }
 }

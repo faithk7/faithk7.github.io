@@ -17,6 +17,13 @@ a {
     text-decoration: none;
 }
 
+.code {
+    color: #6A5ACD; /* Light purple color */
+    background-color: transparent;
+    background: none;
+    font-family: serif, Times;
+}
+
 .c-about-container {
     margin: 20px;
     border-bottom: 1px solid #555555;
@@ -66,3 +73,4 @@ a {
     /* color: #dddddd; */
     margin: 0px;
 }
+
