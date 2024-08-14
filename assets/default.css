@@ -55,7 +55,7 @@ nav li a {
     width: 100%;
     height: 100vh;
     position: relative;
-    overflow: auto;
+    overflow: hidden;
 }
 
 /* for mobile, to make the main content rendered more */
@@ -68,6 +68,7 @@ nav li a {
 .l-grid {
     padding: 20px;
     height: 100vh;
+    overflow: auto;
 }
 
 .l-left {
