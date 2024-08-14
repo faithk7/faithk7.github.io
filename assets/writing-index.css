@@ -48,7 +48,6 @@
     margin-bottom: 20px;
 }
 
-.o-tag-item,
 .o-tag-button {
     display: inline-block;
     margin-right: 5px;
@@ -69,7 +68,7 @@ button.o-tag-button {
     color: #ffffff;
     font-family: serif, Times;
     text-decoration: none;
-    background-image: linear-gradient(to top, #bbbbbb, #bbbbbb);
+    /* background-image: linear-gradient(to top, #bbbbbb, #bbbbbb); */
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: 0% 100%;
@@ -94,13 +93,6 @@ button.o-tag-button {
 }
 
 .o-tag-button::before {
-    content: "#";
-    /* Insert the # symbol before the content */
-    margin-right: 1px;
-    /* Add some space between the # and the text */
-}
-
-.o-tag-item::before {
     content: "#";
     /* Insert the # symbol before the content */
     margin-right: 1px;
