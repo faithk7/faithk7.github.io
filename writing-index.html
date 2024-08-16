@@ -18,7 +18,7 @@ permalink: /writing-index/
     {% endif %}
 
     <div id="tag-container" class="c-tag-container">
-        <span class="o-tag-button" onclick="filterPosts('')">all</span>
+        <span class="o-tag" onclick="filterPosts('')">all</span>
         {% assign tags = "" %}
         {% for post in site.posts %}
         {% for tag in post.tags %}
@@ -28,7 +28,7 @@ permalink: /writing-index/
         {% assign unique_tags = tags | split: "," | uniq | sort %}
         {% for tag in unique_tags reversed %}
         {% if tag != "" %}
-        <span class="o-tag-button" onclick="filterPosts('{{ tag }}')">{{ tag }}</span>
+        <span class="o-tag" onclick="filterPosts('{{ tag }}')">{{ tag }}</span>
         {% endif %}
         {% endfor %}
     </div>
@@ -39,7 +39,7 @@ permalink: /writing-index/
         <div class="o-writing-note-date">{{ post.date | date: "%B %d, %Y" }}</div>
         <div class="c-hashtag-container">
             {% for tag in post.tags %}
-            <span class="o-tag-button" onclick="filterPosts('{{ tag }}')">{{ tag }}</span>
+            <span class="o-tag" onclick="filterPosts('{{ tag }}')">{{ tag }}</span>
             {% endfor %}
         </div>
         <!-- <div class=" o-writing-text">{{ post.content | markdownify }}

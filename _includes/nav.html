@@ -14,16 +14,16 @@
             <ul class="c-navbar-items">
                 <li class="o-navbar-item"><a href="{{ '/' | relative_url }}">Home</a>
                     <!-- <div class="c-setting-container"> -->
-                        <button id="dark-mode-toggle" class="o-setting-icon">
-                            <!-- <img src="{{ '/assets/night.svg' | relative_url }}" alt="Icon Description"
+                    <button id="dark-mode-toggle" class="o-setting-icon">
+                        <!-- <img src="{{ '/assets/night.svg' | relative_url }}" alt="Icon Description"
                                 class="o-setting-icon" /> -->
-                            {% include svg_switch.html %}
-                        </button>
-                        <a href="/feed.xml" class="o-setting-icon">
-                            <!-- <img src="{{ '/assets/rss.svg' | relative_url }}" alt="Icon Description"
+                        {% include svg_switch.html %}
+                    </button>
+                    <a href="/feed.xml" class="o-setting-icon">
+                        <!-- <img src="{{ '/assets/rss.svg' | relative_url }}" alt="Icon Description"
                                 class="o-setting-icon" /> -->
-                            {% include svg_rss.html %}
-                        </a>
+                        {% include svg_rss.html %}
+                    </a>
                     <!-- </div> -->
                 </li>
                 <li class="o-navbar-item"><a href="{{ '/note' | relative_url }}">Note</a></li>
@@ -42,7 +42,7 @@
                 document.querySelectorAll('.l-left, .l-center, .l-right, .c-navbar, .c-line').forEach(el => {
                     el.classList.add('light-mode');
                 });
-                document.querySelectorAll('.o-navbar-item a, .o-tag-button').forEach(el => {
+                document.querySelectorAll('.o-navbar-item a, .o-tag').forEach(el => {
                     el.classList.add('light-mode');
                 });
                 document.querySelectorAll('[data-theme]').forEach(el => {
@@ -54,7 +54,7 @@
                 document.querySelectorAll('.l-left, .l-center, .l-right, .c-navbar, .c-line').forEach(el => {
                     el.classList.remove('light-mode');
                 });
-                document.querySelectorAll('.o-navbar-item a, .o-tag-button').forEach(el => {
+                document.querySelectorAll('.o-navbar-item a, .o-tag').forEach(el => {
                     el.classList.remove('light-mode');
                 });
                 document.querySelectorAll('[data-theme]').forEach(el => {

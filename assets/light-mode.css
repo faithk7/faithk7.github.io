@@ -23,12 +23,13 @@ body.light-mode {
 .o-navbar-item a.light-mode:hover {
     color: #333333;
 }
+
 /*
-.o-tag-button[data-theme="light"] {
+.o-tag[data-theme="light"] {
     background-color: #ffffff;
     color: #000000;
 }
 
-.o-tag-button[data-theme="light"]:hover {
+.o-tag[data-theme="light"]:hover {
     background-color: #cccccc;
 } */

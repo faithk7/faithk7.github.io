@@ -48,7 +48,7 @@
     margin-bottom: 20px;
 }
 
-.o-tag-button {
+.o-tag {
     display: inline-block;
     margin-right: 10px;
     /* Added margin-right */
@@ -64,7 +64,7 @@
     transition: color 0.5s;
 }
 
-span.o-tag-button {
+span.o-tag {
     border: 0px;
     background: none;
     color: inherit;
@@ -84,12 +84,12 @@ span.o-tag-button {
     }
 }
 
-.o-tag-button:hover {
+.o-tag:hover {
     color: #bbbbbb;
     animation: a-underline-text 0.5s forwards;
 }
 
-.o-tag-button::before {
+.o-tag::before {
     content: "#";
     /* Insert the # symbol before the content */
     margin-right: 1px;
