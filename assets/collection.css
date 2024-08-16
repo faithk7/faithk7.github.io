@@ -1,31 +1,41 @@
 /* Styles specific to collection.html */
 
 .c-collection-container {
-    margin: 20px;
+    margin: 1.25rem;
+    /* 20px */
 }
 
 .o-collection-title {
-    font-size: 32px;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    /* 32px */
+    margin-bottom: 1.25rem;
+    /* 20px */
 }
 
 .c-collection-nav-container {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
+    /* 20px */
 }
 
 .o-collection-nav-icon {
-    font-size: 24px;
-    margin-right: 10px;
+    font-size: 1.5rem;
+    /* 24px */
+    margin-right: 0.625rem;
+    /* 10px */
 }
 
 .c-collection-tile-container {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
-    border: 1px solid #555555;
-    padding: 10px;
-    border-radius: 5px;
+    margin-bottom: 1.25rem;
+    /* 20px */
+    border: 0.0625rem solid #555555;
+    /* 1px */
+    padding: 0.625rem;
+    /* 10px */
+    border-radius: 0.3125rem;
+    /* 5px */
 }
 
 .c-collection-item-container {
@@ -34,7 +44,9 @@
 }
 
 .o-collection-item {
-    font-size: 18px;
+    font-size: 1.125rem;
+    /* 18px */
     color: #dddddd;
-    margin-bottom: 5px;
+    margin-bottom: 0.3125rem;
+    /* 5px */
 }

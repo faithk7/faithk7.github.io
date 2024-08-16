@@ -1,5 +1,5 @@
 :root {
-    --paragraphFontSize: 1em;
+    --paragraphFontSize: 1rem;
     --generalFont: monospace;
 }
 
@@ -24,6 +24,8 @@ body {
     background-color: #121212;
     color: #ffffff;
     font-family: serif, Times, Arial, sans-serif;
+    font-size: 1rem;
+    /* 16px */
 }
 
 header {
@@ -47,6 +49,8 @@ nav li {
 nav li a {
     color: #ffffff;
     text-decoration: none;
+    font-size: 1rem;
+    /* 16px */
 }
 
 .l-container {

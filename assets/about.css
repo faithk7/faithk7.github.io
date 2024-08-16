@@ -18,7 +18,8 @@ a {
 }
 
 .code {
-    color: #6A5ACD; /* Light purple color */
+    color: #6A5ACD;
+    /* Light purple color */
     background-color: transparent;
     background: none;
     font-family: serif, Times;
@@ -41,15 +42,20 @@ a {
 }
 
 .o-about-title {
-    font-size: 32px;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    /* 32px */
+    margin-bottom: 1.25rem;
+    /* 20px */
 }
 
 
 .o-about-item-title {
-    font-size: 24px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    font-size: 1.5rem;
+    /* 24px */
+    margin-top: 0.625rem;
+    /* 10px */
+    margin-bottom: 0.625rem;
+    /* 10px */
 }
 
 .o-about-item-title::before {
@@ -58,9 +64,12 @@ a {
 }
 
 .o-about-item-subtitle {
-    font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    font-size: 1.25rem;
+    /* 20px */
+    margin-top: 0.625rem;
+    /* 10px */
+    margin-bottom: 0.625rem;
+    /* 10px */
 }
 
 .o-about-item-subtitle::before {
@@ -69,8 +78,8 @@ a {
 }
 
 .o-about-content {
-    font-size: 18px;
+    font-size: 1.125rem;
+    /* 18px */
     /* color: #dddddd; */
     margin: 0px;
 }
-

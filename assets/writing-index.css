@@ -38,7 +38,8 @@
 
 .o-writing-note-date {
     margin: 5px 0;
-    font-size: 14px;
+    font-size: 0.875rem;
+    /* 14px */
     color: #bbbbbb;
 }
 
@@ -53,7 +54,8 @@
     margin-right: 10px;
     /* Added margin-right */
     border-radius: 3px;
-    font-size: 1.0em;
+    font-size: 1rem;
+    /* 16px */
     line-height: 1.5em;
     color: #ffffff;
     font-family: serif, Times;
@@ -97,8 +99,10 @@ span.o-tag {
 }
 
 .o-post-title {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 1.5rem;
+    /* 24px */
+    margin-bottom: 0.625rem;
+    /* 10px */
 }
 
 

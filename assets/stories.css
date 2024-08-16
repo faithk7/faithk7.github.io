@@ -45,10 +45,13 @@
     overflow: auto;
     padding: 10px;
     margin: -10px;
+    font-size: 1rem;
+    /* 16px */
 }
 
 open-stories .count {
-    font-size: 0.8em;
+    font-size: 0.5rem;
+    /* 8px */
 }
 
 open-stories::part(dialog):focus {
@@ -67,7 +70,8 @@ open-stories::part(button) {
     height: 76px;
     width: 76px;
     border-radius: 50%;
-    font-size: 0.65em;
+    font-size: 0.65rem;
+    /* 10.4px */
     box-sizing: border-box;
     align-items: center;
     display: flex;
