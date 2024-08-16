@@ -13,7 +13,7 @@ title: Recent Notes
     {% for note in sorted_notes %}
     <div class="c-note-item-container">
         <div class="o-note-date">{{ note.date | date: "%B %d, %Y" }}</div>
-        <div class="o-note-text">{{ note.content | markdownify }}</div>
+        <div class="o-note-text" data-theme="light">{{ note.content | markdownify }}</div>
     </div>
     {% endfor %}
     <div class="o-note-footer">

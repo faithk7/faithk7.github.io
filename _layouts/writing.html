@@ -11,10 +11,11 @@ layout: default
     <div class="c-writing-post-date">{{ page.date | date: "%B %d, %Y" }}</div>
     <div class="c-writing-post-tag-container">
         {% for tag in page.tags %}
-        <span class="o-writing-post-tag">{{ tag }}</span>
+        <span class="o-writing-post-tag" data-theme="light"><i>{{ tag }}</i></span>
+        {% unless forloop.last %} / {% endunless %}
         {% endfor %}
     </div>
-    <div class="o-writing-post-text">
+    <div class="o-writing-post-text" data-theme="light">
         {{ content }}
     </div>
 </div>

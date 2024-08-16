@@ -1,5 +1,6 @@
 :root {
-    --paragraphFontSize: 1.0em;
+    --paragraphFontSize: 1em;
+    --generalFont: system-ui;
 }
 
 html,
@@ -48,19 +49,26 @@ nav li a {
     text-decoration: none;
 }
 
-
 .l-container {
     display: grid;
     grid-template-columns: 4fr 4fr 4fr;
     width: 100%;
     height: 100vh;
     position: relative;
-    overflow: auto;
+    overflow: hidden;
+}
+
+/* for mobile, to make the main content rendered more */
+@media (max-width: 767px) {
+    .l-container {
+        grid-template-columns: 2fr 6fr 2fr;
+    }
 }
 
 .l-grid {
     padding: 20px;
     height: 100vh;
+    overflow: auto;
 }
 
 .l-left {

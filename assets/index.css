@@ -20,6 +20,13 @@
     display: block;
 }
 
+
+@media (max-width: 767px) {
+    .c-index-container {
+        z-index: 100;
+    }
+}
+
 .c-name-card-container,
 .c-info-card-container,
 .c-moment-container {
@@ -27,7 +34,7 @@
     width: 100%;
     height: 100%;
     display: block;
-    position: relative
+    position: relative;
 }
 
 .o-name {
@@ -37,7 +44,6 @@
 
 .o-summary {
     margin-top: 40px;
-    margin-bottom: 10px;
     line-height: 1.5;
     font-size: 1.1em;
 }
@@ -58,12 +64,14 @@
 .c-info-card-container {
     margin-top: 50px;
     margin-bottom: 50px;
+    font-family: var(--generalFont);
 }
 
 .o-social {
     /* margin: 10px; */
     border-radius: 5px;
     text-decoration: none;
+    color: #1E90FF;
 }
 
 .c-moment-container {
@@ -98,13 +106,22 @@
     width: 200px;
 }
 
+@media (max-width: 768px) {
+    .c-quote-container {
+        width: 75px;
+        /* to be consistent with that of c-navbar media rule */
+    }
+}
+
+
 @media (max-width: 550px) {
     .c-quote-container {
         display: none;
     }
 }
 
-.o-quote {
+.o-quote,
+.o-quote[data-theme="dark"] {
     font-size: 1em;
     color: #ffffff;
     text-align: center;
@@ -112,12 +129,16 @@
     text-orientation: upright;
 }
 
+.o-quote[data-theme="light"] {
+    color: #000000;
+}
+
 
 /* the styling for c-index-art-container */
 .c-index-art-container {
     position: fixed;
     width: 20vw;
-    max-width: 200px;
+    max-width: min(min(200px, 20vw), 30vh);
     bottom: 0;
     left: 0;
     z-index: 1000;
