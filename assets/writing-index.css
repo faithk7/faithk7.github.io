@@ -50,29 +50,26 @@
 
 .o-tag-button {
     display: inline-block;
-    margin-right: 5px;
+    margin-right: 10px;
+    /* Added margin-right */
     border-radius: 3px;
     font-size: 1.0em;
     line-height: 1.5em;
-}
-
-button.o-tag-button {
-    border: 0px;
-    background: none;
-    color: inherit;
-    margin-left: 0px;
-    margin-right: 0px;
-}
-
-.o-tag-button {
     color: #ffffff;
     font-family: serif, Times;
     text-decoration: none;
-    /* background-image: linear-gradient(to top, #bbbbbb, #bbbbbb); */
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: 0% 100%;
     transition: color 0.5s;
+}
+
+span.o-tag-button {
+    border: 0px;
+    background: none;
+    color: inherit;
+    margin-left: 0px;
+    margin-right: 5px;
 }
 
 @keyframes a-underline-text {
@@ -129,7 +126,8 @@ button.o-tag-button {
     margin: 0 5px;
 }
 
-.pagination a, .pagination .current-page {
+.pagination a,
+.pagination .current-page {
     text-decoration: none;
     padding: 5px 10px;
     border-radius: 5px;
