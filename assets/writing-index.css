@@ -45,6 +45,7 @@
     font-size: 0.875rem;
     /* 14px */
     color: #bbbbbb;
+    font-family: var(--dateFont);
 }
 
 

@@ -24,6 +24,7 @@
     color: #bbbbbb;
     margin-bottom: 0.625rem;
     /* 10px */
+    font-family: var(--dateFont);
 }
 
 .c-writing-post-tag-container {
