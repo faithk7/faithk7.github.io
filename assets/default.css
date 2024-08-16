@@ -1,7 +1,7 @@
 :root {
     --paragraphFontSize: 1rem;
     --titleFont: system-ui;
-    --funcFont: monospace;
+    --linkFont: monospace;
 }
 
 html,
