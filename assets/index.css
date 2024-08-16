@@ -59,7 +59,7 @@
     display: flex;
     justify-content: left;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 1em;
 }
 
 .c-info-card-container {
