@@ -57,6 +57,7 @@ a {
     /* 10px */
     margin-bottom: 0.625rem;
     /* 10px */
+    font-family: var(--titleFont);
 }
 
 .o-about-item-title::before {
@@ -71,6 +72,7 @@ a {
     /* 10px */
     margin-bottom: 0.625rem;
     /* 10px */
+    font-family: var(--titleFont);
 }
 
 .o-about-item-subtitle::before {
