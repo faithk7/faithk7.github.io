@@ -24,7 +24,6 @@
     color: #bbbbbb;
     margin-bottom: 0.625rem;
     /* 10px */
-    font-family: var(--dateFont);
 }
 
 .c-writing-post-tag-container {
@@ -37,7 +36,7 @@
 .o-writing-post-tag {
     display: inline-block;
     /* margin-right: 0.3125rem; /* 5px */
-    */ border-radius: 0.1875rem;
+    border-radius: 0.1875rem;
     /* 3px */
     font-size: 1rem;
     /* 16px */
