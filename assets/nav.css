@@ -4,7 +4,7 @@
     right: 0;
     height: 100%;
     width: 200px;
-    background-color: #2c2c2c;
+    /* background-color: #2c2c2c; */
 }
 
 @media (max-width: 767px) {
