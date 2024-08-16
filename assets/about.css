@@ -46,6 +46,7 @@ a {
     /* 32px */
     margin-bottom: 1.25rem;
     /* 20px */
+    font-family: var(--titleFont);
 }
 
 

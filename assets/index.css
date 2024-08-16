@@ -41,6 +41,7 @@
     font-size: 2rem;
     /* 32px */
     font-weight: bold;
+    font-family: var(--titleFont);
 }
 
 .o-summary {

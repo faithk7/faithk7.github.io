@@ -1,5 +1,9 @@
 /* Styles specific to writing-index.html */
 
+.o-writing-index-title {
+    font-family: var(--titleFont);
+}
+
 .c-writing-index-container {
     margin: 20px;
     border-bottom: 1px solid #555555;

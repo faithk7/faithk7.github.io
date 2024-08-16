@@ -1,5 +1,6 @@
 :root {
     --paragraphFontSize: 1rem;
+    --titleFont: system-ui;
     --generalFont: monospace;
 }
 
