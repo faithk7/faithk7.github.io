@@ -1,5 +1,6 @@
 :root {
-    --paragraphFontSize: 1.0em;
+    --paragraphFontSize: 1em;
+    --generalFont: system-ui;
 }
 
 html,
@@ -48,7 +49,6 @@ nav li a {
     text-decoration: none;
 }
 
-
 .l-container {
     display: grid;
     grid-template-columns: 4fr 4fr 4fr;
@@ -82,8 +82,6 @@ nav li a {
     /* border-left: 1px solid #ffffff;
     border-right: 1px solid #ffffff; */
 }
-
-
 
 .l-right {
     background-color: hsl(0, 0%, 17%);

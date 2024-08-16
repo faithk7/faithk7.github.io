@@ -9,7 +9,8 @@
 
 @media (max-width: 767px) {
     .c-navbar {
-        width: 75px; /* Adjust the width as needed for mobile screens */
+        width: 75px;
+        /* Adjust the width as needed for mobile screens */
     }
 }
 
@@ -20,6 +21,7 @@
     margin-top: 20px;
     border-left: 1px solid #ffffff;
     padding-left: 10px;
+    font-family: var(--generalFont);
 }
 
 .c-navbar-container[data-theme="light"] {
@@ -105,11 +107,14 @@ a.o-setting-icon {
         top: 95%;
         left: 42%;
     }
+
     a.o-setting-icon {
         position: fixed;
         top: 95%;
         left: 50%;
-        width: 24px; /* Adjust size as needed */
-        height: 24px; /* Adjust size as needed */
+        width: 24px;
+        /* Adjust size as needed */
+        height: 24px;
+        /* Adjust size as needed */
     }
 }

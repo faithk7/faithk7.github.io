@@ -34,7 +34,7 @@
     width: 100%;
     height: 100%;
     display: block;
-    position: relative
+    position: relative;
 }
 
 .o-name {
@@ -64,6 +64,7 @@
 .c-info-card-container {
     margin-top: 50px;
     margin-bottom: 50px;
+    font-family: var(--generalFont);
 }
 
 .o-social {
@@ -107,7 +108,8 @@
 
 @media (max-width: 768px) {
     .c-quote-container {
-        width: 75px; /* to be consistent with that of c-navbar media rule */
+        width: 75px;
+        /* to be consistent with that of c-navbar media rule */
     }
 }
 
@@ -118,7 +120,8 @@
     }
 }
 
-.o-quote, .o-quote[data-theme="dark"] {
+.o-quote,
+.o-quote[data-theme="dark"] {
     font-size: 1em;
     color: #ffffff;
     text-align: center;
