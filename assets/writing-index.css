@@ -109,6 +109,7 @@ span.o-tag {
     /* 24px */
     margin-bottom: 0.625rem;
     /* 10px */
+    color: var(--linkColor);
 }
 
 

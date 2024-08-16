@@ -4,6 +4,7 @@
     --linkFont: monospace;
     --tagFont: courier;
     --dateFont: system-ui;
+    --linkColor: #1E90FF;
 }
 
 html,

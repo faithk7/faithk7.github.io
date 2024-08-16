@@ -87,7 +87,7 @@
     /* margin: 10px; */
     border-radius: 5px;
     text-decoration: none;
-    color: #1E90FF;
+    color: var(--linkColor);
     font-size: 0.8rem;
 }
 
