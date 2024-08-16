@@ -1,6 +1,6 @@
 :root {
     --paragraphFontSize: 1em;
-    --generalFont: system-ui;
+    --generalFont: monospace;
 }
 
 html,
