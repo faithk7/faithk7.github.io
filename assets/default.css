@@ -2,6 +2,7 @@
     --paragraphFontSize: 1rem;
     --titleFont: system-ui;
     --linkFont: monospace;
+    --tagFont: courier;
 }
 
 html,

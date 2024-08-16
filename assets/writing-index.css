@@ -68,7 +68,7 @@
     background-repeat: no-repeat;
     background-position: 0% 100%;
     transition: color 0.5s;
-    font-family: var(--linkFont);
+    font-family: var(--tagFont);
 }
 
 span.o-tag {
