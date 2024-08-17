@@ -25,5 +25,18 @@
     </div>
 </body>
 <script type="module" src="https://unpkg.com/open-stories-element@latest"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+        const prefersLight = window.matchMedia('(prefers-color-scheme: light)');
+        const navbar = document.querySelector('.c-navbar-container');
+
+        if (prefersDark.matches) {
+            navbar.setAttribute('data-theme', 'dark');
+        } else {
+            navbar.setAttribute('data-theme', 'light');
+        }
+    });
+</script>
 
 </html>
