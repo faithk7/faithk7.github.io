@@ -125,6 +125,10 @@ a.o-setting-icon {
     /* 16px */
 }
 
+a.o-setting-icon:hover {
+    animation: none;
+}
+
 @media (max-width: 767px) {
     #dark-mode-toggle {
         position: fixed;
