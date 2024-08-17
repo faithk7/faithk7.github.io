@@ -33,14 +33,3 @@ body.light {
 .o-tag[data-theme="light"]:hover {
     background-color: #cccccc;
 } */
-
-
-svg[data-theme="light"] {
-    -webkit-filter: invert(0%);
-    filter: invert(0%);
-}
-
-svg[data-theme="dark"] {
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
-}
