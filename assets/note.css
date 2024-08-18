@@ -30,6 +30,11 @@
     /* 5px */
 }
 
+.o-note-date[data-theme="light"] {
+    color: #666666;
+    /* Darker gray for light mode */
+}
+
 .o-note-text {
     font-size: 1.125rem;
     /* 18px */
