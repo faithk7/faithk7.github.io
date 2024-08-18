@@ -18,12 +18,9 @@ a {
     color: var(--linkColor);
 }
 
-.code {
-    color: #6A5ACD;
+span.highlight {
+    color: #e093e0;
     /* Light purple color */
-    background-color: transparent;
-    background: none;
-    font-family: serif, Times;
 }
 
 .c-about-container {
