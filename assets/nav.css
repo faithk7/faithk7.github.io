@@ -31,7 +31,7 @@
 
 .c-navbar-container[data-theme="light"] {
     border-left: 0.0625rem solid #000000;
-    /* 1px */
+    /* Darker border for light mode */
 }
 
 .c-line {
