@@ -28,13 +28,21 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-        const prefersLight = window.matchMedia('(prefers-color-scheme: light)');
         const navbar = document.querySelector('.c-navbar-container');
 
-        if (prefersDark.matches) {
-            navbar.setAttribute('data-theme', 'dark');
+        // Check for saved mode in local storage
+        const savedMode = localStorage.getItem('mode');
+        if (savedMode) {
+            applyMode(savedMode);
         } else {
-            navbar.setAttribute('data-theme', 'light');
+            // Set theme based on system preference if no preference is set in localStorage
+            if (prefersDark.matches) {
+                navbar.setAttribute('data-theme', 'dark');
+                applyMode('dark');
+            } else {
+                navbar.setAttribute('data-theme', 'light');
+                applyMode('light');
+            }
         }
     });
 </script>
