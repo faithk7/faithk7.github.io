@@ -139,6 +139,7 @@ path[data-theme="light"].st0 {
     stroke-miterlimit: 10;
 }
 
+/* for the svg rss */
 path[data-theme="dark"].st1 {
     fill: none;
     stroke: #ffffff;
@@ -146,6 +147,8 @@ path[data-theme="dark"].st1 {
     stroke-miterlimit: 10;
 }
 
+
+/* for the svg rss */
 path[data-theme="light"].st1 {
     fill: none;
     stroke: #000000;
