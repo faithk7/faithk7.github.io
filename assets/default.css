@@ -155,3 +155,12 @@ path[data-theme="light"].st1 {
     stroke-width: 2;
     stroke-miterlimit: 10;
 }
+
+/* Add this at the end of the file */
+img[src*="spider_lily.svg"][data-theme="dark"] {
+    filter: invert(100%);
+}
+
+img[src*="spider_lily.svg"][data-theme="light"] {
+    filter: invert(0%);
+}
