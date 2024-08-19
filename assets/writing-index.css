@@ -109,6 +109,9 @@ span.o-tag {
     /* 24px */
     margin-bottom: 0.625rem;
     /* 10px */
+}
+
+a.o-post-title {
     color: var(--linkColor);
 }
 
