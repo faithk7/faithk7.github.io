@@ -108,3 +108,47 @@ nav li a {
     font-size: 32px;
     margin-bottom: 20px;
 } */
+
+
+path[data-theme="dark"] {
+    fill: #fff;
+}
+
+path[data-theme="light"] {
+    fill: #000;
+}
+
+line[data-theme="dark"] {
+    stroke: #fff;
+}
+
+line[data-theme="light"] {
+    stroke: #000;
+}
+
+/* Specific styles for paths with data-theme and class st0 */
+path[data-theme="dark"].st0 {
+    fill: none;
+    stroke: #ffffff;
+    stroke-miterlimit: 10;
+}
+
+path[data-theme="light"].st0 {
+    fill: none;
+    stroke: #000000;
+    stroke-miterlimit: 10;
+}
+
+path[data-theme="dark"].st1 {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+}
+
+path[data-theme="light"].st1 {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+}
