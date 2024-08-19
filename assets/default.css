@@ -126,7 +126,7 @@ line[data-theme="light"] {
     stroke: #000;
 }
 
-/* Specific styles for paths with data-theme and class st0 */
+/* Specific styles for paths with data-theme and svg*/
 path[data-theme="dark"].st0 {
     fill: none;
     stroke: #ffffff;
