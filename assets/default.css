@@ -1,10 +1,12 @@
 :root {
     --paragraphFontSize: 1rem;
+    --note-font-size: 1rem;
     --titleFont: system-ui;
     --linkFont: monospace;
     --tagFont: courier;
     --dateFont: system-ui;
     --linkColor: #1E90FF;
+    /* Added this line */
 }
 
 html,
