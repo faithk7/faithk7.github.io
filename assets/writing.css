@@ -50,15 +50,14 @@
 
 
 .o-writing-post-tag[data-theme="light"] {
-    color: #000000;
+    color: #bbbbbb;
 }
 
 /* .o-writing-post-tag::before {
     content: "#";
     margin-right: 0.0625rem; /* 1px */
-}
 
-*/ .o-writing-post-text {
+.o-writing-post-text {
     font-size: 1rem;
     /* 16px */
     line-height: 1.6;
@@ -70,6 +69,7 @@
     /* 1px */
     padding-bottom: 0.625rem;
     /* 10px */
+    border-bottom: 0.0625rem solid #555555;
 }
 
 
