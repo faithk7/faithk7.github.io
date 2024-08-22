@@ -21,10 +21,11 @@
 }
 
 .c-index-container {
-    width: 400px;
+    width: 50%;
     /* margin-left: auto;
     margin-right: auto; */
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     display: block;
 }
 
