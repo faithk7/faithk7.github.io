@@ -57,7 +57,7 @@
     margin-top: 2.5rem;
     /* 40px */
     line-height: 1.5;
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     /* 17.6px */
 }
 
@@ -90,6 +90,7 @@
     text-decoration: none;
     color: var(--linkColor);
     font-size: 0.8rem;
+    text-wrap: nowrap;
 }
 
 .c-moment-container {
