@@ -18,6 +18,10 @@ a {
     color: var(--linkColor);
 }
 
+br {
+    user-select: none;
+}
+
 span.highlight {
     color: #e093e0;
     /* Light purple color */
@@ -30,6 +34,7 @@ span.highlight {
     position: relative;
     /* background: url(/assets/kokoro.svg) no-repeat center center fixed;
     --webkit-background-composite: multiply !important; */
+    user-select: text;
 }
 
 @media (prefers-color-scheme: dark) {
