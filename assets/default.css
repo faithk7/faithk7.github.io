@@ -4,7 +4,7 @@
     --titleFont: system-ui;
     --linkFont: monospace;
     --tagFont: courier;
-    --dateFont: system-ui;
+    --dateFont: serif;
     --linkColor: #1E90FF;
     /* Added this line */
 }
