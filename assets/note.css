@@ -28,6 +28,8 @@
     color: #bbbbbb;
     margin-bottom: 0.3125rem;
     /* 5px */
+    font-family: var(--dateFont);
+    /* Add this line */
 }
 
 .o-note-date[data-theme="light"] {
