@@ -27,12 +27,6 @@
     display: block;
 }
 
-/* @media (min-width: 2560px) {
-    .c-index-container {
-        width: 50%;
-    }
-} */
-
 
 @media (max-width: 767px) {
     .c-index-container {
