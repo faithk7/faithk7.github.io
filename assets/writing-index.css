@@ -75,20 +75,7 @@
     margin-right: 5px;
 }
 
-@keyframes a-underline-text {
-    0% {
-        background-size: 100% 1px;
-        background-position: 0% 100%;
-    }
-
-    100% {
-        background-size: 100% 100%;
-        background-position: 0% 0%;
-    }
-}
-
 span.o-tag:hover {
-    /* color: #bbbbbb; */
     animation: a-underline-text 0.5s forwards;
 }
 
@@ -98,9 +85,6 @@ span.o-tag:hover {
     margin-right: 1px;
     /* Add some space between the # and the text */
 }
-
-
-
 
 .o-post-title {
     font-size: 1.5rem;
