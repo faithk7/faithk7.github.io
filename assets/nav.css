@@ -68,14 +68,12 @@
 
 @keyframes a-underline-text {
     0% {
-        background-size: 0% 0.0625rem;
-        /* 1px */
+        background-size: 0% 1px;
         background-position: 0% 100%;
     }
 
     100% {
-        background-size: 100% 0.0625rem;
-        /* 1px */
+        background-size: 100% 1px;
         background-position: 0% 100%;
     }
 }
