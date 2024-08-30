@@ -16,6 +16,15 @@ p {
 a {
     text-decoration: none;
     color: var(--linkColor);
+    background-image: linear-gradient(to top, #ffffff 1px, transparent 1px);
+    background-size: 100% 0px;
+    background-repeat: no-repeat;
+    background-position: 0% 100%;
+    transition: color 0.5s;
+}
+
+a:hover {
+    animation: a-underline-text 0.5s forwards;
 }
 
 br {
