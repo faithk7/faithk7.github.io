@@ -69,6 +69,8 @@ span.highlight {
     margin-bottom: 0.625rem;
     /* 10px */
     font-family: var(--titleFont);
+    /* color: #b8e2f2; */
+    /* Change color to #b8e2f2 */
 }
 
 .o-about-item-title::before {
@@ -84,6 +86,8 @@ span.highlight {
     margin-bottom: 0.625rem;
     /* 10px */
     font-family: var(--titleFont);
+    color: #e7ddff;
+    /* Change color to #e7ddff */
 }
 
 .o-about-item-subtitle::before {
