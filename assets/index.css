@@ -160,7 +160,7 @@
 .c-index-art-container {
     position: fixed;
     width: 20vw;
-    max-width: min(min(200px, 20vw), 30vh);
+    max-width: min(min(150px, 15vw), 15vh);
     bottom: 0;
     left: 0;
     z-index: 1000;
