@@ -17,7 +17,7 @@ title: Collections
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const collectionTiles = document.getElementById('collection-tiles');
-        const dataFiles = {{ site.data | jsonify
+        const dataFiles = {{ site.data.collect | jsonify
     }};
 
     for (const fileName in dataFiles) {
