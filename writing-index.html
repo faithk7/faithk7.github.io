@@ -48,26 +48,6 @@ permalink: /writing-index/
     {% endfor %}
 </div>
 
-<div class="pagination">
-    <ul>
-        {% if paginator.previous_page %}
-        <li><a href="{{ paginator.previous_page_path }}" class="previous">Previous</a></li>
-        {% endif %}
-        {% for page in (1..paginator.total_pages) %}
-        <li>
-            {% if page == paginator.page %}
-            <span class="current-page">{{ page }}</span>
-            {% else %}
-            <a href="{{ paginator.baseurl }}/page{{ page }}/">{{ page }}</a>
-            {% endif %}
-        </li>
-        {% endfor %}
-        {% if paginator.next_page %}
-        <li><a href="{{ paginator.next_page_path }}" class="next">Next</a></li>
-        {% endif %}
-    </ul>
-</div>
-
 <script>
     function filterPosts(tag) {
         var posts = document.querySelectorAll('.c-writing-item-container');
