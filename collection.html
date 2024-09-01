@@ -5,6 +5,11 @@ title: Collections
 
 <head>
     <link rel="stylesheet" href="{{ '/assets/collection.css' | relative_url }}">
+    <!-- TODO: fix this & refactor -->
+    <script>
+        window.dataFiles = {{ site.data.collect | jsonify }};
+    </script>
+    <script src="{{ '/assets/collect.js' | relative_url }}"></script>
 </head>
 
 <div class="c-collection-container">
@@ -12,29 +17,7 @@ title: Collections
     <div class="c-collection-nav-container" id="collection-nav">
         <!-- Navigation items will be dynamically added here -->
     </div>
-    <div class="c-collection-tile-container">
-        <div class="o-collection-title">Music</div>
-        <div class="c-collection-item-container">
-            <div class="o-collection-item">a song</div>
-            <div class="o-collection-item">another song</div>
-            <div class="o-collection-item">another song</div>
-        </div>
+    <div class="c-collection-tile-container" id="collection-tiles">
+        <!-- Sections will be dynamically added here -->
     </div>
 </div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const collectionNav = document.getElementById('collection-nav');
-        const dataFiles = {{ site.data.collect | jsonify
-    }};
-
-    for (const fileName in dataFiles) {
-        if (dataFiles.hasOwnProperty(fileName)) {
-            const navItem = document.createElement('div');
-            navItem.className = 'o-collection-nav-icon';
-            navItem.innerHTML = `🎵 ${fileName}`;
-            collectionNav.appendChild(navItem);
-        }
-    }
-    });
-</script>
