@@ -20,8 +20,17 @@
 
 .c-collection-nav-container {
     display: flex;
-    margin-bottom: 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    /* left: 0;
+    top: 0; */
+    height: 100vh;
+    padding: 1.25rem;
     /* 20px */
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    /* Adjust the background color as needed */
 }
 
 .o-collection-nav-icon {
