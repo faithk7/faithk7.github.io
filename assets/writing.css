@@ -24,18 +24,28 @@
     color: #bbbbbb;
     margin-bottom: 0.625rem;
     /* 10px */
-    font-family: var(--dateFont); /* Add this line */
+    font-family: var(--dateFont);
+    /* Add this line */
+    display: inline-block;
+}
+
+.c-writing-post-tag-container::before {
+    content: "|";
+    margin-right: 5px;
+    /* Adjust the spacing as needed */
+    margin-left: 5px;
 }
 
 .c-writing-post-tag-container {
+    display: inline-block;
     margin-top: 0.625rem;
     /* 10px */
-    margin-bottom: 1.875rem;
+    margin-bottom: 10px;
     /* 30px */
+    display: inline-block;
 }
 
 .o-writing-post-tag {
-    display: inline-block;
     /* margin-right: 0.3125rem; /* 5px */
     border-radius: 0.1875rem;
     /* 3px */
@@ -43,8 +53,8 @@
     /* 16px */
     line-height: 1.5rem;
     /* 24px */
-    color: #ffffff;
-    font-family: serif, Times;
+    color: #bbbbbb;
+    font-family: var(--tagFont);
     text-decoration: none;
     transition: color 0.5s;
 }
