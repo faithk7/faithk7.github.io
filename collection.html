@@ -9,15 +9,24 @@ title: Collections
 
 <div class="c-collection-container">
     <h1 class="o-collection-title">Collect</h1>
-    <!-- <div class="c-collection-nav-container">
-        <div class="o-collection-nav-icon">🎵</div>
-    </div> -->
-    <div class="c-collection-tile-container">
-        <div class="o-collection-title">Music</div>
-        <div class="c-collection-item-container">
-            <div class="o-collection-item">a song</div>
-            <div class="o-collection-item">another song</div>
-            <div class="o-collection-item">another song</div>
-        </div>
+    <div class="c-collection-tile-container" id="collection-tiles">
+        <!-- Sections will be dynamically added here -->
     </div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const collectionTiles = document.getElementById('collection-tiles');
+        const dataFiles = {{ site.data | jsonify
+    }};
+
+    for (const fileName in dataFiles) {
+        if (dataFiles.hasOwnProperty(fileName)) {
+            const section = document.createElement('div');
+            section.className = 'c-collection-item-container';
+            section.innerHTML = `<div class="o-collection-item">${fileName}</div>`;
+            collectionTiles.appendChild(section);
+        }
+    }
+    });
+</script>
