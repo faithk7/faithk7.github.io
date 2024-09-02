@@ -4,7 +4,6 @@ sass:
 
 plugins:
   - jekyll-feed
-  - jekyll-paginate
 
 collections:
   # sass_dir:
@@ -17,6 +16,3 @@ collections:
 feed:
   path: feed.xml
   custom_path: _includes/custom_feed.xml
-
-paginate: 1 # Number of posts per page
-paginate_path: "/page:num/" # Path format for pagination

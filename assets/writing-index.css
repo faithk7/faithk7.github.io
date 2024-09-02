@@ -60,7 +60,6 @@
     border-radius: 3px;
     font-size: 1rem;
     line-height: 1.5em;
-    color: #ffffff;
     font-family: serif, Times;
     text-decoration: none;
     background-image: linear-gradient(to top, #ffffff 1px, transparent 1px);
@@ -73,6 +72,14 @@
     color: inherit;
     margin-left: 0px;
     margin-right: 5px;
+}
+
+.o-tag[data-theme="light"] {
+    color: #000000;
+}
+
+.o-tag[data-theme="dark"] {
+    color: #ffffff;
 }
 
 span.o-tag:hover {
