@@ -70,10 +70,24 @@ nav li a {
     overflow: hidden;
 }
 
-/* for mobile, to make the main content rendered more */
+/* for mobile, to make the main content rendered more by making it display as block */
 @media (max-width: 767px) {
     .l-container {
-        grid-template-columns: 3fr 6fr 3fr;
+        display: block;
+        background-color: #121212;
+        /* margin-left: 1.5rem;
+        margin-right: 1.5rem; */
+    }
+
+    .l-left,
+    .l-right {
+        display: none;
+    }
+
+    .l-center {
+        /* margin-left: 1.5rem;
+        margin-right: 1.5rem; */
+        background-color: #121212;
     }
 }
 
