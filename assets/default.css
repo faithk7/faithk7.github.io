@@ -79,9 +79,12 @@ nav li a {
         margin-right: 1.5rem; */
     }
 
-    .l-left,
-    .l-right {
+    .l-left {
         display: none;
+    }
+
+    .l-right {
+        width: 0;
     }
 
     .l-center {
