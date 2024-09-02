@@ -21,7 +21,6 @@
 }
 
 .c-index-container {
-    /* width: 80%; */
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -32,6 +31,14 @@
     .c-index-container {
         z-index: 100;
         width: 100%;
+    }
+
+    .c-center-container {
+        display: block;
+        margin-top: 40%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
     }
 }
 
