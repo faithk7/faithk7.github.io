@@ -63,7 +63,7 @@
     font-family: serif, Times;
     text-decoration: none;
     background-image: linear-gradient(to top, #ffffff 1px, transparent 1px);
-    background-size: 100% 1px;
+    background-size: 0px;
     background-repeat: no-repeat;
     background-position: 0% 100%;
     transition: color 0.5s;
