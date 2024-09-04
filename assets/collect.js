@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // TODO: might have a better way to do this e.g., include the iframe as a template
     function showVideoPopup(videoUrl) {
         // Create the iframe element
         const iframe = document.createElement('iframe');
