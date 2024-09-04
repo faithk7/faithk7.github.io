@@ -97,7 +97,10 @@
 
             overlay.addEventListener('click', function () {
                 navbar.classList.remove('show');
-                // overlay.classList.remove('show');
+            });
+
+            navbar.addEventListener('click', function () {
+                navbar.classList.remove('show');
             });
         });
     </script>
