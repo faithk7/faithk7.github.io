@@ -43,11 +43,6 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        padding: 1rem;
-    }
-
-    .c-navbar-items {
-        margin-top: 1rem;
     }
 
     .c-navbar-items li {
