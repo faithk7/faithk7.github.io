@@ -165,6 +165,10 @@
 
 /* the styling for the mobile container */
 @media (max-width: 768px) {
+    .o-summary {
+        font-size: 1rem;
+    }
+
     .c-quote-container {
         width: 4.6875rem;
         /* 75px */

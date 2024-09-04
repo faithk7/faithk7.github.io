@@ -111,3 +111,9 @@ span.highlight {
     /* color: #dddddd; */
     margin: 0px;
 }
+
+@media (max-width: 767px) {
+    .o-about-content {
+        font-size: 1rem;
+    }
+}
