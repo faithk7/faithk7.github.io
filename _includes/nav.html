@@ -66,6 +66,8 @@
             }
         }
 
+
+        // TODO: refactor
         // Check for saved mode in local storage
         const savedMode = localStorage.getItem('mode');
         if (savedMode) {
@@ -84,9 +86,18 @@
         document.addEventListener("DOMContentLoaded", function () {
             const navToggle = document.getElementById('nav-toggle');
             const navbar = document.querySelector('.c-navbar');
+            const overlay = document.createElement('div');
+            overlay.className = 'c-navbar-overlay';
+            document.body.appendChild(overlay);
 
             navToggle.addEventListener('click', function () {
                 navbar.classList.toggle('show');
+                // overlay.classList.toggle('show');
+            });
+
+            overlay.addEventListener('click', function () {
+                navbar.classList.remove('show');
+                // overlay.classList.remove('show');
             });
         });
     </script>
