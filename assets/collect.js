@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (dataFiles.hasOwnProperty(fileName)) {
             const navItem = document.createElement('div');
             navItem.className = 'o-collection-nav-icon';
-            navItem.innerHTML = `🎵 ${fileName}`;
+            navItem.innerHTML = `${fileName}`;
             navItem.dataset.fileName = fileName;
             navItem.addEventListener('click', function () {
                 renderCollectionItems(dataFiles[fileName]);
