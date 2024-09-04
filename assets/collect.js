@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function showVideoPopup(videoUrl) {
         // Create the iframe element
         const iframe = document.createElement('iframe');
+        iframe.allowFullscreen = true;
         iframe.src = videoUrl;
         iframe.style.width = '80%';
         iframe.style.height = '80%';
