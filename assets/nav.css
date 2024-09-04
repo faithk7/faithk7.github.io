@@ -150,25 +150,3 @@ a.o-setting-icon:hover {
         /* Adjust size as needed */
     }
 }
-
-.o-tag {
-    display: inline-block;
-    margin-right: 10px;
-    border-radius: 3px;
-    font-size: 1rem;
-    line-height: 1.5em;
-    color: #ffffff;
-    font-family: serif, Times;
-    text-decoration: none;
-    background-image: linear-gradient(to right, #bbbbbb, #bbbbbb);
-    background-size: 0% 0.125rem;
-    background-repeat: no-repeat;
-    background-position: 0% 100%;
-    transition: color 0.5s;
-    font-family: var(--tagFont);
-}
-
-.o-tag:hover {
-    color: #bbbbbb;
-    animation: a-underline-text 0.5s forwards;
-}
