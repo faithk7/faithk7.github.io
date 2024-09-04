@@ -53,6 +53,10 @@
     .c-navbar-items li {
         margin-bottom: 1rem;
     }
+
+    .c-navbar.show+.c-navbar-icon {
+        display: none;
+    }
 }
 
 .c-navbar-container {
@@ -188,8 +192,4 @@ a.o-setting-icon:hover {
         /* 24px */
         /* Adjust size as needed */
     }
-}
-
-.c-navbar.show+.c-navbar-icon {
-    display: none;
 }
