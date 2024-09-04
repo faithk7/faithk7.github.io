@@ -33,7 +33,7 @@
             </ul>
         </div>
     </nav>
-    <div class="c-navbar-icon" data-theme="">
+    <div class="c-navbar-icon" id="nav-toggle">
         {% include svg_nav_bars.html %}
     </div>
 
@@ -79,6 +79,15 @@
             const newMode = currentMode === 'light' ? 'dark' : 'light';
             applyMode(newMode);
             localStorage.setItem('mode', newMode);
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const navToggle = document.getElementById('nav-toggle');
+            const navbar = document.querySelector('.c-navbar');
+
+            navToggle.addEventListener('click', function () {
+                navbar.classList.toggle('show');
+            });
         });
     </script>
 
