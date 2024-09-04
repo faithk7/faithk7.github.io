@@ -129,10 +129,12 @@ nav li a {
 /* Specific styles for paths with data-theme and svg*/
 path[data-theme="dark"] {
     fill: #fff;
+    stroke: #fff;
 }
 
 path[data-theme="light"] {
     fill: #000;
+    stroke: #000;
 }
 
 line[data-theme="dark"] {
