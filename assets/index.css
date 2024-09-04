@@ -36,8 +36,8 @@
     .c-center-container {
         display: block;
         margin-top: 40%;
-        margin-left: 0;
-        margin-right: 0;
+        margin-left: 20px;
+        margin-right: 0px;
         padding: 0;
     }
 }
@@ -107,21 +107,6 @@
     margin-top: 30px;
     justify-content: left;
     gap: auto;
-}
-
-.o-moment-item {
-    display: flex;
-    background-color: #25020233;
-    width: 55px;
-    height: 55px;
-    padding: 15px;
-    font-size: 0.75rem;
-    /* 12px */
-    margin-right: 20px;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
 }
 
 .c-quote-container {
