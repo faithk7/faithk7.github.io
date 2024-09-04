@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         iframe.style.backgroundColor = '#fff';
         iframe.style.border = '1px solid #ccc';
         iframe.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+        iframe.style.overflow = 'hidden';
 
         // Create the overlay
         const overlay = document.createElement('div');
