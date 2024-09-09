@@ -16,6 +16,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Display "mv" collect by default
+    if (dataFiles.hasOwnProperty('mv')) {
+        renderCollectionItems(dataFiles['mv']);
+    } else {
+        // If "mv" doesn't exist, display the first available collect
+        const firstCollect = Object.keys(dataFiles)[0];
+        if (firstCollect) {
+            renderCollectionItems(dataFiles[firstCollect]);
+        }
+    }
+
     function renderCollectionItems(items) {
         collectionTiles.innerHTML = ''; // Clear previous items
         items.forEach(item => {
