@@ -54,6 +54,11 @@
     /* 10px */
 }
 
+.o-collection-nav-icon.selected {
+    text-decoration: underline;
+    color: var(--linkColor);
+}
+
 .c-collection-tile-container {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
@@ -85,4 +90,8 @@
     color: #dddddd;
     margin-bottom: 0.3125rem;
     /* 5px */
+}
+
+.o-collection-nav-icon.selected {
+    text-decoration: underline;
 }
