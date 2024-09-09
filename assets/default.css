@@ -5,6 +5,7 @@
     --linkFont: monospace;
     --tagFont: courier;
     --dateFont: serif;
+    --backgroundColor: #2c2c2c;
     --linkColor: #1E90FF;
     /* Added this line */
 }
