@@ -56,7 +56,7 @@
 
 .o-collection-nav-icon.selected {
     text-decoration: underline;
-    color: var(--linkColor);
+    color: inherit;
 }
 
 .c-collection-tile-container {
@@ -90,8 +90,4 @@
     color: #dddddd;
     margin-bottom: 0.3125rem;
     /* 5px */
-}
-
-.o-collection-nav-icon.selected {
-    text-decoration: underline;
 }
