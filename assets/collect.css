@@ -2,7 +2,8 @@
 
 .c-collection-container {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 5fr;
+    /* Changed from 1fr 3fr to auto 1fr */
     grid-template-rows: auto 1fr;
     gap: 20px;
     /* height: 100vh; */
@@ -39,8 +40,10 @@
     height: auto;
     min-height: fit-content;
     align-self: center;
-    margin-top: auto;
-    margin-bottom: auto;
+    width: auto;
+    /* Allow width to be determined by content */
+    max-width: 200px;
+    /* Set a maximum width */
     /* Center the container itself vertically */
 }
 
@@ -68,6 +71,7 @@
     align-self: center;
     margin-top: auto;
     margin-bottom: auto;
+    margin-left: 10%;
 }
 
 .c-collection-item-container {
