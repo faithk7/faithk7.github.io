@@ -44,6 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const itemElement = document.createElement('a');
             itemElement.className = 'o-collection-item';
             itemElement.href = item.url;
+            // color to be inherited from parent
+            itemElement.style.color = 'inherit';
             itemElement.target = '_blank';
             itemElement.textContent = item.title;
             collectionTiles.appendChild(itemElement);
