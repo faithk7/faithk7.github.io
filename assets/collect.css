@@ -18,9 +18,7 @@
     grid-column: 1 / -1;
     font-size: 2rem;
     margin-bottom: 1.25rem;
-    /* 20px */
     align-self: flex-start;
-    /* Align the title to the start of the container */
 }
 
 .c-collection-nav-container {
@@ -42,15 +40,11 @@
     width: auto;
     /* Allow width to be determined by content */
     max-width: 200px;
-    /* Set a maximum width */
-    /* Center the container itself vertically */
 }
 
 .o-collection-nav-icon {
     font-size: 1.5rem;
-    /* 24px */
     margin-right: 0.625rem;
-    /* 10px */
 }
 
 .o-collection-nav-icon.selected {
@@ -61,7 +55,6 @@
 .c-collection-tile-container {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    /* Specify the grid row */
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -84,8 +77,6 @@
 
 .o-collection-item {
     font-size: 1.125rem;
-    /* 18px */
     color: #dddddd;
     margin-bottom: 0.3125rem;
-    /* 5px */
 }
