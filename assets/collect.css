@@ -31,7 +31,7 @@
     justify-content: center;
     /* Center content vertically */
     overflow-y: auto;
-    padding: 10px;
+    padding-right: 10px;
     background-color: inherit;
     border-right: 1px solid white;
     height: auto;
