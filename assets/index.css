@@ -31,7 +31,6 @@
     .c-index-container {
         z-index: 100;
         width: 100%;
-        overflow: hidden;
     }
 
     .c-center-container {
@@ -40,11 +39,9 @@
         margin-left: 20px;
         margin-right: 0px;
         padding: 0;
-        overflow: hidden;
-    }
-
-    body {
-        overflow: hidden;
+        /* to disable scrolling */
+        position: fixed;
+        height: 100vh;
     }
 }
 
