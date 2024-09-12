@@ -134,7 +134,14 @@ nav li a {
     margin-bottom: 20px;
 } */
 
+
+
+/* dark mode */
 /* Specific styles for paths with data-theme and svg*/
+a[data-theme="dark"] {
+    color: #50b0eb;
+}
+
 path[data-theme="dark"] {
     fill: #fff;
     stroke: #fff;
