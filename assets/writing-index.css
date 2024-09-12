@@ -14,7 +14,7 @@
     /* Treat the container as a block-level element */
     margin: 0 auto;
     /* Center the container horizontally */
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     width: 30%;
     box-sizing: border-box;
     /* Include padding in the width calculation */
