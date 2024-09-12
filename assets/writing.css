@@ -87,3 +87,18 @@
 .o-writing-post-text[data-theme="light"] {
     color: #000000;
 }
+
+/* for writing image container */
+.center-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.image-caption {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+    color: #666;
+}

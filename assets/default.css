@@ -202,3 +202,26 @@ img[src*="spider_lily.svg"][data-theme="light"] {
         background-position: 0% 0%;
     }
 }
+
+/* for writing image container */
+.center-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.center-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.image-caption {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+    color: #666;
+}
