@@ -27,6 +27,10 @@ body {
     /* For Internet Explorer/Edge */
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     background-color: #121212;
     color: #ffffff;
