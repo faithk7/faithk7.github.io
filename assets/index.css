@@ -166,10 +166,6 @@
     display: block;
 }
 
-.c-index-art-container:hover path {
-    filter: hue-rotate(0deg) saturate(100%) brightness(0%) invert(0%) sepia(100%) saturate(10000%) hue-rotate(0deg);
-}
-
 /* the styling for the mobile container */
 @media (max-width: 768px) {
     .o-summary {
