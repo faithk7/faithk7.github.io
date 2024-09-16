@@ -158,12 +158,16 @@
     /* Standard syntax */
 }
 
-.c-index-art-container img {
+.c-index-art-container object {
     width: 100%;
     height: 100%;
     max-width: 100%;
     max-height: 100%;
     display: block;
+}
+
+.c-index-art-container:hover path {
+    filter: hue-rotate(0deg) saturate(100%) brightness(0%) invert(0%) sepia(100%) saturate(10000%) hue-rotate(0deg);
 }
 
 /* the styling for the mobile container */
