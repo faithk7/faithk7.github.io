@@ -19,6 +19,7 @@
     font-size: 2rem;
     margin-bottom: 1.25rem;
     align-self: flex-start;
+    font-family: var(--titleFont);
 }
 
 .c-collection-nav-container {

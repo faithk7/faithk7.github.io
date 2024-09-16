@@ -3,8 +3,8 @@
     --note-font-size: 1rem;
     --titleFont: system-ui;
     --linkFont: monospace;
-    --tagFont: courier;
-    --dateFont: serif;
+    --tagFont: monospace;
+    --dateFont: Georgia;
     --backgroundColor: #2c2c2c;
     --linkColor: #1E90FF;
     /* Added this line */
@@ -34,7 +34,7 @@ a {
 body {
     background-color: #121212;
     color: #ffffff;
-    font-family: serif, Times, Arial, sans-serif;
+    font-family: Georgia, sans-serif, serif, Times, Arial;
     font-size: 1rem;
     /* 16px */
 }
