@@ -148,7 +148,7 @@
     /* Ensure it's above other elements */
     padding: 10px;
     /* Optional padding for spacing */
-    pointer-events: none;
+    /* pointer-events: none; */
     /* Prevents interaction with the SVG */
     -webkit-user-select: none;
     /* Safari */
