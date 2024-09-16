@@ -34,7 +34,7 @@ a {
 body {
     background-color: #121212;
     color: #ffffff;
-    font-family: Georgia, sans-serif, serif, Times, Arial;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1rem;
     /* 16px */
 }
