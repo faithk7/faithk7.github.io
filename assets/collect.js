@@ -48,7 +48,13 @@ document.addEventListener("DOMContentLoaded", function () {
             itemElement.style.color = 'inherit';
             itemElement.target = '_blank';
             itemElement.textContent = item.title;
+            itemElement.style.opacity = '0'; // Start with opacity 0
+            itemElement.style.transition = 'opacity 0.5s'; // Add transition effect
             collectionTiles.appendChild(itemElement);
+            // Trigger reflow to apply transition
+            requestAnimationFrame(() => {
+                itemElement.style.opacity = '1'; // Fade in
+            });
             itemElement.addEventListener('click', function (e) {
                 e.preventDefault();
                 showVideoPopup(item.url);
