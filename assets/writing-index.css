@@ -76,10 +76,12 @@
 
 .o-tag[data-theme="light"] {
     color: #000000;
+    background-image: linear-gradient(to top, #000000 1px, transparent 1px);
 }
 
 .o-tag[data-theme="dark"] {
     color: #ffffff;
+    background-image: linear-gradient(to top, #ffffff 1px, transparent 1px);
 }
 
 span.o-tag:hover {

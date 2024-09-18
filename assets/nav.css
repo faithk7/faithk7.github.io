@@ -56,13 +56,6 @@
     /* 0px */
 }
 
-.o-navbar-item a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 0.85rem;
-    /* 16px */
-}
-
 @keyframes a-underline-text {
     0% {
         background-size: 0% 1px;
@@ -86,8 +79,18 @@
     transition: color 0.5s;
 }
 
+
+a.o-navbar-item[data-theme="light"] {
+    color: #000000;
+    background-image: linear-gradient(to right, #000000, #000000);
+}
+
+a.o-navbar-item[data-theme="dark"] {
+    color: #ffffff;
+    background-image: linear-gradient(to right, #ffffff, #ffffff);
+}
+
 .o-navbar-item a:hover {
-    color: #bbbbbb;
     animation: a-underline-text 0.5s forwards;
 }
 
