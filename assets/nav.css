@@ -56,7 +56,7 @@
     /* 0px */
 }
 
-@keyframes a-underline-text {
+@keyframes a-underline-text-left-right {
     0% {
         background-size: 0% 1px;
         background-position: 0% 100%;
@@ -91,7 +91,7 @@ a.o-navbar-item[data-theme="dark"] {
 }
 
 .o-navbar-item a:hover {
-    animation: a-underline-text 0.5s forwards;
+    animation: a-underline-text-left-right 0.5s forwards;
 }
 
 #dark-mode-toggle {

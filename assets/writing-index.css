@@ -85,7 +85,7 @@
 }
 
 span.o-tag:hover {
-    animation: a-underline-text 0.5s forwards;
+    animation: a-underline-text-left-right 0.5s forwards;
 }
 
 .o-tag::before {

@@ -202,7 +202,7 @@ img[src*="spider_lily.svg"][data-theme="light"] {
 }
 
 /* Common animation for underline text */
-@keyframes a-underline-text {
+@keyframes a-underline-text-left-right {
     0% {
         background-size: 100% 1px;
         background-position: 0% 100%;
@@ -211,5 +211,17 @@ img[src*="spider_lily.svg"][data-theme="light"] {
     100% {
         background-size: 100% 100%;
         background-position: 0% 0%;
+    }
+}
+
+@keyframes a-underline-text-bottom-up {
+    0% {
+        background-size: 100% 1px;
+        background-position: 0% 100%;
+    }
+
+    100% {
+        background-size: 100% 100%;
+        background-position: 100% 0%;
     }
 }
