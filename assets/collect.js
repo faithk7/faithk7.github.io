@@ -13,13 +13,15 @@ document.addEventListener("DOMContentLoaded", function () {
             navItem.innerHTML = `${fileName}`;
             navItem.dataset.fileName = fileName;
             navItem.addEventListener('click', function () {
-                // Remove 'selected' class from all nav items
-                document.querySelectorAll('.o-collection-nav-icon').forEach(item => {
-                    item.classList.remove('selected');
-                });
-                // Add 'selected' class to clicked nav item
-                this.classList.add('selected');
-                renderCollectionItems(dataFiles[fileName]);
+                if (!this.classList.contains('selected')) {
+                    // Remove 'selected' class from all nav items
+                    document.querySelectorAll('.o-collection-nav-icon').forEach(item => {
+                        item.classList.remove('selected');
+                    });
+                    // Add 'selected' class to clicked nav item
+                    this.classList.add('selected');
+                    renderCollectionItems(dataFiles[fileName]);
+                }
             });
             collectionNav.appendChild(navItem);
         }
