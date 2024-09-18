@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
             navItem.className = 'o-collection-nav-icon';
             navItem.innerHTML = `${fileName}`;
             navItem.dataset.fileName = fileName;
+
+            // add click event listener to nav item
             navItem.addEventListener('click', function () {
                 if (!this.classList.contains('selected')) {
                     // Remove 'selected' class from all nav items
