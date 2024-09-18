@@ -34,13 +34,17 @@
     overflow-y: auto;
     padding-right: 10px;
     background-color: inherit;
-    border-right: 1px solid white;
+    border-right: 2px solid white;
     height: auto;
     min-height: fit-content;
     align-self: center;
     width: auto;
     /* Allow width to be determined by content */
     max-width: 200px;
+}
+
+.c-collection-nav-container[data-theme="light"] {
+    border-right: 2px solid #000000;
 }
 
 .o-collection-nav-icon {
