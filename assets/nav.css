@@ -196,4 +196,8 @@ a.o-setting-icon:hover {
     .c-navbar.show+.c-navbar-icon {
         display: none;
     }
+
+    .o-navbar-item a:hover {
+        animation: none;
+    }
 }
