@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         items.forEach(item => {
             const itemElement = document.createElement('a');
             itemElement.className = 'o-collection-item';
+            itemElement.dataset.theme = ''; // this value will be dynamically adjusted by js, probably need a refactor
             itemElement.href = item.url;
             // color to be inherited from parent
             itemElement.style.color = 'inherit';
