@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
         items.forEach(item => {
             const itemElement = document.createElement('a');
             itemElement.className = 'o-collection-item';
-            itemElement.dataset.theme = ''; // this value will be dynamically adjusted by js, probably need a refactor
             itemElement.href = item.url;
+            itemElement.setAttribute('data-theme', ''); // this value will be dynamically adjusted by js, probably need a refactor
             // color to be inherited from parent
             itemElement.style.color = 'inherit';
             itemElement.target = '_blank';
@@ -64,6 +64,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 e.preventDefault();
                 showVideoPopup(item.url);
             });
+
+            const currentMode = document.body.classList.contains('light') ? 'light' : 'dark';
+            applyMode(currentMode); // manually apply mode to each item, probably need a refactor
         });
     }
 
