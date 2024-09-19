@@ -12,6 +12,8 @@
     height: auto;
     margin-top: auto;
     margin-bottom: auto;
+    height: 50%;
+    /* might need to adjust more when there are more items added */
 }
 
 .o-collection-title {
