@@ -56,7 +56,6 @@
 
 .o-tag {
     display: inline-block;
-    margin-right: 10px;
     border-radius: 3px;
     font-size: 1rem;
     line-height: 1.5em;
@@ -72,6 +71,7 @@
     color: inherit;
     margin-left: 0px;
     margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 .o-tag[data-theme="light"] {
