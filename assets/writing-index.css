@@ -65,7 +65,7 @@
     background-size: 0px;
     background-repeat: no-repeat;
     background-position: 0% 100%;
-    transition: color 0.5s;
+    transition: color 0.3s;
     font-family: var(--tagFont);
     border: 0px;
     color: inherit;
