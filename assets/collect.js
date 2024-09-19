@@ -56,10 +56,10 @@ document.addEventListener("DOMContentLoaded", function () {
             itemElement.style.opacity = '0'; // Start with opacity 0
             itemElement.style.transition = 'opacity 0.5s'; // Add transition effect
             collectionTiles.appendChild(itemElement);
-            // Trigger reflow to apply transition
-            requestAnimationFrame(() => {
+            // Use setTimeout to ensure the transition works in Firefox
+            setTimeout(() => {
                 itemElement.style.opacity = '1'; // Fade in
-            });
+            }, 0);
             itemElement.addEventListener('click', function (e) {
                 e.preventDefault();
                 showVideoPopup(item.url);
