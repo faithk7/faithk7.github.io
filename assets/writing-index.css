@@ -88,6 +88,23 @@ span.o-tag:hover {
     animation: a-underline-text-left-right 0.5s forwards;
 }
 
+/* for selected tag */
+.selected-tag[data-theme="light"] {
+    color: #000000;
+    background-image: linear-gradient(to top, #000000 1px, transparent 1px);
+    background-size: 100%;
+}
+
+.selected-tag[data-theme="dark"] {
+    color: #ffffff;
+    background-image: linear-gradient(to top, #ffffff 1px, transparent 1px);
+    background-size: 100%;
+}
+
+.o-tag.o-post-tag {
+    background-size: 0px;
+}
+
 .o-tag::before {
     content: "#";
     /* Insert the # symbol before the content */

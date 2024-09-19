@@ -18,7 +18,7 @@ permalink: /writing-index/
     {% endif %}
 
     <div id="tag-container" class="c-tag-container">
-        <span class="o-tag" data-theme="" style="color: #cea2fd" onclick="filterPosts('')">all</span><span
+        <span class="o-tag selected-tag" data-theme="" style="color: #cea2fd" onclick="filterPosts('')">all</span><span
             style="margin-left: 3px; margin-right: 7px">|</span>
         {% assign tags = "" %}
         {% for post in site.posts %}
@@ -40,7 +40,7 @@ permalink: /writing-index/
         <div class="o-writing-note-date">{{ post.date | date: "%B %d, %Y" }}</div>
         <div class="c-hashtag-container">
             {% for tag in post.tags %}
-            <span class="o-tag" data-theme="" onclick="filterPosts('{{ tag }}')">{{ tag }}</span>
+            <span class="o-tag o-post-tag" data-theme="" onclick="filterPosts('{{ tag }}')">{{ tag }}</span>
             {% endfor %}
         </div>
         <!-- <div class=" o-writing-text">{{ post.content | markdownify }}
@@ -52,12 +52,28 @@ permalink: /writing-index/
 <script>
     function filterPosts(tag) {
         var posts = document.querySelectorAll('.c-writing-item-container');
+
+        // Filter posts
         posts.forEach(function (post) {
-            var tags = post.getAttribute('data-tags').split(' ');
-            if (tags.includes(tag) || tag === '') {
+            var postTags = post.getAttribute('data-tags').split(' ');
+            if (postTags.includes(tag) || tag === '') {
                 post.style.display = 'block';
             } else {
                 post.style.display = 'none';
+            }
+        });
+
+        // Update tag underline
+        updateTagUnderline(tag);
+    }
+
+    function updateTagUnderline(selectedTag) {
+        var tags = document.querySelectorAll('.o-tag');
+        tags.forEach(function (tagElement) {
+            if (tagElement.textContent === selectedTag || (selectedTag === '' && tagElement.textContent === 'all')) {
+                tagElement.classList.add('selected-tag');
+            } else {
+                tagElement.classList.remove('selected-tag');
             }
         });
     }
