@@ -18,7 +18,8 @@ permalink: /writing-index/
     {% endif %}
 
     <div id="tag-container" class="c-tag-container">
-        <span class="o-tag" data-theme="" onclick="filterPosts('')">all</span>
+        <span class="o-tag" data-theme="" style="color: #cea2fd" onclick="filterPosts('')">all</span><span
+            style="margin-left: 3px; margin-right: 3px">|</span>
         {% assign tags = "" %}
         {% for post in site.posts %}
         {% for tag in post.tags %}
