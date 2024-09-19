@@ -82,6 +82,7 @@ span.highlight {
 .o-about-item-title::before {
     content: "#";
     margin-right: 1px;
+    color: lightblue;
 }
 
 .o-about-item-subtitle {
@@ -92,13 +93,14 @@ span.highlight {
     margin-bottom: 0.625rem;
     /* 10px */
     font-family: var(--titleFont);
-    color: #eca4ec;
     /* Change color to #e7ddff */
 }
 
 .o-about-item-subtitle::before {
     content: "|";
     margin-right: 1px;
+    color: #eca4ec;
+
 }
 
 .o-about-content {
