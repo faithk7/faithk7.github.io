@@ -54,4 +54,5 @@
     font-size: 0.875rem;
     /* 14px */
     color: #bbbbbb;
+    padding-bottom: var(--pageEndMargin);
 }

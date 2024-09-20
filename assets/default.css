@@ -8,6 +8,7 @@
     --backgroundColor: #2c2c2c;
     --linkColor: #1E90FF;
     /* Added this line */
+    --pageEndMargin: 1.25rem;
 }
 
 html,
