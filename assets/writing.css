@@ -78,7 +78,7 @@
     /* 20px */
     border-bottom: 0.0625rem solid #555555;
     /* 1px */
-    padding-bottom: 0.625rem;
+    padding-bottom: var(--pageEndMargin);
     /* 10px */
     border-bottom: 0.0625rem solid #555555;
 }
