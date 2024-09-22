@@ -1,5 +1,9 @@
 /* Styles specific to writing.html */
 
+a {
+    color: var(--linkColor);
+}
+
 .c-writing-post-meta-container {
     margin: 20px;
 }
