@@ -16,7 +16,7 @@
     bottom: -35px;
     left: 12.5%;
     /* Center the border by starting it at 25% */
-    width: 75%;
+    width: 70%;
     /* Make the border span 50% of the width */
     border-bottom: 1px solid #555555;
 }
