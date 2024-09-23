@@ -53,8 +53,9 @@
 }
 
 .o-writing-note-date {
-    margin: 7px 0;
+    margin: 10px 0;
     font-size: 0.9rem;
+    width: 100%;
     /* 14px */
     color: #bbbbbb;
     font-family: var(--dateFont);
