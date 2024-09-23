@@ -6,6 +6,18 @@
 
 .c-writing-index-container {
     margin: 20px;
+    position: relative;
+    /* Ensure the container is positioned relative for the pseudo-element */
+}
+
+.c-writing-index-container::after {
+    content: "";
+    position: absolute;
+    bottom: -35px;
+    left: 12.5%;
+    /* Center the border by starting it at 25% */
+    width: 75%;
+    /* Make the border span 50% of the width */
     border-bottom: 1px solid #555555;
 }
 
@@ -25,7 +37,7 @@
 .c-writing-note-container,
 .o-writing-note-date,
 .o-writing-footer {
-    width: 100%;
+    width: 50%;
     /* Make these elements span the full width */
     display: block;
     /* Block display ensures elements stack vertically */
