@@ -19,3 +19,14 @@ layout: default
         {{ content }}
     </div>
 </div>
+
+
+<script>
+    // open all links in new tab
+    document.addEventListener("DOMContentLoaded", function () {
+        var links = document.querySelectorAll('a');
+        links.forEach(function (link) {
+            link.setAttribute('target', '_blank');
+        });
+    });
+</script>
