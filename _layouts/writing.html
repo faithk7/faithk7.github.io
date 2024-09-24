@@ -22,9 +22,9 @@ layout: default
 
 
 <script>
-    // open all links in new tab
+    // open all links in .o-writing-post-text in a new tab
     document.addEventListener("DOMContentLoaded", function () {
-        var links = document.querySelectorAll('a');
+        var links = document.querySelectorAll('.o-writing-post-text a');
         links.forEach(function (link) {
             link.setAttribute('target', '_blank');
         });
