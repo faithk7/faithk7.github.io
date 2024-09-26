@@ -5,7 +5,7 @@
     --linkFont: monospace;
     --tagFont: monospace;
     --dateFont: Georgia;
-    --backgroundColor: #2c2c2c;
+    --backgroundColor: #121212;
     --linkColor: #1E90FF;
     /* Added this line */
     --pageEndMargin: 1.25rem;
@@ -74,6 +74,7 @@ nav li a {
     height: 100vh;
     position: relative;
     overflow: hidden;
+    background-color: #121212;
 }
 
 /* for mobile, to make the main content rendered more by making it display as block */
@@ -224,5 +225,37 @@ object[data*="spider_lily.svg"][data-theme="light"] {
     100% {
         background-size: 100% 100%;
         background-position: 100% 0%;
+    }
+}
+
+/* for the medium size screen */
+@media (min-width: 1000px) and (max-width: 1440px) {
+    .l-container {
+        transform: scale(0.9) translate(-5.5%, -5.5%);
+        transform-origin: center;
+        width: 112%;
+        height: 112%;
+        background-color: #121212;
+    }
+
+    .l-center {
+        height: 100%;
+    }
+
+    .l-right {
+        height: 100%;
+        border-left: none;
+    }
+
+    .l-left {
+        height: 100%;
+    }
+
+    body {
+        background-color: var(--backgroundColor);
+    }
+
+    html {
+        background-color: var(--backgroundColor);
     }
 }
