@@ -40,8 +40,8 @@ body {
     /* 16px */
 }
 
-/* for the medium size screen */
-@media (min-width: 1000px) and (max-width: 1440px) {
+/* for the medium size screen like macbook air */
+@media (min-width: 1000px) and (max-width: 1440px) and (orientation: landscape) {
     body {
         zoom: 0.8;
     }
