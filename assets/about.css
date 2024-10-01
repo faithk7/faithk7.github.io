@@ -63,7 +63,7 @@ span.highlight {
 .o-about-title {
     font-size: 2rem;
     /* 32px */
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
     /* 20px */
     font-family: var(--titleFont);
 }
@@ -71,9 +71,9 @@ span.highlight {
 .o-about-item-title {
     font-size: 1.5rem;
     /* 24px */
-    margin-top: 0.625rem;
+    margin-top: 1.5rem;
     /* 10px */
-    margin-bottom: 0.625rem;
+    margin-bottom: 0.75rem;
     /* 10px */
     font-family: var(--titleFont);
     /* color: #b8e2f2; */
@@ -89,9 +89,9 @@ span.highlight {
 .o-about-item-subtitle {
     font-size: 1.25rem;
     /* 20px */
-    margin-top: 0.625rem;
+    margin-top: 0.75rem;
     /* 10px */
-    margin-bottom: 0.625rem;
+    margin-bottom: 0.75rem;
     /* 10px */
     font-family: var(--titleFont);
     /* Change color to #e7ddff */

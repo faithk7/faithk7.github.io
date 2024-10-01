@@ -10,17 +10,6 @@
     /* Ensure the container is positioned relative for the pseudo-element */
 }
 
-.c-writing-index-container::after {
-    content: "";
-    position: absolute;
-    bottom: -35px;
-    left: calc(15%);
-    /* Center the border by starting it at 25% */
-    width: 60%;
-    /* Make the border span 50% of the width */
-    border-bottom: 1px solid #555555;
-}
-
 .c-writing-item-container {
     display: block;
     /* Treat the container as a block-level element */
