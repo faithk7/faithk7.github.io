@@ -11,7 +11,7 @@ photos.push(json)
 
 const dirName = path.dirname(filePath)
 if (!fileExists && dirName !== '.') {
-    fs.mkdirSync(dirName, { recursive: true })
+  fs.mkdirSync(dirName, { recursive: true })
 }
 
 fs.writeFileSync(filePath, JSON.stringify(photos, null, 2))

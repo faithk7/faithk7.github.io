@@ -1,10 +1,12 @@
 ---
 layout: default
 title: About
+description: "Kai Qu's about page"
 ---
 
 <head>
     <link rel="stylesheet" href="{{ '/assets/about.css' | relative_url }}">
+    <meta name="description" content="{{ page.description | default: site.description }}">
 </head>
 
 <div class="c-about-container">
