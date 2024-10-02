@@ -52,6 +52,7 @@
 .o-collection-nav-icon {
     font-size: 1.5rem;
     margin-right: 0.625rem;
+    margin-bottom: 3px;
 }
 
 .o-collection-nav-icon.selected {
