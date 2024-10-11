@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Use setTimeout to ensure the transition works in Firefox
             setTimeout(() => {
                 itemElement.style.opacity = '1'; // Fade in
-            }, 0);
+            }, 25);
             itemElement.addEventListener('click', function (e) {
                 e.preventDefault();
                 showVideoPopup(item.url);
