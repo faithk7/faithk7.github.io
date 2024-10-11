@@ -45,7 +45,7 @@
     font-size: 0.9rem;
     width: 100%;
     /* 14px */
-    color: #bbbbbb;
+    color: #999999;
     font-family: var(--dateFont);
 }
 
@@ -120,6 +120,7 @@ span.o-tag:hover {
     /* 10px */
 }
 
-a.o-post-title {
+h2.o-post-title a {
     color: var(--linkColor);
+    /* color: #2e5984; */
 }

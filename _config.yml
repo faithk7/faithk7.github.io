@@ -16,3 +16,5 @@ collections:
 feed:
   path: feed.xml
   custom_path: _includes/custom_feed.xml
+
+description: "Kai Qu's personal site"
