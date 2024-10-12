@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const collectionTiles = document.getElementById('collection-tiles');
     const dataFiles = window.dataFiles;
 
+    // TODO: remove music from dataFiles for now, fix it later
+    delete dataFiles.music;
+    delete dataFiles.essay;
+
     for (const fileName in dataFiles) {
         if (dataFiles.hasOwnProperty(fileName)) {
             const navItem = document.createElement('div');
