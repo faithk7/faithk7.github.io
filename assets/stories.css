@@ -83,7 +83,7 @@ open-stories::part(button) {
     cursor: pointer;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 932px) {
     open-stories::part(button) {
         width: 67px;
         height: 67px;

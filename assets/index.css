@@ -27,7 +27,8 @@
 }
 
 
-@media (max-width: 767px) {
+/* for mobile in portrait mode */
+@media (max-width: 932px) and (orientation: portrait) {
     .c-index-container {
         z-index: 100;
         width: 100%;
@@ -42,6 +43,15 @@
         /* to disable scrolling */
         position: fixed;
         height: 100vh;
+    }
+}
+
+/* for mobile in landscape mode; TODO: not working, fix later */
+@media (max-width: 932px) and (orientation: landscape) {
+    .c-center-container {
+        margin-top: 0;
+        position: relative;
+        height: auto;
     }
 }
 
@@ -168,7 +178,7 @@ h1.o-name {
 }
 
 /* the styling for the mobile container */
-@media (max-width: 768px) {
+@media (max-width: 1032px) {
     .o-summary {
         font-size: 1rem;
     }
@@ -185,7 +195,7 @@ h1.o-name {
 }
 
 
-@media (max-width: 550px) {
+@media (max-width: 1032px) {
     .c-quote-container {
         display: none;
     }

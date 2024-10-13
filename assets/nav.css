@@ -128,33 +128,20 @@ a.o-setting-icon:hover {
     animation: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1032px) {
     #dark-mode-toggle {
-        position: fixed;
-        top: 59.375rem;
-        /* 95% */
-        left: 26.25rem;
-        /* 42% */
+        display: none;
     }
 
     a.o-setting-icon {
-        position: fixed;
-        top: 59.375rem;
-        /* 95% */
-        left: 31.25rem;
-        /* 50% */
-        width: 1.5rem;
-        /* 24px */
-        /* Adjust size as needed */
-        height: 1.5rem;
-        /* 24px */
-        /* Adjust size as needed */
+        display: none;
     }
 }
 
-@media (max-width: 767px) {
+/* for tablet */
+@media (max-width: 1032px) {
     .c-navbar {
-        display: none;
+        width: 1.1rem;
     }
 
     .c-navbar.show {
@@ -172,16 +159,6 @@ a.o-setting-icon:hover {
 
     .c-navbar-container[data-theme="light"] {
         border-left: none;
-    }
-
-    .c-navbar-icon {
-        display: block;
-        width: 20px;
-        height: 20px;
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        z-index: 1001;
     }
 
     .c-navbar-container {
@@ -213,5 +190,22 @@ a.o-setting-icon:hover {
 
     .o-navbar-item a:hover {
         animation: none;
+    }
+}
+
+/* for mobile */
+@media (max-width: 932px) {
+    .c-navbar {
+        display: none;
+    }
+
+    .c-navbar-icon {
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1001;
     }
 }
