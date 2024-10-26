@@ -15,7 +15,7 @@
 {% assign new_categories_arr = new_categories_arr | uniq %}
 
 <div class="stories">
-    <open-stories src="/stories.json" show-metadata><span>
+    <open-stories src="/stories.json" show-metadata data-theme=""><span>
             {% if include.lang == "en" %}24h{% else %}{{ site.i18n[include.lang]["24h"] }}{% endif %}
         </span>
     </open-stories>
@@ -24,7 +24,7 @@
     {% unless categories contains type %}{% continue %}{% endunless %}
     {% assign c = site.data.stories | where_exp: "s", "s.meta.tags contains type" | where_exp: "s", "s.meta.tags
     contains 'Highlight'" | size %}
-    <open-stories src="/stories-{{ type | downcase }}.json" show-metadata is-highlight loading="lazy">
+    <open-stories src="/stories-{{ type | downcase }}.json" show-metadata is-highlight loading="lazy" data-theme="">
         {% if include.lang == "en" %}{{ type }}{% else %}{{ site.i18n[include.lang][type] }}{% endif %}
         <span class="count">&times; {{c}}</span></open-stories>
     {% endfor %}
