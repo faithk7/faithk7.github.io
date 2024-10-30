@@ -85,6 +85,7 @@ a {
     padding-bottom: var(--pageEndMargin);
     /* 10px */
     border-bottom: 0.0625rem solid #555555;
+    font-weight: 400;
 }
 
 
