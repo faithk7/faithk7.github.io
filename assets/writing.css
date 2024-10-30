@@ -25,7 +25,7 @@ a {
 .c-writing-post-date {
     font-size: 1rem;
     /* 16px */
-    color: #bbbbbb;
+    color: #a3a3a3;
     margin-bottom: 0.625rem;
     /* 10px */
     font-family: var(--dateFont);
@@ -65,7 +65,7 @@ a {
 
 
 .o-writing-post-tag[data-theme="light"] {
-    color: #bbbbbb;
+    color: #a3a3a3;
 }
 
 /* .o-writing-post-tag::before {
