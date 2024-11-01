@@ -185,11 +185,11 @@ path[data-theme="light"].st1 {
 }
 
 /* Add this at the end of the file */
-object[data*="spider_lily.svg"][data-theme="dark"] {
+object[data*="spider-lily.svg"][data-theme="dark"] {
     filter: invert(100%);
 }
 
-object[data*="spider_lily.svg"][data-theme="light"] {
+object[data*="spider-lily.svg"][data-theme="light"] {
     filter: invert(0%);
 }
 
