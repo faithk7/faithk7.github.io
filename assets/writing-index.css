@@ -114,6 +114,7 @@ span.o-tag:hover {
 }
 
 .o-post-title {
+    font-weight: 400;
     font-size: 1.3rem;
     /* 24px */
     margin-bottom: 0.625rem;
