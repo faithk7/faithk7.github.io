@@ -7,7 +7,7 @@
     </defs>
     <style>
     svg {
-        transition: fill 0.25s ease;
+        transition: fill 1s ease;
     }
     svg:hover {
         fill: url(#hoverGradient);
