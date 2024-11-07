@@ -27,6 +27,7 @@
     </div>
 </body>
 <script type="module" src="https://unpkg.com/open-stories-element@latest"></script>
+<!-- toggle navbar theme based on system preference -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
@@ -48,7 +49,6 @@
         }
     });
 </script>
-
 <!-- toggle favicon based on theme -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
