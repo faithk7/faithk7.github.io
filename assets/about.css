@@ -45,7 +45,7 @@ span.highlight {
 }
 
 @media (prefers-color-scheme: dark) {
-    .c-about-container::before {
+    .l-center::before {
         content: "";
         position: absolute;
         top: 0;
