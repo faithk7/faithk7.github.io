@@ -1,5 +1,5 @@
 ---
-title: "关于读书"
+title: "关于读书 ╂ Kai Qu"
 date: 2024-09-11
 tags: [reflection, 2024]
 layout: writing

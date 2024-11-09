@@ -1,5 +1,5 @@
 ---
-title: "兽爪"
+title: "兽爪 ╂ Kai Qu"
 date: 2021-11-13
 tags: [review, 2021]
 layout: writing
