@@ -41,7 +41,7 @@ description: "Kai Qu's writing index page"
     <div class="c-writing-item-container" data-tags="{{ post.tags | join: ' ' }}">
         <h2 class="o-post-title"><a href="{{ post.url }}" data-theme="">{{ post.title | replace: "╂ Kai Qu", "" }}</a>
         </h2>
-        <div class="o-writing-note-date">{{ post.date | date: "%B %d, %Y" }}</div>
+        <div class="o-writing-note-date" data-theme="">{{ post.date | date: "%B %d, %Y" }}</div>
         <div class="c-hashtag-container">
             {% for tag in post.tags %}
             <span class="o-tag o-post-tag" data-theme="" onclick="filterPosts('{{ tag }}')">{{ tag }}</span>

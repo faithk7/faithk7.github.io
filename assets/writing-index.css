@@ -57,6 +57,16 @@
     /* Add some spacing between elements, if needed */
 }
 
+.o-writing-note-date[data-theme="light"] {
+    color: #666666;
+    /* Darker gray for light mode */
+}
+
+.o-writing-note-date[data-theme="dark"] {
+    color: #bbbbbb;
+    /* Lighter gray for dark mode */
+}
+
 .o-writing-note-date {
     margin: 10px 0;
     font-size: 0.9rem;
