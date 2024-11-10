@@ -2,10 +2,11 @@ const statusEl = document.querySelector('[data-status-loading]')
 
 try {
     statusEl.hidden = false
-    const s = await(await fetch('https://faithk7.github.io/status-quo/index.txt')).text()
+    const s = await(await fetch('https://status-quo-proxy.lastk7.workers.dev/status-quo/index.txt')).text()
     if (s.trim() !== '') {
         const [datetime, text] = s.split('\n')
         const date = relativeDate(new Date(datetime))
+
         if (date) {
             document.querySelector('[data-status-text]').textContent = text
             document.querySelector('[data-status-datetime]').textContent = `(${date})`
@@ -24,6 +25,7 @@ function relativeDate(date) {
     const day = hour * 24
     const week = day * 7
     const month = day * 30
+    const year = day * 365
     const rtf = new Intl.RelativeTimeFormat('en', { style: 'narrow' })
 
     if (diff < hour) {
@@ -34,7 +36,9 @@ function relativeDate(date) {
         return rtf.format(-Math.floor(diff / day), 'day')
     } else if (diff < month) {
         return rtf.format(-Math.floor(diff / week), 'week')
+    } else if (diff < year) {
+        return rtf.format(-Math.floor(diff / month), 'month')
     } else {
-        return
+        return rtf.format(-Math.floor(diff / year), 'year')
     }
 }

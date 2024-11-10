@@ -2,28 +2,56 @@
 
 
 .l-container {
-    overflow: hidden;
+    .l-container {
+        display: grid;
+        grid-template-columns: 4fr 4fr 4fr;
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }
+
 }
 
 .c-center-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
 }
 
 .c-index-container {
-    width: 400px;
-    /* margin-left: auto;
-    margin-right: auto; */
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     display: block;
 }
 
 
-@media (max-width: 767px) {
+/* for mobile in portrait mode */
+@media (max-width: 932px) and (orientation: portrait) {
     .c-index-container {
         z-index: 100;
+        width: 100%;
+    }
+
+    .c-center-container {
+        display: block;
+        margin-top: 43%;
+        margin-left: 20px;
+        margin-right: 0px;
+        padding: 0;
+        /* to disable scrolling */
+        position: fixed;
+        height: 100vh;
+    }
+}
+
+/* for mobile in landscape mode; TODO: not working, fix later */
+@media (max-width: 932px) and (orientation: landscape) {
+    .c-center-container {
+        margin-top: 0;
+        position: relative;
+        height: auto;
     }
 }
 
@@ -37,41 +65,52 @@
     position: relative;
 }
 
-.o-name {
-    font-size: 2em;
+h1.o-name {
+    font-size: 2rem;
+    /* 32px */
     font-weight: bold;
+    font-family: var(--titleFont);
+    margin-bottom: 0;
 }
 
 .o-summary {
-    margin-top: 40px;
+    margin-top: 2rem;
+    /* 40px */
     line-height: 1.5;
-    font-size: 1.1em;
+    font-size: 1.1rem;
+    /* 17.6px */
 }
 
 .o-status-quo {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 0.8em;
+    margin-top: 0.625rem;
+    /* 10px */
+    margin-bottom: 0.625rem;
+    /* 10px */
+    font-size: 0.8rem;
+    /* 12.8px */
+    font-family: monospace;
 }
 
 .o-info {
     display: flex;
     justify-content: left;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 0.5rem;
 }
 
 .c-info-card-container {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    font-family: var(--generalFont);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-family: var(--linkFont);
 }
 
 .o-social {
     /* margin: 10px; */
     border-radius: 5px;
     text-decoration: none;
-    color: #1E90FF;
+    color: var(--linkColor);
+    font-size: 0.85rem;
+    text-wrap: nowrap;
 }
 
 .c-moment-container {
@@ -84,45 +123,20 @@
     gap: auto;
 }
 
-.o-moment-item {
-    display: flex;
-    background-color: #25020233;
-    width: 55px;
-    height: 55px;
-    padding: 15px;
-    font-size: 12px;
-    margin-right: 20px;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
 .c-quote-container {
     position: absolute;
     top: 35%;
     right: 0%;
     z-index: 100;
-    width: 200px;
+    width: 12.5rem;
+    /* 200px */
 }
 
-@media (max-width: 768px) {
-    .c-quote-container {
-        width: 75px;
-        /* to be consistent with that of c-navbar media rule */
-    }
-}
-
-
-@media (max-width: 550px) {
-    .c-quote-container {
-        display: none;
-    }
-}
 
 .o-quote,
 .o-quote[data-theme="dark"] {
-    font-size: 1em;
+    font-size: 1rem;
+    /* 16px */
     color: #ffffff;
     text-align: center;
     writing-mode: vertical-rl;
@@ -138,14 +152,14 @@
 .c-index-art-container {
     position: fixed;
     width: 20vw;
-    max-width: min(min(200px, 20vw), 30vh);
+    max-width: min(min(150px, 15vw), 15vh);
     bottom: 0;
     left: 0;
     z-index: 1000;
     /* Ensure it's above other elements */
     padding: 10px;
     /* Optional padding for spacing */
-    pointer-events: none;
+    /* pointer-events: none; */
     /* Prevents interaction with the SVG */
     -webkit-user-select: none;
     /* Safari */
@@ -155,10 +169,34 @@
     /* Standard syntax */
 }
 
-.c-index-art-container img {
+.c-index-art-container object {
     width: 100%;
     height: 100%;
     max-width: 100%;
     max-height: 100%;
     display: block;
+}
+
+/* the styling for the mobile container */
+@media (max-width: 1032px) {
+    .o-summary {
+        font-size: 1rem;
+    }
+
+    .c-quote-container {
+        width: 4.6875rem;
+        /* 75px */
+        /* to be consistent with that of c-navbar media rule */
+    }
+
+    .c-index-art-container {
+        display: none;
+    }
+}
+
+
+@media (max-width: 1032px) {
+    .c-quote-container {
+        display: none;
+    }
 }

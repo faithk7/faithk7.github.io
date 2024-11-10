@@ -1,12 +1,13 @@
 :root {
+    /* Default theme variables (assumed to be light) */
     --backgroundColor: #fdfdfd;
-    --textColor: #c04646;
+    --textColor: #404040;
     --secondaryTextColor: #404040;
     --mutedTextColor: #707070;
     --subtleBackgroundColor: #f5f5f5;
     --heartedBackgroundColor: #ffe2e2;
     --selectionBackgroundColor: #ffc;
-    --linkColor: #2357cd;
+    --linkColorMuan: #2357cd;
     --borderColor: #ccc;
     --hrColor: #888;
     --activeColor: #74d274;
@@ -15,6 +16,43 @@
     --logoColor: #ccc;
     --photoBackground: #f4f4f4;
     --storyHoverColor: #d8b4ff;
+
+    /* TODO: think of better way to remove them later; repetitive with the above */
+    /* Light theme variables */
+    --backgroundColorLight: #fdfdfd;
+    --textColorLight: #404040;
+    --secondaryTextColorLight: #404040;
+    --mutedTextColorLight: #707070;
+    --subtleBackgroundColorLight: #f5f5f5;
+    --heartedBackgroundColorLight: #ffe2e2;
+    --selectionBackgroundColorLight: #ffc;
+    --linkColorMuanLight: #2357cd;
+    --borderColorLight: #ccc;
+    --hrColorLight: #888;
+    --activeColorLight: #74d274;
+    --langBackgroundColorLight: #eee;
+    --langShadowColorLight: transparent;
+    --logoColorLight: #ccc;
+    --photoBackgroundLight: #f4f4f4;
+    --storyHoverColorLight: #d8b4ff;
+
+    /* TODO: think of better way to remove them later; repetitive with below; Dark theme variables */
+    --backgroundColorDark: #151615;
+    --textColorDark: #dbdfdf;
+    --secondaryTextColorDark: #cfd5d5;
+    --mutedTextColorDark: #b4b6b8;
+    --subtleBackgroundColorDark: #3a3b3b;
+    --heartedBackgroundColorDark: #652222;
+    --selectionBackgroundColorDark: #19446b;
+    --linkColorMuanDark: #6eb8ff;
+    --borderColorDark: #414141;
+    --hrColorDark: #888;
+    --activeColorDark: #74d274;
+    --langBackgroundColorDark: #2c2c2c;
+    --langShadowColorDark: #0b0c0b 33;
+    --logoColorDark: #555;
+    --photoBackgroundDark: #1a1a1a;
+    --storyHoverColorDark: #d8b4ff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,7 +64,7 @@
         --subtleBackgroundColor: #3a3b3b;
         --heartedBackgroundColor: #652222;
         --selectionBackgroundColor: #19446b;
-        --linkColor: #6eb8ff;
+        --linkColorMuan: #6eb8ff;
         --borderColor: #414141;
         --hrColor: #888;
         --activeColor: #74d274;
@@ -45,10 +83,13 @@
     overflow: auto;
     padding: 10px;
     margin: -10px;
+    font-size: 1rem;
+    /* 16px */
 }
 
 open-stories .count {
-    font-size: 0.8em;
+    font-size: 0.5rem;
+    /* 8px */
 }
 
 open-stories::part(dialog):focus {
@@ -57,7 +98,7 @@ open-stories::part(dialog):focus {
 
 open-stories:not(:defined),
 open-stories::part(button) {
-    font-family: var(--generalFont), serif, Times, Arial, sans-serif;
+    font-family: var(--linkFont), serif, Times, Arial, sans-serif;
     border: 1px solid var(--borderColor);
     box-shadow: inset 0 0 0 2px var(--backgroundColor);
     color: var(--textColor);
@@ -67,7 +108,8 @@ open-stories::part(button) {
     height: 76px;
     width: 76px;
     border-radius: 50%;
-    font-size: 0.65em;
+    font-size: 0.65rem;
+    /* 10.4px */
     box-sizing: border-box;
     align-items: center;
     display: flex;
@@ -78,6 +120,29 @@ open-stories::part(button) {
     justify-content: center;
     cursor: pointer;
 }
+
+open-stories[data-theme="light"]::part(button) {
+    box-shadow: inset 0 0 0 2px var(--backgroundColorLight);
+    border-color: var(--borderColorLight);
+    color: var(--textColorLight);
+    background: var(--subtleBackgroundColorLight);
+}
+
+open-stories[data-theme="dark"]::part(button) {
+    box-shadow: inset 0 0 0 2px var(--backgroundColorDark);
+    border-color: var(--borderColorDark);
+    color: var(--textColorDark);
+    background: var(--subtleBackgroundColorDark);
+}
+
+
+@media (max-width: 932px) {
+    open-stories::part(button) {
+        width: 67px;
+        height: 67px;
+    }
+}
+
 
 open-stories:not(:defined):hover,
 open-stories::part(button):hover {
@@ -91,7 +156,7 @@ open-stories:not([is-highlight])::part(button) {
 }
 
 open-stories:not(.is-read):not(.is-empty):not([is-highlight]):not(.is-loading)::part(button) {
-    border-color: var(--linkColor);
+    border-color: var(--linkColorMuan);
 }
 
 open-stories.is-loading {

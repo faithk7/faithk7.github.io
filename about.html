@@ -1,22 +1,27 @@
 ---
 layout: default
-title: About
+title: Kai Qu ╂ About
+description: "Kai Qu's about page"
 ---
 
 <head>
     <link rel="stylesheet" href="{{ '/assets/about.css' | relative_url }}">
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
 </head>
 
 <div class="c-about-container">
     <h1 class="o-about-title">About</h1>
     <div class="o-about-item">
         <h2 class="o-about-item-title"> Info</h2>
-        <p class="o-about-content">Chinese Name: 瞿锴 (QuKai) <span style="margin-left: 5px; margin-right: 5px"> |
+        <p class="o-about-content">Chinese Name: <span style="font-family: Times, serif">瞿锴</span> (QuKai)
+            <span style="margin-left: 5px; margin-right: 5px"> |
             </span> English Name: Kai
             <br><br>
-            I was born in <code>Hangzhou</code>, a city in the southern part of China, but grew up in Beijing.
+            I was born in <span class="highlight">Hangzhou</span>, a city in the southern part of China, but grew up in
+            <span class="highlight">Beijing</span>.
             <br><br>
-            Speak Chinese (native), English (fluent) and Japanese (moderate).
+            Speak Chinese, English and Japanese.
         </p>
         <br>
     </div>
@@ -24,76 +29,58 @@ title: About
         <h2 class="o-about-item-title"> Interest</h2>
         <h3 class="o-about-item-subtitle"> Running</h3>
         <p class="o-about-content">
-            I enjoy jogging in my spare time. Started running as an attempt to lose weight in high school, but soon the
-            feeling of euphoria after a long run and my growing ability to control pace and rhythm gradually got me
-            interested in this activity.
+            I like to <span class="highlight">jog</span> in my spare time. The euphoria after a long run and the
+            freedom to control my pace and rhythm drew me to this activity.
             <br><br>
-            Finished my first half marathon at <a
-                href="https://results.sporthive.com/events/6519024352588254464/races/4">Charlottesville Marathon</a> in
-            2019
-            and now
-            run
-            about 4 miles per day to keep the habit of running.
+            Finished half marathon once at <a href="https://results.sporthive.com/events/6519024352588254464/races/4"
+                target="_blank" data-theme="">Charlottesville
+                Marathon</a> in
+            2019 and now run about 4 miles per day to keep the habit of running.
+        </p>
+        <br>
+        <h3 class="o-about-item-subtitle" data-theme=""> Anime</h3>
+        <p class="o-about-content">
+            A big fan of anime. Started watching anime since high school and fell in love with this world of
+            boundless imagination and creativity immediately. It poses a big influence on me and is the reason I
+            get
+            deeply interested in <span class="highlight">Japanese culture and language</span>.
         </p>
         <br>
         <h3 class="o-about-item-subtitle"> Music</h3>
         <p class="o-about-content">
-            For most of the time listen to J-pop. Favorite singer: <a
-                href="https://en.wikipedia.org/wiki/Aimer">Aimer</a>.
-            Her voice is powerful and comforting. I
-            remembered
-            the feeling of lonliness but also the joy of inner peace when listening to <a
-                href="https://www.youtube.com/watch?v=K1kjy1XLx7I">Polaris</a>, walking
-            along in
-            the campus at night.
+            Mostly listen to <span class="highlight">J-pop</span>, with <a href="https://jpop.fandom.com/wiki/Aimer"
+                target="_blank" data-theme="">Aimer</a> being my favorite singer for her powerful and comforting voice.
             <br><br>
-            Recently grow fond of <a href="https://en.wikipedia.org/wiki/Aimyon">Aimyon</a> also.
-        </p>
-    </div>
-    <br>
-    <div class="o-about-item">
-        <h3 class="o-about-item-title"> Anime</h3>
-        <p class="o-about-content">
-            A big fan of anime. Started watching anime since high school and fell in love with this world with
-            boundless imagination and creativity immediately. It poses a big influence on me and is also the reason I
-            get
-            deeply interested in Japanese culture.
+            Favorite song: <a href="https://www.youtube.com/watch?v=K1kjy1XLx7I" target="_blank"
+                data-theme="">Polaris</a>.
             <br><br>
-            Favorite anime for now: <a href="https://en.wikipedia.org/wiki/Samurai_Champloo">Samurai Champloo</a>, as
-            its
-            vision of life as a series of adventures, resilient
-            attitudes toward challenges, contemporary artistic styles with the historical setting, and the ambient
-            soundtrack captivate me.
+            Also recently got into <a href="https://en.wikipedia.org/wiki/Aimyon" target="_blank"
+                data-theme="">Aimyon</a>
+            and Japanese
+            city pop.
         </p>
         <br>
     </div>
     <div class="o-about-item">
         <h2 class="o-about-item-title"> Reading</h2>
         <p class="o-about-content">
-            I enjoy reading all kinds of books. Through reading I realized that the minds of humans are limitless,
+            Enjoy reading all kinds of books. Through reading I realize that the human minds are limitless,
             while we are bounded by
             our
             courage and
-            actions. Like said in the end of <a href="https://en.wikipedia.org/wiki/From_the_New_World_(novel)">From
+            actions. Like said in the end of <a href="https://en.wikipedia.org/wiki/From_the_New_World_(novel)"
+                target="_blank" data-theme="">From
                 the
-                New World</a> by <a href="https://en.wikipedia.org/wiki/Yusuke_Kishi">Yusuke Kishi
-            </a> , <i>“Imagination changes everything.”</i> And extensive reading opens
+                New World</a> by <a href="https://en.wikipedia.org/wiki/Yusuke_Kishi" target="_blank"
+                data-theme="">Yusuke Kishi</a>,
+            <i>“<span class="highlight">Imagination</span> changes everything.”</i> And extensive reading
+            opens
             up the world of imagination.
         </p>
     </div>
     <br><br>
 </div>
-<br><br><br>
-<!-- <script>
-    console.log(window.location.pathname);
-    document.addEventListener("DOMContentLoaded", function () {
-        if (window.location.pathname.includes('/about')) {
-            document.body.classList.add('about-page');
-        }
-    });
-</script> -->
-
-
+<br><br>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         // Select the element with the class 'c-about-container'

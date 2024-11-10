@@ -1,8 +1,13 @@
 /* Styles specific to writing-index.html */
 
-.c-writing-container {
+.o-writing-index-title {
+    font-family: var(--titleFont);
+}
+
+.c-writing-index-container {
     margin: 20px;
-    border-bottom: 1px solid #555555;
+    position: relative;
+    /* Ensure the container is positioned relative for the pseudo-element */
 }
 
 .c-writing-item-container {
@@ -10,7 +15,7 @@
     /* Treat the container as a block-level element */
     margin: 0 auto;
     /* Center the container horizontally */
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     width: 30%;
     box-sizing: border-box;
     /* Include padding in the width calculation */
@@ -18,10 +23,16 @@
     /* Ensure contents inside are left-aligned */
 }
 
-.c-writing-note-container,
-.o-writing-note-date,
-.o-writing-footer {
-    width: 100%;
+/* TODO: need find a better way to handle this */
+@media (max-width: 768px) {
+    .c-writing-item-container {
+        width: 80%;
+        padding: 0 0 0 15%;
+    }
+}
+
+.o-writing-note-date {
+    width: 50%;
     /* Make these elements span the full width */
     display: block;
     /* Block display ensures elements stack vertically */
@@ -29,64 +40,70 @@
     /* Add some spacing between elements, if needed */
 }
 
-.c-writing-note-container {
-    /* background-color: #444444; */
-    padding: 15px 0px;
-    border-radius: 5px;
-    display: inline-block;
-}
-
 .o-writing-note-date {
-    margin: 5px 0;
-    font-size: 14px;
-    color: #bbbbbb;
+    margin: 10px 0;
+    font-size: 0.9rem;
+    width: 100%;
+    /* 14px */
+    color: #999999;
+    font-family: var(--dateFont);
 }
-
 
 .c-tag-container {
     margin-top: 5px;
     margin-bottom: 20px;
 }
 
+
 .o-tag {
     display: inline-block;
-    margin-right: 10px;
-    /* Added margin-right */
     border-radius: 3px;
-    font-size: 1.0em;
+    font-size: 1rem;
     line-height: 1.5em;
-    color: #ffffff;
     font-family: serif, Times;
     text-decoration: none;
-    background-size: 100% 0%;
+    background-image: linear-gradient(to top, #ffffff 1px, transparent 1px);
+    background-size: 0px;
     background-repeat: no-repeat;
     background-position: 0% 100%;
-    transition: color 0.5s;
-}
-
-span.o-tag {
+    transition: color 0.3s;
+    font-family: var(--tagFont);
     border: 0px;
-    background: none;
     color: inherit;
     margin-left: 0px;
-    margin-right: 5px;
+    margin-right: 7px;
+    margin-bottom: 5px;
 }
 
-@keyframes a-underline-text {
-    0% {
-        background-size: 100% 0%;
-        background-position: 0% 100%;
-    }
-
-    100% {
-        background-size: 100% 100%;
-        background-position: 0% 0%;
-    }
+.o-tag[data-theme="light"] {
+    color: #000000;
+    background-image: linear-gradient(to top, #000000 1px, transparent 1px);
 }
 
-.o-tag:hover {
-    color: #bbbbbb;
-    animation: a-underline-text 0.5s forwards;
+.o-tag[data-theme="dark"] {
+    color: #ffffff;
+    background-image: linear-gradient(to top, #ffffff 1px, transparent 1px);
+}
+
+span.o-tag:hover {
+    animation: a-underline-text-left-right 0.5s forwards;
+}
+
+/* for selected tag */
+.selected-tag[data-theme="light"] {
+    color: #000000;
+    background-image: linear-gradient(to top, #000000 1px, transparent 1px);
+    background-size: 100%;
+}
+
+.selected-tag[data-theme="dark"] {
+    color: #ffffff;
+    background-image: linear-gradient(to top, #ffffff 1px, transparent 1px);
+    background-size: 100%;
+}
+
+.o-tag.o-post-tag {
+    background-size: 0px;
 }
 
 .o-tag::before {
@@ -97,49 +114,14 @@ span.o-tag {
 }
 
 .o-post-title {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 1.3rem;
+    /* 24px */
+    margin-bottom: 0.625rem;
+    /* 10px */
 }
 
-
-.o-writing-footer {
-    text-align: center;
-    margin-top: 20px;
-    border-top: 1px solid #555555;
-    padding-top: 10px;
-}
-
-/* css styling for pagination */
-.pagination {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.pagination ul {
-    list-style: none;
-    padding: 0;
-    display: inline-block;
-}
-
-.pagination li {
-    display: inline;
-    margin: 0 5px;
-}
-
-.pagination a,
-.pagination .current-page {
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    color: #555;
-}
-
-.pagination a:hover {
-    background-color: #ddd;
-}
-
-.pagination .current-page {
-    font-weight: bold;
-    background-color: #f0f0f0;
+h2.o-post-title a {
+    color: var(--linkColor);
+    /* color: #2e5984; */
 }

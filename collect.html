@@ -1,0 +1,26 @@
+---
+layout: default
+title: Kai Qu ╂ Collect
+description: "Kai Qu's collect page"
+---
+
+<head>
+    <link rel="stylesheet" href="{{ '/assets/collect.css' | relative_url }}">
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <!-- TODO: fix this & refactor -->
+    <script>
+        window.dataFiles = {{ site.data.collect | jsonify }};
+    </script>
+    <script src="{{ '/assets/collectjs/collect.js' | relative_url }}"></script>
+</head>
+
+<div class="c-collection-container">
+    <h1 class="o-collection-title">Collect</h1>
+    <div class="c-collection-nav-container" data-theme="" id="collection-nav">
+        <!-- Navigation items will be dynamically added here -->
+    </div>
+    <div class="c-collection-tile-container" id="collection-tiles">
+        <!-- Sections will be dynamically added here -->
+    </div>
+</div>

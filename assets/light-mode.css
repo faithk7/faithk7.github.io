@@ -1,28 +1,25 @@
 /* light mode style */
 /* Light mode styles */
-body.light-mode {
+body.light {
     background-color: #ffffff;
     color: #000000;
 }
 
-.l-left.light-mode,
-.l-center.light-mode,
-.l-right.light-mode,
-.c-navbar.light-mode {
+.l-left.light,
+.l-center.light,
+.l-right.light,
+.c-navbar.light {
     background-color: #f0f0f0;
 }
 
-.c-line.light-mode {
+.c-line.light {
     background-color: #000000;
 }
 
-.o-navbar-item a.light-mode {
+.o-navbar-item a.light {
     color: #000000;
 }
 
-.o-navbar-item a.light-mode:hover {
-    color: #333333;
-}
 
 /*
 .o-tag[data-theme="light"] {

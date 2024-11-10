@@ -1,23 +1,27 @@
 ---
 layout: default
-title: Home
+title: Kai Qu ╂ Home
+description: "Kai Qu's home page on the World Wide Web"
 ---
 
 <head>
     <script type="module" src="/assets/index.js"></script>
+    <title>{{ page.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/index.css' | relative_url }}">
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <meta name="keywords" content="Kai Qu">
 </head>
 
 <div class="c-center-container">
     <div class="c-index-container">
         <div class="c-name-card-container">
-            <div class="o-name">Kai Qu</div>
+            <h1 class="o-name">Kai Qu</h1>
             <div class="o-status-quo" data-status-loading hidden>
                 <span data-status-text></span> <span data-status-datetime></span>
             </div>
-            <div class="o-summary">A software engineer based in Boston, Massachusetts.
+            <div class="o-summary">A software engineer based in Boston, MA.
                 <br>
-                Love reading, running and watching anime.
+                Loves reading, running and watching anime.
             </div>
         </div>
         <div class="c-info-card-container">
@@ -29,27 +33,22 @@ title: Home
             </div>
             <div class="o-info">
                 <a class="o-social"
-                    href="https://k7books.notion.site/28163bbc1d50481da1bb107545442ca5?v=49d761480a2a4b12a8c6e172f997d1d4">
-                    digital library</a> /
+                    href="https://k7books.notion.site/28163bbc1d50481da1bb107545442ca5?v=49d761480a2a4b12a8c6e172f997d1d4"
+                    target="_blank">digital library</a> /
                 <a class="o-social" href="https://open.spotify.com/user/315ytnpf5bjnkst6vx3yu5eo7xxu"
                     target="_blank">spotify</a> /
                 <a class="o-social" href="https://bangumi.tv/user/535734" target="_blank">bangumi</a>
             </div>
         </div>
-        <!-- <div class="c-moment-container">
-            <div class="o-moment-item">boston<br> x 50</div>
-            <div class="o-moment-item">travel<br> x 30</div>
-            <div class="o-moment-item">self<br> x 10</div>
-        </div> -->
         {% include stories.html lang="en" %}
     </div>
 </div>
 
 <div class="c-quote-container">
-    <div class="o-quote" data-theme="light">死神はリンゴしか食べないから
+    <div class="o-quote" data-theme="">死神はリンゴしか食べないから
     </div>
 </div>
 
 <div class="c-index-art-container">
-    <img src="/assets/spider_lily.svg" alt="Art Description">
+    <object type="image/svg+xml" data="/assets/spider-lily.svg" data-theme="" alt="Spider Lily"></object>
 </div>

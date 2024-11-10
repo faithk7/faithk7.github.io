@@ -9,10 +9,10 @@
 
 <body>
     <nav class="c-navbar">
-        <div class="c-navbar-container" data-theme="light">
+        <div class="c-navbar-container" data-theme="">
             <!-- <div class="c-line"></div> -->
             <ul class="c-navbar-items">
-                <li class="o-navbar-item"><a href="{{ '/' | relative_url }}">Home</a>
+                <li class="o-navbar-item"><a data-theme="" href="{{ '/' | relative_url }}">Home</a>
                     <!-- <div class="c-setting-container"> -->
                     <button id="dark-mode-toggle" class="o-setting-icon">
                         <!-- <img src="{{ '/assets/night.svg' | relative_url }}" alt="Icon Description"
@@ -26,36 +26,39 @@
                     </a>
                     <!-- </div> -->
                 </li>
-                <li class="o-navbar-item"><a href="{{ '/note' | relative_url }}">Note</a></li>
-                <li class="o-navbar-item"><a href="{{ '/writing-index' | relative_url }}">Writing</a></li>
-                <!-- <li class="o-navbar-item"><a href="{{ '/collection' | relative_url }}">Collection</a></li> -->
-                <li class="o-navbar-item"><a href="{{ '/about' | relative_url }}">About</a></li>
+                <li class="o-navbar-item"><a data-theme="" href="{{ '/note' | relative_url }}">Note</a></li>
+                <li class="o-navbar-item"><a data-theme="" href="{{ '/writing-index' | relative_url }}">Writing</a></li>
+                <li class="o-navbar-item"><a data-theme="" href="{{ '/collect' | relative_url }}">Collect</a></li>
+                <li class="o-navbar-item"><a data-theme="" href="{{ '/about' | relative_url }}">About</a></li>
             </ul>
         </div>
     </nav>
+    <div class="c-navbar-icon" id="nav-toggle">
+        {% include svg_nav_bars.html %}
+    </div>
 
     <script>
         // Function to apply the light/dark mode
         function applyMode(mode) {
             if (mode === 'light') {
-                document.body.classList.add('light-mode');
+                document.body.classList.add('light');
                 document.querySelectorAll('.l-left, .l-center, .l-right, .c-navbar, .c-line').forEach(el => {
-                    el.classList.add('light-mode');
+                    el.classList.add('light');
                 });
                 document.querySelectorAll('.o-navbar-item a, .o-tag').forEach(el => {
-                    el.classList.add('light-mode');
+                    el.classList.add('light');
                 });
                 document.querySelectorAll('[data-theme]').forEach(el => {
                     el.setAttribute('data-theme', 'light');
                 });
             } else {
                 // dark mode
-                document.body.classList.remove('light-mode');
+                document.body.classList.remove('light');
                 document.querySelectorAll('.l-left, .l-center, .l-right, .c-navbar, .c-line').forEach(el => {
-                    el.classList.remove('light-mode');
+                    el.classList.remove('light');
                 });
                 document.querySelectorAll('.o-navbar-item a, .o-tag').forEach(el => {
-                    el.classList.remove('light-mode');
+                    el.classList.remove('light');
                 });
                 document.querySelectorAll('[data-theme]').forEach(el => {
                     el.setAttribute('data-theme', 'dark');
@@ -63,6 +66,8 @@
             }
         }
 
+
+        // TODO: refactor
         // Check for saved mode in local storage
         const savedMode = localStorage.getItem('mode');
         if (savedMode) {
@@ -72,10 +77,31 @@
         // Toggle dark mode
         const toggleButton = document.getElementById('dark-mode-toggle');
         toggleButton.addEventListener('click', () => {
-            const currentMode = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+            const currentMode = document.body.classList.contains('light') ? 'light' : 'dark';
             const newMode = currentMode === 'light' ? 'dark' : 'light';
             applyMode(newMode);
             localStorage.setItem('mode', newMode);
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const navToggle = document.getElementById('nav-toggle');
+            const navbar = document.querySelector('.c-navbar');
+            const overlay = document.createElement('div');
+            overlay.className = 'c-navbar-overlay';
+            document.body.appendChild(overlay);
+
+            navToggle.addEventListener('click', function () {
+                navbar.classList.toggle('show');
+                // overlay.classList.toggle('show');
+            });
+
+            overlay.addEventListener('click', function () {
+                navbar.classList.remove('show');
+            });
+
+            navbar.addEventListener('click', function () {
+                navbar.classList.remove('show');
+            });
         });
     </script>
 
