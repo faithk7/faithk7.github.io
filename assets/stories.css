@@ -8,7 +8,7 @@
     --heartedBackgroundColor: #ffe2e2;
     --selectionBackgroundColor: #ffc;
     --linkColorMuan: #2357cd;
-    --borderColor: #ccc;
+    --borderColor: #666666;
     --hrColor: #888;
     --activeColor: #74d274;
     --langBackgroundColor: #eee;
@@ -27,7 +27,7 @@
     --heartedBackgroundColorLight: #ffe2e2;
     --selectionBackgroundColorLight: #ffc;
     --linkColorMuanLight: #2357cd;
-    --borderColorLight: #ccc;
+    --borderColorLight: #666666;
     --hrColorLight: #888;
     --activeColorLight: #74d274;
     --langBackgroundColorLight: #eee;
@@ -45,7 +45,7 @@
     --heartedBackgroundColorDark: #652222;
     --selectionBackgroundColorDark: #19446b;
     --linkColorMuanDark: #6eb8ff;
-    --borderColorDark: #414141;
+    --borderColorDark: #888888;
     --hrColorDark: #888;
     --activeColorDark: #74d274;
     --langBackgroundColorDark: #2c2c2c;
