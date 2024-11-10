@@ -23,7 +23,7 @@
     bottom: -5px;
     left: 0;
     text-align: center;
-    transform: translateY(2rem);
+    transform: translateY(2.5rem);
     color: darkgray;
 }
 
@@ -74,7 +74,7 @@
 
 .c-tag-container {
     margin-top: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 2.7rem;
 }
 
 
