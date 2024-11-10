@@ -33,6 +33,10 @@ a {
     display: inline-block;
 }
 
+.c-writing-post-date[data-theme="light"] {
+    color: #666666;
+}
+
 .c-writing-post-tag-container::before {
     content: "|";
     margin-right: 5px;
@@ -65,7 +69,7 @@ a {
 
 
 .o-writing-post-tag[data-theme="light"] {
-    color: #a3a3a3;
+    color: #666666;
 }
 
 /* .o-writing-post-tag::before {

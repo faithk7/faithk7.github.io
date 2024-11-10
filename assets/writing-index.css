@@ -12,7 +12,7 @@
 
 .c-writing-index-container::after {
     content: "ₖ₇";
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     display: block;
     width: 100%;
     height: 1px;
@@ -54,17 +54,8 @@
     display: block;
     /* Block display ensures elements stack vertically */
     margin-bottom: 10px;
-    /* Add some spacing between elements, if needed */
-}
-
-.o-writing-note-date[data-theme="light"] {
-    color: #666666;
-    /* Darker gray for light mode */
-}
-
-.o-writing-note-date[data-theme="dark"] {
     color: #bbbbbb;
-    /* Lighter gray for dark mode */
+    /* Add some spacing between elements, if needed */
 }
 
 .o-writing-note-date {
@@ -74,6 +65,11 @@
     /* 14px */
     color: #999999;
     font-family: var(--dateFont);
+}
+
+.o-writing-note-date[data-theme="light"] {
+    color: #666666;
+    /* Darker gray for light mode */
 }
 
 .c-tag-container {
