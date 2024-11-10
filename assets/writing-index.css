@@ -10,6 +10,23 @@
     /* Ensure the container is positioned relative for the pseudo-element */
 }
 
+.c-writing-index-container::after {
+    content: "ₖ₇";
+    font-size: 1.2rem;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: darkgray;
+    margin: 0 auto;
+    margin-top: 2rem;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    text-align: center;
+    transform: translateY(2rem);
+    color: darkgray;
+}
+
 .c-writing-item-container {
     display: block;
     /* Treat the container as a block-level element */
