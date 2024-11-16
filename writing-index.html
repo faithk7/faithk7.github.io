@@ -64,7 +64,7 @@ description: "Kai Qu's writing index page"
         posts.forEach(function (post) {
             var postTags = post.getAttribute('data-tags').split(' ');
             if (postTags.includes(tag) || tag === '') {
-                post.style.display = 'block';
+                post.style.display = 'flex';
             } else {
                 post.style.display = 'none';
             }
