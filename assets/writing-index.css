@@ -28,16 +28,13 @@
 }
 
 .c-writing-item-container {
-    display: block;
-    /* Treat the container as a block-level element */
-    margin: 0 auto;
-    /* Center the container horizontally */
-    margin-bottom: 30px;
-    width: 30%;
+    display: flex;
     box-sizing: border-box;
-    /* Include padding in the width calculation */
+    width: 100%;
+    margin: 0 auto;
     text-align: left;
-    /* Ensure contents inside are left-aligned */
+    justify-content: space-between;
+    align-items: end;
 }
 
 /* TODO: need find a better way to handle this */
@@ -62,7 +59,6 @@
     margin: 10px 0;
     font-size: 0.9rem;
     width: 100%;
-    /* 14px */
     color: #999999;
     font-family: var(--dateFont);
 }
@@ -72,16 +68,10 @@
     /* Darker gray for light mode */
 }
 
-.c-tag-container {
-    margin-top: 5px;
-    margin-bottom: 2.3rem;
-}
-
-
 .o-tag {
     display: inline-block;
     border-radius: 3px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.5em;
     font-family: serif, Times;
     text-decoration: none;
@@ -134,6 +124,11 @@ span.o-tag:hover {
     /* Insert the # symbol before the content */
     margin-right: 1px;
     /* Add some space between the # and the text */
+}
+
+
+.c-post-title-container {
+    width: 50%;
 }
 
 .o-post-title {
