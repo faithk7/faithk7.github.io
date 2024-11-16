@@ -44,20 +44,19 @@ span.highlight {
     user-select: text;
 }
 
-@media (prefers-color-scheme: dark) {
-    .l-center::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url(/assets/kokoro.svg) no-repeat center center fixed;
-        object-fit: contain;
-        filter: invert(1);
-        z-index: -1;
-        /* Ensure it is behind the content */
-    }
+.c-about-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(/assets/kokoro.svg) no-repeat center center fixed;
+    object-fit: contain;
+    filter: invert(1);
+    z-index: -1;
+    background-position: center;
+    /* Ensure it is behind the content */
 }
 
 .o-about-title {
