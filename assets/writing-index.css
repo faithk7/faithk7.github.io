@@ -10,6 +10,10 @@
     /* Ensure the container is positioned relative for the pseudo-element */
 }
 
+.c-tag-container {
+    margin-bottom: 2rem;
+}
+
 .c-writing-index-container::after {
     content: "ₖ₇";
     font-size: 1.3rem;
