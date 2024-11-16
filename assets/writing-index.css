@@ -10,8 +10,13 @@
     /* Ensure the container is positioned relative for the pseudo-element */
 }
 
-.c-tag-container {
+.c-tag-container-meta {
     margin-bottom: 2rem;
+}
+
+.c-hashtag-container-post {
+    display: flex;
+    gap: 5px
 }
 
 .c-writing-index-container::after {
@@ -41,13 +46,6 @@
     align-items: end;
 }
 
-/* TODO: need find a better way to handle this */
-@media (max-width: 768px) {
-    .c-writing-item-container {
-        width: 80%;
-        padding: 0 0 0 15%;
-    }
-}
 
 .o-writing-note-date {
     width: 50%;
