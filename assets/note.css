@@ -57,3 +57,7 @@
     color: #bbbbbb;
     padding-bottom: var(--pageEndMargin);
 }
+
+.o-note-footer[data-theme="light"] {
+    color: #666666;
+}

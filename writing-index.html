@@ -12,7 +12,7 @@ description: "Kai Qu's writing index page"
     <meta name="description" content="{{ page.description | default: site.description }}">
 </head>
 
-<div class="c-writing-index-container">
+<div class="c-writing-index-container" data-theme="">
     <h1 class="o-writing-index-title">Writing</h1>
     {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
 

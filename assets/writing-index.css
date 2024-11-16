@@ -36,6 +36,11 @@
     color: darkgray;
 }
 
+.c-writing-index-container::after[data-theme="light"] {
+    background-color: #666666;
+    color: #666666;
+}
+
 .c-writing-item-container {
     display: flex;
     box-sizing: border-box;
