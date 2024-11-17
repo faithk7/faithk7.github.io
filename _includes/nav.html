@@ -14,12 +14,12 @@
             <ul class="c-navbar-items">
                 <li class="o-navbar-item"><a data-theme="" href="{{ '/' | relative_url }}">Home</a>
                     <!-- <div class="c-setting-container"> -->
-                    <button id="dark-mode-toggle" class="o-setting-icon">
+                    <button id="dark-mode-toggle" class="o-setting-icon" aria-label="Toggle dark mode">
                         <!-- <img src="{{ '/assets/night.svg' | relative_url }}" alt="Icon Description"
                                 class="o-setting-icon" /> -->
                         {% include svg_switch.html %}
                     </button>
-                    <a href="/feed.xml" class="o-setting-icon">
+                    <a href="/feed.xml" class="o-setting-icon" aria-label="RSS feed">
                         <!-- <img src="{{ '/assets/rss.svg' | relative_url }}" alt="Icon Description"
                                 class="o-setting-icon" /> -->
                         {% include svg_rss.html %}
