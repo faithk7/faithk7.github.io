@@ -75,6 +75,15 @@
     /* Darker gray for light mode */
 }
 
+
+#all-tag {
+    color: #cea2fd;
+}
+
+#all-tag[data-theme="light"] {
+    color: #a55df1;
+}
+
 .o-tag {
     display: inline-block;
     border-radius: 3px;

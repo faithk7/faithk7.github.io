@@ -21,7 +21,7 @@ description: "Kai Qu's writing index page"
     {% endif %}
 
     <div id="tag-container" class="c-tag-container-meta">
-        <span class="o-tag selected-tag" data-theme="" style="color: #cea2fd" onclick="filterPosts('')">all</span><span
+        <span class="o-tag selected-tag" id="all-tag" data-theme="" onclick="filterPosts('')">all</span><span
             style="margin-left: 3px; margin-right: 7px">|</span>
         {% assign tags = "" %}
         {% for post in site.posts %}
