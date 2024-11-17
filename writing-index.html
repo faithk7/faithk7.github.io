@@ -40,7 +40,7 @@ description: "Kai Qu's writing index page"
     {% for post in sorted_posts %}
     <div class="c-writing-item-container" data-tags="{{ post.tags | join: ' ' }}">
         <div class="c-post-title-container">
-            <h2 class="o-post-title"><a href="{{ post.url }}" data-theme="">{{ post.title | replace: "╂ Kai Qu", ""
+            <h2 class="o-post-title"><a href="{{ post.url }}" data-theme="">{{ post.title | replace: "| Kai Qu", ""
                     }}</a>
             </h2>
             <div class="o-writing-note-date" data-theme="">{{ post.date | date: "%B %d, %Y" }}</div>
