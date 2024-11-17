@@ -1,5 +1,5 @@
 ---
-title: "23 | 2021/11/06 ╂ Kai Qu"
+title: "23 | 2021/11/06 | Kai Qu"
 date: 2021-11-06
 tags: [reflection, 2021]
 layout: writing
