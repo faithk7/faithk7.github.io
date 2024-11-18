@@ -34,6 +34,10 @@ span.highlight {
     /* Light purple color */
 }
 
+span.highlight[data-theme="light"] {
+    color: #bd41bd;
+}
+
 .c-about-container {
     margin: 20px;
     border-bottom: 1px solid #555555;
@@ -82,7 +86,7 @@ span.highlight {
 .o-about-item-title::before {
     content: "#";
     margin-right: 1px;
-    color: lightblue;
+    color: var(--linkColor);
 }
 
 .o-about-item-subtitle {
@@ -99,8 +103,11 @@ span.highlight {
 .o-about-item-subtitle::before {
     content: "|";
     margin-right: 1px;
-    color: #eca4ec;
+    color: #e093e0;
+}
 
+.o-about-item-subtitle::before[data-theme="light"] {
+    color: #bd41bd;
 }
 
 .o-about-content {
