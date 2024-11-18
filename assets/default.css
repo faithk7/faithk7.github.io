@@ -11,6 +11,10 @@
     --pageEndMargin: 1.25rem;
 }
 
+:root[data-theme="light"] {
+    --linkColor: #126ba2;
+}
+
 html,
 body {
     height: 100%;
