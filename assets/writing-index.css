@@ -75,7 +75,6 @@
     /* Darker gray for light mode */
 }
 
-
 #all-tag {
     color: #cea2fd;
 }
@@ -87,7 +86,7 @@
 .o-tag {
     display: inline-block;
     border-radius: 3px;
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.5em;
     font-family: serif, Times;
     text-decoration: none;
@@ -131,10 +130,6 @@ span.o-tag:hover {
     background-size: 100%;
 }
 
-.o-tag.o-post-tag {
-    background-size: 0px;
-}
-
 .o-tag::before {
     content: "#";
     /* Insert the # symbol before the content */
@@ -142,6 +137,25 @@ span.o-tag:hover {
     /* Add some space between the # and the text */
 }
 
+.o-post-tag {
+    background-size: 0px;
+    color: darkgray;
+    font-family: var(--tagFont);
+    font-size: 0.9rem;
+}
+
+.o-post-tag::after {
+    content: "/";
+    margin-left: 5px;
+}
+
+.o-post-tag:last-child::after {
+    content: "";
+}
+
+.o-post-tag[data-theme="light"] {
+    color: #666666;
+}
 
 .c-post-title-container {
     width: 50%;
@@ -156,7 +170,7 @@ span.o-tag:hover {
     /* 10px */
 }
 
-h2.o-post-title a {
-    color: var(--linkColor);
+h3.o-post-title a {
+    color: var(--titleColor);
     /* color: #2e5984; */
 }
