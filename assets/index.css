@@ -109,9 +109,9 @@ h1.o-name {
     border-radius: 5px;
     text-decoration: none;
     color: var(--linkColor);
-    font-size: 1rem;
-    margin-top: 0.1rem;
-    margin-bottom: 0.1rem;
+    font-size: 0.9rem;
+    margin-top: 0.05rem;
+    margin-bottom: 0.0.05rem;
     text-wrap: nowrap;
 }
 
