@@ -110,8 +110,8 @@ h1.o-name {
     text-decoration: none;
     color: var(--linkColor);
     font-size: 0.9rem;
-    margin-top: 0.05rem;
-    margin-bottom: 0.0.05rem;
+    margin-top: 0.07rem;
+    margin-bottom: 0.07rem;
     text-wrap: nowrap;
 }
 
