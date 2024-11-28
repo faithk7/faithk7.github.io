@@ -1,0 +1,36 @@
+name: "Media upload"
+
+on:
+  workflow_dispatch:
+    inputs:
+      filepath:
+        description: "JSON file path for the data"
+        type: string
+        required: true
+      filedata:
+        description: "Stringify JSON data of the media"
+        type: string
+        required: true
+concurrency: ci-${{ github.action }}
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: "main"
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 17.7
+
+      - name: Run script
+        run: node .github/workflows/scripts/media.js '${{ inputs.filepath }}' '${{ inputs.filedata }}'
+
+      - name: Push changes
+        run: |
+          git add .
+          git commit -m "Add story" || echo "Nothing to commit"
+          git fetch origin main
+          git push origin HEAD:main

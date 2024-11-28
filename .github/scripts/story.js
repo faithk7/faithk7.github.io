@@ -24,14 +24,14 @@ layout: story
 date: ${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()} ${date.getHours()}:${date.getMinutes()}
 tags: [ ${json.meta.tags.join(', ')} ]
 title: Story
-image: https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/${json.id}/public
+image: ${json.variants[0]}
 caption: |
   ${json.meta.caption}
 alt: |
   ${json.meta.alt}
 ---
 
-![${json.meta.alt}](https://photos.muan.dev/cdn-cgi/imagedelivery/-wp_VgtWlgmh1JURQ8t1mg/${json.id}/public)
+![${json.meta.alt}](${json.variants[0]})
 
 ${json.meta.caption}
 `
