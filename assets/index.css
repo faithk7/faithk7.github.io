@@ -143,6 +143,7 @@ h1.o-name {
     text-align: center;
     writing-mode: vertical-rl;
     text-orientation: upright;
+    max-height: 30%;
 }
 
 .o-quote[data-theme="light"] {
