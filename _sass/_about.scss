@@ -1,13 +1,13 @@
 /* Styles specific to about.html */
 
-p {
+.c-about-container p {
     line-height: 1.5em;
     text-align: justify;
     font-weight: 300;
     font-family: 'Courier New', Courier, monospace
 }
 
-a {
+.c-about-container a {
     text-decoration: none;
     color: var(--linkColor);
     background-image: linear-gradient(to top, #ffffff 1px, transparent 1px);
@@ -17,24 +17,24 @@ a {
     transition: color 0.3s;
 }
 
-a[data-theme="light"] {
+.c-about-container a[data-theme="light"] {
     background-image: linear-gradient(to top, #000000 1px, transparent 1px);
 }
 
-a:hover {
+.c-about-container a:hover {
     animation: a-underline-text-bottom-up 0.3s ease forwards;
 }
 
-br {
+.c-about-container br {
     user-select: none;
 }
 
-span.highlight {
+.c-about-container span.highlight {
     color: #e093e0;
     /* Light purple color */
 }
 
-span.highlight[data-theme="light"] {
+.c-about-container span.highlight[data-theme="light"] {
     color: #bd41bd;
 }
 
