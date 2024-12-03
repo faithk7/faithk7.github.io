@@ -79,7 +79,6 @@ a {
 .o-writing-post-text {
     font-size: 1rem;
     /* 16px */
-    line-height: 1.8;
     color: #dddddd;
 
     margin-bottom: 1.25rem;
@@ -93,6 +92,7 @@ a {
 }
 
 .o-writing-post-text p {
+    line-height: 2.0;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
