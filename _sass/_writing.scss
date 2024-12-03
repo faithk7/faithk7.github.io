@@ -92,6 +92,9 @@ a {
     font-weight: 400;
 }
 
+.o-writing-post-text p {
+    font-family: var(--bodyFont);
+}
 
 .o-writing-post-text[data-theme="light"] {
     color: #000000;
