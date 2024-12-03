@@ -1,0 +1,32 @@
+/* light mode style */
+/* Light mode styles */
+body.light {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.l-left.light,
+.l-center.light,
+.l-right.light,
+.c-navbar.light {
+    background-color: #f0f0f0;
+}
+
+.c-line.light {
+    background-color: #000000;
+}
+
+.o-navbar-item a.light {
+    color: #000000;
+}
+
+
+/*
+.o-tag[data-theme="light"] {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.o-tag[data-theme="light"]:hover {
+    background-color: #cccccc;
+} */
