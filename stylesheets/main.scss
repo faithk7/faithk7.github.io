@@ -2,12 +2,15 @@
 ---
 
 @import "../_sass/_default";
+/* stylesheets for included components */
 @import "../_sass/_nav";
-@import "../_sass/index";
-@import "../_sass/_about";
-@import "../_sass/_collect";
-@import "../_sass/_note";
+@import "../_sass/_light-mode";
 @import "../_sass/_stories";
+/* stylesheets for pages */
+@import "../_sass/index";
+@import "../_sass/_note";
 @import "../_sass/_story";
 @import "../_sass/_writing-index";
 @import "../_sass/_writing";
+@import "../_sass/_collect";
+@import "../_sass/_about";
