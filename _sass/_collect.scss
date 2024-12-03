@@ -3,17 +3,13 @@
 .c-collection-container {
     display: grid;
     grid-template-columns: 1fr 5fr;
-    /* Changed from 1fr 3fr to auto 1fr */
     grid-template-rows: auto 1fr;
     gap: 20px;
-    /* height: 100vh; */
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    height: auto;
     margin-top: auto;
     margin-bottom: 2rem;
-     /* might need to adjust more when there are more items added */
 }
 
 .o-collection-title {
@@ -27,12 +23,10 @@
 .c-collection-nav-container {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    /* Specify the grid row */
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    /* Center content vertically */
     overflow-y: auto;
     padding-right: 10px;
     background-color: inherit;
@@ -41,7 +35,6 @@
     min-height: fit-content;
     align-self: center;
     width: auto;
-    /* Allow width to be determined by content */
     max-width: 200px;
 }
 
@@ -64,7 +57,7 @@
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
     overflow-y: scroll;
