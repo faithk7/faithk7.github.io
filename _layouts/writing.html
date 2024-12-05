@@ -7,6 +7,8 @@ layout: default
     <title>{{ page.title }}</title>
 </head>
 
+{% include toc.html html=content %}
+
 <div class="c-writing-post-meta-container">
     <h1 class="o-writing-post-title">{{ page.title | replace: "| Kai Qu", "" }}</h1>
     <div class="c-writing-post-date" data-theme="">{{ page.date | date: "%B %d, %Y" }}</div>
