@@ -32,4 +32,29 @@ layout: default
             link.setAttribute('target', '_blank');
         });
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const tocContainer = document.querySelector('.toc-container');
+
+        if (tocContainer) {
+            tocContainer.addEventListener('click', function (event) {
+                // Check if the TOC is overflown
+                const isOverflown = tocContainer.scrollHeight > tocContainer.clientHeight;
+
+                if (isOverflown) {
+                    // Prevent default behavior if the TOC is overflown
+                    event.preventDefault();
+
+                    // Get the target element from the clicked link
+                    const targetId = event.target.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        // Scroll the target element into view
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        }
+    });
 </script>
