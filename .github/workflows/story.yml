@@ -10,7 +10,7 @@ on:
       filedata:
         description: "Stringify JSON data of the media"
         type: string
-        required: false
+        required: true
 concurrency: ci-${{ github.action }}
 
 jobs:
