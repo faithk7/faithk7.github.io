@@ -5,7 +5,7 @@ type: "self"
 {% assign stories = site.data.stories | where_exp: "story", "story.meta.tags contains page.type" | where_exp: "story","story.meta.tags contains 'Highlight'" %}
 {
   "version": "https://jsonfeed.org/version/1.1",
-  "title": "@muan's stories for {{ page.type }}",
+  "title": "@kai's stories for {{ page.type }}",
   "icon": "https://github.com/muan.png",
   "home_page_url": "https://k7n.co/",
   "feed_url": "https://k7n.co/stories-self.json",
