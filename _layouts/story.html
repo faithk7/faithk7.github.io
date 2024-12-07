@@ -25,10 +25,10 @@
             <h1 class="text entry-title">
                 {{ page.title }}, {{ page.date | date: "%Y/%m/%d %H:%M" }}
             </h1>
-            <!-- <open-heart class="text-open-heart monospace" href="https://likes.muan.dev/?id={{ page.url }}" emoji="❤️"
+            <open-heart class="text-open-heart monospace" href="https://likes.muan.dev/?id={{ page.url }}" emoji="❤️"
                 aria-labelledby="like-prompt">
                 (<span class="on">Liked ♥︎.</span><span class="off">Like?</span>)
-            </open-heart> -->
+            </open-heart>
         </div>
         <div>
             {{ page.caption }}
@@ -38,7 +38,7 @@
         <img src="{{ page.image }}" alt="{{ page.alt }}" class="story-image">
     </main>
 
-    <!-- <script defer type="module" src="https://unpkg.com/open-heart-element@latest"></script> -->
+    <script defer type="module" src="https://unpkg.com/open-heart-element@latest"></script>
 </body>
 
 </html>
