@@ -6,8 +6,11 @@ const jsonString = process.argv[3]
 const fileExists = fs.existsSync(filePath)
 
 const photos = fileExists ? JSON.parse(fs.readFileSync(filePath).toString()) : []
-const json = JSON.parse(jsonString)
-photos.push(json)
+// only add jsonString if it exists, otherwise it is a file upload
+if (jsonString) {
+  const json = JSON.parse(jsonString)
+  photos.push(json)
+}
 
 const dirName = path.dirname(filePath)
 if (!fileExists && dirName !== '.') {
