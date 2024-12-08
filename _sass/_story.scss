@@ -27,12 +27,18 @@
         z-index: 1;
         bottom: 0;
         color: #fff;
+        font-size: 1rem;
+        max-height: 10vh;
     }
 
     .story-meta {
         display: flex;
         justify-content: space-between;
         gap: 1rem;
+    }
+
+    .entry-title {
+        font-size: 1rem;
     }
 
     main {
