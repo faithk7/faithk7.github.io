@@ -2,24 +2,18 @@
 
 .c-note-container {
     margin: 1.25rem;
-    /* 20px */
 }
 
 .o-note-title {
     font-size: 2rem;
-    /* 32px */
     margin-bottom: 1.25rem;
-    /* 20px */
     font-family: var(--titleFont);
 }
 
 .c-note-item-container {
     margin-bottom: 1.25rem;
-    /* 20px */
     border-bottom: 0.0625rem solid #555555;
-    /* 1px */
     padding-bottom: 0.625rem;
-    /* 10px */
 }
 
 .c-note-item-container p {
@@ -29,22 +23,17 @@
 
 .o-note-date {
     font-size: 1rem;
-    /* 16px */
     color: #bbbbbb;
     margin-bottom: 0.3125rem;
-    /* 5px */
     font-family: var(--dateFont);
-    /* Add this line */
 }
 
 .o-note-date[data-theme="light"] {
     color: #666666;
-    /* Darker gray for light mode */
 }
 
 .o-note-text {
     font-size: var(--note-font-size);
-    /* 18px */
     color: #dddddd;
     font-weight: 400;
 }
@@ -56,9 +45,7 @@
 .o-note-footer {
     text-align: center;
     margin-top: 1.25rem;
-    /* 20px */
     font-size: 0.875rem;
-    /* 14px */
     color: #bbbbbb;
     padding-bottom: var(--pageEndMargin);
 }
