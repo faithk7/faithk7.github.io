@@ -38,9 +38,20 @@ layout: default
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
             if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start', // or 'center' or 'nearest' depending on your preference
+                const elementRect = targetElement.getBoundingClientRect();
+                const absoluteElementTop = elementRect.top + window.pageYOffset;
+                const middle = absoluteElementTop - (window.innerHeight - elementRect.height);
+
+                console.log("elementRect.top", elementRect.top);
+                console.log("elementRect.height", elementRect.height);
+                console.log("window.innerHeight", window.innerHeight);
+                console.log('Current Scroll Position:', window.pageYOffset);
+                console.log('Target Element Top:', absoluteElementTop);
+                console.log('Calculated Scroll Position:', middle);
+
+                window.scrollTo({
+                    top: middle,
+                    behavior: 'smooth'
                 });
             }
         });
