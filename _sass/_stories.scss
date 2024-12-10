@@ -7,7 +7,7 @@
     --subtleBackgroundColor: #f5f5f5;
     --heartedBackgroundColor: #ffe2e2;
     --selectionBackgroundColor: #ffc;
-    --linkColorMuan: #2357cd;
+    --linkColor: #2357cd;
     --borderColor: #666666;
     --hrColor: #888;
     --activeColor: #74d274;
@@ -26,7 +26,7 @@
     --subtleBackgroundColorLight: #f5f5f5;
     --heartedBackgroundColorLight: #ffe2e2;
     --selectionBackgroundColorLight: #ffc;
-    --linkColorMuanLight: #2357cd;
+    --linkColorLight: #2357cd;
     --borderColorLight: #666666;
     --hrColorLight: #888;
     --activeColorLight: #74d274;
@@ -44,7 +44,7 @@
     --subtleBackgroundColorDark: #3a3b3b;
     --heartedBackgroundColorDark: #652222;
     --selectionBackgroundColorDark: #19446b;
-    --linkColorMuanDark: #6eb8ff;
+    --linkColorDark: #6eb8ff;
     --borderColorDark: #888888;
     --hrColorDark: #888;
     --activeColorDark: #74d274;
@@ -64,7 +64,7 @@
         --subtleBackgroundColor: #3a3b3b;
         --heartedBackgroundColor: #652222;
         --selectionBackgroundColor: #19446b;
-        --linkColorMuan: #6eb8ff;
+        --linkColor: #6eb8ff;
         --borderColor: #414141;
         --hrColor: #888;
         --activeColor: #74d274;
@@ -99,7 +99,7 @@ open-stories::part(dialog):focus {
 open-stories:not(:defined),
 open-stories::part(button) {
     font-family: var(--linkFont), serif, Times, Arial, sans-serif;
-    border: 1px solid var(--borderColor);
+    border: 2px solid var(--borderColor);
     box-shadow: inset 0 0 0 2px var(--backgroundColor);
     color: var(--textColor);
     background: var(--subtleBackgroundColor);
@@ -156,7 +156,7 @@ open-stories:not([is-highlight])::part(button) {
 }
 
 open-stories:not(.is-read):not(.is-empty):not([is-highlight]):not(.is-loading)::part(button) {
-    border-color: var(--linkColorMuan);
+    border-color: var(--linkColor);
 }
 
 open-stories.is-loading {

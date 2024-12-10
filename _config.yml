@@ -6,11 +6,11 @@ plugins:
   - jekyll-feed
 
 collections:
-  # sass_dir:
-  #   output: true
   notes:
     output: true
   posts:
+    output: true
+  stories:
     output: true
 
 feed:

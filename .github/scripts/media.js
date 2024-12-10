@@ -6,6 +6,7 @@ const jsonString = process.argv[3]
 const fileExists = fs.existsSync(filePath)
 
 const photos = fileExists ? JSON.parse(fs.readFileSync(filePath).toString()) : []
+
 const json = JSON.parse(jsonString)
 photos.push(json)
 
