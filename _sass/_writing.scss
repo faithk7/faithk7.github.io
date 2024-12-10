@@ -11,6 +11,22 @@
     list-style: none;
 }
 
+.toc-container ul {
+    list-style: none;
+}
+
+.toc-container li {
+    margin-bottom: 5px;
+}
+
+.toc-container ul li:first-child {
+    margin-top: 5px;
+}
+
+.toc-container ul li {
+    margin-bottom: 5px;
+}
+
 a {
     color: var(--linkColor);
 }
