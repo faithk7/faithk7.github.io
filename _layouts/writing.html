@@ -32,36 +32,17 @@ layout: default
         });
     });
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const tocContainer = document.querySelector('.toc-container');
-
-        if (tocContainer) {
-            console.log("tocContainer", tocContainer);
-            tocContainer.addEventListener('click', function (event) {
-                console.log("event", event);
-                console.log("adding event listener");
-                // Ensure the clicked element is an <a> within an <li> of the <ul> with class 'toc-container'
-                if (event.target.matches('ul.toc-container > li > a')) {
-                    console.log("matches");
-                    // Check if the TOC is overflown
-                    const isOverflown = tocContainer.scrollHeight > tocContainer.clientHeight;
-
-                    if (isOverflown) {
-                        // Prevent default behavior if the TOC is overflown
-                        event.preventDefault();
-
-                        // Get the target element from the clicked link
-                        const targetId = event.target.getAttribute('href');
-                        const targetElement = document.querySelector(targetId);
-                        console.log("targetElement", targetElement);
-
-                        if (targetElement) {
-                            // Scroll the target element into view
-                            targetElement.scrollIntoView({ behavior: 'smooth' });
-                        }
-                    }
-                }
-            });
-        }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start', // or 'center' or 'nearest' depending on your preference
+                });
+            }
+        });
     });
 </script>
