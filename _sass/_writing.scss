@@ -12,6 +12,13 @@
     font-family: monospace;
 }
 
+.toc-container::before {
+    content: "目录";
+    text-decoration: underline;
+    display: block;
+    margin-bottom: 8px;
+}
+
 .toc-container ul {
     list-style: none;
 }
