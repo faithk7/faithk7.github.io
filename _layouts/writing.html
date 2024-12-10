@@ -37,23 +37,22 @@ layout: default
             e.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                const elementRect = targetElement.getBoundingClientRect();
-                const absoluteElementTop = elementRect.top + window.pageYOffset;
-                const middle = absoluteElementTop - (window.innerHeight - elementRect.height);
+            const scrollContainer = document.querySelector('.l-grid.l-center.light'); // Select the specific element
 
-                console.log("elementRect.top", elementRect.top);
-                console.log("elementRect.height", elementRect.height);
-                console.log("window.innerHeight", window.innerHeight);
-                console.log('Current Scroll Position:', window.pageYOffset);
+            if (targetElement && scrollContainer) {
+                const elementRect = targetElement.getBoundingClientRect();
+                const containerRect = scrollContainer.getBoundingClientRect();
+                const absoluteElementTop = elementRect.top + scrollContainer.scrollTop - containerRect.top;
+                const middle = absoluteElementTop - (containerRect.height - elementRect.height);
+
+                console.log('Current Scroll Position:', scrollContainer.scrollTop);
                 console.log('Target Element Top:', absoluteElementTop);
                 console.log('Calculated Scroll Position:', middle);
 
-                // window.scrollTo({
-                //     top: 50,
-                //     behavior: 'smooth'
-                // });
-                window.scrollTo(0, 50);
+                scrollContainer.scrollTo({
+                    top: middle,
+                    behavior: 'smooth'
+                });
             }
         });
     });
