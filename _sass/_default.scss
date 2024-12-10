@@ -29,8 +29,7 @@ body {
     /* For Firefox */
     -ms-user-select: text;
     /* For Internet Explorer/Edge */
-    overflow-y: overlay;
-    scroll-behavior: smooth;
+    overflow: auto;
 }
 
 a {
