@@ -43,14 +43,17 @@ layout: default
                 const elementRect = targetElement.getBoundingClientRect();
                 const containerRect = scrollContainer.getBoundingClientRect();
                 const absoluteElementTop = elementRect.top + scrollContainer.scrollTop - containerRect.top;
-                const middle = absoluteElementTop - (containerRect.height - elementRect.height);
+
+                // Calculate the maximum scroll position to prevent overflow
+                const maxScrollTop = scrollContainer.scrollHeight - containerRect.height;
+                const targetScrollTop = Math.min(absoluteElementTop, maxScrollTop);
 
                 console.log('Current Scroll Position:', scrollContainer.scrollTop);
                 console.log('Target Element Top:', absoluteElementTop);
-                console.log('Calculated Scroll Position:', middle);
+                console.log('Calculated Scroll Position:', targetScrollTop);
 
                 scrollContainer.scrollTo({
-                    top: middle,
+                    top: targetScrollTop,
                     behavior: 'smooth'
                 });
             }
