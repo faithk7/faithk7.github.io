@@ -9,6 +9,7 @@
     padding: 10px;      /* Add some padding for aesthetics */
     z-index: 1000;      /* Ensure it is on top of other elements */
     list-style: none;
+    font-family: monospace;
 }
 
 .toc-container ul {
@@ -16,11 +17,11 @@
 }
 
 .toc-container li {
-    margin-bottom: 5px;
+    margin-bottom: 7px;
 }
 
 .toc-container ul li:first-child {
-    margin-top: 5px;
+    margin-top: 7px;
 }
 
 .toc-container ul li {
