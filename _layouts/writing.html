@@ -6,6 +6,8 @@ layout: default
     <title>{{ page.title }}</title>
 </head>
 
+{% include toc.html html=content class="toc-container" %}
+
 <div class="c-writing-post-meta-container">
     <h1 class="o-writing-post-title">{{ page.title | replace: "| Kai Qu", "" }}</h1>
     <div class="c-writing-post-date" data-theme="">{{ page.date | date: "%B %d, %Y" }}</div>
@@ -27,6 +29,34 @@ layout: default
         var links = document.querySelectorAll('.o-writing-post-text a');
         links.forEach(function (link) {
             link.setAttribute('target', '_blank');
+        });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            const scrollContainer = document.querySelector('.l-grid.l-center.light'); // Select the specific element
+
+            if (targetElement && scrollContainer) {
+                const elementRect = targetElement.getBoundingClientRect();
+                const containerRect = scrollContainer.getBoundingClientRect();
+                const absoluteElementTop = elementRect.top + scrollContainer.scrollTop - containerRect.top;
+
+                // Calculate the maximum scroll position to prevent overflow
+                const maxScrollTop = scrollContainer.scrollHeight - containerRect.height;
+                const targetScrollTop = Math.min(absoluteElementTop, maxScrollTop);
+
+                console.log('Current Scroll Position:', scrollContainer.scrollTop);
+                console.log('Target Element Top:', absoluteElementTop);
+                console.log('Calculated Scroll Position:', targetScrollTop);
+
+                scrollContainer.scrollTo({
+                    top: targetScrollTop,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 </script>

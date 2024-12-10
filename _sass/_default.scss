@@ -7,7 +7,6 @@
     --dateFont: Georgia;
     --backgroundColor: #121212;
     --linkColor: #388dc2;
-    /* Added this line */
     --pageEndMargin: 1.25rem;
 }
 
@@ -30,6 +29,7 @@ body {
     /* For Firefox */
     -ms-user-select: text;
     /* For Internet Explorer/Edge */
+    overflow: auto;
 }
 
 a {
@@ -85,8 +85,6 @@ nav li a {
     .l-container {
         display: block;
         background-color: #121212;
-        /* margin-left: 1.5rem;
-        margin-right: 1.5rem; */
     }
 
     .l-left {
@@ -98,8 +96,6 @@ nav li a {
     }
 
     .l-center {
-        /* margin-left: 1.5rem;
-        margin-right: 1.5rem; */
         background-color: #121212;
     }
 }
@@ -116,11 +112,8 @@ nav li a {
 }
 
 .l-center {
-    /* background-color: #333333; */
     background-color: #2c2c2c;
     padding: 20px;
-    /* border-left: 1px solid #ffffff;
-    border-right: 1px solid #ffffff; */
 }
 
 .l-right {

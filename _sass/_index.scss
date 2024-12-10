@@ -67,7 +67,6 @@
 
 h1.o-name {
     font-size: 2rem;
-    /* 32px */
     font-weight: bold;
     font-family: var(--titleFont);
     margin-bottom: 0;
@@ -75,19 +74,14 @@ h1.o-name {
 
 .o-summary {
     margin-top: 2rem;
-    /* 40px */
     line-height: 1.9;
     font-size: 1.1rem;
-    /* 17.6px */
 }
 
 .o-status-quo {
     margin-top: 0.625rem;
-    /* 10px */
     margin-bottom: 0.625rem;
-    /* 10px */
     font-size: 0.8rem;
-    /* 12.8px */
     font-family: monospace;
 }
 
@@ -105,7 +99,6 @@ h1.o-name {
 }
 
 .o-social {
-    /* margin: 10px; */
     border-radius: 5px;
     text-decoration: none;
     color: var(--linkColor);
@@ -116,9 +109,6 @@ h1.o-name {
 }
 
 .c-moment-container {
-    /* display: flex;
-    justify-content: center;
-    gap: 20px; */
     display: flex;
     margin-top: 30px;
     justify-content: left;
@@ -131,14 +121,12 @@ h1.o-name {
     right: 0%;
     z-index: 100;
     width: 12.5rem;
-    /* 200px */
 }
 
 
 .o-quote,
 .o-quote[data-theme="dark"] {
     font-size: 1rem;
-    /* 16px */
     color: #ffffff;
     text-align: center;
     writing-mode: vertical-rl;
@@ -159,17 +147,10 @@ h1.o-name {
     bottom: 0;
     left: 0;
     z-index: 1000;
-    /* Ensure it's above other elements */
     padding: 10px;
-    /* Optional padding for spacing */
-    /* pointer-events: none; */
-    /* Prevents interaction with the SVG */
     -webkit-user-select: none;
-    /* Safari */
     -ms-user-select: none;
-    /* IE 10 and IE 11 */
     user-select: none;
-    /* Standard syntax */
 }
 
 .c-index-art-container object {
