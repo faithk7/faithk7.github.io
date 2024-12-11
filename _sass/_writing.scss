@@ -1,5 +1,3 @@
-/* Styles specific to writing.html */
-
 .toc-container {
     position: absolute; /* Position the TOC absolutely */
     top: 0;             /* Align it to the top */
@@ -17,6 +15,12 @@
     text-decoration: underline;
     display: block;
     margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+    .toc-container {
+        display: none;
+    }
 }
 
 .toc-container ul {
