@@ -41,6 +41,8 @@ body {
     width: auto;
     max-width: 200px;
     position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .c-collection-nav-container[data-theme="light"] {
