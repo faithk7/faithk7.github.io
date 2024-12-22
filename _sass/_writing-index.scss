@@ -101,6 +101,7 @@
     margin-left: 0px;
     margin-right: 8px;
     margin-bottom: 5px;
+    cursor: pointer;
 }
 
 .o-tag[data-theme="light"] {
@@ -140,6 +141,7 @@ span.o-tag:hover {
     color: darkgray;
     font-family: var(--tagFont);
     font-size: 0.9rem;
+    cursor: pointer;
 }
 
 .o-post-tag::after {
