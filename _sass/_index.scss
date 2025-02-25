@@ -70,6 +70,13 @@ h1.o-name {
     margin-top: 2rem;
     line-height: 1.9;
     font-size: 1.1rem;
+    max-width: 23rem;
+}
+
+.o-summary-line {
+    display: block;
+    line-height: 1.5;
+    margin-bottom: 0.57em;
 }
 
 .o-status-quo {
