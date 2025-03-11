@@ -3,7 +3,7 @@
      xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kai Qu</title>
-    <description>Kai Qu</description>
+    <description>Kai Qu's Posts</description>
     <link>{{ site.url | xml_escape }}</link>
     <atom:link href="{{ site.url | append: '/feed.xml' | xml_escape }}" rel="self" type="application/rss+xml"/>
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>

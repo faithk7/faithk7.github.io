@@ -31,7 +31,7 @@ layout: default
             link.setAttribute('target', '_blank');
         });
     });
-
+    // TODO: refactor this to a seperate script possbily
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
