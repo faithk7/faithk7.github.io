@@ -1,0 +1,24 @@
+# Enable compression
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript
+
+# Add correct content-type for JavaScript files
+AddType application/javascript .js
+
+# Set proper encoding
+AddDefaultCharset UTF-8
+
+# Cache control
+<FilesMatch "\.(js|css)$">
+    Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>
+
+# Enable Keep-Alive
+<IfModule mod_headers.c>
+    Header set Connection keep-alive
+</IfModule>
+
+# Compress JavaScript files
+<FilesMatch "\.js$">
+    SetOutputFilter DEFLATE
+    Header append Vary Accept-Encoding
+</FilesMatch> 

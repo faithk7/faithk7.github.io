@@ -4,6 +4,25 @@ sass:
 
 plugins:
   - jekyll-feed
+  - jekyll-minifier
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+jekyll-minifier:
+  uglifier_args:
+    harmony: true
+  compress_css: true
+  compress_javascript: true
+  exclude:
+    - "*.min.js"
+    - "*.min.css"
+  preserve_php: true
+  remove_spaces_inside_tags: true
+  remove_multi_spaces: true
+  remove_comments: true
+  remove_intertag_spaces: true
+  remove_quotes: false
+  compress_json: true
 
 collections:
   notes:
@@ -18,3 +37,26 @@ feed:
   custom_path: _includes/custom_feed.xml
 
 description: "Kai Qu's home page on the World Wide Web"
+
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: []
+  blanklines: false
+  profile: false
+  startings: [html, head, body]
+
+# Asset compression and optimization
+assets:
+  compression: true
+  gzip: true
+  sources:
+    - assets/
+    - _sass/
+  defaults:
+    js:
+      integrity: true
+    css:
+      integrity: true
