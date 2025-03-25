@@ -9,18 +9,12 @@
 <body>
     <nav class="c-navbar">
         <div class="c-navbar-container" data-theme="">
-            <!-- <div class="c-line"></div> -->
             <ul class="c-navbar-items">
                 <li class="o-navbar-item"><a data-theme="" href="{{ '/' | relative_url }}" title="Home">Home</a>
-                    <!-- <div class="c-setting-container"> -->
                     <button id="dark-mode-toggle" class="o-setting-icon" aria-label="Toggle dark mode">
-                        <!-- <img src="{{ '/assets/night.svg' | relative_url }}" alt="Icon Description"
-                                class="o-setting-icon" /> -->
                         {% include svg_html/switch_icon.html %}
                     </button>
                     <a href="/feed.xml" class="o-setting-icon" aria-label="RSS feed">
-                        <!-- <img src="{{ '/assets/rss.svg' | relative_url }}" alt="Icon Description"
-                                class="o-setting-icon" /> -->
                         {% include svg_html/rss_icon.html %}
                     </a>
                     <!-- </div> -->
