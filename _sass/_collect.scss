@@ -10,7 +10,8 @@ body {
     grid-template-rows: auto 1fr;
     gap: 20px;
     width: 100%;
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100%; /* Full viewport height */
+    min-height: stretch; /* Opera */
     box-sizing: border-box;
     overflow-y: auto; /* Allow vertical scrolling within the container */
 }
