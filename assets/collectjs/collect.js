@@ -72,8 +72,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-            const currentMode = document.body.classList.contains('light') ? 'light' : 'dark';
-            applyMode(currentMode); // manually apply mode to each item, probably need a refactor
+            // const currentMode = document.body.classList.contains('light') ? 'light' : 'dark';
+            // applyMode(currentMode); // manually apply mode to each item, probably need a refactor
         });
     }
 
