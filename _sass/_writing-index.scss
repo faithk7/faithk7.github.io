@@ -60,15 +60,13 @@
     margin-bottom: 10px;
     color: #bbbbbb;
     /* Add some spacing between elements, if needed */
-}
-
-.o-writing-note-date {
-    margin: 10px 0;
+    margin: 0;
     font-size: 0.9rem;
     width: 100%;
     color: #999999;
     font-family: var(--dateFont);
 }
+
 
 .o-writing-note-date[data-theme="light"] {
     color: #666666;
