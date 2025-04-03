@@ -14,9 +14,17 @@
     margin-bottom: 2rem;
 }
 
+.c-post-meta-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
 .c-hashtag-container-post {
     display: flex;
-    gap: 5px
+    gap: 5px;
+    align-items: center;
 }
 
 .c-writing-index-container::after {
@@ -43,12 +51,11 @@
 
 .c-writing-item-container {
     display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     width: 100%;
     margin: 0 auto;
     text-align: left;
-    justify-content: space-between;
-    align-items: end;
     border: 1px solid darkgray;
     padding: 15px;
     border-radius: 5px;
@@ -60,20 +67,12 @@
 }
 
 .o-writing-note-date {
-    width: 50%;
-    /* Make these elements span the full width */
-    display: block;
-    /* Block display ensures elements stack vertically */
-    margin-bottom: 10px;
-    color: #bbbbbb;
-    /* Add some spacing between elements, if needed */
+    display: inline-block;
     margin: 0;
     font-size: 0.9rem;
-    width: 100%;
     color: #999999;
     font-family: var(--dateFont);
 }
-
 
 .o-writing-note-date[data-theme="light"] {
     color: #666666;
@@ -172,6 +171,7 @@ span.o-tag:hover {
     font-size: 1.3rem;
     margin-bottom: 0.625rem;
     margin-top: 0;
+    width: 100%;
 }
 
 h3.o-post-title a {
