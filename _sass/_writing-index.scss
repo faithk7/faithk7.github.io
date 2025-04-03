@@ -163,7 +163,7 @@ span.o-tag:hover {
 }
 
 .c-post-title-container {
-    width: 50%;
+    width: 100%;
 }
 
 .o-post-title {
@@ -171,6 +171,7 @@ span.o-tag:hover {
     font-weight: 400;
     font-size: 1.3rem;
     margin-bottom: 0.625rem;
+    margin-top: 0;
 }
 
 h3.o-post-title a {
