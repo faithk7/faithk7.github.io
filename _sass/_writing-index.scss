@@ -49,8 +49,15 @@
     text-align: left;
     justify-content: space-between;
     align-items: end;
+    border: 1px solid darkgray;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
 }
 
+.c-writing-item-container[data-theme="light"] {
+    border-color: #666666;
+}
 
 .o-writing-note-date {
     width: 50%;
