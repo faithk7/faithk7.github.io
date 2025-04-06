@@ -179,8 +179,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const iframe = document.createElement('iframe');
         iframe.allowFullscreen = true;
         iframe.src = videoUrl;
-        iframe.style.width = '80%';
-        iframe.style.height = '80%';
+        iframe.loading = "eager";
+        iframe.style.width = '75%';
+        iframe.style.height = '75%';
         iframe.style.position = 'fixed';
         iframe.style.top = '50%';
         iframe.style.left = '50%';
