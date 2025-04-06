@@ -2,7 +2,7 @@ const statusEl = document.querySelector('[data-status-loading]')
 
 try {
     statusEl.hidden = false
-    const s = await(await fetch('https://status-quo-proxy.lastk7.workers.dev/status-quo/index.txt')).text()
+    const s = await(await fetch('https://k7n.co/status-quo/index.txt')).text()
     if (s.trim() !== '') {
         const [datetime, text] = s.split('\n')
         const date = relativeDate(new Date(datetime))
