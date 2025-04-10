@@ -34,7 +34,7 @@ collections:
 
 feed:
   path: feed.xml
-  custom_path: _includes/custom_feed.xml
+  custom_path: _includes/feed.xml
 
 description: "Kai Qu's home page on the World Wide Web"
 

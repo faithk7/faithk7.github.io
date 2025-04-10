@@ -12,10 +12,10 @@
             <ul class="c-navbar-items">
                 <li class="o-navbar-item"><a data-theme="" href="{{ '/' | relative_url }}" title="Home">Home</a>
                     <button id="dark-mode-toggle" class="o-setting-icon" aria-label="Toggle dark mode">
-                        {% include svg_html/switch_icon.html %}
+                        {% include svg_html/dark_mode_toggle.html %}
                     </button>
                     <a href="/feed.xml" class="o-setting-icon" aria-label="RSS feed">
-                        {% include svg_html/rss_icon.html %}
+                        {% include svg_html/rss.html %}
                     </a>
                     <!-- </div> -->
                 </li>
@@ -32,7 +32,7 @@
         </div>
     </nav>
     <div class="c-navbar-icon" id="nav-toggle">
-        {% include svg_html/navbar_icon.html %}
+        {% include svg_html/menu.html %}
     </div>
 
     <script>
