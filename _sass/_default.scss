@@ -172,18 +172,6 @@ path[data-theme="light"].st1 {
     stroke-miterlimit: 10;
 }
 
-/* Add this at the end of the file */
-object[data*="spider-lily.svg"][data-theme="dark"] {
-    filter: invert(100%);
-    transition: filter 1s ease;
-}
-
-object[data*="spider-lily.svg"][data-theme="light"] {
-    filter: invert(0%);
-    transition: filter 1s ease;
-}
-
-/* Common animation for underline text */
 @keyframes a-underline-text-left-right {
     0% {
         background-size: 100% 1px;
