@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const collectionNav = document.getElementById('collection-nav');
-    const collectionTiles = document.getElementById('collection-tiles');
+    const collectionNav = document.querySelector('.c-collection-nav-container');
+    const collectionTiles = document.querySelector('.c-collection-tile-container');
     const dataFiles = window.dataFiles;
 
     // TODO: remove music from dataFiles for now, fix it later
