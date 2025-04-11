@@ -64,6 +64,26 @@
     filter: brightness(0.7) opacity(0.5);
 }
 
+// .c-about-container::after {
+//     content: "革命前夜";
+//     position: fixed;
+//     bottom: 0;
+//     right: 0;
+//     padding: 10px;
+//     font-family: var(--titleFont);
+//     font-size: 1rem;
+//     color: var(--textColor);
+//     z-index: 1000;
+//     writing-mode: vertical-rl;
+//     text-orientation: upright;
+// }
+
+// @media (max-width: 1032px) {
+//     .c-about-container::after {
+//         display: none;
+//     }
+// }
+
 .o-about-title {
     font-size: 2rem;
     margin-bottom: 1rem;
