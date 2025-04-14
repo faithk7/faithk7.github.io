@@ -61,3 +61,13 @@ assets:
       integrity: true
     css:
       integrity: true
+    img:
+      integrity: true
+    png:
+      optipng:
+        level: 5
+      pngquant:
+        quality: [0.65, 0.8]
+    svg:
+      svgo: true
+      integrity: true
