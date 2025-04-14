@@ -13,11 +13,11 @@ description: "Kai Qu's home page on the World Wide Web"
     <meta name="description" content="{{ page.description | default: site.description }}">
     <meta name="keywords" content="Kai Qu, kai qu">
 
-    <!-- Preload critical pages -->
-    <link rel="preload" href="/writing-index" as="document">
-    <link rel="preload" href="/about" as="document">
-    <link rel="preload" href="/note" as="document">
-    <link rel="preload" href="/collect" as="document">
+    <!-- Prefetch likely-to-be-visited pages -->
+    <link rel="prefetch" href="/writing-index" as="document">
+    <link rel="prefetch" href="/about" as="document">
+    <link rel="prefetch" href="/note" as="document">
+    <link rel="prefetch" href="/collect" as="document">
 
 </head>
 
