@@ -14,6 +14,12 @@ last_modified_at: {{ site.time | date: '%Y-%m-%d %H:%M:%S' }}
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+
+    <!-- Prefetch articles -->
+    {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+    {% for post in sorted_posts %}
+    <link rel="prefetch" href="{{ post.url }}" as="document">
+    {% endfor %}
 </head>
 
 <div class="c-writing-index-container" data-theme="">
