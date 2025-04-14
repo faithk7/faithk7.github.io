@@ -8,6 +8,9 @@ description: "Kai Qu's about page"
     <!-- <link rel="stylesheet" href="{{ '/assets/about.css' | relative_url }}"> -->
     <title>{{ page.title }}</title>
     <meta name="description" content="{{ page.description | default: site.description }}">
+    <!-- Preload background images -->
+    <link rel="preload" href="/assets/kokoro.png" as="image" type="image/png">
+    <link rel="preload" href="/assets/kokoro_dark.png" as="image" type="image/png">
 </head>
 
 <div class="c-about-container" data-theme="">
