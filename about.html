@@ -5,10 +5,8 @@ description: "Kai Qu's about page"
 ---
 
 <head>
-    <!-- <link rel="stylesheet" href="{{ '/assets/about.css' | relative_url }}"> -->
     <title>{{ page.title }}</title>
     <meta name="description" content="{{ page.description | default: site.description }}">
-    <!-- Preload background images -->
     <link rel="preload" href="/assets/kokoro.png" as="image" type="image/png">
     <link rel="preload" href="/assets/kokoro_dark.png" as="image" type="image/png">
 </head>
@@ -83,18 +81,3 @@ description: "Kai Qu's about page"
         </p>
     </div>
 </div>
-<!-- <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Select the element with the class 'c-about-container'
-        var aboutContainer = document.querySelector('.c-about-container');
-
-        // Ensure the element exists before applying styles
-        if (aboutContainer) {
-            // Apply styles dynamically
-            aboutContainer.style.margin = "20px";
-            aboutContainer.style.borderBottom = "1px solid #555555";
-            aboutContainer.style.setProperty("background", "url('/assets/kokoro.png') no-repeat center center fixed", "important");
-            aboutContainer.style.setProperty("--webkit-background-composite", "multiply", "important");
-        }
-    });
-</script> -->
