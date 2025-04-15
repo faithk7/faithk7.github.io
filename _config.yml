@@ -71,3 +71,22 @@ assets:
     svg:
       svgo: true
       integrity: true
+
+# Global compression settings
+gzip_compression:
+  enabled: true
+  extensions:
+    - '.html'
+    - '.css'
+    - '.js'
+    - '.xml'
+    - '.json'
+    - '.txt'
+  skip_extensions:
+    - '.png'
+    - '.jpg'
+    - '.gif'
+    - '.mp4'
+    - '.webp'
+  cache: true
+  cache_dir: '.jekyll-cache/gzip'
