@@ -72,6 +72,27 @@ assets:
       svgo: true
       integrity: true
 
+# Cache control settings
+cache_control:
+  enabled: true
+  max_age: 31536000  # 1 year in seconds
+  static_files:
+    - '.css'
+    - '.js'
+    - '.png'
+    - '.jpg'
+    - '.jpeg'
+    - '.gif'
+    - '.ico'
+    - '.svg'
+    - '.woff'
+    - '.woff2'
+    - '.ttf'
+    - '.eot'
+  headers:
+    Cache-Control: "public, max-age=31536000, immutable"
+    Expires: "Thu, 31 Dec 2099 23:59:59 GMT"
+
 # Global compression settings
 gzip_compression:
   enabled: true
