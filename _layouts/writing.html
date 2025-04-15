@@ -3,6 +3,7 @@ layout: default
 ---
 
 <head>
+    <!-- Meta tags first -->
     <title>{{ page.title }}</title>
 </head>
 
@@ -22,41 +23,38 @@ layout: default
     </div>
 </div>
 
-
-<script>
-    // open all links in .o-writing-post-text in a new tab
+<!-- JavaScript moved to bottom -->
+<script defer>
+    // Initialize when DOM is ready
     document.addEventListener("DOMContentLoaded", function () {
-        var links = document.querySelectorAll('.o-writing-post-text a');
-        links.forEach(function (link) {
+        // Open all links in .o-writing-post-text in a new tab
+        document.querySelectorAll('.o-writing-post-text a').forEach(function (link) {
             link.setAttribute('target', '_blank');
         });
-    });
-    // TODO: refactor this to a seperate script possbily
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            const scrollContainer = document.querySelector('.l-grid.l-center.light'); // Select the specific element
 
-            if (targetElement && scrollContainer) {
-                const elementRect = targetElement.getBoundingClientRect();
-                const containerRect = scrollContainer.getBoundingClientRect();
-                const absoluteElementTop = elementRect.top + scrollContainer.scrollTop - containerRect.top;
+        // Handle smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                const scrollContainer = document.querySelector('.l-grid.l-center.light');
 
-                // Calculate the maximum scroll position to prevent overflow
-                const maxScrollTop = scrollContainer.scrollHeight - containerRect.height;
-                const targetScrollTop = Math.min(absoluteElementTop, maxScrollTop);
+                if (targetElement && scrollContainer) {
+                    const elementRect = targetElement.getBoundingClientRect();
+                    const containerRect = scrollContainer.getBoundingClientRect();
+                    const absoluteElementTop = elementRect.top + scrollContainer.scrollTop - containerRect.top;
 
-                console.log('Current Scroll Position:', scrollContainer.scrollTop);
-                console.log('Target Element Top:', absoluteElementTop);
-                console.log('Calculated Scroll Position:', targetScrollTop);
+                    // Calculate the maximum scroll position to prevent overflow
+                    const maxScrollTop = scrollContainer.scrollHeight - containerRect.height;
+                    const targetScrollTop = Math.min(absoluteElementTop, maxScrollTop);
 
-                scrollContainer.scrollTo({
-                    top: targetScrollTop,
-                    behavior: 'smooth'
-                });
-            }
+                    scrollContainer.scrollTo({
+                        top: targetScrollTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
     });
 </script>
