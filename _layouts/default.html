@@ -31,25 +31,25 @@
     <!-- All JavaScript moved to bottom for better performance -->
     <script defer>
         // Theme preference handling
-        document.addEventListener('DOMContentLoaded', function () {
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-            const navbar = document.querySelector('.c-navbar-container');
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+        //     const navbar = document.querySelector('.c-navbar-container');
 
-            // Check for saved mode in local storage
-            const savedMode = localStorage.getItem('mode');
-            if (savedMode) {
-                applyMode(savedMode);
-            } else {
-                // Set theme based on system preference if no preference is set in localStorage
-                if (prefersDark.matches) {
-                    navbar.setAttribute('data-theme', 'dark');
-                    applyMode('dark');
-                } else {
-                    navbar.setAttribute('data-theme', 'light');
-                    applyMode('light');
-                }
-            }
-        });
+        //     // Check for saved mode in local storage
+        //     const savedMode = localStorage.getItem('mode');
+        //     if (savedMode) {
+        //         applyMode(savedMode);
+        //     } else {
+        //         // Set theme based on system preference if no preference is set in localStorage
+        //         if (prefersDark.matches) {
+        //             navbar.setAttribute('data-theme', 'dark');
+        //             applyMode('dark');
+        //         } else {
+        //             navbar.setAttribute('data-theme', 'light');
+        //             applyMode('light');
+        //         }
+        //     }
+        // });
 
         // Favicon handling
         document.addEventListener('DOMContentLoaded', function () {
