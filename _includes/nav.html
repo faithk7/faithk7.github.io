@@ -38,30 +38,19 @@
     <script>
         // Function to apply the light/dark mode
         function applyMode(mode) {
-            if (mode === 'light') {
-                document.body.classList.add('light');
-                document.querySelectorAll('.l-left, .l-center, .l-right, .c-navbar, .c-line').forEach(el => {
-                    el.classList.add('light');
-                });
-                document.querySelectorAll('.o-navbar-item a, .o-tag').forEach(el => {
-                    el.classList.add('light');
-                });
-                document.querySelectorAll('[data-theme]').forEach(el => {
-                    el.setAttribute('data-theme', 'light');
-                });
-            } else {
-                // dark mode
-                document.body.classList.remove('light');
-                document.querySelectorAll('.l-left, .l-center, .l-right, .c-navbar, .c-line').forEach(el => {
-                    el.classList.remove('light');
-                });
-                document.querySelectorAll('.o-navbar-item a, .o-tag').forEach(el => {
-                    el.classList.remove('light');
-                });
-                document.querySelectorAll('[data-theme]').forEach(el => {
-                    el.setAttribute('data-theme', 'dark');
-                });
-            }
+            const elements = [
+                document.body,
+                ...document.querySelectorAll('.l-left, .l-center, .l-right, .c-navbar, .c-line, .o-navbar-item a, .o-tag')
+            ];
+
+            elements.forEach(el => {
+                el.setAttribute('data-theme', mode);
+            });
+
+            // Update any other elements that might have data-theme
+            document.querySelectorAll('[data-theme]').forEach(el => {
+                el.setAttribute('data-theme', mode);
+            });
         }
 
 
@@ -75,7 +64,7 @@
         // Toggle dark mode
         const toggleButton = document.getElementById('dark-mode-toggle');
         toggleButton.addEventListener('click', () => {
-            const currentMode = document.body.classList.contains('light') ? 'light' : 'dark';
+            const currentMode = document.body.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
             const newMode = currentMode === 'light' ? 'dark' : 'light';
             applyMode(newMode);
             localStorage.setItem('mode', newMode);
