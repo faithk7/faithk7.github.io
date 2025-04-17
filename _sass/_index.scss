@@ -1,190 +1,227 @@
 /* Home Page Styles */
 
+// Variables
+$spacing: (
+    xs: 0.2rem,
+    sm: 0.5rem,
+    base: 0.625rem,  // 10px
+    md: 1rem,
+    lg: 2rem,
+    xl: 2.3rem
+);
 
+$breakpoints: (
+    tablet: 1032px,
+    mobile: 932px
+);
+
+$sizes: (
+    quote-width: (
+        desktop: 12.5rem,
+        tablet: 4.6875rem
+    ),
+    art: (
+        width: 20vw,
+        max-width: min(min(150px, 15vw), 15vh)
+    )
+);
+
+$colors: (
+    text: (
+        dark: #ffffff,
+        light: #000000
+    )
+);
+
+// Mixins
+@mixin theme-variant($property, $dark-value, $light-value) {
+    #{$property}: $dark-value;
+
+    &[data-theme="light"] {
+        #{$property}: $light-value;
+    }
+}
+
+@mixin responsive($breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+
+// Layout
 .l-container {
-    .l-container {
-        display: grid;
-        grid-template-columns: 4fr 4fr 4fr;
-        width: 100%;
-        height: 100vh;
-        position: relative;
-        overflow: hidden;
-    }
-
-}
-
-.c-center-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.c-index-container {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
-
-
-/* for mobile in portrait mode */
-@media (max-width: 932px) and (orientation: portrait) {
-    .c-index-container {
-        z-index: 100;
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-}
-
-/* for mobile in landscape mode; TODO: not working, fix later */
-@media (max-width: 932px) and (orientation: landscape) {
-    .c-center-container {
-        margin-top: 0;
-        position: relative;
-        height: auto;
-    }
-}
-
-.c-name-card-container,
-.c-info-card-container,
-.c-moment-container {
-    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(3, 4fr);
     width: 100%;
-    height: 100%;
-    display: block;
+    height: 100vh;
     position: relative;
+    overflow: hidden;
 }
 
-h1.o-name {
-    font-size: 2rem;
-    font-weight: bold;
-    font-family: var(--titleFont);
-    margin-bottom: 0;
-}
+// Components
+.c {
+    &-center-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
 
-.o-summary {
-    margin-top: 2rem;
-    line-height: 1.9;
-    font-size: 1.1rem;
-    max-width: 23rem;
-}
-
-.o-summary-line {
-    display: block;
-    line-height: 1.5;
-    margin-bottom: 0.57em;
-}
-
-.o-status-quo {
-    margin-top: 0.625rem;
-    margin-bottom: 0.625rem;
-    font-size: 0.8rem;
-    font-family: monospace;
-}
-
-.o-info {
-    display: flex;
-    justify-content: left;
-    gap: 10px;
-    margin-top: 0.5rem;
-}
-
-.c-info-card-container {
-    margin-top: 2rem;
-    margin-bottom: 2.3rem;
-    font-family: var(--linkFont);
-}
-
-.o-social {
-    border-radius: 5px;
-    text-decoration: none;
-    color: var(--linkColor);
-    font-size: 0.9rem;
-    margin-top: 0.2rem;
-    margin-bottom: 0.2rem;
-    text-wrap: nowrap;
-}
-
-.c-moment-container {
-    display: flex;
-    margin-top: 30px;
-    justify-content: left;
-    gap: auto;
-}
-
-.c-quote-container {
-    position: absolute;
-    top: 35%;
-    right: 0%;
-    z-index: 100;
-    width: 12.5rem;
-}
-
-
-.o-quote,
-.o-quote[data-theme="dark"] {
-    font-size: 1rem;
-    color: #ffffff;
-    text-align: center;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    max-height: 30%;
-}
-
-.o-quote[data-theme="light"] {
-    color: #000000;
-}
-
-
-/* the styling for c-index-art-container */
-.c-index-art-container {
-    position: fixed;
-    width: 20vw;
-    max-width: min(min(150px, 15vw), 15vh);
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    padding: 10px;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background: transparent;
-    color: inherit;
-}
-
-.c-index-art-container object {
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
-}
-
-/* the styling for the mobile container */
-@media (max-width: 1032px) {
-    .o-summary {
-        font-size: 1rem;
+        @media (max-width: map-get($breakpoints, mobile)) and (orientation: landscape) {
+            margin-top: 0;
+            position: relative;
+            height: auto;
+        }
     }
 
-    .c-quote-container {
-        width: 4.6875rem;
-        /* 75px */
-        /* to be consistent with that of c-navbar media rule */
+    &-index {
+        &-container {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+
+            @media (max-width: map-get($breakpoints, mobile)) and (orientation: portrait) {
+                z-index: 100;
+                padding: 0 5%;
+            }
+        }
+
+        &-art {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            filter: invert(0);
+
+            &[data-theme="dark"] {
+                filter: invert(1);
+            }
+
+            &[data-theme="light"] {
+                filter: invert(0);
+            }
+
+            &-container {
+                position: fixed;
+                width: map-get(map-get($sizes, art), width);
+                max-width: map-get(map-get($sizes, art), max-width);
+                bottom: 0;
+                left: 0;
+                z-index: 1000;
+                padding: 10px;
+                user-select: none;
+                background: transparent;
+                color: inherit;
+
+                object {
+                    width: 100%;
+                    height: 100%;
+                    max-width: 100%;
+                    max-height: 100%;
+                    display: block;
+                }
+
+                @include responsive(tablet) {
+                    display: none;
+                }
+            }
+        }
     }
 
-    .c-index-art-container {
-        display: none;
+    &-name-card-container,
+    &-info-card-container,
+    &-moment-container {
+        text-align: left;
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: relative;
+    }
+
+    &-info-card-container {
+        margin: map-get($spacing, lg) 0 map-get($spacing, xl);
+        font-family: var(--linkFont);
+    }
+
+    &-moment-container {
+        display: flex;
+        margin-top: 30px;
+        justify-content: left;
+    }
+
+    &-quote-container {
+        position: absolute;
+        top: 35%;
+        right: 0;
+        z-index: 100;
+        width: map-get(map-get($sizes, quote-width), desktop);
+
+        @include responsive(tablet) {
+            width: map-get(map-get($sizes, quote-width), tablet);
+            display: none;
+        }
     }
 }
 
+// Objects
+.o {
+    &-name {
+        font-size: map-get($spacing, lg);
+        font-weight: bold;
+        font-family: var(--titleFont);
+        margin-bottom: 0;
+    }
 
-@media (max-width: 1032px) {
-    .c-quote-container {
-        display: none;
+    &-summary {
+        margin-top: map-get($spacing, lg);
+        line-height: 1.9;
+        font-size: 1.1rem;
+        max-width: 23rem;
+
+        @include responsive(tablet) {
+            font-size: map-get($spacing, md);
+        }
+
+        &-line {
+            display: block;
+            line-height: 1.5;
+            margin-bottom: 0.57em;
+        }
+    }
+
+    &-status-quo {
+        margin: map-get($spacing, base) 0;
+        font-size: 0.8rem;
+        font-family: monospace;
+    }
+
+    &-info {
+        display: flex;
+        justify-content: left;
+        gap: 10px;
+        margin-top: map-get($spacing, sm);
+    }
+
+    &-social {
+        border-radius: 5px;
+        text-decoration: none;
+        color: var(--linkColor);
+        font-size: 0.9rem;
+        margin: map-get($spacing, xs) 0;
+        text-wrap: nowrap;
+    }
+
+    &-quote {
+        font-size: map-get($spacing, md);
+        text-align: center;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        max-height: 30%;
+        @include theme-variant('color', map-get(map-get($colors, text), dark), map-get(map-get($colors, text), light));
     }
 }
 
-/* the styling for spider lily */
+// Spider Lily
 .spider-lily {
     width: 100%;
     height: 100%;
@@ -192,26 +229,4 @@ h1.o-name {
     max-height: 100%;
     display: block;
     color: inherit;
-}
-
-/* the styling for the mobile container */
-@media (max-width: 1032px) {
-    // ... existing code ...
-}
-
-.c-index-art {
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
-    filter: invert(0);
-}
-
-.c-index-art[data-theme="dark"] {
-    filter: invert(1);
-}
-
-.c-index-art[data-theme="light"] {
-    filter: invert(0);
 }
