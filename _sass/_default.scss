@@ -1,34 +1,90 @@
+// Variables
+$root-vars: (
+    paragraph-font-size: 1rem,
+    note-font-size: 1rem,
+    title-font: system-ui,
+    link-font: monospace,
+    tag-font: monospace,
+    date-font: Georgia,
+    background-color: #121212,
+    link-color: (
+        dark: #388dc2,
+        light: #126ba2
+    ),
+    page-end-margin: 1.25rem
+);
+
+$colors: (
+    background: (
+        primary: #121212,
+        secondary: #2c2c2c
+    ),
+    text: (
+        dark: #ffffff,
+        light: #000000
+    ),
+    link: (
+        dark: #50b0eb
+    )
+);
+
+$breakpoints: (
+    tablet: 1032px,
+    medium-screen: (
+        min: 1000px,
+        max: 1440px
+    )
+);
+
+// Mixins
+@mixin theme-variant($property, $dark-value, $light-value) {
+    #{$property}: $dark-value;
+    &[data-theme="light"] {
+        #{$property}: $light-value;
+    }
+}
+
+@mixin responsive($breakpoint) {
+    @if type-of(map-get($breakpoints, $breakpoint)) == 'map' {
+        $range: map-get($breakpoints, $breakpoint);
+        @media (min-width: map-get($range, min)) and (max-width: map-get($range, max)) and (orientation: landscape) {
+            @content;
+        }
+    } @else {
+        @media (max-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+}
+
+// Root Variables
 :root {
-    --paragraphFontSize: 1rem;
-    --note-font-size: 1rem;
-    --titleFont: system-ui;
-    --linkFont: monospace;
-    --tagFont: monospace;
-    --dateFont: Georgia;
-    --backgroundColor: #121212;
-    --linkColor: #388dc2;
-    --pageEndMargin: 1.25rem;
+    --paragraphFontSize: #{map-get($root-vars, paragraph-font-size)};
+    --note-font-size: #{map-get($root-vars, note-font-size)};
+    --titleFont: #{map-get($root-vars, title-font)};
+    --linkFont: #{map-get($root-vars, link-font)};
+    --tagFont: #{map-get($root-vars, tag-font)};
+    --dateFont: #{map-get($root-vars, date-font)};
+    --backgroundColor: #{map-get($root-vars, background-color)};
+    --linkColor: #{map-get(map-get($root-vars, link-color), dark)};
+    --pageEndMargin: #{map-get($root-vars, page-end-margin)};
+
+    &[data-theme="light"] {
+        --linkColor: #{map-get(map-get($root-vars, link-color), light)};
+    }
 }
 
-:root[data-theme="light"] {
-    --linkColor: #126ba2;
-}
-
+// Base Styles
 html,
 body {
     height: 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    /* Prevent double scrollbars */
     user-select: text;
-    /* Allow selection */
     -webkit-user-select: text;
-    /* For WebKit-based browsers */
     -moz-user-select: text;
-    /* For Firefox */
     -ms-user-select: text;
-    /* For Internet Explorer/Edge */
 }
 
 a {
@@ -36,142 +92,111 @@ a {
 }
 
 body {
-    background-color: #121212;
-    color: #ffffff;
+    background-color: map-get(map-get($colors, background), primary);
+    color: map-get(map-get($colors, text), dark);
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1rem;
-    /* 16px */
-}
+    font-size: map-get($root-vars, paragraph-font-size);
 
-/* for the medium size screen like macbook air */
-@media (min-width: 1000px) and (max-width: 1440px) and (orientation: landscape) {
-    body {
+    @include responsive(medium-screen) {
         zoom: 0.8;
     }
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav li {
-    margin: 10px 0;
-}
-
-nav li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1rem;
-    /* 16px */
-}
-
-/* note that this is for everything except the index.css, which needs to be centered */
-/* TODO: refactor this later */
-.l-container {
-    display: grid;
-    grid-template-columns: 5fr 7fr 5fr;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    background-color: #121212;
-}
-
-/* for mobile & tablet, to make the main content rendered more by making it display as block */
-@media (max-width: 1032px) {
-    .l-container {
-        display: block;
-        background-color: #121212;
+// Navigation
+nav {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
     }
 
-    .l-left {
-        display: none;
-    }
+    li {
+        margin: 10px 0;
 
-    .l-right {
-        width: 0;
-    }
-
-    .l-center {
-        background-color: #121212;
+        a {
+            color: map-get(map-get($colors, text), dark);
+            text-decoration: none;
+            font-size: map-get($root-vars, paragraph-font-size);
+        }
     }
 }
 
+// Layout
+.l {
+    &-container {
+        display: grid;
+        grid-template-columns: 5fr 7fr 5fr;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        background-color: map-get(map-get($colors, background), primary);
 
-.l-grid {
-    padding: 20px;
-    height: 100%;
-    overflow: auto;
+        @include responsive(tablet) {
+            display: block;
+            background-color: map-get(map-get($colors, background), primary);
+        }
+    }
+
+    &-grid {
+        padding: 20px;
+        height: 100%;
+        overflow: auto;
+    }
+
+    &-left {
+        background-color: map-get(map-get($colors, background), secondary);
+
+        @include responsive(tablet) {
+            display: none;
+        }
+    }
+
+    &-center {
+        background-color: map-get(map-get($colors, background), secondary);
+        padding: 20px;
+    }
+
+    &-right {
+        background-color: map-get(map-get($colors, background), secondary);
+        position: relative;
+
+        @include responsive(tablet) {
+            width: 0;
+        }
+    }
 }
 
-.l-left {
-    background-color: #2c2c2c;
+// Theme Variants
+a {
+    &[data-theme="dark"] {
+        color: map-get(map-get($colors, link), dark);
+    }
 }
 
-.l-center {
-    background-color: #2c2c2c;
-    padding: 20px;
+path {
+    @include theme-variant('fill', map-get(map-get($colors, text), dark), map-get(map-get($colors, text), light));
+    @include theme-variant('stroke', map-get(map-get($colors, text), dark), map-get(map-get($colors, text), light));
+
+    &.st0 {
+        fill: none;
+        @include theme-variant('stroke', map-get(map-get($colors, text), dark), map-get(map-get($colors, text), light));
+        stroke-miterlimit: 10;
+    }
+
+    &.st1 {
+        fill: none;
+        @include theme-variant('stroke', map-get(map-get($colors, text), dark), map-get(map-get($colors, text), light));
+        stroke-width: 2;
+        stroke-miterlimit: 10;
+    }
 }
 
-.l-right {
-    background-color: #2c2c2c;
-    position: relative;
+line {
+    @include theme-variant('stroke', map-get(map-get($colors, text), dark), map-get(map-get($colors, text), light));
 }
 
-/* dark mode */
-/* Specific styles for paths with data-theme and svg*/
-a[data-theme="dark"] {
-    color: #50b0eb;
-}
-
-path[data-theme="dark"] {
-    fill: #fff;
-    stroke: #fff;
-}
-
-path[data-theme="light"] {
-    fill: #000;
-    stroke: #000;
-}
-
-line[data-theme="dark"] {
-    stroke: #fff;
-}
-
-line[data-theme="light"] {
-    stroke: #000;
-}
-
-path[data-theme="dark"].st0 {
-    fill: none;
-    stroke: #ffffff;
-    stroke-miterlimit: 10;
-}
-
-path[data-theme="light"].st0 {
-    fill: none;
-    stroke: #000000;
-    stroke-miterlimit: 10;
-}
-
-/* for the svg rss */
-path[data-theme="dark"].st1 {
-    fill: none;
-    stroke: #ffffff;
-    stroke-width: 2;
-    stroke-miterlimit: 10;
-}
-
-/* for the svg rss */
-path[data-theme="light"].st1 {
-    fill: none;
-    stroke: #000000;
-    stroke-width: 2;
-    stroke-miterlimit: 10;
-}
-
+// Animations
 @keyframes a-underline-text-left-right {
     0% {
         background-size: 100% 1px;
