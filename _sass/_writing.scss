@@ -1,120 +1,138 @@
+// Variables
+$toc-margin: 10px;
+$toc-padding: 10px;
+$text-color-dark: #dddddd;
+$text-color-light: #000000;
+$border-color-dark: #555555;
+$border-color-light: #666666;
+$tag-color-dark: #bbbbbb;
+$tag-color-light: #666666;
+$date-color-dark: #a3a3a3;
+$date-color-light: #666666;
+
+// Table of Contents
 .toc-container {
-    position: absolute; /* Position the TOC absolutely */
-    top: 0;             /* Align it to the top */
-    left: 0;            /* Align it to the left */
-    margin: 10px;
-    margin-top: 15px;          /* Remove any default margin */
-    padding: 10px;      /* Add some padding for aesthetics */
-    z-index: 1000;      /* Ensure it is on top of other elements */
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: $toc-margin;
+    margin-top: 15px;
+    padding: $toc-padding;
+    z-index: 1000;
     list-style: none;
     font-family: monospace;
-}
 
-.toc-container::before {
-    content: "目录";
-    text-decoration: underline;
-    display: block;
-    margin-bottom: 8px;
-}
+    &::before {
+        content: "目录";
+        text-decoration: underline;
+        display: block;
+        margin-bottom: 8px;
+    }
 
-@media (max-width: 1032px) {
-    .toc-container {
+    ul {
+        list-style: none;
+
+        li {
+            margin-bottom: 5px;
+
+            &:first-child {
+                margin-top: 7px;
+            }
+        }
+    }
+
+    @media (max-width: 1032px) {
         display: none;
     }
 }
 
-.toc-container ul {
-    list-style: none;
-}
-
-.toc-container li {
-    margin-bottom: 7px;
-}
-
-.toc-container ul li:first-child {
-    margin-top: 7px;
-}
-
-.toc-container ul li {
-    margin-bottom: 5px;
-}
-
+// Links
 a {
     color: var(--linkColor);
 }
 
-.c-writing-post-meta-container {
-    margin: 20px;
+// Writing Post Container
+.c-writing-post {
+    &-meta-container {
+        margin: 20px;
+    }
+
+    &-container {
+        padding-bottom: 1.5rem;
+    }
+
+    &-date {
+        font-size: 1rem;
+        color: $date-color-dark;
+        margin-bottom: 0.625rem;
+        font-family: var(--dateFont);
+        display: inline-block;
+
+        &[data-theme="light"] {
+            color: $date-color-light;
+        }
+    }
+
+    &-tag-container {
+        display: inline-block;
+        margin-top: 0.625rem;
+        margin-bottom: 10px;
+
+        &::before {
+            content: "|";
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+    }
 }
 
-.o-writing-title {
-    font-size: 2rem;
-    margin-bottom: 1.25rem;
+// Writing Elements
+.o-writing {
+    &-title {
+        font-size: 2rem;
+        margin-bottom: 1.25rem;
+    }
+
+    &-post {
+        &-title {
+            font-size: 2rem;
+            margin-bottom: 0.625rem;
+        }
+
+        &-tag {
+            border-radius: 0.1875rem;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            color: $tag-color-dark;
+            font-family: var(--tagFont);
+            text-decoration: none;
+            transition: color 0.5s;
+
+            &[data-theme="light"] {
+                color: $tag-color-light;
+            }
+        }
+
+        &-text {
+            font-size: 1rem;
+            color: $text-color-dark;
+            border-bottom: 0.0625rem solid $border-color-dark;
+            font-weight: 400;
+
+            p {
+                line-height: 2.0;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                margin-bottom: 2rem;
+            }
+
+            &[data-theme="light"] {
+                color: $text-color-light;
+            }
+        }
+    }
 }
 
-.o-writing-post-title {
-    font-size: 2rem;
-    margin-bottom: 0.625rem;
-}
-
-.c-writing-post-date {
-    font-size: 1rem;
-    color: #a3a3a3;
-    margin-bottom: 0.625rem;
-    font-family: var(--dateFont);
-    display: inline-block;
-}
-
-.c-writing-post-date[data-theme="light"] {
-    color: #666666;
-}
-
-.c-writing-post-tag-container::before {
-    content: "|";
-    margin-right: 5px;
-    margin-left: 5px;
-}
-
-.c-writing-post-tag-container {
-    display: inline-block;
-    margin-top: 0.625rem;
-    margin-bottom: 10px;
-    display: inline-block;
-}
-
-.o-writing-post-tag {
-    border-radius: 0.1875rem;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    color: #bbbbbb;
-    font-family: var(--tagFont);
-    text-decoration: none;
-    transition: color 0.5s;
-}
-
-
-.o-writing-post-tag[data-theme="light"] {
-    color: #666666;
-}
-
-.o-writing-post-text {
-    font-size: 1rem;
-    color: #dddddd;
-    border-bottom: 0.0625rem solid #555555;
-    font-weight: 400;
-}
-
-.o-writing-post-text p {
-    line-height: 2.0;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    margin-bottom: 2rem; /* Add margin to ensure content doesn't touch the border */
-}
-
-.o-writing-post-text[data-theme="light"] {
-    color: #000000;
-}
-
-/* for writing image container */
+// Image Styles
 .center-image {
     width: 100%;
     height: auto;
@@ -130,9 +148,4 @@ a {
     margin-top: 10px;
     font-style: normal;
     color: #666;
-}
-
-/* Add a container class to handle the overall padding */
-.c-writing-post-container {
-    padding-bottom: 1.5rem; /* Add padding to ensure the border is visible */
 }
