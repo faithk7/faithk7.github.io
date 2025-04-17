@@ -100,9 +100,6 @@ a {
 .o-writing-post-text {
     font-size: 1rem;
     color: #dddddd;
-    margin-bottom: 1.25rem;
-    border-bottom: 0.0625rem solid #555555;
-    padding-bottom: var(--pageEndMargin);
     border-bottom: 0.0625rem solid #555555;
     font-weight: 400;
 }
@@ -110,6 +107,7 @@ a {
 .o-writing-post-text p {
     line-height: 2.0;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 2rem; /* Add margin to ensure content doesn't touch the border */
 }
 
 .o-writing-post-text[data-theme="light"] {
@@ -132,4 +130,9 @@ a {
     margin-top: 10px;
     font-style: normal;
     color: #666;
+}
+
+/* Add a container class to handle the overall padding */
+.c-writing-post-container {
+    padding-bottom: 1.5rem; /* Add padding to ensure the border is visible */
 }
