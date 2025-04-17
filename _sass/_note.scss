@@ -1,55 +1,80 @@
 /* Styles specific to note.html */
 
-.c-note-container {
-    margin: 1.25rem;
+// Variables
+$spacing: (
+    xs: 0.3125rem,  // 5px
+    sm: 0.625rem,   // 10px
+    md: 0.875rem,   // 14px
+    base: 1rem,     // 16px
+    lg: 1.25rem,    // 20px
+    xl: 2rem        // 32px
+);
+
+$colors: (
+    text: (
+        dark: #dddddd,
+        light: #000000
+    ),
+    muted: (
+        dark: #bbbbbb,
+        light: #666666
+    ),
+    border: #555555
+);
+
+// Mixins
+@mixin theme-color($theme: 'dark') {
+    color: map-get(map-get($colors, if($theme == 'light', 'muted', 'text')), $theme);
+
+    &[data-theme="light"] {
+        color: map-get(map-get($colors, if($theme == 'light', 'muted', 'text')), 'light');
+    }
 }
 
-.o-note-title {
-    font-size: 2rem;
-    margin-bottom: 1.25rem;
-    font-family: var(--titleFont);
+// Components
+.c-note {
+    &-container {
+        margin: map-get($spacing, lg);
+    }
+
+    &-item-container {
+        margin-bottom: map-get($spacing, lg);
+        border-bottom: 0.0625rem solid map-get($colors, border);
+        padding-bottom: map-get($spacing, sm);
+
+        p {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            line-height: 1.5;
+        }
+    }
 }
 
-.c-note-item-container {
-    margin-bottom: 1.25rem;
-    border-bottom: 0.0625rem solid #555555;
-    padding-bottom: 0.625rem;
-}
+// Objects
+.o-note {
+    &-title {
+        font-size: map-get($spacing, xl);
+        margin-bottom: map-get($spacing, lg);
+        font-family: var(--titleFont);
+    }
 
-.c-note-item-container p {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    line-height: 1.5;
-}
+    &-date {
+        font-size: map-get($spacing, base);
+        margin-bottom: map-get($spacing, xs);
+        font-family: var(--dateFont);
+        @include theme-color('light');
+    }
 
-.o-note-date {
-    font-size: 1rem;
-    color: #bbbbbb;
-    margin-bottom: 0.3125rem;
-    font-family: var(--dateFont);
-}
+    &-text {
+        font-size: var(--note-font-size);
+        font-weight: 400;
+        @include theme-color('dark');
+    }
 
-.o-note-date[data-theme="light"] {
-    color: #666666;
-}
-
-.o-note-text {
-    font-size: var(--note-font-size);
-    color: #dddddd;
-    font-weight: 400;
-}
-
-.o-note-text[data-theme="light"] {
-    color: #000000;
-}
-
-.o-note-footer {
-    text-align: center;
-    margin-top: 1.25rem;
-    font-size: 0.875rem;
-    color: #bbbbbb;
-    padding-bottom: var(--pageEndMargin);
-}
-
-.o-note-footer[data-theme="light"] {
-    color: #666666;
+    &-footer {
+        text-align: center;
+        margin-top: map-get($spacing, lg);
+        font-size: map-get($spacing, md);
+        padding-bottom: var(--pageEndMargin);
+        @include theme-color('light');
+    }
 }
