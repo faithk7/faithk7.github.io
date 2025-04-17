@@ -1,130 +1,194 @@
 /* Styles specific to about.html */
 
-.c-about-container p {
-    line-height: 1.5em;
-    text-align: justify;
-    font-weight: 300;
-    font-family: 'Courier New', Courier, monospace
+// Variables
+$about: (
+    spacing: (
+        margin: 20px,
+        title-margin-bottom: 1rem,
+        item-title-margin-top: 1.5rem,
+        item-title-margin-bottom: 0.75rem,
+        item-subtitle-margin: 0.75rem,
+        padding-bottom: 2rem
+    ),
+    fonts: (
+        title: 2rem,
+        item-title: 1.5rem,
+        item-subtitle: 1.25rem,
+        content: 1.125rem,
+        mobile-content: 1rem,
+        signature: 0.7rem
+    ),
+    colors: (
+        highlight: (
+            dark: #e093e0,
+            light: #bd41bd
+        ),
+        signature: (
+            dark: darkgray,
+            light: #666666
+        )
+    ),
+    background: (
+        dark: '/assets/kokoro_dark.png',
+        light: '/assets/kokoro.png'
+    )
+);
+
+$breakpoints: (
+    mobile: 767px
+);
+
+// Mixins
+@mixin theme-variant($property, $dark-value, $light-value) {
+    #{$property}: $dark-value;
+    &[data-theme="light"] {
+        #{$property}: $light-value;
+    }
 }
 
-.c-about-container a {
-    text-decoration: none;
-    color: var(--linkColor);
-    background-image: linear-gradient(to top, #ffffff 1px, transparent 1px);
-    background-size: 100% 0px;
-    background-repeat: no-repeat;
-    background-position: 0% 100%;
-    transition: color 0.3s;
+@mixin responsive($breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+    }
 }
 
-.c-about-container a[data-theme="light"] {
-    background-image: linear-gradient(to top, #000000 1px, transparent 1px);
-}
-
-.c-about-container a:hover {
-    animation: a-underline-text-bottom-up 0.3s ease forwards;
-}
-
-.c-about-container br {
-    user-select: none;
-}
-
-.c-about-container span.highlight {
-    color: #e093e0;
-}
-
-.c-about-container span.highlight[data-theme="light"] {
-    color: #bd41bd;
-}
-
+// Component: About Container
 .c-about-container {
-    margin: 20px;
+    margin: map-get(map-get($about, spacing), margin);
     z-index: 1000;
     position: relative;
     user-select: text;
-    padding-bottom: 2rem;
+    padding-bottom: map-get(map-get($about, spacing), padding-bottom);
+
+    // Text styles
+    p {
+        line-height: 1.5em;
+        text-align: justify;
+        font-weight: 300;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    // Link styles
+    a {
+        text-decoration: none;
+        color: var(--linkColor);
+        background-image: linear-gradient(to top, #ffffff 1px, transparent 1px);
+        background-size: 100% 0px;
+        background-repeat: no-repeat;
+        background-position: 0% 100%;
+        transition: color 0.3s;
+
+        &[data-theme="light"] {
+            background-image: linear-gradient(to top, #000000 1px, transparent 1px);
+        }
+
+        &:hover {
+            animation: a-underline-text-bottom-up 0.3s ease forwards;
+        }
+    }
+
+    // Line break styles
+    br {
+        user-select: none;
+    }
+
+    // Highlight styles
+    span.highlight {
+        @include theme-variant(
+            'color',
+            map-get(map-get(map-get($about, colors), highlight), dark),
+            map-get(map-get(map-get($about, colors), highlight), light)
+        );
+    }
+
+    // Background image
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(map-get(map-get($about, background), dark)) no-repeat center center fixed;
+        object-fit: contain;
+        filter: invert(1) brightness(1.2) opacity(0.15);
+        z-index: -1;
+        background-position: center;
+    }
+
+    &[data-theme="light"]::before {
+        background: url(map-get(map-get($about, background), light)) no-repeat center center fixed;
+        filter: brightness(0.7) opacity(0.5);
+    }
+
+    // Signature
+    &::after {
+        content: "革命前夜";
+        font-size: map-get(map-get($about, fonts), signature);
+        display: block;
+        width: 100%;
+        height: 1px;
+        margin: 0 auto;
+        margin-top: 1rem;
+        position: relative;
+        text-align: center;
+        @include theme-variant(
+            'color',
+            map-get(map-get(map-get($about, colors), signature), dark),
+            map-get(map-get(map-get($about, colors), signature), light)
+        );
+        padding-bottom: 1rem;
+    }
 }
 
-.c-about-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url(/assets/kokoro_dark.png) no-repeat center center fixed;
-    object-fit: contain;
-    filter: invert(1) brightness(1.2) opacity(0.15);
-    z-index: -1;
-    background-position: center;
-}
+// Objects
+.o {
+    &-about {
+        &-title {
+            font-size: map-get(map-get($about, fonts), title);
+            margin-bottom: map-get(map-get($about, spacing), title-margin-bottom);
+            font-family: var(--titleFont);
+        }
 
-.c-about-container[data-theme="light"]::before {
-    background: url(/assets/kokoro.png) no-repeat center center fixed;
-    filter: brightness(0.7) opacity(0.5);
-}
+        &-item {
+            &-title {
+                font-size: map-get(map-get($about, fonts), item-title);
+                margin-top: map-get(map-get($about, spacing), item-title-margin-top);
+                margin-bottom: map-get(map-get($about, spacing), item-title-margin-bottom);
+                font-family: var(--titleFont);
 
-.c-about-container::after {
-    content: "革命前夜";
-    font-size: 0.7rem;
-    display: block;
-    width: 100%;
-    height: 1px;
-    margin: 0 auto;
-    margin-top: 1rem;
-    position: relative;
-    text-align: center;
-    color: darkgray;
-    padding-bottom: 1rem;
-}
+                &::before {
+                    content: "#";
+                    margin-right: 1px;
+                    color: var(--linkColor);
+                }
+            }
 
-.c-about-container[data-theme="light"]::after {
-    color: #666666;
-}
+            &-subtitle {
+                font-size: map-get(map-get($about, fonts), item-subtitle);
+                margin-top: map-get(map-get($about, spacing), item-subtitle-margin);
+                margin-bottom: map-get(map-get($about, spacing), item-subtitle-margin);
+                font-family: var(--titleFont);
 
-.o-about-title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    font-family: var(--titleFont);
-}
+                &::before {
+                    content: "|";
+                    margin-right: 1px;
+                    @include theme-variant(
+                        'color',
+                        map-get(map-get(map-get($about, colors), highlight), dark),
+                        map-get(map-get(map-get($about, colors), highlight), light)
+                    );
+                }
+            }
+        }
 
-.o-about-item-title {
-    font-size: 1.5rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-    font-family: var(--titleFont);
-}
+        &-content {
+            font-size: map-get(map-get($about, fonts), content);
+            margin: 0px;
 
-.o-about-item-title::before {
-    content: "#";
-    margin-right: 1px;
-    color: var(--linkColor);
-}
-
-.o-about-item-subtitle {
-    font-size: 1.25rem;
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
-    font-family: var(--titleFont);
-}
-
-.o-about-item-subtitle::before {
-    content: "|";
-    margin-right: 1px;
-    color: #e093e0;
-}
-
-.o-about-item-subtitle::before[data-theme="light"] {
-    color: #bd41bd;
-}
-
-.o-about-content {
-    font-size: 1.125rem;
-    margin: 0px;
-}
-
-@media (max-width: 767px) {
-    .o-about-content {
-        font-size: 1rem;
+            @include responsive(mobile) {
+                font-size: map-get(map-get($about, fonts), mobile-content);
+            }
+        }
     }
 }
