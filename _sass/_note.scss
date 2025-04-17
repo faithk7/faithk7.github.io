@@ -39,7 +39,7 @@ $colors: (
 
     &-item-container {
         margin-bottom: map-get($spacing, lg);
-        border-bottom: 0.0625rem solid map-get($colors, border);
+        border-bottom: 1px solid map-get($colors, border);
         padding-bottom: map-get($spacing, sm);
 
         p {
