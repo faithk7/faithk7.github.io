@@ -127,12 +127,31 @@ a.o-setting-icon:hover {
     a.o-setting-icon {
         display: none;
     }
+
+    .c-navbar {
+        width: 5.3rem;
+    }
+
+    .c-navbar-container {
+        margin-top: 10px;
+        margin-right: 10px;
+        border-left: 1px solid #ffffff;
+    }
+
+    .c-navbar-items {
+        padding-left: 5px;
+    }
+
+    .o-navbar-item a:hover {
+        animation: none;
+    }
 }
 
-/* for tablet */
-@media (max-width: 1032px) {
+/* for mobile */
+@media (max-width: 445px) {
     .c-navbar {
-        width: 1.1rem;
+        display: none;
+        width: 100%;
     }
 
     .c-navbar.show {
@@ -145,11 +164,17 @@ a.o-setting-icon:hover {
         background-color: transparent;
         backdrop-filter: blur(3px);
         z-index: 1000;
-        border-left: none;
     }
 
-    .c-navbar-container[data-theme="light"] {
-        border-left: none;
+    .c-navbar-icon {
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1001;
+        cursor: pointer;
     }
 
     .c-navbar-container {
@@ -175,28 +200,7 @@ a.o-setting-icon:hover {
         align-self: flex-end;
     }
 
-    .c-navbar.show+.c-navbar-icon {
+    .c-navbar.show + .c-navbar-icon {
         display: none;
-    }
-
-    .o-navbar-item a:hover {
-        animation: none;
-    }
-}
-
-/* for mobile */
-@media (max-width: 932px) {
-    .c-navbar {
-        display: none;
-    }
-
-    .c-navbar-icon {
-        display: block;
-        width: 20px;
-        height: 20px;
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        z-index: 1001;
     }
 }
