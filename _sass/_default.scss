@@ -126,6 +126,11 @@ a[data-theme="dark"] {
     color: #50b0eb;
 }
 
+path {
+    fill: #000;
+    stroke: #000;
+}
+
 path[data-theme="dark"] {
     fill: #fff;
     stroke: #fff;
@@ -136,12 +141,22 @@ path[data-theme="light"] {
     stroke: #000;
 }
 
+line {
+    stroke: #000;
+}
+
 line[data-theme="dark"] {
     stroke: #fff;
 }
 
 line[data-theme="light"] {
     stroke: #000;
+}
+
+path.st0 {
+    fill: none;
+    stroke: #000000;
+    stroke-miterlimit: 10;
 }
 
 path[data-theme="dark"].st0 {
@@ -157,6 +172,13 @@ path[data-theme="light"].st0 {
 }
 
 /* for the svg rss */
+path.st1 {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+}
+
 path[data-theme="dark"].st1 {
     fill: none;
     stroke: #ffffff;
@@ -170,6 +192,31 @@ path[data-theme="light"].st1 {
     stroke: #000000;
     stroke-width: 2;
     stroke-miterlimit: 10;
+}
+
+/* Apply dark mode styles based on system preference */
+@media (prefers-color-scheme: dark) {
+    path:not([data-theme="light"]) {
+        fill: #fff;
+        stroke: #fff;
+    }
+
+    line:not([data-theme="light"]) {
+        stroke: #fff;
+    }
+
+    path.st0:not([data-theme="light"]) {
+        fill: none;
+        stroke: #ffffff;
+        stroke-miterlimit: 10;
+    }
+
+    path.st1:not([data-theme="light"]) {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 2;
+        stroke-miterlimit: 10;
+    }
 }
 
 @keyframes a-underline-text-left-right {
