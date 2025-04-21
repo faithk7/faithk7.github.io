@@ -128,7 +128,7 @@ h1.o-name {
     text-align: center;
     writing-mode: vertical-rl;
     text-orientation: upright;
-    max-height: 30%;
+    max-height: 35%;
 }
 
 .o-quote[data-theme="light"] {
@@ -206,12 +206,22 @@ h1.o-name {
     max-height: 100%;
     display: block;
     filter: invert(0);
+    color: #000000;
 }
 
 .c-index-art[data-theme="dark"] {
     filter: invert(1);
+    color: #ffffff;
 }
 
 .c-index-art[data-theme="light"] {
     filter: invert(0);
+    color: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+    .c-index-art:not([data-theme="light"]) {
+        filter: invert(1);
+        color: #ffffff;
+    }
 }
