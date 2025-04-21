@@ -1,54 +1,5 @@
 /* Styles specific to collection.html */
 
-// Variables
-$collection: (
-    title-size: 2rem,
-    nav: (
-        icon-size: 1.5rem,
-        max-width: 200px,
-        border-width: 2px
-    ),
-    item: (
-        font-size: 1.125rem,
-        icon-size: 20px,
-        spacing: (
-            margin-bottom: 15px,
-            padding-left: 30px
-        )
-    ),
-    spacing: (
-        gap: 20px,
-        margin-bottom: 1.25rem,
-        last-item-margin: 2rem
-    )
-);
-
-$colors: (
-    border: (
-        dark: #ffffff,
-        light: #000000
-    ),
-    text: (
-        dark: #dddddd,
-        light: #000000
-    )
-);
-
-// Mixins
-@mixin theme-variant($property, $dark-value, $light-value) {
-    #{$property}: $dark-value;
-    &[data-theme="light"] {
-        #{$property}: $light-value;
-    }
-}
-
-@mixin play-icon($color) {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='#{$color}' d='M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: map-get(map-get($collection, item), icon-size) map-get(map-get($collection, item), icon-size);
-}
-
 body {
     overflow: hidden; /* Prevent scrolling on the entire page */
 }
@@ -57,7 +8,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: auto 1fr;
-    gap: map-get(map-get($collection, spacing), gap);
+    gap: 20px;
     width: 100%;
     min-height: 100%; /* Full viewport height */
     min-height: stretch; /* Opera */
@@ -67,8 +18,8 @@ body {
 
 .o-collection-title {
     grid-column: 1 / -1;
-    font-size: map-get($collection, title-size);
-    margin-bottom: map-get(map-get($collection, spacing), margin-bottom);
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
     align-self: flex-start;
     font-family: var(--titleFont);
     position: fixed;
@@ -84,39 +35,32 @@ body {
     overflow-y: auto;
     padding-right: 10px;
     background-color: inherit;
-    @include theme-variant('border-right',
-        map-get(map-get($colors, border), dark) solid map-get(map-get($collection, nav), border-width),
-        map-get(map-get($colors, border), light) solid map-get(map-get($collection, nav), border-width)
-    );
+    border-right: 2px solid white;
     height: auto;
     min-height: fit-content;
     align-self: center;
     width: auto;
-    max-width: map-get(map-get($collection, nav), max-width);
+    max-width: 200px;
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-
-    &[data-theme="light"] {
-        border-right: 2px solid #000000;
-    }
 }
 
+.c-collection-nav-container[data-theme="light"] {
+    border-right: 2px solid #000000;
+}
 
 .o-collection-nav-icon {
-    font-size: map-get(map-get($collection, nav), icon-size);
-    margin: {
-        right: 0.625rem;
-        bottom: 3px;
-    }
+    font-size: 1.5rem;
+    margin-right: 0.625rem;
+    margin-bottom: 3px;
     cursor: pointer;
-
-    .selected {
-        text-decoration: underline;
-        color: inherit;
-    }
 }
 
+.o-collection-nav-icon.selected {
+    text-decoration: underline;
+    color: inherit;
+}
 
 .c-collection-tile-container {
     grid-column: 2 / 3;
@@ -130,11 +74,9 @@ body {
     height: auto;
     min-height: fit-content;
     align-self: center;
-    margin: {
-        top: auto;
-        bottom: auto;
-        left: 20%;
-    }
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20%;
 }
 
 .c-collection-item-container {
@@ -144,17 +86,21 @@ body {
 }
 
 .o-collection-item {
-    font-size: map-get(map-get($collection, item), font-size);
-    @include theme-variant('color', map-get(map-get($colors, text), dark), map-get(map-get($colors, text), light));
-    margin-bottom: map-get(map-get(map-get($collection, item), spacing), margin-bottom);
-    padding-left: map-get(map-get(map-get($collection, item), spacing), padding-left);
-    @include play-icon(map-get(map-get($colors, text), dark));
+    font-size: 1.125rem;
+    color: #dddddd;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23dddddd' d='M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 20px 20px;
+}
 
-    &:nth-last-of-type(1) {
-        margin-bottom: map-get(map-get($collection, spacing), last-item-margin);
-    }
+.o-collection-item:nth-last-of-type(1) {
+    margin-bottom: 2rem;
+}
 
-    &[data-theme="light"] {
-        @include play-icon(map-get(map-get($colors, text), light));
-    }
+.o-collection-item[data-theme="light"] {
+    color: #000000;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23000000' d='M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z'/%3E%3C/svg%3E");
 }

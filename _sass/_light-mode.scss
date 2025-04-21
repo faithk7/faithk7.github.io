@@ -1,58 +1,20 @@
-// Variables
-$colors-light: (
-    background: (
-        primary: #ffffff,
-        secondary: #f0f0f0
-    ),
-    text: #000000
-);
-
-// Mixins
-@mixin light-theme {
-    &[data-theme="light"] {
-        @content;
-    }
-}
-
 /* Light mode styles */
-body {
-    @include light-theme {
-        background-color: map-get(map-get($colors-light, background), primary);
-        color: map-get($colors-light, text);
-    }
+body[data-theme="light"] {
+    background-color: #ffffff;
+    color: #000000;
 }
 
-// Layout components
-.l {
-    &-left,
-    &-center,
-    &-right {
-        @include light-theme {
-            background-color: map-get(map-get($colors-light, background), secondary);
-        }
-    }
+.l-left[data-theme="light"],
+.l-center[data-theme="light"],
+.l-right[data-theme="light"],
+.c-navbar[data-theme="light"] {
+    background-color: #f0f0f0;
 }
 
-// Navigation components
-.c {
-    &-navbar {
-        @include light-theme {
-            background-color: map-get(map-get($colors-light, background), secondary);
-        }
-    }
-
-    &-line {
-        @include light-theme {
-            background-color: map-get($colors-light, text);
-        }
-    }
+.c-line[data-theme="light"] {
+    background-color: #000000;
 }
 
-// Navigation items
-.o-navbar-item {
-    a {
-        @include light-theme {
-            color: map-get($colors-light, text);
-        }
-    }
+.o-navbar-item a[data-theme="light"] {
+    color: #000000;
 }

@@ -1,215 +1,206 @@
-// Variables
-$spacing: (
-    xs: 0.125rem,    // 2px
-    sm: 0.625rem,    // 10px
-    base: 0.75rem,   // 12px
-    md: 1rem,        // 16px
-    lg: 1.25rem,     // 20px
-    xl: 6.25rem      // 100px
-);
-
-$breakpoints: (
-    mobile: 445px,
-    tablet: 1032px
-);
-
-$colors: (
-    text: (
-        dark: #ffffff,
-        light: #000000
-    ),
-    border: (
-        dark: #ffffff,
-        light: #000000
-    )
-);
-
-// Mixins
-@mixin theme-variant($property, $dark-value, $light-value) {
-    #{$property}: $dark-value;
-
-    &[data-theme="light"] {
-        #{$property}: $light-value;
-    }
-}
-
-@mixin underline-animation($color) {
-    background-image: linear-gradient(to right, $color, $color);
-    background-size: 0% map-get($spacing, xs);
-    background-repeat: no-repeat;
-    background-position: 0% 100%;
-}
-
-// Keyframes
-@keyframes a-underline-text-left-right {
-    0% {
-        background-size: 0% 1px;
-        background-position: 0% 100%;
-    }
-    100% {
-        background-size: 100% 1px;
-        background-position: 0% 100%;
-    }
-}
-
-// Components
 .c-navbar {
     position: fixed;
     top: 0;
     right: 0;
     height: 100%;
     width: 12.5rem;
-
-    &-icon {
-        display: none;
-    }
-
-    &-container {
-        display: block;
-        margin-top: map-get($spacing, lg);
-        padding-left: map-get($spacing, sm);
-        font-family: var(--linkFont);
-        @include theme-variant('border-left', 0.0625rem solid map-get(map-get($colors, border), dark), 0.0625rem solid map-get(map-get($colors, border), light));
-    }
-
-    &-items {
-        li {
-            margin-bottom: map-get($spacing, md);
-            align-self: flex-end;
-        }
-
-        @include theme-variant('border-left', 1px solid map-get(map-get($colors, border), dark), 1px solid map-get(map-get($colors, border), light));
-    }
-
-    // Mobile styles
-    @media (max-width: map-get($breakpoints, mobile)) {
-        display: none;
-        width: 100%;
-
-        &.show {
-            display: block;
-            position: fixed;
-            top: 0;
-            right: 0;
-            height: 100%;
-            width: 100%;
-            background-color: transparent;
-            backdrop-filter: blur(3px);
-            z-index: 1000;
-
-            & + .c-navbar-icon {
-                display: none;
-            }
-        }
-
-        &-icon {
-            display: block;
-            width: 20px;
-            height: 20px;
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            z-index: 1001;
-            cursor: pointer;
-        }
-
-        &-container {
-            margin-top: 10px;
-            margin-right: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            border-left: none;
-        }
-
-        &-items {
-            padding-left: 10px;
-        }
-    }
-
-    // Tablet styles
-    @media (max-width: map-get($breakpoints, tablet)) {
-        width: 5.3rem;
-
-        &-container {
-            margin-top: 10px;
-            margin-right: 10px;
-        }
-
-        &-items {
-            padding-left: 5px;
-        }
-    }
+    /* 200px */
+    /* background-color: #2c2c2c; */
 }
 
-// Line component
+.c-navbar-icon {
+    display: none;
+    /* Hide by default */
+}
+
+.c-navbar-container {
+    display: block;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    margin-top: 1.25rem;
+    /* 20px */
+    border-left: 0.0625rem solid #ffffff;
+    /* 1px */
+    padding-left: 0.625rem;
+    /* 10px */
+    font-family: var(--linkFont);
+}
+
+.c-navbar-container[data-theme="light"] {
+    border-left: 0.0625rem solid #000000;
+    /* Darker border for light mode */
+}
+
 .c-line {
-    width: map-get($spacing, xs);
-    height: map-get($spacing, xl);
-    background-color: map-get(map-get($colors, text), dark);
-    margin-bottom: map-get($spacing, lg);
+    width: 0.125rem;
+    /* 2px */
+    height: 6.25rem;
+    /* 100px */
+    background-color: #ffffff;
+    margin-bottom: 1.25rem;
+    /* 20px */
 }
 
-// Objects
 .o-navbar-item {
-    margin: map-get($spacing, base) 0;
+    margin: 0.75rem 0;
+    /* 16px */
+}
 
-    &:nth-of-type(1) {
-        margin-top: 0;
+.o-navbar-item:nth-of-type(1) {
+    margin-top: 0rem;
+    /* 0px */
+}
+
+.o-navbar-item:nth-last-of-type(1) {
+    margin-bottom: 0rem;
+    /* 0px */
+}
+
+@keyframes a-underline-text-left-right {
+    0% {
+        background-size: 0% 1px;
+        background-position: 0% 100%;
     }
 
-    &:nth-last-of-type(1) {
-        margin-bottom: 0;
-    }
-
-    a {
-        @include theme-variant('color', map-get(map-get($colors, text), dark), map-get(map-get($colors, text), light));
-        text-decoration: none;
-        @include underline-animation(map-get(map-get($colors, text), light));
-        transition: color 0.3s;
-        font-size: 0.8rem;
-
-        &:hover {
-            animation: a-underline-text-left-right 0.5s forwards;
-        }
-
-        @media (max-width: map-get($breakpoints, tablet)) {
-            &:hover {
-                animation: none;
-            }
-        }
+    100% {
+        background-size: 100% 1px;
+        background-position: 0% 100%;
     }
 }
 
-// Settings
+.o-navbar-item a {
+    color: #ffffff;
+    text-decoration: none;
+    background-image: linear-gradient(to right, #000000, #000000);
+    background-size: 0% 0.125rem;
+    /* 2px */
+    background-repeat: no-repeat;
+    background-position: 0% 100%;
+    transition: color 0.3s;
+    font-size: 0.8rem;
+}
+
+
+.o-navbar-item a[data-theme="light"] {
+    color: #000000;
+    background-image: linear-gradient(to right, #000000, #000000);
+}
+
+.o-navbar-item a[data-theme="dark"] {
+    color: #ffffff;
+    background-image: linear-gradient(to right, #ffffff, #ffffff);
+}
+
+.o-navbar-item a:hover {
+    animation: a-underline-text-left-right 0.5s forwards;
+}
+
 #dark-mode-toggle {
     position: absolute;
     top: 1.0625rem;
-    right: map-get($spacing, xl);
-    height: map-get($spacing, md);
-    width: map-get($spacing, md);
+    right: 6.25rem;
+    height: 1rem;
+    width: 1rem;
     background-color: transparent;
     border: none;
     outline: none;
     cursor: pointer;
-
-    @media (max-width: map-get($breakpoints, tablet)) {
-        display: none;
-    }
 }
 
-.o-setting-icon {
+a.o-setting-icon {
     position: absolute;
     top: 0.9375rem;
     right: 4.0625rem;
-    height: map-get($spacing, md);
-    width: map-get($spacing, md);
+    height: 1rem;
+    width: 1rem;
+}
 
-    &:hover {
-        animation: none;
+a.o-setting-icon:hover {
+    animation: none;
+}
+
+@media (max-width: 1032px) {
+    #dark-mode-toggle {
+        display: none;
     }
 
-    @media (max-width: map-get($breakpoints, tablet)) {
+    a.o-setting-icon {
+        display: none;
+    }
+
+    .c-navbar {
+        width: 5.3rem;
+    }
+
+    .c-navbar-container {
+        margin-top: 10px;
+        margin-right: 10px;
+        border-left: 1px solid #ffffff;
+    }
+
+    .c-navbar-items {
+        padding-left: 5px;
+    }
+
+    .o-navbar-item a:hover {
+        animation: none;
+    }
+}
+
+/* for mobile */
+@media (max-width: 445px) {
+    .c-navbar {
+        display: none;
+        width: 100%;
+    }
+
+    .c-navbar.show {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        background-color: transparent;
+        backdrop-filter: blur(3px);
+        z-index: 1000;
+    }
+
+    .c-navbar-icon {
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1001;
+        cursor: pointer;
+    }
+
+    .c-navbar-container {
+        margin-top: 10px;
+        margin-right: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        border-left: none;
+    }
+
+    .c-navbar-items {
+        padding-left: 10px;
+        border-left: 1px solid #ffffff;
+    }
+
+    .c-navbar-items[data-theme="light"] {
+        border-left: 1px solid #000000;
+    }
+
+    .c-navbar-items li {
+        margin-bottom: 1rem;
+        align-self: flex-end;
+    }
+
+    .c-navbar.show + .c-navbar-icon {
         display: none;
     }
 }
