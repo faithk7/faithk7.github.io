@@ -51,8 +51,11 @@ document.addEventListener("DOMContentLoaded", function () {
             itemElement.href = item.url;
             itemElement.dataset.type = item.type; // Add type data attribute
             itemElement.dataset.url = item.url; // Add URL data attribute
-            const theme = localStorage.getItem('mode') || 'light';
-            itemElement.setAttribute('data-theme', theme); // this value will be dynamically adjusted by js, probably need a refactor
+            const theme = localStorage.getItem('mode');
+            if (theme) {
+                console.log("theme", theme);
+                itemElement.setAttribute('data-theme', theme); // this value will be dynamically adjusted by js, probably need a refactor
+            }
             // color to be inherited from parent
             itemElement.style.color = 'inherit';
             itemElement.target = '_blank';
