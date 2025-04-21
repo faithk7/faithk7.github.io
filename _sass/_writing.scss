@@ -102,16 +102,16 @@ a {
     color: #dddddd;
     border-bottom: 0.0625rem solid #555555;
     font-weight: 400;
-}
 
-.o-writing-post-text p {
-    line-height: 2.0;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    margin-bottom: 2rem; /* Add margin to ensure content doesn't touch the border */
-}
+    p {
+        line-height: 2.0;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin-bottom: 2rem; /* Add margin to ensure content doesn't touch the border */
+    }
 
-.o-writing-post-text[data-theme="light"] {
-    color: #000000;
+    [data-theme="light"] & {
+        color: #000000;
+    }
 }
 
 /* for writing image container */
