@@ -12,7 +12,7 @@ description: "Kai Qu's recent notes"
 
 <div class="c-note-container">
     <h1 class="o-note-title">Recent Notes</h1>
-    {% assign sorted_notes = site.notes | sort: 'date' | reverse %}
+    {% assign sorted_notes = site.notes | where_exp: "note", "note.hidden != true" | sort: 'date' | reverse %}
     {% for note in sorted_notes %}
     <div class="c-note-item-container">
         <div class="o-note-date" data-theme="">{{ note.date | date: "%B %d, %Y" }}</div>
