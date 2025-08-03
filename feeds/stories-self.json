@@ -2,31 +2,44 @@
 permalink: /stories-self.json
 type: "self"
 ---
-{% assign stories = site.data.stories | where_exp: "story", "story.meta.tags contains page.type" | where_exp: "story","story.meta.tags contains 'Highlight'" %}
+{% assign stories = site.data.stories | where_exp: "story",
+  "story.meta.tags contains page.type" | where_exp: "story",
+  "story.meta.tags contains 'Highlight'" %
+}
 {
   "version": "https://jsonfeed.org/version/1.1",
   "title": "@kai's stories for {{ page.type }}",
   "icon": "https://github.com/muan.png",
-  "home_page_url": "https://k7n.co/",
-  "feed_url": "https://k7n.co/stories-self.json",
+  "home_page_url": "{{ site.url }}/",
+  "feed_url": "{{ site.url }}/stories-self.json",
   "description": "Stories about {{ page.type }}.",
   "_open_stories": {
     "version": "0.0.9"
   },
   "items": [
-    {% for story in stories %}{% if stories.first != story %},{% endif %}
+    {% for story in stories %
+    }{% if stories.first != story %
+    },
+    {% endif %
+    }
     {
       "id": "{{ story.id }}",
       "date_published": "{{ story.uploaded | date_to_xmlschema }}",
-      {% assign date_expired = story.uploaded | date: "%s" | plus: 86400 | date_to_xmlschema %}
+      {% assign date_expired = story.uploaded | date: "%s" | plus: 86400 | date_to_xmlschema %
+      }
       "tags": [
-        {% for tag in story.meta.tags %}"{{ tag }}"{% if tag != story.meta.tags.last %},{% endif %}{% endfor %}
+        {% for tag in story.meta.tags %
+        }"{{ tag }}"{% if tag != story.meta.tags.last %
+        },
+        {% endif %
+        }{% endfor %
+        }
       ],
       "content_html": "<img src='https://55dbd1d.webp.li/pk7/{{ story.id }}.jpg' alt='{{ story.meta.alt }}'>",
       "authors": [
         {
           "name": "Kai Qu",
-          "url": "https://k7n.co"
+          "url": "{{ site.url }}"
         }
       ],
       "url": "{{ site.url }}/stories/{{ story.id }}",
@@ -41,6 +54,7 @@ type: "self"
           ]
         }
       }
-    }{% endfor %}
+    }{% endfor %
+    }
   ]
 }

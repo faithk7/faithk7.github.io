@@ -38,6 +38,7 @@ feed:
   custom_path: _includes/feed.xml
 
 description: "Kai Qu's home page on the World Wide Web"
+url: "https://k7m.xyz"
 
 compress_html:
   clippings: all
