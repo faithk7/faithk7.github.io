@@ -215,4 +215,93 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.appendChild(iframe);
         document.body.appendChild(overlay);
     }
+
+    // Detect if visitor is in China and suggest VPN via banner and icon
+    (function checkAndSuggestVpnForChina() {
+        const DISMISS_KEY = 'collect_vpn_notice_dismissed';
+        if (localStorage.getItem(DISMISS_KEY) === '1') return;
+
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 2500);
+        fetch('https://ipapi.co/json/', { signal: controller.signal })
+            .then(res => res.ok ? res.json() : Promise.reject(new Error('ipapi.co non-OK')))
+            .then(data => {
+                clearTimeout(timeoutId);
+                try { if (VPN_DEBUG) console.log('[collect] VPN check response', data); } catch (_) { }
+                const countryCode = String((data && (data.country || data.country_code || data.countryCode)) || '').toUpperCase();
+                const countryName = String((data && (data.country_name || data.countryName)) || '').toLowerCase();
+                if (countryCode === 'CN' || countryName === 'china') {
+                    renderVpnWarning();
+                    try { if (VPN_DEBUG) console.log('[collect] VPN banner rendered (CN detected)'); } catch (_) { }
+                } else {
+                    try { if (VPN_DEBUG) console.log('[collect] Non-CN detected:', countryCode || countryName); } catch (_) { }
+                }
+            })
+            .catch((err) => {
+                try { console.warn('[collect] VPN check failed', (err && (err.name || err.message)) || err); } catch (_) { }
+                // Silently ignore on failure
+            });
+
+        function renderVpnWarning() {
+            // Banner
+            const banner = document.createElement('div');
+            banner.setAttribute('role', 'status');
+            banner.style.position = 'fixed';
+            banner.style.top = '0';
+            banner.style.left = '0';
+            banner.style.right = '0';
+            banner.style.zIndex = '2000';
+            banner.style.display = 'flex';
+            banner.style.alignItems = 'center';
+            banner.style.gap = '8px';
+            banner.style.padding = '8px 12px';
+            banner.style.background = '#FEF3C7'; // amber-100
+            banner.style.borderBottom = '1px solid #F59E0B'; // amber-500
+            banner.style.color = '#92400E'; // amber-700
+            banner.style.fontFamily = 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
+
+            const icon = document.createElement('span');
+            icon.textContent = '⚠️';
+            icon.setAttribute('aria-hidden', 'true');
+
+            const text = document.createElement('div');
+            text.style.flex = '1';
+            text.textContent = 'Media may require VPN/Proxy to load properly.';
+
+            const closeBtn = document.createElement('button');
+            closeBtn.type = 'button';
+            closeBtn.textContent = '×';
+            closeBtn.style.border = 'none';
+            closeBtn.style.background = 'transparent';
+            closeBtn.style.fontSize = '18px';
+            closeBtn.style.cursor = 'pointer';
+            closeBtn.style.color = 'inherit';
+            closeBtn.setAttribute('aria-label', 'Dismiss VPN notice');
+            closeBtn.addEventListener('click', () => {
+                localStorage.setItem(DISMISS_KEY, '1');
+                if (banner && banner.parentNode) banner.parentNode.removeChild(banner);
+                document.body.style.paddingTop = '';
+            });
+
+            banner.appendChild(icon);
+            banner.appendChild(text);
+            banner.appendChild(closeBtn);
+            document.body.appendChild(banner);
+
+            // Prevent overlap with fixed banner
+            const currentPaddingTop = parseInt(getComputedStyle(document.body).paddingTop || '0', 10) || 0;
+            document.body.style.paddingTop = (currentPaddingTop + banner.offsetHeight) + 'px';
+
+            // Icon next to page title if exists
+            try {
+                const titleEl = document.querySelector('.o-collection-title');
+                if (titleEl && !titleEl.querySelector('.vpn-hint-icon')) {
+                    const hint = document.createElement('span');
+                    hint.className = 'vpn-hint-icon';
+                    hint.title = 'VPN recommended in China for media accessibility';
+                    titleEl.appendChild(hint);
+                }
+            } catch (_) { }
+        }
+    })();
 });
