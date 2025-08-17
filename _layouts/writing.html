@@ -34,29 +34,54 @@ layout: default
             link.setAttribute('target', '_blank');
         });
 
-        // Handle smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                const scrollContainer = document.querySelector('.l-grid.l-center.light');
+        // Smooth scroll with offset for TOC links; use delegation for reliability
+        function getOffsetTop() {
+            try {
+                const nav = document.querySelector('.c-navbar');
+                return nav ? Math.ceil(nav.getBoundingClientRect().height) + 8 : 8;
+            } catch (_) { return 8; }
+        }
 
-                if (targetElement && scrollContainer) {
-                    const elementRect = targetElement.getBoundingClientRect();
-                    const containerRect = scrollContainer.getBoundingClientRect();
-                    const absoluteElementTop = elementRect.top + scrollContainer.scrollTop - containerRect.top;
+        function scrollToHash(hash) {
+            var id = (hash || '').replace(/^#/, '');
+            if (!id) return;
+            var target = document.getElementById(decodeURIComponent(id));
+            if (!target) return;
+            var offset = getOffsetTop();
+            var y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
 
-                    // Calculate the maximum scroll position to prevent overflow
-                    const maxScrollTop = scrollContainer.scrollHeight - containerRect.height;
-                    const targetScrollTop = Math.min(absoluteElementTop, maxScrollTop);
-
-                    scrollContainer.scrollTo({
-                        top: targetScrollTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
+        document.addEventListener('click', function (e) {
+            var link = e.target && e.target.closest && e.target.closest('.toc-container a[href*="#"]');
+            if (!link) return;
+            var href = link.getAttribute('href') || '';
+            // If the link points to another page, let browser handle it
+            try {
+                var url = new URL(href, location.href);
+                if (url.pathname !== location.pathname) return;
+                var hash = url.hash;
+            } catch (_) {
+                var hash = href.indexOf('#') >= 0 ? href.slice(href.indexOf('#')) : '';
+            }
+            if (!hash) return;
+            // Only prevent default if target exists on this page
+            var id = hash.replace(/^#/, '');
+            var target = document.getElementById(decodeURIComponent(id));
+            if (!target) return;
+            e.preventDefault();
+            scrollToHash(hash);
+            if (history && history.replaceState) {
+                history.replaceState(null, '', hash);
+            } else {
+                location.hash = hash;
+            }
         });
+
+        // Also handle direct hash on load and after hash changes
+        if (location.hash) {
+            setTimeout(function () { scrollToHash(location.hash); }, 0);
+        }
+        window.addEventListener('hashchange', function () { scrollToHash(location.hash); });
     });
 </script>

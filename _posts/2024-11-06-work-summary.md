@@ -11,10 +11,10 @@ hidden: true
 
 刚来到波士顿地区是 22 年 1 月，正值寒冬和大雪。上一次见到雪可能还是在三年前，所以非常激动。对波士顿这个城市也十分喜欢，尤其是冬天的波士顿，灵魂契合般的喜欢。原来每个城市都有自己的气质，能和人的气质产生共鸣。
 
-![本当に](https://bk7.k7n.co/boston_winter_1.webp){: .center-image }
+![本当に](https://bk7.k7m.xyz/boston_winter_1.webp){: .center-image }
 _本当に_{: .image-caption}
 
-![好き](https://bk7.k7n.co/boston_winter_2.webp){: .center-image }
+![好き](https://bk7.k7m.xyz/boston_winter_2.webp){: .center-image }
 _好き_{: .image-caption}
 
 2 月 15 号开始工作。记得刚进组时的兴奋与热情，想着要做出什么 distruptive technology，成为组里的中流砥柱（笑）。这种蜜月期大概半年多就结束了：现实比想象要萧条地多 — 制度和环境的限制，以及自己人际交往还有技术能力上的欠缺。也和一些真正大厂的员工交流过，好像大多数人也都在拧螺丝，并且容易温水煮青蛙，被周围的环境麻痹，慢慢丧失自我提升的兴趣，我觉得这是很恐怖的。
@@ -65,5 +65,5 @@ _好き_{: .image-caption}
 软件工程师比自己想象中需要的能力综合的多的工作。沟通能力很重要，并且越往上走越是如此。对于职业发展需要规划，越早规划越好。同时，职场中的无奈无可避免，要改变环境的话可能需要付出巨大的努力，心态上的宽容和调整会更容易。最后，工作还是要选自己喜欢的，能做自己热爱的事情是一种幸福。
 
 
-![但 MW 的独立办公室是自闭者的天堂](https://bk7.k7n.co/mw_office.webp){: .center-image }
+![但 MW 的独立办公室是自闭者的天堂](https://bk7.k7m.xyz/mw_office.webp){: .center-image }
 _但 MW 的独立办公室是自闭者的天堂_{: .image-caption}

@@ -16,4 +16,4 @@ permalink: /writing/kemonozume_review.html
 
 剧中许多细节也很有趣：由香表情下的情感变化、丢掉又被捡起的戒指、跳伞、猴子师傅、阿凡的粗中有细、在大家都快变成食人鬼前阿信对俊彦的那一句“新年快乐” -- 这种反差和不合时宜显得那么有魅力。有时会感觉周围的一切都那么的不真实，像灵魂出窍一般，从上方观察着自己和周围人的生活，一切显得合理却又荒诞。人生是一场旅途，就算是有世界末日，那也只是旅行中最后的体验罢了。
 
-![kemonozume_3](https://bk7.k7n.co/kemonozume_3.webp){: .center-image }
+![kemonozume_3](https://bk7.k7m.xyz/kemonozume_3.webp){: .center-image }

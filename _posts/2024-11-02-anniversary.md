@@ -10,7 +10,7 @@ permalink: /writing/anniversary.html
 
 对于十年之约能够兑现，自己是有些震撼的。一开始旺姐有意无意在年级群里说起这件事时，我只觉得这十分理想主义：大家都变了啊，没人会把初中一个活动性质的承诺当真的。每个人在成长的过程中都无数次地被别人爽约，也无数次地爽了别人的约，这种承诺微不足道。我不理解旺姐为什么要一直牵挂着已经毕业10年的同学们，甚至还把十年之约当真了。我猜想她应该会在遭遇几次的冷漠后放弃吧，毕竟大多数人都是这样。但旺姐一直把我们当成她的孩子，关心和挂念着我们。看着大家和老师在母校前的合照，体会着那一份赤忱和幸福，内心有什么东西被触动了。
 
-![银杏之约](https://bk7.k7n.co/wang_message.webp){: .center-image }
+![银杏之约](https://bk7.k7m.xyz/wang_message.webp){: .center-image }
 _银杏之约_{: .image-caption}
 
 中学时的自己应该是一个温暖的人，会真心地喜爱他人和集体。可出国后，环境的剧变、没法融入的无助和一次被冷淡话语伤害的经历让我的信念崩塌。善没法拯救当时的我，所以变得逐渐封闭了 — 至少能不被他人伤害，也不会给别人带来麻烦。
@@ -41,8 +41,8 @@ _银杏之约_{: .image-caption}
 
 北朝，生日快乐。
 
-![北朝的教学楼](https://bk7.k7n.co/middle_school.webp){: .center-image }
+![北朝的教学楼](https://bk7.k7m.xyz/middle_school.webp){: .center-image }
 _教学楼_{: .image-caption}
 
-![夏天](https://bk7.k7n.co/middle_school_trip.webp){: .center-image }
+![夏天](https://bk7.k7m.xyz/middle_school_trip.webp){: .center-image }
 _夏天_{: .image-caption}
