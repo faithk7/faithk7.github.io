@@ -124,7 +124,27 @@
 }
 
 @media (max-width: 767px) {
+    .c-about-container {
+        margin: 16px;
+    }
+
+    .c-about-container p {
+        line-height: 1.7;
+    }
+
+    .o-about-title {
+        font-size: 1.5rem;
+    }
+
+    .o-about-item-title {
+        font-size: 1.2rem;
+    }
+
+    .o-about-item-subtitle {
+        font-size: 1.05rem;
+    }
+
     .o-about-content {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 }
