@@ -54,9 +54,9 @@ description: "Kai Qu's home page on the World Wide Web"
     </div>
 </div>
 
-<div class="c-quote-container">
-    <div class="o-quote" data-theme="">死神はリンゴしか食べないから
-    </div>
+<div class="c-quote-container" data-quote>
+    <div class="o-quote" data-theme="" data-quote-text>死神はリンゴしか食べないから</div>
+    <button class="o-quote-reload" type="button" title="Reload quote" data-quote-reload>↻</button>
 </div>
 
 <div class="c-index-art-container" data-theme="">
@@ -64,5 +64,6 @@ description: "Kai Qu's home page on the World Wide Web"
 </div>
 
 <!-- JavaScript moved to bottom -->
+<script id="quotes-data" type="application/json">{{ site.data.quotes | jsonify }}</script>
 <script type="module" src="/assets/index.js" defer></script>
 <script type="module" src="https://unpkg.com/open-stories-element@latest" async></script>

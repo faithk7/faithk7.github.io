@@ -118,6 +118,10 @@ h1.o-name {
     right: 0%;
     z-index: 100;
     width: 12.5rem;
+    display: flex;
+    flex-direction: row; /* first line (first column) at leftmost */
+    align-items: flex-end;
+    gap: 0.25rem;
 }
 
 
@@ -126,13 +130,36 @@ h1.o-name {
     font-size: 1rem;
     color: #ffffff;
     text-align: center;
-    writing-mode: vertical-rl;
+    writing-mode: vertical-rl; /* vertical layout */
     text-orientation: upright;
     max-height: 35%;
 }
 
 .o-quote[data-theme="light"] {
     color: #000000;
+}
+
+/* reload button styling and hover reveal */
+.o-quote-reload {
+    appearance: none;
+    border: 1px solid currentColor;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: 1;
+    padding: 0.2rem 0.35rem;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    bottom: -3; /* lower-left corner of quote container */
+}
+
+.c-quote-container:hover .o-quote-reload,
+.o-quote-reload:focus-visible {
+    opacity: 1;
 }
 
 
