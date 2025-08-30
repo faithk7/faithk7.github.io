@@ -155,6 +155,7 @@ h1.o-name {
     position: absolute;
     left: 0;
     bottom: -2.0em; /* place 0.5em below the quote container */
+    user-select: none;
 }
 
 .c-quote-container:hover .o-quote-reload,
