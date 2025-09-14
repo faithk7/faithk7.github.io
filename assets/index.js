@@ -88,13 +88,34 @@ if (quoteContainer) {
 
     const quotes = getEmbeddedQuotes()
     let lastIndex = -1
+    let remainingIndices = []
+
+    function refillRemainingIndices() {
+        remainingIndices = Array.from({ length: quotes.length }, (_, i) => i)
+        for (let i = remainingIndices.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1))
+                ;[remainingIndices[i], remainingIndices[j]] = [remainingIndices[j], remainingIndices[i]]
+        }
+        // Avoid immediate repeat across cycles when there are 2+ quotes
+        if (
+            quotes.length > 1 &&
+            lastIndex !== -1 &&
+            remainingIndices[remainingIndices.length - 1] === lastIndex
+        ) {
+            const swapWith = remainingIndices.length - 2
+            if (swapWith >= 0) {
+                ;[remainingIndices[remainingIndices.length - 1], remainingIndices[swapWith]] = [
+                    remainingIndices[swapWith],
+                    remainingIndices[remainingIndices.length - 1]
+                ]
+            }
+        }
+    }
 
     function pickRandomIndex() {
         if (!quotes.length) return -1
-        let idx = Math.floor(Math.random() * quotes.length)
-        if (quotes.length > 1 && idx === lastIndex) {
-            idx = (idx + 1) % quotes.length
-        }
+        if (remainingIndices.length === 0) refillRemainingIndices()
+        const idx = remainingIndices.pop()
         lastIndex = idx
         return idx
     }
