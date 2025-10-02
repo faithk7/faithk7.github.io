@@ -5,6 +5,13 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="text/html; charset=utf-8" http-equiv="content-type">
     <meta name="description" content="{{ page.description | default: site.description }}">
+    <!-- Resource hints for performance -->
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://open-heart.lastk7.workers.dev">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <!-- Metadata and resources -->
     <link rel="alternate" type="application/rss+xml" href="/notes.xml">
     <link rel="icon" href="/assets/fav.svg" type="image/svg+xml" sizes="24x24">
     <link href="/stylesheets/main.css" rel="stylesheet" type="text/css">
@@ -14,9 +21,7 @@
     <meta content="{{ page.image }}" property="twitter:image">
     <meta content="{{ page.title }} - {{ site.title }}" property="og:title">
     <meta content="{{ page.title }} - {{ site.title }}" name="twitter:title">
-    <!-- Preconnect for Google Fonts performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap" rel="stylesheet">
 </head>
 
