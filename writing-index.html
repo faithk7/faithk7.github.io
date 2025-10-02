@@ -15,7 +15,12 @@ last_modified_at: {{ site.time | date: '%Y-%m-%d %H:%M:%S' }}
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <!-- Resource hints -->
+    <!-- Resource hints for navigation -->
+    <link rel="prefetch" href="/" as="document">
+    <link rel="prefetch" href="/note" as="document">
+    <link rel="prefetch" href="/about" as="document">
+    <link rel="prefetch" href="/collect" as="document">
+    <!-- Prefetch posts -->
     {% assign sorted_posts = site.posts | where_exp: "post", "post.hidden != true" | sort: 'date' | reverse %}
     {% for post in sorted_posts %}
     <link rel="prefetch" href="{{ post.url }}" as="document">
