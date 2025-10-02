@@ -33,7 +33,7 @@
         {% include svg_html/menu.html %}
     </div>
 
-    <script>
+    <script defer>
         // Function to apply the light/dark mode
         function applyMode(mode) {
             const elements = [
@@ -51,42 +51,44 @@
             });
         }
 
+        // Initialize theme from saved mode
+        document.addEventListener('DOMContentLoaded', function () {
+            const savedMode = localStorage.getItem('mode');
+            if (savedMode) {
+                applyMode(savedMode);
+            }
 
-        // TODO: refactor
-        // Check for saved mode in local storage
-        const savedMode = localStorage.getItem('mode');
-        if (savedMode) {
-            applyMode(savedMode);
-        }
+            // Toggle dark mode
+            const toggleButton = document.getElementById('dark-mode-toggle');
+            if (toggleButton) {
+                toggleButton.addEventListener('click', () => {
+                    const currentMode = document.body.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+                    const newMode = currentMode === 'light' ? 'dark' : 'light';
+                    applyMode(newMode);
+                    localStorage.setItem('mode', newMode);
+                });
+            }
 
-        // Toggle dark mode
-        const toggleButton = document.getElementById('dark-mode-toggle');
-        toggleButton.addEventListener('click', () => {
-            const currentMode = document.body.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
-            const newMode = currentMode === 'light' ? 'dark' : 'light';
-            applyMode(newMode);
-            localStorage.setItem('mode', newMode);
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
+            // Navigation toggle functionality
             const navToggle = document.getElementById('nav-toggle');
             const navbar = document.querySelector('.c-navbar');
-            const overlay = document.createElement('div');
-            overlay.className = 'c-navbar-overlay';
-            document.body.appendChild(overlay);
+            if (navToggle && navbar) {
+                const overlay = document.createElement('div');
+                overlay.className = 'c-navbar-overlay';
+                document.body.appendChild(overlay);
 
-            navToggle.addEventListener('click', function () {
-                navbar.classList.toggle('show');
-                // overlay.classList.toggle('show');
-            });
+                navToggle.addEventListener('click', function () {
+                    navbar.classList.toggle('show');
+                });
 
-            overlay.addEventListener('click', function () {
-                navbar.classList.remove('show');
-            });
+                overlay.addEventListener('click', function () {
+                    navbar.classList.remove('show');
+                });
 
-            navbar.addEventListener('click', function () {
-                navbar.classList.remove('show');
-            });
+                navbar.addEventListener('click', function () {
+                    navbar.classList.remove('show');
+                });
+            }
         });
     </script>
 

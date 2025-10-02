@@ -5,8 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ site.description }}">
-    <!-- Critical CSS first -->
-    <link rel="preload" href="{{ '/stylesheets/main.css' | relative_url }}" as="style">
+    <!-- Prevent FOUC: Apply saved theme before render -->
+    <script>
+        (function () {
+            const savedMode = localStorage.getItem('mode');
+            if (savedMode) {
+                document.documentElement.setAttribute('data-theme', savedMode);
+            }
+        })();
+    </script>
+    <!-- CSS -->
     <link rel="stylesheet" href="{{ '/stylesheets/main.css' | relative_url }}">
     <!-- Favicon after CSS -->
     <link id="favicon" rel="icon" href="/assets/site-logo.png" type="image/png">
