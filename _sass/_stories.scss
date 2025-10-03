@@ -170,12 +170,21 @@ open-stories.is-empty::part(button) {
     opacity: 0.5;
     overflow: hidden;
     position: relative;
+    border-color: #333333;
+}
+
+open-stories.is-empty[data-theme="light"]::part(button) {
+    border-color: #444444;
+}
+
+open-stories.is-empty[data-theme="dark"]::part(button) {
+    border-color: #7b7a7a;
 }
 
 open-stories.is-empty::part(button):before {
     display: block;
     content: '';
-    border-left: 1px solid var(--mutedTextColor);
+    border-left: 1px solid #3e3e3e;
     position: absolute;
     transform: rotate(-45deg);
     top: 0;
@@ -183,4 +192,8 @@ open-stories.is-empty::part(button):before {
     width: 150%;
     height: 150%;
     transform-origin: top left;
+}
+
+open-stories.is-empty[data-theme="dark"]::part(button):before {
+    border-left-color: #a9a9a9;
 }
