@@ -48,24 +48,26 @@ layout: default
             var target = document.getElementById(decodeURIComponent(id));
             if (!target) return;
 
-            // Find the scrollable container (.l-center or window)
+            // Find the scrollable container (.l-center)
             var scrollContainer = document.querySelector('.l-center');
-            if (!scrollContainer) {
-                scrollContainer = window;
-            }
 
             var offset = getOffsetTop();
 
-            // Check if we're scrolling a container or the window
-            if (scrollContainer === window) {
-                var y = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                window.scrollTo({ top: y, behavior: 'smooth' });
-            } else {
+            if (scrollContainer && scrollContainer.scrollTo) {
                 // For container scroll, calculate position relative to container
                 var containerRect = scrollContainer.getBoundingClientRect();
                 var targetRect = target.getBoundingClientRect();
-                var y = scrollContainer.scrollTop + (targetRect.top - containerRect.top) - offset;
-                scrollContainer.scrollTo({ top: y, behavior: 'smooth' });
+                var currentScroll = scrollContainer.scrollTop;
+                var targetPosition = currentScroll + (targetRect.top - containerRect.top) - offset;
+
+                scrollContainer.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            } else {
+                // Fallback to window scroll
+                var y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({ top: y, behavior: 'smooth' });
             }
         }
 
