@@ -35,40 +35,33 @@ layout: default
         });
 
         // Smooth scroll with offset for TOC links; use delegation for reliability
-        function getOffsetTop() {
-            try {
-                const nav = document.querySelector('.c-navbar');
-                return nav ? Math.ceil(nav.getBoundingClientRect().height) + 8 : 8;
-            } catch (_) { return 8; }
-        }
+        var isScrolling = false;
+        var scrollOffset = 5; // Fixed 15px offset from viewport top
 
         function scrollToHash(hash) {
+            if (isScrolling) return; // Prevent multiple simultaneous scrolls
+
             var id = (hash || '').replace(/^#/, '');
             if (!id) return;
             var target = document.getElementById(decodeURIComponent(id));
             if (!target) return;
 
-            // Find the scrollable container (.l-center)
-            var scrollContainer = document.querySelector('.l-center');
+            isScrolling = true;
 
-            var offset = getOffsetTop();
+            // Use scrollIntoView with block: 'start' to align to top
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
 
-            if (scrollContainer && scrollContainer.scrollTo) {
-                // For container scroll, calculate position relative to container
-                var containerRect = scrollContainer.getBoundingClientRect();
-                var targetRect = target.getBoundingClientRect();
-                var currentScroll = scrollContainer.scrollTop;
-                var targetPosition = currentScroll + (targetRect.top - containerRect.top) - offset;
-
-                scrollContainer.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            } else {
-                // Fallback to window scroll
-                var y = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                window.scrollTo({ top: y, behavior: 'smooth' });
-            }
+            // After scrollIntoView completes, adjust for the offset
+            setTimeout(function () {
+                var scrollContainer = document.querySelector('.l-center');
+                if (scrollContainer) {
+                    scrollContainer.scrollTop -= scrollOffset;
+                }
+                isScrolling = false;
+            }, 600); // Wait for smooth scroll to complete
         }
 
         document.addEventListener('click', function (e) {
