@@ -79,6 +79,10 @@ nav li a {
     background-color: #121212;
 }
 
+:root[data-theme="light"] .l-container {
+    background-color: #f0f0f0;
+}
+
 /* for mobile & tablet, to make the main content rendered more by making it display as block */
 @media (max-width: 1032px) {
     .l-container {

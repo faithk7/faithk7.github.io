@@ -1,7 +1,21 @@
 /* Light mode styles */
+/* Apply to body based on :root[data-theme] for instant FOUC prevention */
+:root[data-theme="light"] body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Keep these for JavaScript-applied data-theme attributes */
 body[data-theme="light"] {
     background-color: #ffffff;
     color: #000000;
+}
+
+:root[data-theme="light"] .l-left,
+:root[data-theme="light"] .l-center,
+:root[data-theme="light"] .l-right,
+:root[data-theme="light"] .c-navbar {
+    background-color: #f0f0f0;
 }
 
 .l-left[data-theme="light"],
@@ -11,8 +25,16 @@ body[data-theme="light"] {
     background-color: #f0f0f0;
 }
 
+:root[data-theme="light"] .c-line {
+    background-color: #000000;
+}
+
 .c-line[data-theme="light"] {
     background-color: #000000;
+}
+
+:root[data-theme="light"] .o-navbar-item a {
+    color: #000000;
 }
 
 .o-navbar-item a[data-theme="light"] {
