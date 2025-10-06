@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}" data-theme="">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ site.description }}">
+    {% seo %}
     <!-- Prevent FOUC: Apply saved theme before render -->
     <script>
         (function () {
@@ -18,7 +18,72 @@
     <link rel="stylesheet" href="{{ '/stylesheets/main.css' | relative_url }}">
     <!-- Favicon after CSS -->
     <link id="favicon" rel="icon" href="/assets/site-logo.png" type="image/png">
-    <title>{{ page.title }}</title>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kai Qu",
+      "url": "https://k7m.xyz",
+      "image": "https://k7m.xyz/assets/site-logo.png",
+      "jobTitle": "Software Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Baidu"
+      },
+      "sameAs": [
+        "https://github.com/faithk7",
+        "https://www.linkedin.com/in/kqu1106/",
+        "https://read.cv/lastk7",
+        "https://www.kaggle.com/faithk7u"
+      ],
+      "description": "Software engineer based in Beijing, China. Loves reading, running and watching anime.",
+      "nationality": {
+        "@type": "Country",
+        "name": "China"
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Virginia"
+        }
+      ]
+    }
+    </script>
+
+    {% if page.layout == 'writing' and page.date %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "{{ page.title | replace: '| Kai Qu', '' | strip }}",
+      "author": {
+        "@type": "Person",
+        "name": "Kai Qu",
+        "url": "https://k7m.xyz"
+      },
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      "dateModified": "{{ page.date | date_to_xmlschema }}",
+      "description": "{{ page.description | default: page.excerpt | strip_html | truncatewords: 50 }}",
+      "url": "{{ page.url | absolute_url }}",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ page.url | absolute_url }}"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Kai Qu",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://k7m.xyz/assets/site-logo.png"
+        }
+      }{% if page.keywords or page.tags %},
+      "keywords": "{{ page.keywords | default: page.tags | join: ', ' }}"{% endif %}{% if page.lang %},
+      "inLanguage": "{{ page.lang }}"{% endif %}
+    }
+    </script>
+    {% endif %}
 </head>
 
 <body>

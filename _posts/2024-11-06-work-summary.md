@@ -4,6 +4,7 @@ date: 2024-11-06
 tags: [reflection, 2024]
 layout: writing
 permalink: /writing/work-summary.html
+lang: zh-CN
 ---
 
 仅仅是个人的一些的体会和感受，以及提醒未来的自己。

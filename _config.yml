@@ -37,8 +37,22 @@ feed:
   path: feed.xml
   custom_path: _includes/feed.xml
 
+title: "Kai Qu"
 description: "Kai Qu's home page on the World Wide Web"
 url: "https://k7m.xyz"
+author:
+  name: "Kai Qu"
+  email: "kqy7yu@gmail.com"
+  twitter: "@faithk7"
+lang: "en"
+logo: "/assets/site-logo.png"
+social:
+  name: "Kai Qu"
+  links:
+    - "https://github.com/faithk7"
+    - "https://www.linkedin.com/in/kqu1106/"
+    - "https://read.cv/lastk7"
+    - "https://www.kaggle.com/faithk7u"
 
 compress_html:
   clippings: all

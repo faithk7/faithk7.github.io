@@ -1,0 +1,16 @@
+# robots.txt for https://k7m.xyz
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://k7m.xyz/sitemap.xml
+
+# Crawl-delay for polite bots
+Crawl-delay: 1
+
+# Disallow admin/temp directories if any
+Disallow: /temp/
+Disallow: /.git/
+Disallow: /vendor/
+
