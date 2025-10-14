@@ -10,9 +10,9 @@ description: "Kai Qu's about page"
     <link rel="prefetch" href="/note" as="document">
     <link rel="prefetch" href="/writing-index" as="document">
     <link rel="prefetch" href="/collect" as="document">
-    <!-- Page-specific preloads -->
-    <link rel="preload" href="/assets/kokoro.png" as="image" type="image/png">
-    <link rel="preload" href="/assets/kokoro_dark.png" as="image" type="image/png">
+    <!-- Page-specific preloads with high priority -->
+    <link rel="preload" href="/assets/kokoro.png" as="image" type="image/png" fetchpriority="high">
+    <link rel="preload" href="/assets/kokoro_dark.png" as="image" type="image/png" fetchpriority="high">
     <style>
         .c-about-container::before {
             content: "";
