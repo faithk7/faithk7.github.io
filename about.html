@@ -11,8 +11,8 @@ description: "Kai Qu's about page"
     <link rel="prefetch" href="/writing-index" as="document">
     <link rel="prefetch" href="/collect" as="document">
     <!-- Page-specific preloads with high priority -->
-    <link rel="preload" href="/assets/kokoro.png" as="image" type="image/png" fetchpriority="high">
-    <link rel="preload" href="/assets/kokoro_dark.png" as="image" type="image/png" fetchpriority="high">
+    <link rel="preload" href="/assets/kokoro.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" href="/assets/kokoro_dark.webp" as="image" type="image/webp" fetchpriority="high">
     <style>
         .c-about-container::before {
             content: "";
@@ -21,7 +21,7 @@ description: "Kai Qu's about page"
             left: 0;
             width: 100%;
             height: 100%;
-            background: url(/assets/kokoro_dark.png) no-repeat center center fixed;
+            background: url(/assets/kokoro_dark.webp) no-repeat center center fixed;
             object-fit: contain;
             filter: invert(1) brightness(1.2) opacity(0.15);
             z-index: -1;
@@ -29,7 +29,7 @@ description: "Kai Qu's about page"
         }
 
         .c-about-container[data-theme="light"]::before {
-            background: url(/assets/kokoro.png) no-repeat center center fixed;
+            background: url(/assets/kokoro.webp) no-repeat center center fixed;
             filter: brightness(0.7) opacity(0.5);
         }
     </style>
