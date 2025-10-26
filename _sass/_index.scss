@@ -126,7 +126,7 @@ h1.o-name {
 
 
 .o-quote,
-.o-quote[data-theme="dark"] {
+:root[data-theme="dark"] .o-quote {
     font-size: 1rem;
     color: #ffffff;
     text-align: center;
@@ -135,7 +135,7 @@ h1.o-name {
     max-height: 35%;
 }
 
-.o-quote[data-theme="light"] {
+:root[data-theme="light"] .o-quote {
     color: #000000;
 }
 
@@ -237,18 +237,18 @@ h1.o-name {
     color: #000000;
 }
 
-.c-index-art[data-theme="dark"] {
+:root[data-theme="dark"] .c-index-art {
     filter: invert(1);
     color: #ffffff;
 }
 
-.c-index-art[data-theme="light"] {
+:root[data-theme="light"] .c-index-art {
     filter: invert(0);
     color: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
-    .c-index-art:not([data-theme="light"]) {
+    :root:not([data-theme="light"]) .c-index-art {
         filter: invert(1);
         color: #ffffff;
     }

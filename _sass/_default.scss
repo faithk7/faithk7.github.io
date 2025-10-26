@@ -83,6 +83,10 @@ nav li a {
     background-color: #f0f0f0;
 }
 
+:root[data-theme="light"] .l-center {
+    background-color: #121212;
+}
+
 /* for mobile & tablet, to make the main content rendered more by making it display as block */
 @media (max-width: 1032px) {
     .l-container {
@@ -127,7 +131,7 @@ nav li a {
 
 /* dark mode */
 /* Specific styles for paths with data-theme and svg*/
-a[data-theme="dark"] {
+:root[data-theme="dark"] a {
     color: #50b0eb;
 }
 
@@ -136,12 +140,12 @@ path {
     stroke: #000;
 }
 
-path[data-theme="dark"] {
+:root[data-theme="dark"] path {
     fill: #fff;
     stroke: #fff;
 }
 
-path[data-theme="light"] {
+:root[data-theme="light"] path {
     fill: #000;
     stroke: #000;
 }
@@ -150,11 +154,11 @@ line {
     stroke: #000;
 }
 
-line[data-theme="dark"] {
+:root[data-theme="dark"] line {
     stroke: #fff;
 }
 
-line[data-theme="light"] {
+:root[data-theme="light"] line {
     stroke: #000;
 }
 
@@ -164,13 +168,13 @@ path.st0 {
     stroke-miterlimit: 10;
 }
 
-path[data-theme="dark"].st0 {
+:root[data-theme="dark"] path.st0 {
     fill: none;
     stroke: #ffffff;
     stroke-miterlimit: 10;
 }
 
-path[data-theme="light"].st0 {
+:root[data-theme="light"] path.st0 {
     fill: none;
     stroke: #000000;
     stroke-miterlimit: 10;
@@ -184,7 +188,7 @@ path.st1 {
     stroke-miterlimit: 10;
 }
 
-path[data-theme="dark"].st1 {
+:root[data-theme="dark"] path.st1 {
     fill: none;
     stroke: #ffffff;
     stroke-width: 2;
@@ -192,7 +196,7 @@ path[data-theme="dark"].st1 {
 }
 
 /* for the svg rss */
-path[data-theme="light"].st1 {
+:root[data-theme="light"] path.st1 {
     fill: none;
     stroke: #000000;
     stroke-width: 2;
@@ -201,22 +205,22 @@ path[data-theme="light"].st1 {
 
 /* Apply dark mode styles based on system preference */
 @media (prefers-color-scheme: dark) {
-    path:not([data-theme="light"]) {
+    :root:not([data-theme="light"]) path {
         fill: #fff;
         stroke: #fff;
     }
 
-    line:not([data-theme="light"]) {
+    :root:not([data-theme="light"]) line {
         stroke: #fff;
     }
 
-    path.st0:not([data-theme="light"]) {
+    :root:not([data-theme="light"]) path.st0 {
         fill: none;
         stroke: #ffffff;
         stroke-miterlimit: 10;
     }
 
-    path.st1:not([data-theme="light"]) {
+    :root:not([data-theme="light"]) path.st1 {
         fill: none;
         stroke: #ffffff;
         stroke-width: 2;

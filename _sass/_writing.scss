@@ -65,7 +65,7 @@ a {
     display: inline-block;
 }
 
-.c-writing-post-date[data-theme="light"] {
+:root[data-theme="light"] .c-writing-post-date {
     color: #666666;
 }
 
@@ -93,7 +93,7 @@ a {
 }
 
 
-.o-writing-post-tag[data-theme="light"] {
+:root[data-theme="light"] .o-writing-post-tag {
     color: #666666;
 }
 
@@ -109,7 +109,7 @@ a {
         margin-bottom: 2rem; /* Add margin to ensure content doesn't touch the border */
     }
 
-    [data-theme="light"] & {
+    :root[data-theme="light"] & {
         color: #000000;
     }
 }

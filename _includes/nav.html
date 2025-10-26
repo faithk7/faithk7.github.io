@@ -8,9 +8,9 @@
 
 <body>
     <nav class="c-navbar">
-        <div class="c-navbar-container" data-theme="">
+        <div class="c-navbar-container">
             <ul class="c-navbar-items">
-                <li class="o-navbar-item"><a data-theme="" href="{{ '/' | relative_url }}">Home</a>
+                <li class="o-navbar-item"><a href="{{ '/' | relative_url }}">Home</a>
                     <button id="dark-mode-toggle" class="o-setting-icon" aria-label="Toggle dark mode">
                         {% include svg_html/dark_mode_toggle.html %}
                     </button>
@@ -19,12 +19,12 @@
                     </a>
                     <!-- </div> -->
                 </li>
-                <li class="o-navbar-item"><a data-theme="" href="{{ '/note' | relative_url }}">Note</a>
+                <li class="o-navbar-item"><a href="{{ '/note' | relative_url }}">Note</a>
                 </li>
-                <li class="o-navbar-item"><a data-theme="" href="{{ '/writing-index' | relative_url }}">Writing</a></li>
-                <li class="o-navbar-item"><a data-theme="" href="{{ '/collect' | relative_url }}">Collect</a>
+                <li class="o-navbar-item"><a href="{{ '/writing-index' | relative_url }}">Writing</a></li>
+                <li class="o-navbar-item"><a href="{{ '/collect' | relative_url }}">Collect</a>
                 </li>
-                <li class="o-navbar-item"><a data-theme="" href="{{ '/about' | relative_url }}">About</a>
+                <li class="o-navbar-item"><a href="{{ '/about' | relative_url }}">About</a>
                 </li>
             </ul>
         </div>
@@ -36,19 +36,8 @@
     <script defer>
         // Function to apply the light/dark mode
         function applyMode(mode) {
-            const elements = [
-                document.body,
-                ...document.querySelectorAll('.l-left, .l-center, .l-right, .c-navbar, .c-line, .o-navbar-item a, .o-tag')
-            ];
-
-            elements.forEach(el => {
-                el.setAttribute('data-theme', mode);
-            });
-
-            // Update any other elements that might have data-theme
-            document.querySelectorAll('[data-theme]').forEach(el => {
-                el.setAttribute('data-theme', mode);
-            });
+            // Only set data-theme on :root, CSS cascade handles the rest
+            document.documentElement.setAttribute('data-theme', mode);
         }
 
         // Initialize theme from saved mode
@@ -62,7 +51,7 @@
             const toggleButton = document.getElementById('dark-mode-toggle');
             if (toggleButton) {
                 toggleButton.addEventListener('click', () => {
-                    const currentMode = document.body.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+                    const currentMode = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
                     const newMode = currentMode === 'light' ? 'dark' : 'light';
                     applyMode(newMode);
                     localStorage.setItem('mode', newMode);

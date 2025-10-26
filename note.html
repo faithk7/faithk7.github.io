@@ -20,11 +20,11 @@ description: "Kai Qu's recent notes"
     {% assign sorted_notes = site.notes | where_exp: "note", "note.hidden != true" | sort: 'date' | reverse %}
     {% for note in sorted_notes %}
     <div class="c-note-item-container">
-        <div class="o-note-date" data-theme="">{{ note.date | date: "%B %d, %Y" }}</div>
-        <div class="o-note-text" data-theme="">{{ note.content | markdownify }}</div>
+        <div class="o-note-date">{{ note.date | date: "%B %d, %Y" }}</div>
+        <div class="o-note-text">{{ note.content | markdownify }}</div>
     </div>
     {% endfor %}
-    <div class="o-note-footer" data-theme="">
+    <div class="o-note-footer">
         Only the most recent 100 notes are shown
     </div>
 </div>

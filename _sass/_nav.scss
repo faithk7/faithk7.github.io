@@ -27,7 +27,7 @@
     user-select: none;
 }
 
-.c-navbar-container[data-theme="light"] {
+:root[data-theme="light"] .c-navbar-container {
     border-left: 1px solid #000000;
     /* Darker border for light mode */
 }
@@ -81,12 +81,12 @@
     font-size: 0.8rem;
 }
 
-.o-navbar-item a[data-theme="dark"] {
+:root[data-theme="dark"] .o-navbar-item a {
     color: #ffffff;
     background-image: linear-gradient(to right, #ffffff, #ffffff);
 }
 
-.o-navbar-item a[data-theme="light"] {
+:root[data-theme="light"] .o-navbar-item a {
     color: #000000;
     background-image: linear-gradient(to right, #000000, #000000);
 }
@@ -190,7 +190,7 @@ a.o-setting-icon:hover {
         border-left: 1px solid #ffffff;
     }
 
-    .c-navbar-items[data-theme="light"] {
+    :root[data-theme="light"] .c-navbar-items {
         border-left: 1px solid #000000;
     }
 

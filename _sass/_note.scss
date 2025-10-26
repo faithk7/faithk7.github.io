@@ -28,7 +28,7 @@
     font-family: var(--dateFont);
 }
 
-.o-note-date[data-theme="light"] {
+:root[data-theme="light"] .o-note-date {
     color: #666666;
 }
 
@@ -38,7 +38,7 @@
     font-weight: 400;
 }
 
-.o-note-text[data-theme="light"] {
+:root[data-theme="light"] .o-note-text {
     color: #000000;
 }
 
@@ -50,6 +50,6 @@
     padding-bottom: var(--pageEndMargin);
 }
 
-.o-note-footer[data-theme="light"] {
+:root[data-theme="light"] .o-note-footer {
     color: #666666;
 }

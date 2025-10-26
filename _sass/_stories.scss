@@ -117,14 +117,14 @@ open-stories::part(button) {
     cursor: pointer;
 }
 
-open-stories[data-theme="light"]::part(button) {
+:root[data-theme="light"] open-stories::part(button) {
     box-shadow: inset 0 0 0 2px var(--backgroundColorLight);
     border-color: var(--borderColorLight);
     color: var(--textColorLight);
     background: var(--subtleBackgroundColorLight);
 }
 
-open-stories[data-theme="dark"]::part(button) {
+:root[data-theme="dark"] open-stories::part(button) {
     box-shadow: inset 0 0 0 2px var(--backgroundColorDark);
     border-color: var(--borderColorDark);
     color: var(--textColorDark);
@@ -173,11 +173,11 @@ open-stories.is-empty::part(button) {
     border-color: #333333;
 }
 
-open-stories.is-empty[data-theme="light"]::part(button) {
+:root[data-theme="light"] open-stories.is-empty::part(button) {
     border-color: #444444;
 }
 
-open-stories.is-empty[data-theme="dark"]::part(button) {
+:root[data-theme="dark"] open-stories.is-empty::part(button) {
     border-color: #7b7a7a;
 }
 
@@ -194,6 +194,6 @@ open-stories.is-empty::part(button):before {
     transform-origin: top left;
 }
 
-open-stories.is-empty[data-theme="dark"]::part(button):before {
+:root[data-theme="dark"] open-stories.is-empty::part(button):before {
     border-left-color: #a9a9a9;
 }

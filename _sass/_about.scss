@@ -17,7 +17,7 @@
     transition: color 0.3s;
 }
 
-.c-about-container a[data-theme="light"] {
+:root[data-theme="light"] .c-about-container a {
     background-image: linear-gradient(to top, #000000 1px, transparent 1px);
 }
 
@@ -33,7 +33,7 @@
     color: #e093e0;
 }
 
-.c-about-container span.highlight[data-theme="light"] {
+:root[data-theme="light"] .c-about-container span.highlight {
     color: #bd41bd;
 }
 
@@ -78,7 +78,7 @@
     padding-bottom: 1rem;
 }
 
-.c-about-container[data-theme="light"]::after {
+:root[data-theme="light"] .c-about-container::after {
     color: #666666;
 }
 
@@ -114,7 +114,7 @@
     color: #e093e0;
 }
 
-.o-about-item-subtitle::before[data-theme="light"] {
+:root[data-theme="light"] .o-about-item-subtitle::before {
     color: #bd41bd;
 }
 

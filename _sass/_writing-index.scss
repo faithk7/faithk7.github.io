@@ -44,7 +44,7 @@
     color: darkgray;
 }
 
-.c-writing-index-container::after[data-theme="light"] {
+:root[data-theme="light"] .c-writing-index-container::after {
     background-color: #666666;
     color: #666666;
 }
@@ -62,7 +62,7 @@
     margin-bottom: 15px;
 }
 
-.c-writing-item-container[data-theme="light"] {
+:root[data-theme="light"] .c-writing-item-container {
     border-color: #666666;
 }
 
@@ -74,7 +74,7 @@
     font-family: var(--dateFont);
 }
 
-.o-writing-note-date[data-theme="light"] {
+:root[data-theme="light"] .o-writing-note-date {
     color: #666666;
     /* Darker gray for light mode */
 }
@@ -83,7 +83,7 @@
     color: #cea2fd;
 }
 
-#all-tag[data-theme="light"] {
+:root[data-theme="light"] #all-tag {
     color: #a55df1;
 }
 
@@ -108,12 +108,12 @@
     cursor: pointer;
 }
 
-.o-tag[data-theme="light"] {
+:root[data-theme="light"] .o-tag {
     color: #000000;
     background-image: linear-gradient(to top, #000000 1px, transparent 1px);
 }
 
-.o-tag[data-theme="dark"] {
+:root[data-theme="dark"] .o-tag {
     color: #ffffff;
     background-image: linear-gradient(to top, #ffffff 1px, transparent 1px);
 }
@@ -123,13 +123,13 @@ span.o-tag:hover {
 }
 
 /* for selected tag */
-.selected-tag[data-theme="light"] {
+:root[data-theme="light"] .selected-tag {
     color: #000000;
     background-image: linear-gradient(to top, #000000 1px, transparent 1px);
     background-size: 100%;
 }
 
-.selected-tag[data-theme="dark"] {
+:root[data-theme="dark"] .selected-tag {
     color: #ffffff;
     background-image: linear-gradient(to top, #ffffff 1px, transparent 1px);
     background-size: 100%;
@@ -157,7 +157,7 @@ span.o-tag:hover {
     content: "";
 }
 
-.o-post-tag[data-theme="light"] {
+:root[data-theme="light"] .o-post-tag {
     color: #666666;
 }
 
