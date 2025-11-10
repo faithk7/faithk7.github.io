@@ -44,9 +44,13 @@ body {
 }
 
 /* for the medium size screen like macbook air */
+/* Using transform: scale() instead of non-standard zoom property */
 @media (min-width: 1000px) and (max-width: 1440px) and (orientation: landscape) {
     body {
-        zoom: 0.8;
+        transform: scale(0.8);
+        transform-origin: top left;
+        width: 125%; /* Compensate for scaling: 100% / 0.8 = 125% */
+        height: 125%;
     }
 }
 
