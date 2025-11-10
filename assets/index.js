@@ -1,21 +1,44 @@
 const statusEl = document.querySelector('[data-status-loading]')
 
-try {
-    statusEl.hidden = false
-    const s = await(await fetch('https://k7m.xyz/status-quo/index.txt')).text()
-    if (s.trim() !== '') {
-        const [datetime, text] = s.split('\n')
-        const date = relativeDate(new Date(datetime))
-
-        if (date) {
-            document.querySelector('[data-status-text]').textContent = text
-            document.querySelector('[data-status-datetime]').textContent = `(${date})`
+// Add null check for statusEl
+if (!statusEl) {
+    console.warn('[status] Status element not found')
+} else {
+    try {
+        statusEl.hidden = false
+        const response = await fetch('https://k7m.xyz/status-quo/index.txt')
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`)
         }
+        
+        const s = await response.text()
+        
+        if (s.trim() !== '') {
+            const [datetime, text] = s.split('\n')
+            const date = relativeDate(new Date(datetime))
+
+            if (date) {
+                const textEl = document.querySelector('[data-status-text]')
+                const datetimeEl = document.querySelector('[data-status-datetime]')
+                
+                // Null checks for status elements
+                if (textEl && datetimeEl) {
+                    textEl.textContent = text
+                    datetimeEl.textContent = `(${date})`
+                } else {
+                    console.warn('[status] Status text/datetime elements not found')
+                }
+            }
+        }
+        statusEl.removeAttribute('data-status-loading')
+    } catch (e) {
+        // Gracefully handle errors
+        if (statusEl.parentNode) {
+            statusEl.remove()
+        }
+        console.warn('[status] Failed to load status:', e.message)
     }
-    statusEl.removeAttribute('data-status-loading')
-} catch (e) {
-    statusEl.remove()
-    console.warn(e)
 }
 
 function relativeDate(date) {

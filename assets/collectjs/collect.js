@@ -12,13 +12,49 @@ const VPN_CONFIG = {
     TARGET_COUNTRY_NAME: 'china'
 };
 
+/**
+ * Display user-visible error message
+ * @param {string} message - Error message to display
+ */
+function showUserError(message) {
+    const container = document.querySelector('.c-collection-tile-container');
+    if (!container) return;
+    
+    const errorDiv = document.createElement('div');
+    errorDiv.style.padding = '20px';
+    errorDiv.style.textAlign = 'center';
+    errorDiv.style.color = '#ff6b6b';
+    errorDiv.textContent = message;
+    container.appendChild(errorDiv);
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     const collectionNav = document.querySelector('.c-collection-nav-container');
     const collectionTiles = document.querySelector('.c-collection-tile-container');
     
+    // Null checks for required elements
+    if (!collectionNav || !collectionTiles) {
+        console.error('[collect] Required container elements not found');
+        return;
+    }
+    
     // Use data attribute instead of global variable
     const dataFilesElement = document.getElementById('collection-data');
-    const dataFiles = dataFilesElement ? JSON.parse(dataFilesElement.textContent) : window.dataFiles || {};
+    let dataFiles = {};
+    
+    try {
+        dataFiles = dataFilesElement ? JSON.parse(dataFilesElement.textContent) : window.dataFiles || {};
+    } catch (e) {
+        console.error('[collect] Failed to parse collection data:', e);
+        showUserError('Failed to load collection data. Please refresh the page.');
+        return;
+    }
+    
+    if (!dataFiles || Object.keys(dataFiles).length === 0) {
+        console.warn('[collect] No collection data available');
+        showUserError('No collections available.');
+        return;
+    }
 
     // TODO: remove music from dataFiles for now, fix it later
     delete dataFiles.music;
@@ -31,19 +67,38 @@ document.addEventListener("DOMContentLoaded", function () {
             navItem.className = 'o-collection-nav-icon';
             navItem.innerHTML = `${fileName}`;
             navItem.dataset.fileName = fileName;
+            
+            // Make keyboard accessible
+            navItem.setAttribute('role', 'button');
+            navItem.setAttribute('tabindex', '0');
+            navItem.setAttribute('aria-label', `View ${fileName} collection`);
 
-            // add click event listener to nav item
-            navItem.addEventListener('click', function () {
-                if (!this.classList.contains('selected')) {
+            // Function to handle selection
+            const selectNavItem = () => {
+                if (!navItem.classList.contains('selected')) {
                     // Remove 'selected' class from all nav items
                     document.querySelectorAll('.o-collection-nav-icon').forEach(item => {
                         item.classList.remove('selected');
+                        item.setAttribute('aria-selected', 'false');
                     });
                     // Add 'selected' class to clicked nav item
-                    this.classList.add('selected');
+                    navItem.classList.add('selected');
+                    navItem.setAttribute('aria-selected', 'true');
                     renderCollectionItems(dataFiles[fileName], fileName);
                 }
+            };
+
+            // Mouse click event
+            navItem.addEventListener('click', selectNavItem);
+            
+            // Keyboard event (Enter or Space)
+            navItem.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    selectNavItem();
+                }
             });
+            
             collectionNav.appendChild(navItem);
         }
     }
@@ -69,9 +124,14 @@ document.addEventListener("DOMContentLoaded", function () {
             itemElement.href = item.url;
             itemElement.dataset.type = item.type; // Add type data attribute
             itemElement.dataset.url = item.url; // Add URL data attribute
+            
+            // Keyboard accessibility
+            itemElement.setAttribute('role', 'button');
+            itemElement.setAttribute('tabindex', '0');
+            itemElement.setAttribute('aria-label', `Play ${item.title}`);
+            
             const theme = localStorage.getItem('mode');
             if (theme) {
-                console.log("theme", theme);
                 itemElement.setAttribute('data-theme', theme); // this value will be dynamically adjusted by js, probably need a refactor
             }
             // color to be inherited from parent
@@ -85,12 +145,24 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(() => {
                 itemElement.style.opacity = '1'; // Fade in
             }, CONFIG.ANIMATION_DELAY_MS);
-            itemElement.addEventListener('click', function (e) {
+            
+            // Function to handle item activation
+            const activateItem = (e) => {
                 e.preventDefault();
                 if (fileName === 'music') {
                     renderAudioPlayer(item.url);
                 } else {
                     showVideoPopup(item.url);
+                }
+            };
+            
+            // Mouse click event
+            itemElement.addEventListener('click', activateItem);
+            
+            // Keyboard event (Enter or Space)
+            itemElement.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    activateItem(e);
                 }
             });
 
@@ -135,7 +207,12 @@ document.addEventListener("DOMContentLoaded", function () {
         playerContainer.style.display = 'flex';
 
         fetch(musicUrl)
-            .then(response => response.blob())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.blob();
+            })
             .then(blob => {
                 jsmediatags.read(blob, {
                     onSuccess: function (tag) {
@@ -158,32 +235,51 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
                     },
                     onError: function (error) {
-                        console.log('Error reading metadata:', error);
+                        console.warn('[collect] Error reading audio metadata:', error);
+                        // Continue without cover image
+                        coverImage.style.display = 'none';
                     }
                 });
+            })
+            .catch(error => {
+                console.error('[collect] Failed to fetch audio file:', error);
+                // Audio player can still work without metadata
             });
 
+        /**
+         * Extract dominant color using sampling for better performance
+         * Instead of checking every pixel, sample a subset for much faster processing
+         */
         function extractDominantColor(img) {
-            imageCanvas.width = img.width;
-            imageCanvas.height = img.height;
+            // Use smaller canvas for sampling to improve performance
+            const maxDimension = 100;
+            const scaleFactor = Math.min(maxDimension / img.width, maxDimension / img.height);
+            const scaledWidth = Math.floor(img.width * scaleFactor);
+            const scaledHeight = Math.floor(img.height * scaleFactor);
+            
+            imageCanvas.width = scaledWidth;
+            imageCanvas.height = scaledHeight;
 
-            ctx.drawImage(img, 0, 0, img.width, img.height);
+            ctx.drawImage(img, 0, 0, scaledWidth, scaledHeight);
 
-            const imageData = ctx.getImageData(0, 0, img.width, img.height);
+            const imageData = ctx.getImageData(0, 0, scaledWidth, scaledHeight);
             const data = imageData.data;
 
             let r = 0, g = 0, b = 0;
-            const totalPixels = img.width * img.height;
+            // Sample every 5th pixel for even faster processing
+            const sampleRate = 5;
+            let sampledPixels = 0;
 
-            for (let i = 0; i < data.length; i += 4) {
+            for (let i = 0; i < data.length; i += 4 * sampleRate) {
                 r += data[i];
                 g += data[i + 1];
                 b += data[i + 2];
+                sampledPixels++;
             }
 
-            r = Math.floor(r / totalPixels);
-            g = Math.floor(g / totalPixels);
-            b = Math.floor(b / totalPixels);
+            r = Math.floor(r / sampledPixels);
+            g = Math.floor(g / sampledPixels);
+            b = Math.floor(b / sampledPixels);
 
             const dominantColor = `rgb(${r}, ${g}, ${b})`;
 
@@ -197,24 +293,52 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Refactored: use CSS classes instead of inline styles
     function showVideoPopup(videoUrl) {
+        // Store currently focused element to restore later
+        const previousFocus = document.activeElement;
+        
         // Create the iframe element
         const iframe = document.createElement('iframe');
         iframe.allowFullscreen = true;
         iframe.src = videoUrl;
         iframe.loading = "eager";
         iframe.className = 'c-video-popup-iframe';
+        iframe.setAttribute('title', 'Video player');
 
         // Create the overlay
         const overlay = document.createElement('div');
         overlay.className = 'c-video-popup-overlay';
-        overlay.addEventListener('click', function () {
-            document.body.removeChild(iframe);
-            document.body.removeChild(overlay);
-        });
+        overlay.setAttribute('role', 'dialog');
+        overlay.setAttribute('aria-label', 'Video popup');
+        overlay.setAttribute('aria-modal', 'true');
+        
+        // Function to close popup
+        const closePopup = () => {
+            if (iframe.parentNode) document.body.removeChild(iframe);
+            if (overlay.parentNode) document.body.removeChild(overlay);
+            // Restore focus
+            if (previousFocus) previousFocus.focus();
+            // Remove keyboard listener
+            document.removeEventListener('keydown', handleKeydown);
+        };
+        
+        // Click overlay to close
+        overlay.addEventListener('click', closePopup);
+        
+        // ESC key to close
+        const handleKeydown = (e) => {
+            if (e.key === 'Escape') {
+                e.preventDefault();
+                closePopup();
+            }
+        };
+        document.addEventListener('keydown', handleKeydown);
 
         // Append the iframe and overlay to the body
-        document.body.appendChild(iframe);
         document.body.appendChild(overlay);
+        document.body.appendChild(iframe);
+        
+        // Focus the iframe for keyboard navigation
+        iframe.focus();
     }
 
     // Detect if visitor is in China and suggest VPN via banner and icon
