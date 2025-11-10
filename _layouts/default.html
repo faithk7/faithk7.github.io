@@ -124,8 +124,9 @@
         });
     </script>
     <!-- Instant page loading: preloads pages on hover/touchstart -->
-    <script src="//instant.page/5.2.0" type="module"
-        integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
+    <!-- Use explicit HTTPS instead of protocol-relative URL for security -->
+    <script src="https://instant.page/5.2.0" type="module"
+        integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z" crossorigin="anonymous"></script>
 </body>
 
 </html>
