@@ -1,14 +1,32 @@
+// Constants for magic numbers and configuration
+const CONFIG = {
+    FETCH_TIMEOUT_MS: 2500,
+    ANIMATION_DELAY_MS: 25,
+    FADE_IN_DURATION: '0.5s'
+};
+
+const VPN_CONFIG = {
+    DISMISS_KEY: 'collect_vpn_notice_dismissed',
+    API_URL: 'https://ipapi.co/json/',
+    TARGET_COUNTRY_CODE: 'CN',
+    TARGET_COUNTRY_NAME: 'china'
+};
+
 document.addEventListener("DOMContentLoaded", function () {
     const collectionNav = document.querySelector('.c-collection-nav-container');
     const collectionTiles = document.querySelector('.c-collection-tile-container');
-    const dataFiles = window.dataFiles;
+    
+    // Use data attribute instead of global variable
+    const dataFilesElement = document.getElementById('collection-data');
+    const dataFiles = dataFilesElement ? JSON.parse(dataFilesElement.textContent) : window.dataFiles || {};
 
     // TODO: remove music from dataFiles for now, fix it later
     delete dataFiles.music;
     delete dataFiles.essay;
 
     for (const fileName in dataFiles) {
-        if (dataFiles.hasOwnProperty(fileName)) {
+        // Use Object.hasOwn() for safer property checking
+        if (Object.hasOwn(dataFiles, fileName)) {
             const navItem = document.createElement('div');
             navItem.className = 'o-collection-nav-icon';
             navItem.innerHTML = `${fileName}`;
@@ -31,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Display "mv" collect by default
-    if (dataFiles.hasOwnProperty('mv')) {
+    if (Object.hasOwn(dataFiles, 'mv')) {
         renderCollectionItems(dataFiles['mv'], 'mv');
         document.querySelector(`[data-file-name="mv"]`).classList.add('selected');
     } else {
@@ -61,12 +79,12 @@ document.addEventListener("DOMContentLoaded", function () {
             itemElement.target = '_blank';
             itemElement.textContent = item.title;
             itemElement.style.opacity = '0'; // Start with opacity 0
-            itemElement.style.transition = 'opacity 0.5s'; // Add transition effect
+            itemElement.style.transition = `opacity ${CONFIG.FADE_IN_DURATION}`; // Add transition effect
             collectionTiles.appendChild(itemElement);
             // Use setTimeout to ensure the transition works in Firefox
             setTimeout(() => {
                 itemElement.style.opacity = '1'; // Fade in
-            }, 25);
+            }, CONFIG.ANIMATION_DELAY_MS);
             itemElement.addEventListener('click', function (e) {
                 e.preventDefault();
                 if (fileName === 'music') {
@@ -177,35 +195,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // TODO: might have a better way to do this e.g., include the iframe as a template
+    // Refactored: use CSS classes instead of inline styles
     function showVideoPopup(videoUrl) {
         // Create the iframe element
         const iframe = document.createElement('iframe');
         iframe.allowFullscreen = true;
         iframe.src = videoUrl;
         iframe.loading = "eager";
-        iframe.style.width = '75%';
-        iframe.style.height = '75%';
-        iframe.style.position = 'fixed';
-        iframe.style.top = '50%';
-        iframe.style.left = '50%';
-        iframe.style.transform = 'translate(-50%, -50%)';
-        iframe.style.zIndex = '1000';
-        iframe.style.backgroundColor = '#fff';
-        iframe.style.border = '1px solid #ccc';
-        iframe.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
-        iframe.style.overflow = 'hidden';
-        iframe.style.borderRadius = '12px'; // Add rounded corners
+        iframe.className = 'c-video-popup-iframe';
 
         // Create the overlay
         const overlay = document.createElement('div');
-        overlay.style.position = 'fixed';
-        overlay.style.top = '0';
-        overlay.style.left = '0';
-        overlay.style.width = '100%';
-        overlay.style.height = '100%';
-        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-        overlay.style.zIndex = '999';
+        overlay.className = 'c-video-popup-overlay';
         overlay.addEventListener('click', function () {
             document.body.removeChild(iframe);
             document.body.removeChild(overlay);
@@ -218,19 +219,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Detect if visitor is in China and suggest VPN via banner and icon
     (function checkAndSuggestVpnForChina() {
-        const DISMISS_KEY = 'collect_vpn_notice_dismissed';
-        if (localStorage.getItem(DISMISS_KEY) === '1') return;
+        if (localStorage.getItem(VPN_CONFIG.DISMISS_KEY) === '1') return;
 
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 2500);
-        fetch('https://ipapi.co/json/', { signal: controller.signal })
+        const timeoutId = setTimeout(() => controller.abort(), CONFIG.FETCH_TIMEOUT_MS);
+        fetch(VPN_CONFIG.API_URL, { signal: controller.signal })
             .then(res => res.ok ? res.json() : Promise.reject(new Error('ipapi.co non-OK')))
             .then(data => {
                 clearTimeout(timeoutId);
                 try { if (VPN_DEBUG) console.log('[collect] VPN check response', data); } catch (_) { }
                 const countryCode = String((data && (data.country || data.country_code || data.countryCode)) || '').toUpperCase();
                 const countryName = String((data && (data.country_name || data.countryName)) || '').toLowerCase();
-                if (countryCode === 'CN' || countryName === 'china') {
+                if (countryCode === VPN_CONFIG.TARGET_COUNTRY_CODE || countryName === VPN_CONFIG.TARGET_COUNTRY_NAME) {
                     renderVpnWarning();
                     try { if (VPN_DEBUG) console.log('[collect] VPN banner rendered (CN detected)'); } catch (_) { }
                 } else {
@@ -278,7 +278,7 @@ document.addEventListener("DOMContentLoaded", function () {
             closeBtn.style.color = 'inherit';
             closeBtn.setAttribute('aria-label', 'Dismiss VPN notice');
             closeBtn.addEventListener('click', () => {
-                localStorage.setItem(DISMISS_KEY, '1');
+                localStorage.setItem(VPN_CONFIG.DISMISS_KEY, '1');
                 if (banner && banner.parentNode) banner.parentNode.removeChild(banner);
                 document.body.style.paddingTop = '';
             });

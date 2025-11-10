@@ -15,10 +15,8 @@ description: "Kai Qu's collect page"
     <link rel="prefetch" href="/about" as="document">
     <!-- Preload critical resources for collect page -->
     <link rel="preload" href="{{ '/assets/collectjs/collect.js' | relative_url }}" as="script">
-    <!-- TODO: fix this & refactor -->
-    <script>
-        window.dataFiles = {{ site.data.collect | jsonify }};
-    </script>
+    <!-- Use data attribute instead of global variable for better encapsulation -->
+    <script id="collection-data" type="application/json">{{ site.data.collect | jsonify }}</script>
     <script src="{{ '/assets/collectjs/collect.js' | relative_url }}" defer></script>
 </head>
 
