@@ -10,9 +10,24 @@ description: "Kai Qu's about page"
     <link rel="prefetch" href="/note" as="document">
     <link rel="prefetch" href="/writing-index" as="document">
     <link rel="prefetch" href="/collect" as="document">
-    <!-- Page-specific preloads with high priority -->
-    <link rel="preload" href="/assets/kokoro.webp" as="image" type="image/webp" fetchpriority="high">
-    <link rel="preload" href="/assets/kokoro_dark.webp" as="image" type="image/webp" fetchpriority="high">
+    <!-- Conditionally preload background image based on theme to save bandwidth -->
+    <script>
+        (function() {
+            // Check saved theme or system preference
+            const savedTheme = localStorage.getItem('mode');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDarkMode = savedTheme ? savedTheme === 'dark' : prefersDark;
+            
+            // Preload only the theme-appropriate image
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'image';
+            link.type = 'image/webp';
+            link.fetchPriority = 'high';
+            link.href = isDarkMode ? '/assets/kokoro_dark.webp' : '/assets/kokoro.webp';
+            document.head.appendChild(link);
+        })();
+    </script>
     <style>
         .c-about-container::before {
             content: "";
