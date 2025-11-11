@@ -310,7 +310,6 @@ document.addEventListener("DOMContentLoaded", function () {
         overlay.setAttribute('role', 'dialog');
         overlay.setAttribute('aria-label', 'Video popup');
         overlay.setAttribute('aria-modal', 'true');
-        overlay.setAttribute('tabindex', '0');
         
         // Function to close popup
         const closePopup = () => {
@@ -318,15 +317,19 @@ document.addEventListener("DOMContentLoaded", function () {
             if (overlay.parentNode) document.body.removeChild(overlay);
             // Restore focus
             if (previousFocus) previousFocus.focus();
-            // Remove keyboard listeners
+            // Remove all event listeners
             document.removeEventListener('keydown', handleKeydown, true);
-            overlay.removeEventListener('keydown', handleOverlayKeydown);
+            window.removeEventListener('keydown', handleKeydown, true);
+            document.removeEventListener('fullscreenchange', handleFullscreenChange);
         };
         
         // Click overlay to close
         overlay.addEventListener('click', closePopup);
         
-        // ESC key to close - capture phase to catch before iframe
+        // Track if we're in fullscreen
+        let wasInFullscreen = false;
+        
+        // ESC key to close - use capture phase to intercept before iframe
         const handleKeydown = (e) => {
             if (e.key === 'Escape') {
                 e.preventDefault();
@@ -334,23 +337,29 @@ document.addEventListener("DOMContentLoaded", function () {
                 closePopup();
             }
         };
-        document.addEventListener('keydown', handleKeydown, true);
         
-        // Additional ESC key handler on overlay itself
-        const handleOverlayKeydown = (e) => {
-            if (e.key === 'Escape') {
-                e.preventDefault();
-                closePopup();
+        // Handle fullscreen changes - close popup when exiting fullscreen via ESC
+        const handleFullscreenChange = () => {
+            const isFullscreen = !!document.fullscreenElement;
+            // If we were in fullscreen and now we're not, user likely pressed ESC
+            if (wasInFullscreen && !isFullscreen) {
+                // Small delay to let fullscreen exit complete
+                setTimeout(closePopup, 100);
             }
+            wasInFullscreen = isFullscreen;
         };
-        overlay.addEventListener('keydown', handleOverlayKeydown);
+        
+        // Listen on both document and window in capture phase
+        document.addEventListener('keydown', handleKeydown, true);
+        window.addEventListener('keydown', handleKeydown, true);
+        document.addEventListener('fullscreenchange', handleFullscreenChange);
 
         // Append the iframe and overlay to the body
         document.body.appendChild(overlay);
         document.body.appendChild(iframe);
         
-        // Focus the overlay instead of iframe for better ESC key handling
-        overlay.focus();
+        // Focus iframe to allow video player keyboard controls
+        iframe.focus();
     }
 
     // Detect if visitor is in China and suggest VPN via banner and icon

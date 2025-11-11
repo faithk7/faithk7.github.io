@@ -139,3 +139,37 @@ body {
     z-index: 999;
     cursor: pointer;
 }
+
+.c-video-popup-close {
+    position: fixed;
+    top: 5%;
+    right: 10%;
+    z-index: 1001;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #333;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.c-video-popup-close:hover,
+.c-video-popup-close:focus {
+    background-color: #fff;
+    transform: scale(1.1);
+    outline: 2px solid #666;
+    outline-offset: 2px;
+}
+
+.c-video-popup-close:active {
+    transform: scale(0.95);
+}
