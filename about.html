@@ -42,8 +42,9 @@ description: "Kai Qu's about page"
             background-size: contain;
             background-attachment: fixed;
             filter: invert(1) brightness(1.2) opacity(0.15);
-            z-index: -1;
+            z-index: 0;
             will-change: transform;
+            pointer-events: none;
         }
 
         :root[data-theme="light"] .c-about-container::before {
