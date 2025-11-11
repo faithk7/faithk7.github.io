@@ -310,6 +310,7 @@ document.addEventListener("DOMContentLoaded", function () {
         overlay.setAttribute('role', 'dialog');
         overlay.setAttribute('aria-label', 'Video popup');
         overlay.setAttribute('aria-modal', 'true');
+        overlay.setAttribute('tabindex', '0');
         
         // Function to close popup
         const closePopup = () => {
@@ -317,28 +318,39 @@ document.addEventListener("DOMContentLoaded", function () {
             if (overlay.parentNode) document.body.removeChild(overlay);
             // Restore focus
             if (previousFocus) previousFocus.focus();
-            // Remove keyboard listener
-            document.removeEventListener('keydown', handleKeydown);
+            // Remove keyboard listeners
+            document.removeEventListener('keydown', handleKeydown, true);
+            overlay.removeEventListener('keydown', handleOverlayKeydown);
         };
         
         // Click overlay to close
         overlay.addEventListener('click', closePopup);
         
-        // ESC key to close
+        // ESC key to close - capture phase to catch before iframe
         const handleKeydown = (e) => {
+            if (e.key === 'Escape') {
+                e.preventDefault();
+                e.stopPropagation();
+                closePopup();
+            }
+        };
+        document.addEventListener('keydown', handleKeydown, true);
+        
+        // Additional ESC key handler on overlay itself
+        const handleOverlayKeydown = (e) => {
             if (e.key === 'Escape') {
                 e.preventDefault();
                 closePopup();
             }
         };
-        document.addEventListener('keydown', handleKeydown);
+        overlay.addEventListener('keydown', handleOverlayKeydown);
 
         // Append the iframe and overlay to the body
         document.body.appendChild(overlay);
         document.body.appendChild(iframe);
         
-        // Focus the iframe for keyboard navigation
-        iframe.focus();
+        // Focus the overlay instead of iframe for better ESC key handling
+        overlay.focus();
     }
 
     // Detect if visitor is in China and suggest VPN via banner and icon
