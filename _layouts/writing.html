@@ -35,7 +35,7 @@ layout: default
 
         // Smooth scroll with offset for TOC links; use delegation for reliability
         var isScrolling = false;
-        var scrollOffset = 5; // Fixed 15px offset from viewport top
+        var scrollOffset = 5; // Fixed 5px offset from viewport top
 
         function scrollToHash(hash) {
             if (isScrolling) return; // Prevent multiple simultaneous scrolls
@@ -45,22 +45,24 @@ layout: default
             var target = document.getElementById(decodeURIComponent(id));
             if (!target) return;
 
+            var scrollContainer = document.querySelector('.l-center');
+            if (!scrollContainer) return;
+
             isScrolling = true;
 
-            // Use scrollIntoView with block: 'start' to align to top
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            // Manually calculate scroll position relative to container
+            var targetPosition = target.offsetTop - scrollOffset;
+            
+            // Use scrollTo for smooth scrolling (better cross-browser support)
+            scrollContainer.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
             });
 
-            // After scrollIntoView completes, adjust for the offset
+            // Reset the scrolling flag after animation completes
             setTimeout(function () {
-                var scrollContainer = document.querySelector('.l-center');
-                if (scrollContainer) {
-                    scrollContainer.scrollTop -= scrollOffset;
-                }
                 isScrolling = false;
-            }, 600); // Wait for smooth scroll to complete
+            }, 600);
         }
 
         document.addEventListener('click', function (e) {
