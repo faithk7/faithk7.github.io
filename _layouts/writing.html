@@ -50,8 +50,13 @@ layout: default
 
             isScrolling = true;
 
-            // Manually calculate scroll position relative to container
-            var targetPosition = target.offsetTop - scrollOffset;
+            // Calculate target position relative to scroll container
+            // Get absolute positions relative to viewport
+            var targetRect = target.getBoundingClientRect();
+            var containerRect = scrollContainer.getBoundingClientRect();
+            
+            // Calculate position: current scroll + target position relative to container top - offset
+            var targetPosition = scrollContainer.scrollTop + (targetRect.top - containerRect.top) - scrollOffset;
             
             // Use scrollTo for smooth scrolling (better cross-browser support)
             scrollContainer.scrollTo({
