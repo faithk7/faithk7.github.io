@@ -112,11 +112,9 @@ body {
 }
 
 /* Video popup and overlay styles */
-/* Extracted from inline styles in collect.js for better maintainability */
-
 .c-video-popup-iframe {
-    width: 75%;
-    height: 75%;
+    width: 80%;
+    height: 80%;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -126,7 +124,7 @@ body {
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 4px;
 }
 
 .c-video-popup-overlay {
@@ -172,4 +170,34 @@ body {
 
 .c-video-popup-close:active {
     transform: scale(0.95);
+}
+
+/* VPN Banner Styles */
+.c-vpn-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: #FEF3C7; /* amber-100 */
+    border-bottom: 1px solid #F59E0B; /* amber-500 */
+    color: #92400E; /* amber-700 */
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.c-vpn-banner-text {
+    flex: 1;
+}
+
+.c-vpn-banner-close {
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    cursor: pointer;
+    color: inherit;
+    padding: 0 4px;
 }

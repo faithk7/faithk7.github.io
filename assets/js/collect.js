@@ -7,6 +7,7 @@ const CONFIG = {
 
 const VPN_CONFIG = {
     DISMISS_KEY: 'collect_vpn_notice_dismissed',
+    SESSION_CACHE_KEY: 'collect_vpn_check_result',
     API_URL: 'https://ipapi.co/json/',
     TARGET_COUNTRY_CODE: 'CN',
     TARGET_COUNTRY_NAME: 'china'
@@ -61,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
     delete dataFiles.essay;
 
     for (const fileName in dataFiles) {
-        // Use Object.hasOwn() for safer property checking
         if (Object.hasOwn(dataFiles, fileName)) {
             const navItem = document.createElement('div');
             navItem.className = 'o-collection-nav-icon';
@@ -165,9 +165,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     activateItem(e);
                 }
             });
-
-            // const currentMode = document.body.classList.contains('light') ? 'light' : 'dark';
-            // applyMode(currentMode); // manually apply mode to each item, probably need a refactor
         });
     }
 
@@ -194,10 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.appendChild(imageCanvas);
         document.body.appendChild(audioPlayerContainer);
 
-        console.log(audioPlayerContainer);
-
         const audioPlayer = document.getElementById('audioPlayer');
-        console.log(audioPlayer);
         const coverImage = document.getElementById('coverImage');
         const playerContainer = document.getElementById('playerContainer');
         const dominantColorBox = document.getElementById('dominantColorBox');
@@ -291,7 +285,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Refactored: use CSS classes instead of inline styles
     function showVideoPopup(videoUrl) {
         // Store currently focused element to restore later
         const previousFocus = document.activeElement;
@@ -364,63 +357,58 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Detect if visitor is in China and suggest VPN via banner and icon
     (function checkAndSuggestVpnForChina() {
+        // 1. Check dismissal
         if (localStorage.getItem(VPN_CONFIG.DISMISS_KEY) === '1') return;
+
+        // 2. Check session cache
+        const cachedResult = sessionStorage.getItem(VPN_CONFIG.SESSION_CACHE_KEY);
+        if (cachedResult === 'CN') {
+            renderVpnWarning();
+            return;
+        } else if (cachedResult === 'OTHER') {
+            return; // Not in CN, previously checked
+        }
 
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), CONFIG.FETCH_TIMEOUT_MS);
+        
         fetch(VPN_CONFIG.API_URL, { signal: controller.signal })
             .then(res => res.ok ? res.json() : Promise.reject(new Error('ipapi.co non-OK')))
             .then(data => {
                 clearTimeout(timeoutId);
-                try { if (VPN_DEBUG) console.log('[collect] VPN check response', data); } catch (_) { }
                 const countryCode = String((data && (data.country || data.country_code || data.countryCode)) || '').toUpperCase();
                 const countryName = String((data && (data.country_name || data.countryName)) || '').toLowerCase();
+                
                 if (countryCode === VPN_CONFIG.TARGET_COUNTRY_CODE || countryName === VPN_CONFIG.TARGET_COUNTRY_NAME) {
+                    sessionStorage.setItem(VPN_CONFIG.SESSION_CACHE_KEY, 'CN');
                     renderVpnWarning();
-                    try { if (VPN_DEBUG) console.log('[collect] VPN banner rendered (CN detected)'); } catch (_) { }
                 } else {
-                    try { if (VPN_DEBUG) console.log('[collect] Non-CN detected:', countryCode || countryName); } catch (_) { }
+                    sessionStorage.setItem(VPN_CONFIG.SESSION_CACHE_KEY, 'OTHER');
                 }
             })
             .catch((err) => {
-                try { console.warn('[collect] VPN check failed', (err && (err.name || err.message)) || err); } catch (_) { }
                 // Silently ignore on failure
+                try { console.warn('[collect] VPN check failed', (err && (err.name || err.message)) || err); } catch (_) { }
             });
 
         function renderVpnWarning() {
             // Banner
             const banner = document.createElement('div');
+            banner.className = 'c-vpn-banner';
             banner.setAttribute('role', 'status');
-            banner.style.position = 'fixed';
-            banner.style.top = '0';
-            banner.style.left = '0';
-            banner.style.right = '0';
-            banner.style.zIndex = '2000';
-            banner.style.display = 'flex';
-            banner.style.alignItems = 'center';
-            banner.style.gap = '8px';
-            banner.style.padding = '8px 12px';
-            banner.style.background = '#FEF3C7'; // amber-100
-            banner.style.borderBottom = '1px solid #F59E0B'; // amber-500
-            banner.style.color = '#92400E'; // amber-700
-            banner.style.fontFamily = 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
 
             const icon = document.createElement('span');
             icon.textContent = '⚠️';
             icon.setAttribute('aria-hidden', 'true');
 
             const text = document.createElement('div');
-            text.style.flex = '1';
+            text.className = 'c-vpn-banner-text';
             text.textContent = 'Media may require VPN/Proxy to load properly.';
 
             const closeBtn = document.createElement('button');
             closeBtn.type = 'button';
+            closeBtn.className = 'c-vpn-banner-close';
             closeBtn.textContent = '×';
-            closeBtn.style.border = 'none';
-            closeBtn.style.background = 'transparent';
-            closeBtn.style.fontSize = '18px';
-            closeBtn.style.cursor = 'pointer';
-            closeBtn.style.color = 'inherit';
             closeBtn.setAttribute('aria-label', 'Dismiss VPN notice');
             closeBtn.addEventListener('click', () => {
                 localStorage.setItem(VPN_CONFIG.DISMISS_KEY, '1');
@@ -435,7 +423,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Prevent overlap with fixed banner
             const currentPaddingTop = parseInt(getComputedStyle(document.body).paddingTop || '0', 10) || 0;
-            document.body.style.paddingTop = (currentPaddingTop + banner.offsetHeight) + 'px';
+            document.body.style.paddingTop = (currentPaddingTop + 40) + 'px'; // Approx height since offsetHeight is 0 before paint
 
             // Icon next to page title if exists
             try {
