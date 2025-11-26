@@ -1,86 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
-<body>
-    <nav class="c-navbar">
-        <div class="c-navbar-container">
-            <ul class="c-navbar-items">
-                <li class="o-navbar-item"><a href="{{ '/' | relative_url }}">Home</a>
-                    <button id="dark-mode-toggle" class="o-setting-icon" aria-label="Toggle dark mode">
-                        {% include svg_html/dark_mode_toggle.html %}
-                    </button>
-                    <a href="/feed.xml" class="o-setting-icon" aria-label="RSS feed">
-                        {% include svg_html/rss.html %}
-                    </a>
-                    <!-- </div> -->
-                </li>
-                <li class="o-navbar-item"><a href="{{ '/note' | relative_url }}">Note</a>
-                </li>
-                <li class="o-navbar-item"><a href="{{ '/writing-index' | relative_url }}">Writing</a></li>
-                <li class="o-navbar-item"><a href="{{ '/collect' | relative_url }}">Collect</a>
-                </li>
-                <li class="o-navbar-item"><a href="{{ '/about' | relative_url }}">About</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="c-navbar-icon" id="nav-toggle">
-        {% include svg_html/menu.html %}
+<nav class="c-navbar">
+    <div class="c-navbar-container">
+        <ul class="c-navbar-items">
+            <li class="o-navbar-item"><a href="{{ '/' | relative_url }}">Home</a>
+                <button id="dark-mode-toggle" class="o-setting-icon" aria-label="Toggle dark mode">
+                    {% include svg_html/dark_mode_toggle.html %}
+                </button>
+                <a href="/feed.xml" class="o-setting-icon" aria-label="RSS feed">
+                    {% include svg_html/rss.html %}
+                </a>
+                <!-- </div> -->
+            </li>
+            <li class="o-navbar-item"><a href="{{ '/note' | relative_url }}">Note</a>
+            </li>
+            <li class="o-navbar-item"><a href="{{ '/writing-index' | relative_url }}">Writing</a></li>
+            <li class="o-navbar-item"><a href="{{ '/collect' | relative_url }}">Collect</a>
+            </li>
+            <li class="o-navbar-item"><a href="{{ '/about' | relative_url }}">About</a>
+            </li>
+        </ul>
     </div>
-
-    <script defer>
-        // Function to apply the light/dark mode
-        function applyMode(mode) {
-            // Only set data-theme on :root, CSS cascade handles the rest
-            document.documentElement.setAttribute('data-theme', mode);
-        }
-
-        // Initialize theme from saved mode
-        document.addEventListener('DOMContentLoaded', function () {
-            const savedMode = localStorage.getItem('mode');
-            if (savedMode) {
-                applyMode(savedMode);
-            }
-
-            // Toggle dark mode
-            const toggleButton = document.getElementById('dark-mode-toggle');
-            if (toggleButton) {
-                toggleButton.addEventListener('click', () => {
-                    const currentMode = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
-                    const newMode = currentMode === 'light' ? 'dark' : 'light';
-                    applyMode(newMode);
-                    localStorage.setItem('mode', newMode);
-                });
-            }
-
-            // Navigation toggle functionality
-            const navToggle = document.getElementById('nav-toggle');
-            const navbar = document.querySelector('.c-navbar');
-            if (navToggle && navbar) {
-                const overlay = document.createElement('div');
-                overlay.className = 'c-navbar-overlay';
-                document.body.appendChild(overlay);
-
-                navToggle.addEventListener('click', function () {
-                    navbar.classList.toggle('show');
-                });
-
-                overlay.addEventListener('click', function () {
-                    navbar.classList.remove('show');
-                });
-
-                navbar.addEventListener('click', function () {
-                    navbar.classList.remove('show');
-                });
-            }
-        });
-    </script>
-
-</body>
-
-</html>
+</nav>
+<div class="c-navbar-icon" id="nav-toggle">
+    {% include svg_html/menu.html %}
+</div>
