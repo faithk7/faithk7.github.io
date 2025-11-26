@@ -1,5 +1,5 @@
 ---
-title: "我们要相信些什么 | Kai Qu"
+title: "我们要相信些什么"
 date: 2024-11-02
 tags: [thought, 2024]
 layout: writing
