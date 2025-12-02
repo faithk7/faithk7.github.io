@@ -23,9 +23,44 @@ description: "Kai Qu's collect page"
 <div class="c-collection-container">
     <h1 class="o-collection-title">Collect</h1>
     <div class="c-collection-nav-container">
-        <!-- Navigation items will be dynamically added here -->
+        {% for collection in site.data.collect %}
+            {% assign name = collection[0] %}
+            {% assign items = collection[1] %}
+            {% if items.size > 0 %}
+                {% if name == "mv" %}
+                    <div class="o-collection-nav-icon selected" data-section="{{ name }}" role="button" tabindex="0" aria-label="View {{ name }} collection" aria-selected="true">
+                        {{ name }}
+                    </div>
+                {% else %}
+                    <div class="o-collection-nav-icon" data-section="{{ name }}" role="button" tabindex="0" aria-label="View {{ name }} collection" aria-selected="false">
+                        {{ name }}
+                    </div>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
     </div>
     <div class="c-collection-tile-container">
-        <!-- Sections will be dynamically added here -->
+        {% for collection in site.data.collect %}
+            {% assign name = collection[0] %}
+            {% assign items = collection[1] %}
+            {% if items.size > 0 %}
+                {% if name == "music" %}
+                    {% assign default_type = "audio" %}
+                {% else %}
+                    {% assign default_type = "video" %}
+                {% endif %}
+                {% if name == "mv" %}
+                    <div class="c-collection-section" data-section="{{ name }}" style="display: block;">
+                {% else %}
+                    <div class="c-collection-section" data-section="{{ name }}" style="display: none;">
+                {% endif %}
+                    {% for item in items %}
+                        <a class="o-collection-item" href="{{ item.url }}" data-section="{{ name }}" data-type="{{ item.type | default: default_type }}" target="_blank">
+                            {{ item.title }}
+                        </a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endfor %}
     </div>
 </div>

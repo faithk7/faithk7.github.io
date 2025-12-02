@@ -79,6 +79,12 @@ body {
     margin-left: 20%;
 }
 
+.c-collection-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .c-collection-item-container {
     display: flex;
     flex-direction: column;

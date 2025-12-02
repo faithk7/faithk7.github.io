@@ -32,65 +32,86 @@ function showUserError(message) {
 document.addEventListener("DOMContentLoaded", function () {
     const collectionNav = document.querySelector('.c-collection-nav-container');
     const collectionTiles = document.querySelector('.c-collection-tile-container');
-    
+    const navItems = collectionNav ? collectionNav.querySelectorAll('.o-collection-nav-icon') : null;
+    const sections = document.querySelectorAll('.c-collection-section');
+    const items = document.querySelectorAll('.o-collection-item');
+
     // Null checks for required elements
     if (!collectionNav || !collectionTiles) {
         console.error('[collect] Required container elements not found');
         return;
     }
-    
-    // Use data attribute instead of global variable
-    const dataFilesElement = document.getElementById('collection-data');
-    let dataFiles = {};
-    
-    try {
-        dataFiles = dataFilesElement ? JSON.parse(dataFilesElement.textContent) : window.dataFiles || {};
-    } catch (e) {
-        console.error('[collect] Failed to parse collection data:', e);
-        showUserError('Failed to load collection data. Please refresh the page.');
-        return;
-    }
-    
-    if (!dataFiles || Object.keys(dataFiles).length === 0) {
-        console.warn('[collect] No collection data available');
-        showUserError('No collections available.');
-        return;
-    }
 
-    // TODO: remove music from dataFiles for now, fix it later
-    delete dataFiles.music;
-    delete dataFiles.essay;
+    const theme = localStorage.getItem('mode');
 
-    for (const fileName in dataFiles) {
-        if (Object.hasOwn(dataFiles, fileName)) {
-            const navItem = document.createElement('div');
-            navItem.className = 'o-collection-nav-icon';
-            navItem.innerHTML = `${fileName}`;
-            navItem.dataset.fileName = fileName;
-            
-            // Make keyboard accessible
+    // Initialize pre-rendered items: theme, fade-in animation, and click/keyboard behavior
+    items.forEach(itemElement => {
+        if (theme) {
+            itemElement.setAttribute('data-theme', theme); // reuse existing theme logic
+        }
+        itemElement.style.color = 'inherit';
+        itemElement.style.opacity = '0';
+        itemElement.style.transition = `opacity ${CONFIG.FADE_IN_DURATION}`;
+        setTimeout(() => {
+            itemElement.style.opacity = '1';
+        }, CONFIG.ANIMATION_DELAY_MS);
+
+        const activateItem = (e) => {
+            e.preventDefault();
+            const type = itemElement.dataset.type || 'video';
+            const url = itemElement.getAttribute('href');
+            if (type === 'audio') {
+                renderAudioPlayer(url);
+            } else {
+                showVideoPopup(url);
+            }
+        };
+
+        // Mouse click event
+        itemElement.addEventListener('click', activateItem);
+
+        // Keyboard event (Enter or Space)
+        itemElement.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                activateItem(e);
+            }
+        });
+    });
+
+    const setActiveSection = (sectionName) => {
+        if (!sections || sections.length === 0) return;
+        sections.forEach(section => {
+            if (section.dataset.section === sectionName) {
+                section.style.display = '';
+            } else {
+                section.style.display = 'none';
+            }
+        });
+    };
+
+    if (navItems) {
+        navItems.forEach(navItem => {
+            const sectionName = navItem.dataset.section || navItem.dataset.fileName;
+
+            // Ensure accessibility attributes are present
             navItem.setAttribute('role', 'button');
             navItem.setAttribute('tabindex', '0');
-            navItem.setAttribute('aria-label', `View ${fileName} collection`);
 
-            // Function to handle selection
             const selectNavItem = () => {
-                if (!navItem.classList.contains('selected')) {
-                    // Remove 'selected' class from all nav items
-                    document.querySelectorAll('.o-collection-nav-icon').forEach(item => {
-                        item.classList.remove('selected');
-                        item.setAttribute('aria-selected', 'false');
-                    });
-                    // Add 'selected' class to clicked nav item
-                    navItem.classList.add('selected');
-                    navItem.setAttribute('aria-selected', 'true');
-                    renderCollectionItems(dataFiles[fileName], fileName);
+                document.querySelectorAll('.o-collection-nav-icon').forEach(item => {
+                    item.classList.remove('selected');
+                    item.setAttribute('aria-selected', 'false');
+                });
+                navItem.classList.add('selected');
+                navItem.setAttribute('aria-selected', 'true');
+                if (sectionName) {
+                    setActiveSection(sectionName);
                 }
             };
 
             // Mouse click event
             navItem.addEventListener('click', selectNavItem);
-            
+
             // Keyboard event (Enter or Space)
             navItem.addEventListener('keydown', function (e) {
                 if (e.key === 'Enter' || e.key === ' ') {
@@ -98,74 +119,20 @@ document.addEventListener("DOMContentLoaded", function () {
                     selectNavItem();
                 }
             });
-            
-            collectionNav.appendChild(navItem);
-        }
-    }
-
-    // Display "mv" collect by default
-    if (Object.hasOwn(dataFiles, 'mv')) {
-        renderCollectionItems(dataFiles['mv'], 'mv');
-        document.querySelector(`[data-file-name="mv"]`).classList.add('selected');
-    } else {
-        // If "mv" doesn't exist, display the first available collect
-        const firstCollect = Object.keys(dataFiles)[0];
-        if (firstCollect) {
-            renderCollectionItems(dataFiles[firstCollect], firstCollect);
-            document.querySelector(`[data-file-name="${firstCollect}"]`).classList.add('selected');
-        }
-    }
-
-    function renderCollectionItems(items, fileName) {
-        collectionTiles.innerHTML = ''; // Clear previous items
-        items.forEach(item => {
-            const itemElement = document.createElement('a');
-            itemElement.className = 'o-collection-item';
-            itemElement.href = item.url;
-            itemElement.dataset.type = item.type; // Add type data attribute
-            itemElement.dataset.url = item.url; // Add URL data attribute
-            
-            // Keyboard accessibility
-            itemElement.setAttribute('role', 'button');
-            itemElement.setAttribute('tabindex', '0');
-            itemElement.setAttribute('aria-label', `Play ${item.title}`);
-            
-            const theme = localStorage.getItem('mode');
-            if (theme) {
-                itemElement.setAttribute('data-theme', theme); // this value will be dynamically adjusted by js, probably need a refactor
-            }
-            // color to be inherited from parent
-            itemElement.style.color = 'inherit';
-            itemElement.target = '_blank';
-            itemElement.textContent = item.title;
-            itemElement.style.opacity = '0'; // Start with opacity 0
-            itemElement.style.transition = `opacity ${CONFIG.FADE_IN_DURATION}`; // Add transition effect
-            collectionTiles.appendChild(itemElement);
-            // Use setTimeout to ensure the transition works in Firefox
-            setTimeout(() => {
-                itemElement.style.opacity = '1'; // Fade in
-            }, CONFIG.ANIMATION_DELAY_MS);
-            
-            // Function to handle item activation
-            const activateItem = (e) => {
-                e.preventDefault();
-                if (fileName === 'music') {
-                    renderAudioPlayer(item.url);
-                } else {
-                    showVideoPopup(item.url);
-                }
-            };
-            
-            // Mouse click event
-            itemElement.addEventListener('click', activateItem);
-            
-            // Keyboard event (Enter or Space)
-            itemElement.addEventListener('keydown', function (e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    activateItem(e);
-                }
-            });
         });
+
+        // Set initial active section based on pre-selected nav or first nav item
+        let defaultNav = document.querySelector('.o-collection-nav-icon.selected');
+        if (!defaultNav && navItems.length > 0) {
+            defaultNav = navItems[0];
+        }
+        if (defaultNav) {
+            const defaultSection = defaultNav.dataset.section || defaultNav.dataset.fileName;
+            defaultNav.setAttribute('aria-selected', 'true');
+            if (defaultSection) {
+                setActiveSection(defaultSection);
+            }
+        }
     }
 
     function renderAudioPlayer(musicUrl) {
