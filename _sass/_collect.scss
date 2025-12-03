@@ -77,12 +77,27 @@ body {
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 20%;
+    position: relative;
 }
 
 .c-collection-section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+    pointer-events: none;
+    position: absolute;
+    visibility: hidden;
+
+    &.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+        position: relative;
+        visibility: visible;
+    }
 }
 
 .c-collection-item-container {

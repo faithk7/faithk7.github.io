@@ -82,9 +82,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!sections || sections.length === 0) return;
         sections.forEach(section => {
             if (section.dataset.section === sectionName) {
-                section.style.display = '';
+                section.classList.add('active');
             } else {
-                section.style.display = 'none';
+                section.classList.remove('active');
             }
         });
     };
