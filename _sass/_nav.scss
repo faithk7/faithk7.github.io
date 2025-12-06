@@ -59,7 +59,7 @@
 .o-navbar-item a {
     color: #ffffff;
     text-decoration: none;
-    background-image: linear-gradient(to right, #000000, #000000);
+    background-image: linear-gradient(to right, #ffffff, #ffffff);
     background-size: 0% 0.125rem;
     /* 2px */
     background-repeat: no-repeat;
@@ -130,10 +130,6 @@ a.o-setting-icon:hover {
 
     .c-navbar-items {
         padding-left: 5px;
-    }
-
-    .o-navbar-item a:hover {
-        animation: none;
     }
 }
 
