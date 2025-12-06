@@ -23,33 +23,21 @@
 
 .o-note-date {
     font-size: 1rem;
-    color: #bbbbbb;
+    color: var(--note-text-secondary);
     margin-bottom: 0.3125rem;
     font-family: var(--dateFont);
 }
 
-:root[data-theme="light"] .o-note-date {
-    color: #666666;
-}
-
 .o-note-text {
     font-size: var(--note-font-size);
-    color: #dddddd;
+    color: var(--note-text-primary);
     font-weight: 400;
-}
-
-:root[data-theme="light"] .o-note-text {
-    color: #000000;
 }
 
 .o-note-footer {
     text-align: center;
     margin-top: 1.25rem;
     font-size: 0.875rem;
-    color: #bbbbbb;
+    color: var(--note-text-secondary);
     padding-bottom: var(--pageEndMargin);
-}
-
-:root[data-theme="light"] .o-note-footer {
-    color: #666666;
 }

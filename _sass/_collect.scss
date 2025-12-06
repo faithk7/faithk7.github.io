@@ -31,7 +31,7 @@
     overflow-y: auto;
     padding-right: 10px;
     background-color: inherit;
-    border-right: 2px solid white;
+    border-right: 2px solid var(--collect-border-color);
     height: auto;
     min-height: fit-content;
     align-self: center;
@@ -40,10 +40,6 @@
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-}
-
-:root[data-theme="light"] .c-collection-nav-container {
-    border-right: 2px solid #000000;
 }
 
 .o-collection-nav-icon {
@@ -104,28 +100,17 @@
 
 .o-collection-item {
     font-size: 1.125rem;
-    color: #dddddd;
+    color: var(--collect-text-primary);
     margin-bottom: 15px;
     padding-left: 30px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23ffffff' d='M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z'/%3E%3C/svg%3E");
+    background-image: var(--collect-icon-url);
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 20px 20px;
 }
 
-// @media (prefers-color-scheme: dark) {
-//     .o-collection-item:not([data-theme="light"]) {
-//         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23ffffff' d='M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z'/%3E%3C/svg%3E");
-//     }
-// }
-
 .o-collection-item:nth-last-of-type(1) {
     margin-bottom: 2rem;
-}
-
-:root[data-theme="light"] .o-collection-item {
-    color: #000000;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23000000' d='M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z'/%3E%3C/svg%3E");
 }
 
 /* Video popup and overlay styles */
