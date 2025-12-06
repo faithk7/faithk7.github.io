@@ -56,7 +56,7 @@
     /* 0px */
 }
 
-.o-navbar-item a {
+.o-navbar-item > a:not(.o-setting-icon) {
     color: #ffffff;
     text-decoration: none;
     background-image: linear-gradient(to right, #ffffff, #ffffff);
@@ -68,22 +68,27 @@
     font-size: 0.8rem;
 }
 
-:root[data-theme="dark"] .o-navbar-item a {
+:root[data-theme="dark"] .o-navbar-item > a:not(.o-setting-icon) {
     color: #ffffff;
     background-image: linear-gradient(to right, #ffffff, #ffffff);
 }
 
-:root[data-theme="light"] .o-navbar-item a {
+:root[data-theme="light"] .o-navbar-item > a:not(.o-setting-icon) {
     color: #000000;
     background-image: linear-gradient(to right, #000000, #000000);
 }
 
-.o-navbar-item a:hover {
+.o-navbar-item > a:not(.o-setting-icon):hover {
     animation: a-underline-text-left-right 0.5s forwards;
 }
 
-.o-navbar-item.is-active a {
-	background-size: 100% 1px;
+.o-navbar-item.is-active > a:not(.o-setting-icon) {
+    background-size: 100% 1px;
+    animation: none;
+}
+
+.o-navbar-item.is-active > a:not(.o-setting-icon):hover {
+    animation: none;
 }
 
 #dark-mode-toggle {
