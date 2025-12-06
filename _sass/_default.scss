@@ -8,10 +8,16 @@
     --backgroundColor: #121212;
     --linkColor: #388dc2;
     --pageEndMargin: 1.25rem;
+    /* Nav Tokens */
+    --nav-border-color: #ffffff;
+    --nav-text-color: #ffffff;
 }
 
 :root[data-theme="light"] {
     --linkColor: #126ba2;
+    /* Nav Tokens */
+    --nav-border-color: #000000;
+    --nav-text-color: #000000;
 }
 
 html,

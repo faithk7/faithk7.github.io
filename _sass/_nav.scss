@@ -18,17 +18,13 @@
     /* align-items: center; */
     margin-top: 1.25rem;
     /* 20px */
-    border-left: 1px solid #ffffff;
+    border-left: 1px solid var(--nav-border-color);
     /* 1px */
     padding-left: 0.625rem;
     /* 10px */
     font-family: var(--linkFont);
     user-select: none;
-}
-
-:root[data-theme="light"] .c-navbar-container {
-    border-left: 1px solid #000000;
-    /* Darker border for light mode */
+    color: var(--nav-text-color);
 }
 
 .c-line {
@@ -36,7 +32,7 @@
     /* 2px */
     height: 6.25rem;
     /* 100px */
-    background-color: #ffffff;
+    background-color: var(--nav-border-color);
     margin-bottom: 1.25rem;
     /* 20px */
 }
@@ -57,25 +53,15 @@
 }
 
 .o-navbar-item > a:not(.o-setting-icon) {
-    color: #ffffff;
+    color: var(--nav-text-color);
     text-decoration: none;
-    background-image: linear-gradient(to right, #ffffff, #ffffff);
+    background-image: linear-gradient(to right, var(--nav-text-color), var(--nav-text-color));
     background-size: 0% 0.125rem;
     /* 2px */
     background-repeat: no-repeat;
     background-position: 0% 100%;
     transition: color 0.3s;
     font-size: 0.8rem;
-}
-
-:root[data-theme="dark"] .o-navbar-item > a:not(.o-setting-icon) {
-    color: #ffffff;
-    background-image: linear-gradient(to right, #ffffff, #ffffff);
-}
-
-:root[data-theme="light"] .o-navbar-item > a:not(.o-setting-icon) {
-    color: #000000;
-    background-image: linear-gradient(to right, #000000, #000000);
 }
 
 .o-navbar-item > a:not(.o-setting-icon):hover {
@@ -179,11 +165,7 @@ a.o-setting-icon:hover {
 
     .c-navbar-items {
         padding-left: 10px;
-        border-left: 1px solid #ffffff;
-    }
-
-    :root[data-theme="light"] .c-navbar-items {
-        border-left: 1px solid #000000;
+        border-left: 1px solid var(--nav-border-color);
     }
 
     .c-navbar-items li {
