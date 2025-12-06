@@ -1,9 +1,5 @@
 /* Styles specific to collection.html */
 
-body {
-    overflow: hidden; /* Prevent scrolling on the entire page */
-}
-
 .c-collection-container {
     display: grid;
     grid-template-columns: 1fr 5fr;

@@ -17,7 +17,8 @@ description: "Kai Qu's writing index page"
     <link rel="prefetch" href="/about" as="document">
     <link rel="prefetch" href="/collect" as="document">
     <!-- Prefetch posts -->
-    {% assign sorted_posts = site.posts | where_exp: "post", "post.hidden != true" | sort: 'date' | reverse %}
+    {% assign posts_collection = site.collections.posts.docs | default: site.posts %}
+    {% assign sorted_posts = posts_collection | where_exp: "post", "post.hidden != true" | sort: 'date' | reverse %}
     {% for post in sorted_posts %}
     <link rel="prefetch" href="{{ post.url }}" as="document">
     {% endfor %}
@@ -25,7 +26,9 @@ description: "Kai Qu's writing index page"
 
 <div class="c-writing-index-container">
     <h1 class="o-writing-index-title">Writing</h1>
-    {% assign sorted_posts = site.posts | where_exp: "post", "post.hidden != true" | sort: 'date' | reverse %}
+    {% assign posts_collection = site.collections.posts.docs | default: site.posts %}
+    {% assign sorted_posts = posts_collection | where_exp: "post", "post.hidden != true" | sort: 'date' | reverse %}
+    {%- comment -%} Post count: {{ sorted_posts.size }} {%- endcomment -%}
 
     <div id="tag-container" class="c-tag-container-meta">
         <span class="o-tag selected-tag" id="all-tag" onclick="filterPosts('')">all</span><span
