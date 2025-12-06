@@ -1,4 +1,5 @@
-:root {
+.col-stories,
+.stories {
     /* Default theme variables (assumed to be light) */
     --backgroundColor: #fdfdfd;
     --textColor: #404040;
@@ -48,14 +49,15 @@
     --hrColorDark: #888;
     --activeColorDark: #74d274;
     --langBackgroundColorDark: #2c2c2c;
-    --langShadowColorDark: #0b0c0b 33;
+    --langShadowColorDark: rgba(11, 12, 11, 0.2);
     --logoColorDark: #555;
     --photoBackgroundDark: #1a1a1a;
     --storyHoverColorDark: #d8b4ff;
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
+    .col-stories,
+    .stories {
         --backgroundColor: #151615;
         --textColor: #dbdfdf;
         --secondaryTextColor: #cfd5d5;
