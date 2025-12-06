@@ -56,18 +56,6 @@
     /* 0px */
 }
 
-@keyframes a-underline-text-left-right {
-    0% {
-        background-size: 0% 1px;
-        background-position: 0% 100%;
-    }
-
-    100% {
-        background-size: 100% 1px;
-        background-position: 0% 100%;
-    }
-}
-
 .o-navbar-item a {
     color: #ffffff;
     text-decoration: none;

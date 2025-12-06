@@ -234,13 +234,13 @@ path.st1 {
 
 @keyframes a-underline-text-left-right {
     0% {
-        background-size: 100% 1px;
+        background-size: 0% 1px;
         background-position: 0% 100%;
     }
 
     100% {
-        background-size: 100% 100%;
-        background-position: 0% 0%;
+        background-size: 100% 1px;
+        background-position: 0% 100%;
     }
 }
 
