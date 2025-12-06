@@ -11,6 +11,12 @@
     /* Nav Tokens */
     --nav-border-color: #ffffff;
     --nav-text-color: #ffffff;
+    /* Writing Tokens */
+    --writing-text-primary: #dddddd;
+    --writing-text-secondary: #a3a3a3;
+    --writing-border-color: darkgray;
+    --writing-tag-active: #cea2fd;
+    --writing-tag-text: #ffffff;
 }
 
 :root[data-theme="light"] {
@@ -18,6 +24,12 @@
     /* Nav Tokens */
     --nav-border-color: #000000;
     --nav-text-color: #000000;
+    /* Writing Tokens */
+    --writing-text-primary: #000000;
+    --writing-text-secondary: #666666;
+    --writing-border-color: #666666;
+    --writing-tag-active: #a55df1;
+    --writing-tag-text: #000000;
 }
 
 html,

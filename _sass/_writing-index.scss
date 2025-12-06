@@ -33,7 +33,7 @@
     display: block;
     width: 100%;
     height: 1px;
-    background-color: darkgray;
+    background-color: var(--writing-border-color);
     margin: 0 auto;
     margin-top: 1rem;
     position: absolute;
@@ -41,12 +41,7 @@
     left: 0;
     text-align: center;
     transform: translateY(2rem);
-    color: darkgray;
-}
-
-:root[data-theme="light"] .c-writing-index-container::after {
-    background-color: #666666;
-    color: #666666;
+    color: var(--writing-border-color);
 }
 
 .c-writing-item-container {
@@ -56,35 +51,22 @@
     width: 100%;
     margin: 0 auto;
     text-align: left;
-    border: 1px solid darkgray;
+    border: 1px solid var(--writing-border-color);
     padding: 15px;
     border-radius: 5px;
     margin-bottom: 15px;
-}
-
-:root[data-theme="light"] .c-writing-item-container {
-    border-color: #666666;
 }
 
 .o-writing-note-date {
     display: inline-block;
     margin: 0;
     font-size: 0.95rem;
-    color: #999999;
+    color: var(--writing-text-secondary);
     font-family: var(--dateFont);
 }
 
-:root[data-theme="light"] .o-writing-note-date {
-    color: #666666;
-    /* Darker gray for light mode */
-}
-
 #all-tag {
-    color: #cea2fd;
-}
-
-:root[data-theme="light"] #all-tag {
-    color: #a55df1;
+    color: var(--writing-tag-active);
 }
 
 .o-tag {
@@ -94,28 +76,18 @@
     line-height: 1.5em;
     font-family: serif, Times;
     text-decoration: none;
-    background-image: linear-gradient(to top, #ffffff 1px, transparent 1px);
+    background-image: linear-gradient(to top, var(--writing-tag-text) 1px, transparent 1px);
     background-size: 0px;
     background-repeat: no-repeat;
     background-position: 0% 100%;
     transition: color 0.3s;
     font-family: var(--tagFont);
     border: 0px;
-    color: inherit;
+    color: var(--writing-tag-text);
     margin-left: 0px;
     margin-right: 8px;
     margin-bottom: 5px;
     cursor: pointer;
-}
-
-:root[data-theme="light"] .o-tag {
-    color: #000000;
-    background-image: linear-gradient(to top, #000000 1px, transparent 1px);
-}
-
-:root[data-theme="dark"] .o-tag {
-    color: #ffffff;
-    background-image: linear-gradient(to top, #ffffff 1px, transparent 1px);
 }
 
 span.o-tag:hover {
@@ -123,15 +95,9 @@ span.o-tag:hover {
 }
 
 /* for selected tag */
-:root[data-theme="light"] .selected-tag {
-    color: #000000;
-    background-image: linear-gradient(to top, #000000 1px, transparent 1px);
-    background-size: 100%;
-}
-
-:root[data-theme="dark"] .selected-tag {
-    color: #ffffff;
-    background-image: linear-gradient(to top, #ffffff 1px, transparent 1px);
+.selected-tag {
+    color: var(--writing-tag-text);
+    background-image: linear-gradient(to top, var(--writing-tag-text) 1px, transparent 1px);
     background-size: 100%;
 }
 
@@ -142,7 +108,7 @@ span.o-tag:hover {
 
 .o-post-tag {
     background-size: 0px;
-    color: darkgray;
+    color: var(--writing-text-secondary);
     font-family: var(--tagFont);
     font-size: 0.9rem;
     cursor: pointer;
@@ -155,10 +121,6 @@ span.o-tag:hover {
 
 .o-post-tag:last-child::after {
     content: "";
-}
-
-:root[data-theme="light"] .o-post-tag {
-    color: #666666;
 }
 
 .c-post-title-container {
