@@ -10,19 +10,11 @@
 .c-about-container a {
     text-decoration: none;
     color: var(--linkColor);
-    background-image: linear-gradient(to top, #ffffff 1px, transparent 1px);
-    background-size: 100% 0px;
-    background-repeat: no-repeat;
-    background-position: 0% 100%;
     transition: color 0.3s;
 }
 
-:root[data-theme="light"] .c-about-container a {
-    background-image: linear-gradient(to top, #000000 1px, transparent 1px);
-}
-
 .c-about-container a:hover {
-    animation: a-underline-text-bottom-up 0.3s ease forwards;
+    opacity: 0.8;
 }
 
 .c-about-container br {

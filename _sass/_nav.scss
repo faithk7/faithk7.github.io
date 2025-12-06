@@ -82,6 +82,10 @@
     animation: a-underline-text-left-right 0.5s forwards;
 }
 
+.o-navbar-item.is-active a {
+	background-size: 100% 1px;
+}
+
 #dark-mode-toggle {
     position: absolute;
     top: 1.0625rem;
