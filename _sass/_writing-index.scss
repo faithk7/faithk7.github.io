@@ -5,13 +5,13 @@
 }
 
 .c-writing-index-container {
-    margin: 20px;
+    margin: var(--space-md);
     position: relative;
     /* Ensure the container is positioned relative for the pseudo-element */
 }
 
 .c-tag-container-meta {
-    margin-bottom: 2rem;
+    margin-bottom: var(--space-lg);
 }
 
 .c-post-meta-container {
@@ -23,7 +23,7 @@
 
 .c-hashtag-container-post {
     display: flex;
-    gap: 5px;
+    gap: var(--space-xs);
     align-items: center;
 }
 
@@ -35,7 +35,7 @@
     height: 1px;
     background-color: var(--writing-border-color);
     margin: 0 auto;
-    margin-top: 1rem;
+    margin-top: var(--space-md);
     position: absolute;
     bottom: -5px;
     left: 0;
@@ -52,9 +52,9 @@
     margin: 0 auto;
     text-align: left;
     border: 1px solid var(--writing-border-color);
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 15px;
+    padding: var(--space-md);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-md);
 }
 
 .o-writing-note-date {
@@ -71,7 +71,7 @@
 
 .o-tag {
     display: inline-block;
-    border-radius: 3px;
+    border-radius: var(--radius-sm);
     font-size: 1rem;
     line-height: 1.5em;
     font-family: serif, Times;
@@ -85,8 +85,8 @@
     border: 0px;
     color: var(--writing-tag-text);
     margin-left: 0px;
-    margin-right: 8px;
-    margin-bottom: 5px;
+    margin-right: var(--space-sm);
+    margin-bottom: var(--space-xs);
     cursor: pointer;
 }
 
@@ -116,7 +116,7 @@ span.o-tag:hover {
 
 .o-post-tag::after {
     content: "/";
-    margin-left: 5px;
+    margin-left: var(--space-xs);
 }
 
 .o-post-tag:last-child::after {
@@ -131,7 +131,7 @@ span.o-tag:hover {
     font-family: 'Times New Roman', Times, serif;
     font-weight: 400;
     font-size: 1.3rem;
-    margin-bottom: 0.625rem;
+    margin-bottom: var(--space-sm);
     margin-top: 0;
     width: 100%;
 }

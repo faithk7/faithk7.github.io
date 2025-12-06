@@ -4,7 +4,7 @@
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: auto 1fr;
-    gap: 20px;
+    gap: var(--space-md);
     width: 100%;
     min-height: 100%; /* Full viewport height */
     min-height: stretch; /* Opera */
@@ -15,7 +15,7 @@
 .o-collection-title {
     grid-column: 1 / -1;
     font-size: 2rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: var(--space-md);
     align-self: flex-start;
     font-family: var(--titleFont);
     position: fixed;
@@ -29,7 +29,7 @@
     align-items: center;
     justify-content: center;
     overflow-y: auto;
-    padding-right: 10px;
+    padding-right: var(--space-sm);
     background-color: inherit;
     border-right: 2px solid var(--collect-border-color);
     height: auto;
@@ -44,7 +44,7 @@
 
 .o-collection-nav-icon {
     font-size: 1.5rem;
-    margin-right: 0.625rem;
+    margin-right: var(--space-sm);
     margin-bottom: 3px;
     cursor: pointer;
 }
@@ -61,7 +61,7 @@
     justify-content: center;
     flex-direction: column;
     overflow-y: scroll;
-    padding: 10px;
+    padding: var(--space-sm);
     background-color: inherit;
     height: auto;
     min-height: fit-content;
@@ -101,16 +101,16 @@
 .o-collection-item {
     font-size: 1.125rem;
     color: var(--collect-text-primary);
-    margin-bottom: 15px;
-    padding-left: 30px;
+    margin-bottom: var(--space-md);
+    padding-left: var(--space-lg);
     background-image: var(--collect-icon-url);
     background-repeat: no-repeat;
     background-position: left center;
-    background-size: 20px 20px;
+    background-size: var(--space-md) var(--space-md);
 }
 
 .o-collection-item:nth-last-of-type(1) {
-    margin-bottom: 2rem;
+    margin-bottom: var(--space-lg);
 }
 
 /* Video popup and overlay styles */

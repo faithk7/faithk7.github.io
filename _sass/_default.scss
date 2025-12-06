@@ -1,55 +1,86 @@
 :root {
+    /* Design Tokens */
+    /* Colors */
+    --color-surface: #121212;
+    --color-surface-muted: #2c2c2c;
+    --color-border: #555555; /* Unifying #555, darkgray */
+    --color-text-primary: #dddddd;
+    --color-text-secondary: #ffffff; /* Some text is pure white */
+    --color-text-muted: #a3a3a3;
+    --color-accent-1: #388dc2; /* Link blue */
+    --color-accent-2: #e093e0; /* Highlight pink/purple */
+
+    /* Spacing */
+    --space-xs: 0.3125rem; /* 5px */
+    --space-sm: 0.625rem;  /* 10px */
+    --space-md: 1.25rem;   /* 20px */
+    --space-lg: 2rem;      /* 32px */
+    --space-xl: 3rem;      /* 48px */
+
+    /* Radius */
+    --radius-sm: 5px;
+    --radius-md: 8px;
+
     --paragraphFontSize: 1rem;
     --note-font-size: 1rem;
     --titleFont: system-ui;
     --linkFont: monospace;
     --tagFont: monospace;
     --dateFont: Georgia;
-    --backgroundColor: #121212;
-    --linkColor: #388dc2;
-    --pageEndMargin: 1.25rem;
+    --backgroundColor: var(--color-surface);
+    --linkColor: var(--color-accent-1);
+    --pageEndMargin: var(--space-md);
     /* Nav Page Vars */
-    --nav-border-color: #ffffff;
+    --nav-border-color: #ffffff; /* Kept specific for now, or map to text-secondary? Nav uses white */
     --nav-text-color: #ffffff;
     /* Writing Page Vars */
-    --writing-text-primary: #dddddd;
-    --writing-text-secondary: #a3a3a3;
-    --writing-border-color: darkgray;
+    --writing-text-primary: var(--color-text-primary);
+    --writing-text-secondary: var(--color-text-muted);
+    --writing-border-color: var(--color-border);
     --writing-tag-active: #cea2fd;
     --writing-tag-text: #ffffff;
     /* Collect Page Vars */
     --collect-border-color: #ffffff;
-    --collect-text-primary: #dddddd;
+    --collect-text-primary: var(--color-text-primary);
     --collect-icon-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23ffffff' d='M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z'/%3E%3C/svg%3E");
     /* About Page Vars */
-    --about-highlight-color: #e093e0;
-    --about-divider-color: darkgray;
+    --about-highlight-color: var(--color-accent-2);
+    --about-divider-color: var(--color-border);
     /* Note Page Vars */
-    --note-text-primary: #dddddd;
-    --note-text-secondary: #bbbbbb;
+    --note-text-primary: var(--color-text-primary);
+    --note-text-secondary: #bbbbbb; /* Keep specific for now or map to muted */
 }
 
 :root[data-theme="light"] {
-    --linkColor: #126ba2;
+    --color-surface: #f0f0f0;
+    --color-surface-muted: #e0e0e0; /* Assuming light grey for muted surface */
+    --color-border: #cccccc; /* Light border */
+    --color-text-primary: #000000;
+    --color-text-secondary: #000000;
+    --color-text-muted: #666666;
+    --color-accent-1: #126ba2;
+    --color-accent-2: #bd41bd;
+
+    --linkColor: var(--color-accent-1);
     /* Nav Page Vars */
     --nav-border-color: #000000;
     --nav-text-color: #000000;
     /* Writing Page Vars */
-    --writing-text-primary: #000000;
-    --writing-text-secondary: #666666;
-    --writing-border-color: #666666;
+    --writing-text-primary: var(--color-text-primary);
+    --writing-text-secondary: var(--color-text-muted);
+    --writing-border-color: var(--color-border); /* was #666666 */
     --writing-tag-active: #a55df1;
     --writing-tag-text: #000000;
     /* Collect Page Vars */
     --collect-border-color: #000000;
-    --collect-text-primary: #000000;
+    --collect-text-primary: var(--color-text-primary);
     --collect-icon-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23000000' d='M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z'/%3E%3C/svg%3E");
     /* About Page Vars */
-    --about-highlight-color: #bd41bd;
-    --about-divider-color: #666666;
+    --about-highlight-color: var(--color-accent-2);
+    --about-divider-color: var(--color-text-muted); /* was #666666 */
     /* Note Page Vars */
-    --note-text-primary: #000000;
-    --note-text-secondary: #666666;
+    --note-text-primary: var(--color-text-primary);
+    --note-text-secondary: var(--color-text-muted);
 }
 
 html,
@@ -74,8 +105,8 @@ a {
 }
 
 body {
-    background-color: #121212;
-    color: #ffffff;
+    background-color: var(--color-surface);
+    color: var(--color-text-secondary);
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1rem;
     /* 16px */
@@ -99,11 +130,11 @@ nav ul {
 }
 
 nav li {
-    margin: 10px 0;
+    margin: var(--space-sm) 0;
 }
 
 nav li a {
-    color: #ffffff;
+    color: var(--color-text-secondary);
     text-decoration: none;
     font-size: 1rem;
     /* 16px */
@@ -118,22 +149,22 @@ nav li a {
     height: 100%;
     position: relative;
     overflow: hidden;
-    background-color: #121212;
+    background-color: var(--color-surface);
 }
 
 :root[data-theme="light"] .l-container {
-    background-color: #f0f0f0;
+    background-color: var(--color-surface);
 }
 
 :root[data-theme="light"] .l-center {
-    background-color: #121212;
+    background-color: var(--color-surface);
 }
 
 /* for mobile & tablet, to make the main content rendered more by making it display as block */
 @media (max-width: 1032px) {
     .l-container {
         display: block;
-        background-color: #121212;
+        background-color: var(--color-surface);
     }
 
     .l-left {
@@ -145,29 +176,29 @@ nav li a {
     }
 
     .l-center {
-        background-color: #121212;
+        background-color: var(--color-surface);
     }
 }
 
 
 .l-grid {
-    padding: 20px;
+    padding: var(--space-md);
     height: 100%;
     overflow: auto;
 }
 
 .l-left {
-    background-color: #2c2c2c;
+    background-color: var(--color-surface-muted);
 }
 
 .l-center {
-    background-color: #2c2c2c;
-    padding: 20px;
+    background-color: var(--color-surface-muted);
+    padding: var(--space-md);
     scroll-behavior: smooth;
 }
 
 .l-right {
-    background-color: #2c2c2c;
+    background-color: var(--color-surface-muted);
     position: relative;
 }
 

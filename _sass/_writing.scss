@@ -2,9 +2,9 @@
     position: absolute; /* Position the TOC absolutely */
     top: 0;             /* Align it to the top */
     left: 0;            /* Align it to the left */
-    margin: 10px;
-    margin-top: 15px;          /* Remove any default margin */
-    padding: 10px;      /* Add some padding for aesthetics */
+    margin: var(--space-sm);
+    margin-top: var(--space-md);          /* Remove any default margin */
+    padding: var(--space-sm);      /* Add some padding for aesthetics */
     z-index: 1000;      /* Ensure it is on top of other elements */
     list-style: none;
     font-family: monospace;
@@ -14,7 +14,7 @@
     content: "目录";
     text-decoration: underline;
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: var(--space-sm);
 }
 
 @media (max-width: 1032px) {
@@ -28,15 +28,15 @@
 }
 
 .toc-container li {
-    margin-bottom: 7px;
+    margin-bottom: var(--space-xs);
 }
 
 .toc-container ul li:first-child {
-    margin-top: 7px;
+    margin-top: var(--space-xs);
 }
 
 .toc-container ul li {
-    margin-bottom: 5px;
+    margin-bottom: var(--space-xs);
 }
 
 a {
@@ -44,42 +44,42 @@ a {
 }
 
 .c-writing-post-meta-container {
-    margin: 20px;
+    margin: var(--space-md);
 }
 
 .o-writing-title {
     font-size: 2rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: var(--space-md);
 }
 
 .o-writing-post-title {
     font-size: 2rem;
-    margin-bottom: 0.625rem;
+    margin-bottom: var(--space-sm);
 }
 
 .c-writing-post-date {
     font-size: 1rem;
     color: var(--writing-text-secondary);
-    margin-bottom: 0.625rem;
+    margin-bottom: var(--space-sm);
     font-family: var(--dateFont);
     display: inline-block;
 }
 
 .c-writing-post-tag-container::before {
     content: "|";
-    margin-right: 5px;
-    margin-left: 5px;
+    margin-right: var(--space-xs);
+    margin-left: var(--space-xs);
 }
 
 .c-writing-post-tag-container {
     display: inline-block;
-    margin-top: 0.625rem;
-    margin-bottom: 10px;
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-sm);
     display: inline-block;
 }
 
 .o-writing-post-tag {
-    border-radius: 0.1875rem;
+    border-radius: var(--radius-sm);
     font-size: 1rem;
     line-height: 1.5rem;
     color: var(--writing-text-secondary);
@@ -91,13 +91,13 @@ a {
 .o-writing-post-text {
     font-size: 1rem;
     color: var(--writing-text-primary);
-    border-bottom: 0.0625rem solid #555555;
+    border-bottom: 0.0625rem solid var(--writing-border-color);
     font-weight: 400;
 
     p {
         line-height: 2.0;
         font-family: Georgia, 'Times New Roman', Times, serif;
-        margin-bottom: 2rem; /* Add margin to ensure content doesn't touch the border */
+        margin-bottom: var(--space-lg); /* Add margin to ensure content doesn't touch the border */
     }
 }
 
@@ -107,19 +107,19 @@ a {
     height: auto;
     max-height: 70vh;
     object-fit: contain;
-    border-radius: 5px;
-    margin-top: 10px;
+    border-radius: var(--radius-sm);
+    margin-top: var(--space-sm);
 }
 
 .image-caption {
     display: block;
     text-align: center;
-    margin-top: 10px;
+    margin-top: var(--space-sm);
     font-style: normal;
-    color: #666;
+    color: var(--writing-text-secondary);
 }
 
 /* Add a container class to handle the overall padding */
 .c-writing-post-container {
-    padding-bottom: 1.5rem; /* Add padding to ensure the border is visible */
+    padding-bottom: var(--space-lg); /* Add padding to ensure the border is visible */
 }

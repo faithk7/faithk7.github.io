@@ -1,19 +1,19 @@
 /* Styles specific to note.html */
 
 .c-note-container {
-    margin: 1.25rem;
+    margin: var(--space-md);
 }
 
 .o-note-title {
     font-size: 2rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: var(--space-md);
     font-family: var(--titleFont);
 }
 
 .c-note-item-container {
-    margin-bottom: 1.25rem;
-    border-bottom: 0.0625rem solid #555555;
-    padding-bottom: 0.625rem;
+    margin-bottom: var(--space-md);
+    border-bottom: 0.0625rem solid var(--color-border);
+    padding-bottom: var(--space-sm);
 }
 
 .c-note-item-container p {
@@ -24,7 +24,7 @@
 .o-note-date {
     font-size: 1rem;
     color: var(--note-text-secondary);
-    margin-bottom: 0.3125rem;
+    margin-bottom: var(--space-xs);
     font-family: var(--dateFont);
 }
 
@@ -36,7 +36,7 @@
 
 .o-note-footer {
     text-align: center;
-    margin-top: 1.25rem;
+    margin-top: var(--space-md);
     font-size: 0.875rem;
     color: var(--note-text-secondary);
     padding-bottom: var(--pageEndMargin);

@@ -55,7 +55,7 @@ h1.o-name {
 }
 
 .o-summary {
-    margin-top: 2rem;
+    margin-top: var(--space-lg);
     line-height: 1.9;
     font-size: 1.1rem;
     max-width: 23rem;
@@ -68,8 +68,8 @@ h1.o-name {
 }
 
 .o-status-quo {
-    margin-top: 0.625rem;
-    margin-bottom: 0.625rem;
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-sm);
     font-size: 0.8rem;
     font-family: monospace;
 }
@@ -77,18 +77,18 @@ h1.o-name {
 .o-info {
     display: flex;
     justify-content: left;
-    gap: 10px;
-    margin-top: 0.5rem;
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
 }
 
 .c-info-card-container {
-    margin-top: 2rem;
-    margin-bottom: 2.3rem;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-lg);
     font-family: var(--linkFont);
 }
 
 .o-social {
-    border-radius: 5px;
+    border-radius: var(--radius-sm);
     text-decoration: none;
     color: var(--linkColor);
     font-size: 0.9rem;
@@ -99,7 +99,7 @@ h1.o-name {
 
 .c-moment-container {
     display: flex;
-    margin-top: 30px;
+    margin-top: var(--space-lg);
     justify-content: left;
     gap: auto;
 }
@@ -120,7 +120,7 @@ h1.o-name {
 .o-quote,
 :root[data-theme="dark"] .o-quote {
     font-size: 1rem;
-    color: #ffffff;
+    color: var(--color-text-secondary);
     text-align: center;
     writing-mode: vertical-rl; /* vertical layout */
     text-orientation: upright;
@@ -128,7 +128,7 @@ h1.o-name {
 }
 
 :root[data-theme="light"] .o-quote {
-    color: #000000;
+    color: var(--color-text-secondary);
 }
 
 /* reload button styling and hover reveal */
@@ -140,7 +140,7 @@ h1.o-name {
     font: inherit;
     line-height: 1;
     padding: 0.2rem 0.35rem;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     opacity: 0;
     transition: opacity 0.15s ease-in-out;
     cursor: pointer;
@@ -164,7 +164,7 @@ h1.o-name {
     bottom: 0;
     left: 0;
     z-index: 1000;
-    padding: 10px;
+    padding: var(--space-sm);
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
@@ -206,22 +206,22 @@ h1.o-name {
     max-height: 100%;
     display: block;
     filter: invert(0);
-    color: #000000;
+    color: var(--color-text-secondary);
 }
 
 :root[data-theme="dark"] .c-index-art {
     filter: invert(1);
-    color: #ffffff;
+    color: var(--color-text-secondary);
 }
 
 :root[data-theme="light"] .c-index-art {
     filter: invert(0);
-    color: #000000;
+    color: var(--color-text-secondary);
 }
 
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) .c-index-art {
         filter: invert(1);
-        color: #ffffff;
+        color: var(--color-text-secondary);
     }
 }
