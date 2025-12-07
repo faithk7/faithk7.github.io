@@ -18,36 +18,47 @@
     <link rel="stylesheet" href="{{ '/stylesheets/main.css' | relative_url }}">
     <!-- Favicon after CSS -->
     <link id="favicon" rel="icon" href="/assets/site-logo.png" type="image/png">
+    
+    <!-- Page-specific resource hints -->
+    {% if page.prefetch_urls %}
+        {% for url in page.prefetch_urls %}
+        <link rel="prefetch" href="{{ url }}" as="document">
+        {% endfor %}
+    {% endif %}
+    {% if page.prefetch_resources %}
+        {% for resource in page.prefetch_resources %}
+        <link rel="prefetch" href="{{ resource }}">
+        {% endfor %}
+    {% endif %}
+    
+    <!-- Page-specific styles -->
+    {% if page.page_styles %}
+        <style>{{ page.page_styles }}</style>
+    {% endif %}
 
-    <!-- Structured Data -->
-    <!-- TODO: is this needed? -->
+    <!-- Structured Data for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Kai Qu",
-      "url": "https://k7m.xyz",
-      "image": "https://k7m.xyz/assets/site-logo.png",
-      "jobTitle": "Software Engineer",
+      "name": "{{ site.author.name }}",
+      "url": "{{ site.author.url }}",
+      "image": "{{ site.author.image }}",
+      "jobTitle": "{{ site.author.job_title }}",
       "worksFor": {
         "@type": "Organization",
-        "name": "Baidu"
+        "name": "{{ site.author.company }}"
       },
-      "sameAs": [
-        "https://github.com/faithk7",
-        "https://www.linkedin.com/in/kqu1106/",
-        "https://read.cv/lastk7",
-        "https://www.kaggle.com/faithk7u"
-      ],
-      "description": "Software engineer based in Beijing, China. Loves reading, running and watching anime.",
+      "sameAs": {{ site.social.links | jsonify }},
+      "description": "{{ site.author.description }}",
       "nationality": {
         "@type": "Country",
-        "name": "China"
+        "name": "{{ site.author.nationality }}"
       },
       "alumniOf": [
         {
           "@type": "CollegeOrUniversity",
-          "name": "University of Virginia"
+          "name": "{{ site.author.alumni }}"
         }
       ]
     }
