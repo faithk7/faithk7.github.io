@@ -6,23 +6,23 @@ permalink: /writing-index
 description: "Kai Qu's writing index page"
 ---
 
-<head>
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+{% capture head %}
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 
-    <!-- Resource hints for navigation -->
-    <link rel="prefetch" href="/" as="document">
-    <link rel="prefetch" href="/note" as="document">
-    <link rel="prefetch" href="/about" as="document">
-    <link rel="prefetch" href="/collect" as="document">
-    <!-- Prefetch posts -->
-    {% assign posts_collection = site.collections.posts.docs | default: site.posts %}
-    {% assign sorted_posts = posts_collection | where_exp: "post", "post.hidden != true" | sort: 'date' | reverse %}
-    {% for post in sorted_posts %}
-    <link rel="prefetch" href="{{ post.url }}" as="document">
-    {% endfor %}
-</head>
+<!-- Resource hints for navigation -->
+<link rel="prefetch" href="/" as="document">
+<link rel="prefetch" href="/note" as="document">
+<link rel="prefetch" href="/about" as="document">
+<link rel="prefetch" href="/collect" as="document">
+<!-- Prefetch posts -->
+{% assign posts_collection = site.collections.posts.docs | default: site.posts %}
+{% assign sorted_posts = posts_collection | where_exp: "post", "post.hidden != true" | sort: 'date' | reverse %}
+{% for post in sorted_posts %}
+<link rel="prefetch" href="{{ post.url }}" as="document">
+{% endfor %}
+{% endcapture %}
 
 <div class="c-writing-index-container">
     <h1 class="o-writing-index-title">Writing</h1>
