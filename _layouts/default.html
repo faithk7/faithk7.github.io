@@ -32,24 +32,29 @@
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "{{ site.author.name }}",
-      "url": "{{ site.author.url }}",
-      "image": "{{ site.author.image }}",
-      "jobTitle": "{{ site.author.job_title }}",
+      "name": "Kai Qu",
+      "url": "https://k7m.xyz",
+      "image": "https://k7m.xyz/assets/site-logo.png",
+      "jobTitle": "Software Engineer",
       "worksFor": {
         "@type": "Organization",
-        "name": "{{ site.author.company }}"
+        "name": "Baidu"
       },
-      "sameAs": {{ site.social.links | jsonify }},
-      "description": "{{ site.author.description }}",
+      "sameAs": [
+        "https://github.com/faithk7",
+        "https://www.linkedin.com/in/kqu1106/",
+        "https://read.cv/lastk7",
+        "https://www.kaggle.com/faithk7u"
+      ],
+      "description": "Software engineer based in Beijing, China. Loves reading, running and watching anime.",
       "nationality": {
         "@type": "Country",
-        "name": "{{ site.author.nationality }}"
+        "name": "China"
       },
       "alumniOf": [
         {
           "@type": "CollegeOrUniversity",
-          "name": "{{ site.author.alumni }}"
+          "name": "University of Virginia"
         }
       ]
     }

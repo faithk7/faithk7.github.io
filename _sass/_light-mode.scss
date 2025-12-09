@@ -1,0 +1,21 @@
+/* Light mode styles */
+/* Apply styles via :root cascade for instant, flicker-free theme switching */
+:root[data-theme="light"] body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+:root[data-theme="light"] .l-left,
+:root[data-theme="light"] .l-center,
+:root[data-theme="light"] .l-right,
+:root[data-theme="light"] .c-navbar {
+    background-color: #f0f0f0;
+}
+
+:root[data-theme="light"] .c-line {
+    background-color: #000000;
+}
+
+:root[data-theme="light"] .o-navbar-item a {
+    color: #000000;
+}

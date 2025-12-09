@@ -2,56 +2,63 @@
 layout: default
 title: About
 description: "Kai Qu's about page"
-prefetch_urls:
-  - "/"
-  - "/note"
-  - "/writing-index"
-  - "/collect"
-page_styles: |
-  .c-about-container::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url(/assets/kokoro_dark.webp);
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: contain;
-      background-attachment: fixed;
-      filter: invert(1) brightness(1.2) opacity(0.15);
-      z-index: 0;
-      will-change: transform;
-      pointer-events: none;
-  }
-  :root[data-theme="light"] .c-about-container::before {
-      background-image: url(/assets/kokoro.webp);
-      filter: brightness(0.7) opacity(0.5);
-  }
 ---
 
-<script>
-    // Conditionally preload background image based on theme to save bandwidth
-    (function() {
-        const savedTheme = localStorage.getItem('mode');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const isDarkMode = savedTheme ? savedTheme === 'dark' : prefersDark;
-        
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'image';
-        link.type = 'image/webp';
-        link.fetchPriority = 'high';
-        link.href = isDarkMode ? '/assets/kokoro_dark.webp' : '/assets/kokoro.webp';
-        document.head.appendChild(link);
-    })();
-</script>
+<head>
+    <!-- Resource hints for navigation -->
+    <link rel="prefetch" href="/" as="document">
+    <link rel="prefetch" href="/note" as="document">
+    <link rel="prefetch" href="/writing-index" as="document">
+    <link rel="prefetch" href="/collect" as="document">
+    <!-- Conditionally preload background image based on theme to save bandwidth -->
+    <script>
+        (function() {
+            // Check saved theme or system preference
+            const savedTheme = localStorage.getItem('mode');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDarkMode = savedTheme ? savedTheme === 'dark' : prefersDark;
+            
+            // Preload only the theme-appropriate image
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'image';
+            link.type = 'image/webp';
+            link.fetchPriority = 'high';
+            link.href = isDarkMode ? '/assets/kokoro_dark.webp' : '/assets/kokoro.webp';
+            document.head.appendChild(link);
+        })();
+    </script>
+    <style>
+        .c-about-container::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(/assets/kokoro_dark.webp);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            background-attachment: fixed;
+            filter: invert(1) brightness(1.2) opacity(0.15);
+            z-index: 0;
+            will-change: transform;
+            pointer-events: none;
+        }
+
+        :root[data-theme="light"] .c-about-container::before {
+            background-image: url(/assets/kokoro.webp);
+            filter: brightness(0.7) opacity(0.5);
+        }
+    </style>
+</head>
 <div class="c-about-container">
     <h1 class="o-about-title">About</h1>
     <div class="o-about-item">
         <h2 class="o-about-item-title">Info</h2>
-        <p class="o-about-content">Chinese Name: <span class="chinese-name">瞿锴</span> (QuKai) <span class="separator">|</span> English Name: Kai <br><br>I was born in <span
+        <p class="o-about-content">Chinese Name: <span style="font-family: Times, serif">瞿锴</span> (QuKai) <span
+                style="margin-left: 5px; margin-right: 5px">| </span> English Name: Kai <br><br>I was born in <span
                 class="highlight">Hangzhou</span>,
             a city in the southern part of China,
             but grew up in <span class="highlight">Beijing</span>. <br><br>Speak Chinese,
@@ -63,8 +70,7 @@ page_styles: |
         <p class="o-about-content">I like to <span class="highlight">jog</span> in my spare time. The
             euphoria after a long run and the freedom to control my pace and rhythm drew me to this activity.
             <br><br>Finished half marathon once at <a
-                href="https://results.sporthive.com/events/6519024352588254464/races/4" 
-                target="_blank" rel="noopener noreferrer"
+                href="https://results.sporthive.com/events/6519024352588254464/races/4" target="_blank"
 >Charlottesville Marathon</a> in 2019 and now run about 4 miles per day to keep the habit
             of
             running.
@@ -77,11 +83,11 @@ page_styles: |
         <h3 class="o-about-item-subtitle">Music</h3>
         <p class="o-about-content">Mostly listen to <span class="highlight">J-pop</span> and <span
                 class="highlight">K-pop</span>,
-            with a touch of Jazz. <a href="https://jpop.fandom.com/wiki/Aimer" target="_blank" rel="noopener noreferrer">Aimer</a>
+            with a touch of Jazz. <a href="https://jpop.fandom.com/wiki/Aimer" target="_blank">Aimer</a>
             is
             my favorite singer for her powerful and comforting voice. <br><br>Favorite song: <a
-                href="https://www.youtube.com/watch?v=K1kjy1XLx7I" target="_blank" rel="noopener noreferrer">Polaris</a>.
-            <br><br>Recently got into <a href="https://en.wikipedia.org/wiki/Aimyon" target="_blank" rel="noopener noreferrer"
+                href="https://www.youtube.com/watch?v=K1kjy1XLx7I" target="_blank">Polaris</a>.
+            <br><br>Recently got into <a href="https://en.wikipedia.org/wiki/Aimyon" target="_blank"
 >Aimyon</a> and Japanese city pop.
         </p><br>
     </div>
@@ -90,8 +96,8 @@ page_styles: |
         <p class="o-about-content">Enjoy reading all kinds of books. Through reading I realize that the human minds are
             limitless,
             while we are bounded by our courage and actions. Like said in the end of <a
-                href="https://en.wikipedia.org/wiki/From_the_New_World_(novel)" target="_blank" rel="noopener noreferrer">From the
-                New World</a> by <a href="https://en.wikipedia.org/wiki/Yusuke_Kishi" target="_blank" rel="noopener noreferrer"
+                href="https://en.wikipedia.org/wiki/From_the_New_World_(novel)" target="_blank">From the
+                New World</a> by <a href="https://en.wikipedia.org/wiki/Yusuke_Kishi" target="_blank"
 >Yusuke Kishi</a>,
             <i>“<span class="highlight">Imagination</span> changes everything.”</i> And extensive reading
             opens up the world of imagination.

@@ -74,16 +74,17 @@
     border-radius: var(--radius-sm);
     font-size: 1rem;
     line-height: 1.5em;
-    font-family: var(--tagFont);
+    font-family: serif, Times;
     text-decoration: none;
     background-image: linear-gradient(to top, var(--writing-tag-text) 1px, transparent 1px);
     background-size: 0px;
     background-repeat: no-repeat;
     background-position: 0% 100%;
     transition: color 0.3s;
-    border: 0;
+    font-family: var(--tagFont);
+    border: 0px;
     color: var(--writing-tag-text);
-    margin-left: 0;
+    margin-left: 0px;
     margin-right: var(--space-sm);
     margin-bottom: var(--space-xs);
     cursor: pointer;
@@ -106,7 +107,7 @@ span.o-tag:hover {
 }
 
 .o-post-tag {
-    background-size: 0;
+    background-size: 0px;
     color: var(--writing-text-secondary);
     font-family: var(--tagFont);
     font-size: 0.9rem;
