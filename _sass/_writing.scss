@@ -75,7 +75,6 @@ a {
     display: inline-block;
     margin-top: var(--space-sm);
     margin-bottom: var(--space-sm);
-    display: inline-block;
 }
 
 .o-writing-post-tag {
@@ -86,6 +85,11 @@ a {
     font-family: var(--tagFont);
     text-decoration: none;
     transition: color 0.5s;
+}
+
+.o-writing-post-tag-separator {
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
 .o-writing-post-text {

@@ -40,12 +40,23 @@ feed:
 title: "Kai Qu"
 description: "Kai Qu's home page on the World Wide Web"
 url: "https://k7m.xyz"
+lang: "en"
+logo: "/assets/site-logo.png"
+
+# Author information for JSON-LD structured data
 author:
   name: "Kai Qu"
   email: "kqy7yu@gmail.com"
   twitter: "@faithk7"
-lang: "en"
-logo: "/assets/site-logo.png"
+  url: "https://k7m.xyz"
+  image: "https://k7m.xyz/assets/site-logo.png"
+  job_title: "Software Engineer"
+  company: "Baidu"
+  description: "Software engineer based in Beijing, China. Loves reading, running and watching anime."
+  nationality: "China"
+  alumni: "University of Virginia"
+
+# Social media links
 social:
   name: "Kai Qu"
   links:
