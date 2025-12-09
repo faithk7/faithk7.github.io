@@ -167,52 +167,45 @@ document.addEventListener("DOMContentLoaded", function () {
         audioPlayer.src = musicUrl;
         playerContainer.style.display = 'flex';
 
-        const mediaTags = window.jsmediatags;
+        fetch(musicUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.blob();
+            })
+            .then(blob => {
+                jsmediatags.read(blob, {
+                    onSuccess: function (tag) {
+                        const tags = tag.tags;
 
-        if (mediaTags) {
-            fetch(musicUrl)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.blob();
-                })
-                .then(blob => {
-                    mediaTags.read(blob, {
-                        onSuccess: function (tag) {
-                            const tags = tag.tags;
+                        if (tags.picture) {
+                            const picture = tags.picture;
+                            const base64String = picture.data.reduce((acc, byte) => acc + String.fromCharCode(byte), '');
+                            const base64Data = btoa(base64String);
+                            const imageUrl = `data:${picture.format};base64,${base64Data}`;
 
-                            if (tags.picture) {
-                                const picture = tags.picture;
-                                const base64String = picture.data.reduce((acc, byte) => acc + String.fromCharCode(byte), '');
-                                const base64Data = btoa(base64String);
-                                const imageUrl = `data:${picture.format};base64,${base64Data}`;
+                            coverImage.src = imageUrl;
+                            coverImage.style.display = 'block';
 
-                                coverImage.src = imageUrl;
-                                coverImage.style.display = 'block';
-
-                                coverImage.onload = function () {
-                                    extractDominantColor(coverImage);
-                                };
-                            } else {
-                                coverImage.style.display = 'none';
-                            }
-                        },
-                        onError: function (error) {
-                            console.warn('[collect] Error reading audio metadata:', error);
-                            // Continue without cover image
+                            coverImage.onload = function () {
+                                extractDominantColor(coverImage);
+                            };
+                        } else {
                             coverImage.style.display = 'none';
                         }
-                    });
-                })
-                .catch(error => {
-                    console.error('[collect] Failed to fetch audio file:', error);
-                    // Audio player can still work without metadata
+                    },
+                    onError: function (error) {
+                        console.warn('[collect] Error reading audio metadata:', error);
+                        // Continue without cover image
+                        coverImage.style.display = 'none';
+                    }
                 });
-        } else {
-            coverImage.style.display = 'none';
-            console.warn('[collect] jsmediatags unavailable, skipping cover art extraction');
-        }
+            })
+            .catch(error => {
+                console.error('[collect] Failed to fetch audio file:', error);
+                // Audio player can still work without metadata
+            });
 
         /**
          * Extract dominant color using sampling for better performance

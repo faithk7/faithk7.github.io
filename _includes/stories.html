@@ -1,3 +1,7 @@
+<head>
+    <meta charset="UTF-8">
+</head>
+
 {% assign categories = "boston,travel,self," | split: "," %}
 {% assign stories = site.data.stories | sort: "uploaded" | reverse %}
 {% assign new_categories_arr = "" | split: "" | compact %}

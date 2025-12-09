@@ -103,7 +103,7 @@
     color: var(--collect-text-primary);
     margin-bottom: var(--space-md);
     padding-left: var(--space-lg);
-    background-image: url(var(--collect-icon-url));
+    background-image: var(--collect-icon-url);
     background-repeat: no-repeat;
     background-position: left center;
     background-size: var(--space-md) var(--space-md);
