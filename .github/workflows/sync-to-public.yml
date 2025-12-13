@@ -1,0 +1,37 @@
+name: Sync to public mirror
+
+on:
+  schedule:
+    # Daily at 00:00 UTC (08:00 Beijing)
+    - cron: "0 0 * * *"
+  workflow_dispatch: {}
+
+# Minimal permissions for reading the source repo; pushing to target uses PAT via secret.
+permissions:
+  contents: read
+
+concurrency:
+  group: sync-to-public-mirror
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout source (private) repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Sync snapshot to public mirror
+        env:
+          # Create this in: Settings -> Secrets and variables -> Actions -> New repository secret
+          SYNC_TOKEN: ${{ secrets.SYNC_TOKEN }}
+          TARGET_REPO: faithk7/faithk7.github.io-mirror
+          # Change to master if your public repo default branch is master
+          TARGET_BRANCH: main
+          COMMIT_MSG: sync
+        run: bash scripts/sync_to_public_repo.sh
+
+
