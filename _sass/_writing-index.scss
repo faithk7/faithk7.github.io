@@ -83,6 +83,8 @@
     transition: color 0.3s;
     font-family: var(--tagFont);
     border: 0px;
+    background: transparent;
+    padding: 0;
     color: var(--writing-tag-text);
     margin-left: 0px;
     margin-right: var(--space-sm);
@@ -90,7 +92,7 @@
     cursor: pointer;
 }
 
-span.o-tag:hover {
+.o-tag:hover {
     animation: a-underline-text-left-right 0.5s forwards;
 }
 
@@ -112,6 +114,9 @@ span.o-tag:hover {
     font-family: var(--tagFont);
     font-size: 0.9rem;
     cursor: pointer;
+    border: 0;
+    background: transparent;
+    padding: 0;
 }
 
 .o-post-tag::after {

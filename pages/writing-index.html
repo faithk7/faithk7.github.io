@@ -4,25 +4,8 @@ title: Writing
 paginate: true
 permalink: /writing-index
 description: "Kai Qu's writing index page"
+head_include: head.html
 ---
-
-<head>
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-
-    <!-- Resource hints for navigation -->
-    <link rel="prefetch" href="/" as="document">
-    <link rel="prefetch" href="/note" as="document">
-    <link rel="prefetch" href="/about" as="document">
-    <link rel="prefetch" href="/collect" as="document">
-    <!-- Prefetch posts -->
-    {% assign posts_collection = site.collections.posts.docs | default: site.posts %}
-    {% assign sorted_posts = posts_collection | where_exp: "post", "post.hidden != true" | sort: 'date' | reverse %}
-    {% for post in sorted_posts %}
-    <link rel="prefetch" href="{{ post.url }}" as="document">
-    {% endfor %}
-</head>
 
 <div class="c-writing-index-container">
     <h1 class="o-writing-index-title">Writing</h1>
@@ -31,7 +14,7 @@ description: "Kai Qu's writing index page"
     {%- comment -%} Post count: {{ sorted_posts.size }} {%- endcomment -%}
 
     <div id="tag-container" class="c-tag-container-meta">
-        <span class="o-tag selected-tag" id="all-tag" onclick="filterPosts('')">all</span><span
+        <button type="button" class="o-tag selected-tag" id="all-tag" data-tag="">all</button><span
             style="margin-left: 3px; margin-right: 7px">|</span>
         {% assign tags = "" %}
         {% for post in sorted_posts %}
@@ -42,7 +25,7 @@ description: "Kai Qu's writing index page"
         {% assign unique_tags = tags | split: "," | uniq | sort %}
         {% for tag in unique_tags reversed %}
         {% if tag != "" %}
-        <span class="o-tag" onclick="filterPosts('{{ tag }}')">{{ tag }}</span>
+        <button type="button" class="o-tag" data-tag="{{ tag }}">{{ tag }}</button>
         {% endif %}
         {% endfor %}
     </div>
@@ -55,7 +38,7 @@ description: "Kai Qu's writing index page"
             <div class="o-writing-note-date">{{ post.date | date: "%B %d, %Y" }}</div>
             <div class="c-hashtag-container-post">
                 {% for tag in post.tags %}
-                <span class="o-post-tag" onclick="filterPosts('{{ tag }}')">{{ tag }}</span>
+                <button type="button" class="o-post-tag" data-tag="{{ tag }}">{{ tag }}</button>
                 {% endfor %}
             </div>
         </div>
@@ -64,7 +47,15 @@ description: "Kai Qu's writing index page"
 </div>
 
 <!-- JavaScript moved to bottom -->
-<script defer>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('click', function (e) {
+            var btn = e.target && e.target.closest && e.target.closest('button[data-tag]');
+            if (!btn) return;
+            filterPosts(btn.getAttribute('data-tag') || '');
+        });
+    });
+
     function filterPosts(tag) {
         var posts = document.querySelectorAll('.c-writing-item-container');
 
@@ -83,9 +74,9 @@ description: "Kai Qu's writing index page"
     }
 
     function updateTagUnderline(selectedTag) {
-        var tags = document.querySelectorAll('.o-tag');
+        var tags = document.querySelectorAll('.o-tag[data-tag]');
         tags.forEach(function (tagElement) {
-            if (tagElement.textContent === selectedTag || (selectedTag === '' && tagElement.textContent === 'all')) {
+            if ((tagElement.getAttribute('data-tag') || '') === selectedTag) {
                 tagElement.classList.add('selected-tag');
             } else {
                 tagElement.classList.remove('selected-tag');
@@ -93,3 +84,5 @@ description: "Kai Qu's writing index page"
         });
     }
 </script>
+
+

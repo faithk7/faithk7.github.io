@@ -33,6 +33,30 @@
     padding-bottom: var(--space-lg);
 }
 
+/* About page background art (moved from former head-about.html inline <style>) */
+.c-about-container::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/assets/kokoro_dark.webp);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-attachment: fixed;
+    filter: invert(1) brightness(1.2) opacity(0.15);
+    z-index: 0;
+    will-change: transform;
+    pointer-events: none;
+}
+
+:root[data-theme="light"] .c-about-container::before {
+    background-image: url(/assets/kokoro.webp);
+    filter: brightness(0.7) opacity(0.5);
+}
+
 
 .c-about-container::after {
     content: "革命前夜";

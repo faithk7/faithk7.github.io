@@ -2,10 +2,6 @@
 layout: default
 ---
 
-<head>
-    <!-- Page-specific configurations -->
-</head>
-
 {% include toc.html html=content class="toc-container" %}
 
 <div class="c-writing-post-meta-container">
@@ -28,9 +24,16 @@ layout: default
 <script defer>
     // Initialize when DOM is ready
     document.addEventListener("DOMContentLoaded", function () {
-        // Open all links in .o-writing-post-text in a new tab
-        document.querySelectorAll('.o-writing-post-text a').forEach(function (link) {
-            link.setAttribute('target', '_blank');
+        // Open external links in .o-writing-post-text in a new tab (and set rel for security)
+        document.querySelectorAll('.o-writing-post-text a[href]').forEach(function (link) {
+            try {
+                var url = new URL(link.getAttribute('href'), location.href);
+                if (url.origin === location.origin) return;
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+            } catch (_) {
+                // ignore malformed href
+            }
         });
 
         // Smooth scroll with offset for TOC links; use delegation for reliability

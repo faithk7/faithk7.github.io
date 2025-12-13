@@ -9,6 +9,15 @@ function applyMode(mode) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    // --- External link safety ---
+    // Ensure rel is set for any target=_blank links to prevent reverse tabnabbing
+    document.querySelectorAll('a[target="_blank"]').forEach((a) => {
+        const rel = (a.getAttribute('rel') || '').toLowerCase();
+        if (!rel.includes('noopener') || !rel.includes('noreferrer')) {
+            a.setAttribute('rel', 'noopener noreferrer');
+        }
+    });
+
     // --- Theme Toggle Logic ---
     // Note: The initial mode application is handled by a blocking inline script in <head> to prevent FOUC.
     // This block handles the interactions.
@@ -47,11 +56,17 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         navToggle.addEventListener('click', function () {
-            navbar.classList.toggle('show');
+            const isOpen = navbar.classList.toggle('show');
+            if (navToggle.setAttribute) {
+                navToggle.setAttribute('aria-expanded', String(isOpen));
+            }
         });
 
         navbar.addEventListener('click', function () {
             navbar.classList.remove('show');
+            if (navToggle.setAttribute) {
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
         });
     }
 

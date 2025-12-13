@@ -2,9 +2,10 @@
 <html lang="{% if page.path contains 'zh-TW' %}zh-TW{% elsif page.path contains 'de-DE' %}de-DE{% else %}en{% endif %}">
 
 <head>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="text/html; charset=utf-8" http-equiv="content-type">
-    <meta name="description" content="{{ page.description | default: site.description }}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% assign story_description = page.description | default: page.content | strip_html | strip_newlines | truncate: 120 %}
+    <meta name="description" content="{{ story_description }}">
     <!-- Resource hints for performance -->
     <link rel="dns-prefetch" href="https://unpkg.com">
     <link rel="dns-prefetch" href="https://open-heart.lastk7.workers.dev">
@@ -16,9 +17,12 @@
     <link rel="icon" href="/assets/fav.svg" type="image/svg+xml" sizes="24x24">
     <link href="/stylesheets/main.css" rel="stylesheet" type="text/css">
     <meta content="{{ site.url }}{{ page.url }}" property="og:url">
-    <meta content="{{ page.content | strip_html | strip_newlines | truncate: 120 }}" name="description">
+    <meta content="{{ story_description }}" property="og:description">
+    <meta content="{{ story_description }}" name="twitter:description">
+    {% if page.image %}
     <meta content="{{ page.image }}" property="og:image">
     <meta content="{{ page.image }}" property="twitter:image">
+    {% endif %}
     <meta content="{{ page.title }} - {{ site.title }}" property="og:title">
     <meta content="{{ page.title }} - {{ site.title }}" name="twitter:title">
     <!-- Google Fonts -->
@@ -43,7 +47,9 @@
         </div>
     </header>
     <main>
+        {% if page.image %}
         <img src="{{ page.image }}" alt="{{ page.alt }}" class="story-image">
+        {% endif %}
     </main>
 
     <script defer type="module" src="https://unpkg.com/open-heart-element@latest" crossorigin="anonymous"></script>

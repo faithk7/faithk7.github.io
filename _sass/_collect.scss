@@ -6,10 +6,16 @@
     grid-template-rows: auto 1fr;
     gap: var(--space-md);
     width: 100%;
-    min-height: 100%; /* Full viewport height */
-    min-height: stretch; /* Opera */
+    height: 100%;
+    min-height: 100%;
     box-sizing: border-box;
-    overflow-y: auto; /* Allow vertical scrolling within the container */
+    overflow: hidden; /* prevent inner layout from creating extra scroll space */
+}
+
+/* Collect page: disable the default .l-center scroll container;
+   let the collect tile container decide whether scrolling is needed. */
+body[data-page*="collect"] .l-center {
+    overflow: hidden;
 }
 
 .o-collection-title {
@@ -47,6 +53,11 @@
     margin-right: var(--space-sm);
     margin-bottom: 3px;
     cursor: pointer;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    color: inherit;
+    font-family: inherit;
 }
 
 .o-collection-nav-icon.selected {
@@ -60,35 +71,31 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    overflow-y: scroll;
+    height: 100%;
+    overflow-y: auto;
     padding: var(--space-sm);
     background-color: inherit;
-    height: auto;
-    min-height: fit-content;
-    align-self: center;
-    margin-top: auto;
-    margin-bottom: auto;
+    min-height: 0;
+    align-self: stretch;
+    margin-top: 0;
+    margin-bottom: 0;
     margin-left: 20%;
     position: relative;
 }
 
 .c-collection-section {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: flex-start;
-    opacity: 0;
-    transform: translateY(12px);
-    transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
-    pointer-events: none;
-    position: absolute;
-    visibility: hidden;
+    opacity: 1;
+    transform: none;
+    transition: none;
+    pointer-events: auto;
+    position: static;
+    visibility: visible;
 
     &.active {
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-        position: relative;
-        visibility: visible;
+        display: flex;
     }
 }
 
@@ -101,16 +108,13 @@
 .o-collection-item {
     font-size: 1.125rem;
     color: var(--collect-text-primary);
-    margin-bottom: var(--space-md);
-    padding-left: var(--space-lg);
-    background-image: var(--collect-icon-url);
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: var(--space-md) var(--space-md);
+    margin-bottom: var(--space-sm);
+    /* Removed collect icon bullets (collect-icon-black/white.svg) */
+    padding-left: 0;
 }
 
 .o-collection-item:nth-last-of-type(1) {
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
 }
 
 /* Video popup and overlay styles */

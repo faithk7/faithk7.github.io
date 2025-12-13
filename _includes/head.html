@@ -1,0 +1,60 @@
+{%- comment -%}
+Unified per-page <head> include used by `_layouts/default.html` via `page.head_include`.
+
+Motivation:
+- Reduce the number of `_includes/head-*.html` files.
+- Keep existing behavior (prefetch/preload) with a single, maintainable entrypoint.
+{%- endcomment -%}
+
+{%- assign url = page.url | default: '' -%}
+
+<!-- Resource hints for navigation -->
+<link rel="prefetch" href="{{ '/' | relative_url }}" as="document">
+<link rel="prefetch" href="{{ '/note' | relative_url }}" as="document">
+<link rel="prefetch" href="{{ '/writing-index' | relative_url }}" as="document">
+<link rel="prefetch" href="{{ '/collect' | relative_url }}" as="document">
+<link rel="prefetch" href="{{ '/about' | relative_url }}" as="document">
+
+{%- if url == '/' or url == '/index.html' -%}
+<!-- Home page: prefetch the status-quo text -->
+<link rel="prefetch" href="https://k7m.xyz/status-quo/index.txt">
+{%- endif -%}
+
+{%- if url == '/writing-index' or url == '/writing-index/' or url == '/writing-index.html' -%}
+<!-- Writing index: avoid stale caching and prefetch a limited number of posts -->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+{%- comment -%} Prefetch a limited number of posts to avoid network overload {%- endcomment -%}
+{%- assign posts_collection = site.collections.posts.docs | default: site.posts -%}
+{%- assign sorted_posts = posts_collection | where_exp: "post", "post.hidden != true" | sort: 'date' | reverse -%}
+{%- for post in sorted_posts limit: 15 -%}
+<link rel="prefetch" href="{{ post.url }}" as="document">
+{%- endfor -%}
+{%- endif -%}
+
+{%- if url == '/about' or url == '/about/' or url == '/about.html' -%}
+<!-- About page: preload the theme-appropriate background image.
+     Note: site default is "dark" unless `data-theme="light"` is set via localStorage. -->
+<script>
+  (function () {
+    try {
+      var savedTheme = localStorage.getItem('mode'); // 'dark' | 'light' | null
+      var isDarkMode = savedTheme ? savedTheme === 'dark' : true;
+
+      var link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.type = 'image/webp';
+      link.fetchPriority = 'high';
+      link.href = isDarkMode ? '/assets/kokoro_dark.webp' : '/assets/kokoro.webp';
+      document.head.appendChild(link);
+    } catch (_) {
+      // If anything goes wrong, skip preloading.
+    }
+  })();
+</script>
+{%- endif -%}
+
+

@@ -93,17 +93,13 @@ document.addEventListener("DOMContentLoaded", function () {
         navItems.forEach(navItem => {
             const sectionName = navItem.dataset.section || navItem.dataset.fileName;
 
-            // Ensure accessibility attributes are present
-            navItem.setAttribute('role', 'button');
-            navItem.setAttribute('tabindex', '0');
-
             const selectNavItem = () => {
                 document.querySelectorAll('.o-collection-nav-icon').forEach(item => {
                     item.classList.remove('selected');
-                    item.setAttribute('aria-selected', 'false');
+                    item.setAttribute('aria-pressed', 'false');
                 });
                 navItem.classList.add('selected');
-                navItem.setAttribute('aria-selected', 'true');
+                navItem.setAttribute('aria-pressed', 'true');
                 if (sectionName) {
                     setActiveSection(sectionName);
                 }
@@ -128,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         if (defaultNav) {
             const defaultSection = defaultNav.dataset.section || defaultNav.dataset.fileName;
-            defaultNav.setAttribute('aria-selected', 'true');
+            defaultNav.setAttribute('aria-pressed', 'true');
             if (defaultSection) {
                 setActiveSection(defaultSection);
             }

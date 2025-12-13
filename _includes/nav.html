@@ -1,4 +1,4 @@
-<nav class="c-navbar">
+<nav class="c-navbar" id="site-nav">
     <div class="c-navbar-container">
         <ul class="c-navbar-items">
             <li class="o-navbar-item{% if page.url == '/' or page.url == '/index.html' %} is-active{% endif %}"><a href="{{ '/' | relative_url }}">Home</a>
@@ -20,6 +20,6 @@
         </ul>
     </div>
 </nav>
-<div class="c-navbar-icon" id="nav-toggle">
+<button type="button" class="c-navbar-icon" id="nav-toggle" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false">
     {% include svg_html/menu.html %}
-</div>
+</button>

@@ -1,0 +1,55 @@
+---
+layout: default
+title: Collect
+permalink: /collect
+description: "Kai Qu's collect page"
+head_include: head.html
+---
+
+<div class="c-collection-container">
+    <h1 class="o-collection-title">Collect</h1>
+    <div class="c-collection-nav-container">
+        {% for collection in site.data.collect %}
+            {% assign name = collection[0] %}
+            {% assign items = collection[1] %}
+            {% if items.size > 0 %}
+                {% if name == "mv" %}
+                    <button type="button" class="o-collection-nav-icon selected" data-section="{{ name }}" aria-label="View {{ name }} collection" aria-pressed="true">
+                        {{ name }}
+                    </button>
+                {% else %}
+                    <button type="button" class="o-collection-nav-icon" data-section="{{ name }}" aria-label="View {{ name }} collection" aria-pressed="false">
+                        {{ name }}
+                    </button>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="c-collection-tile-container">
+        {% for collection in site.data.collect %}
+            {% assign name = collection[0] %}
+            {% assign items = collection[1] %}
+            {% if items.size > 0 %}
+                {% assign default_type = "video" %}
+                {% if name == "mv" %}
+                    <div class="c-collection-section active" data-section="{{ name }}">
+                {% else %}
+                    <div class="c-collection-section" data-section="{{ name }}">
+                {% endif %}
+                    {% for item in items %}
+                        <a class="o-collection-item" href="{{ item.url }}" data-section="{{ name }}" data-type="{{ item.type | default: default_type }}" target="_blank" rel="noopener noreferrer">
+                            {{ item.title }}
+                        </a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Page-specific data for scripts -->
+<script id="collection-data" type="application/json">{{ site.data.collect | jsonify }}</script>
+<!-- Collect page interactions -->
+<script src="{{ '/assets/js/collect.js' | relative_url }}" defer></script>
+
+

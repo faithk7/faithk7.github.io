@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% seo %}
+    {% if page.head_include %}
+    {% include {{ page.head_include }} %}
+    {% endif %}
     <!-- Prevent FOUC: Apply saved theme before render -->
     <script>
         (function () {
@@ -87,7 +90,7 @@
     {% endif %}
 </head>
 
-<body>
+<body data-page="{{ page.url }}" data-layout="{{ page.layout }}">
     <div class="l-container">
         <div class="l-grid l-left">
             <!-- Left empty space (3 parts) -->
