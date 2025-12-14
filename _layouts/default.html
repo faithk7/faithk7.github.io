@@ -8,7 +8,6 @@
     {% if page.head_include %}
     {% include {{ page.head_include }} %}
     {% endif %}
-    <!-- Prevent FOUC: Apply saved theme before render -->
     <script>
         (function () {
             const savedMode = localStorage.getItem('mode');
@@ -17,13 +16,9 @@
             }
         })();
     </script>
-    <!-- CSS -->
     <link rel="stylesheet" href="{{ '/stylesheets/main.css' | relative_url }}">
-    <!-- Favicon after CSS -->
     <link id="favicon" rel="icon" href="/assets/site-logo.png" type="image/png">
 
-    <!-- Structured Data -->
-    <!-- TODO: is this needed? -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -93,23 +88,17 @@
 <body data-page="{{ page.url }}" data-layout="{{ page.layout }}">
     <div class="l-container">
         <div class="l-grid l-left">
-            <!-- Left empty space (3 parts) -->
         </div>
         <div class="l-grid l-center">
-            <!-- Main content (6 parts) -->
             {{ content }}
         </div>
         <div class="l-grid l-right">
-            <!-- Navbar (3 parts) -->
             {% include nav.html %}
         </div>
     </div>
 
-    <!-- Main Application Script -->
     <script src="/assets/js/main.js" defer></script>
 
-    <!-- Instant page loading: preloads pages on hover/touchstart -->
-    <!-- Use explicit HTTPS instead of protocol-relative URL for security -->
     <script src="https://instant.page/5.2.0" type="module"
         integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z" crossorigin="anonymous"></script>
 </body>
