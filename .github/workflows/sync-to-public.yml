@@ -29,8 +29,8 @@ jobs:
           # Create this in: Settings -> Secrets and variables -> Actions -> New repository secret
           SYNC_TOKEN: ${{ secrets.SYNC_TOKEN }}
           TARGET_REPO: faithk7/faithk7.github.io-mirror
-          # Change to master if your public repo default branch is master
-          TARGET_BRANCH: main
+          # Use "auto" to detect the target repo default branch (HEAD). Falls back to "main" if repo is empty.
+          TARGET_BRANCH: auto
           COMMIT_MSG: sync
         run: bash scripts/sync_to_public_repo.sh
 
