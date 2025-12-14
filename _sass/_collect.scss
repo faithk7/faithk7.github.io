@@ -107,10 +107,28 @@ body[data-page*="collect"] .l-center {
 
 .o-collection-item {
     font-size: 1.125rem;
-    color: var(--collect-text-primary);
     margin-bottom: var(--space-sm);
     /* Removed collect icon bullets (collect-icon-black/white.svg) */
     padding-left: 0;
+}
+
+body[data-page*="collect"] a.o-collection-item {
+    color: inherit;
+}
+
+@keyframes collect-section-enter {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body[data-page*="collect"] .c-collection-section.active {
+    animation: collect-section-enter 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .o-collection-item:nth-last-of-type(1) {

@@ -42,19 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    const theme = localStorage.getItem('mode');
-
-    // Initialize pre-rendered items: theme, fade-in animation, and click/keyboard behavior
-    items.forEach(itemElement => {
-        if (theme) {
-            itemElement.setAttribute('data-theme', theme); // reuse existing theme logic
-        }
-        itemElement.style.color = 'inherit';
-        itemElement.style.opacity = '0';
-        itemElement.style.transition = `opacity ${CONFIG.FADE_IN_DURATION}`;
-        setTimeout(() => {
-            itemElement.style.opacity = '1';
-        }, CONFIG.ANIMATION_DELAY_MS);
+    // Initialize pre-rendered items: click/keyboard behavior
+    items.forEach((itemElement) => {
 
         const activateItem = (e) => {
             e.preventDefault();
@@ -196,6 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         // Continue without cover image
                         coverImage.style.display = 'none';
                     }
+
                 });
             })
             .catch(error => {
