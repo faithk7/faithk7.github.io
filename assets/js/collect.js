@@ -69,6 +69,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const setActiveSection = (sectionName) => {
         if (!sections || sections.length === 0) return;
+        if (collectionTiles) {
+            collectionTiles.classList.toggle('is-stage-active', sectionName === 'stage');
+        }
         sections.forEach(section => {
             if (section.dataset.section === sectionName) {
                 section.classList.add('active');
