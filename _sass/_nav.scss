@@ -1,8 +1,9 @@
 .c-navbar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100%;
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-xs);
+    max-height: calc(100% - (2 * var(--space-md)));
+    overflow-y: auto;
     width: 12.5rem;
     z-index: 100;
 }
