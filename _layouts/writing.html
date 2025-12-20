@@ -40,6 +40,36 @@ layout: default
         var isScrolling = false;
         var scrollOffset = 5; // Fixed 5px offset from viewport top
 
+        function supportsSmoothScroll() {
+            return 'scrollBehavior' in document.documentElement.style;
+        }
+
+        function getScrollTarget() {
+            var container = document.querySelector('.l-center');
+            if (container && container.scrollHeight > container.clientHeight) {
+                return container;
+            }
+            return window;
+        }
+
+        function setScrollTop(target, top) {
+            if (target === window) {
+                if (supportsSmoothScroll()) {
+                    window.scrollTo({ top: top, behavior: 'smooth' });
+                } else {
+                    document.documentElement.scrollTop = top;
+                    document.body.scrollTop = top;
+                }
+                return;
+            }
+
+            if (supportsSmoothScroll() && target.scrollTo) {
+                target.scrollTo({ top: top, behavior: 'smooth' });
+            } else {
+                target.scrollTop = top;
+            }
+        }
+
         function scrollToHash(hash) {
             if (isScrolling) return; // Prevent multiple simultaneous scrolls
 
@@ -47,25 +77,19 @@ layout: default
             if (!id) return;
             var target = document.getElementById(decodeURIComponent(id));
             if (!target) return;
-
-            var scrollContainer = document.querySelector('.l-center');
-            if (!scrollContainer) return;
+            var scrollTarget = getScrollTarget();
 
             isScrolling = true;
 
-            // Calculate target position relative to scroll container
-            // Get absolute positions relative to viewport
-            var targetRect = target.getBoundingClientRect();
-            var containerRect = scrollContainer.getBoundingClientRect();
-            
-            // Calculate position: current scroll + target position relative to container top - offset
-            var targetPosition = scrollContainer.scrollTop + (targetRect.top - containerRect.top) - scrollOffset;
-            
-            // Use scrollTo for smooth scrolling (better cross-browser support)
-            scrollContainer.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
+            if (scrollTarget === window) {
+                var targetTop = target.getBoundingClientRect().top + window.pageYOffset - scrollOffset;
+                setScrollTop(scrollTarget, targetTop);
+            } else {
+                var targetRect = target.getBoundingClientRect();
+                var containerRect = scrollTarget.getBoundingClientRect();
+                var targetPosition = scrollTarget.scrollTop + (targetRect.top - containerRect.top) - scrollOffset;
+                setScrollTop(scrollTarget, targetPosition);
+            }
 
             // Reset the scrolling flag after animation completes
             setTimeout(function () {

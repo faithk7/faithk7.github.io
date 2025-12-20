@@ -101,6 +101,13 @@ a {
     }
 }
 
+.o-writing-post-text h1,
+.o-writing-post-text h2,
+.o-writing-post-text h3,
+.o-writing-post-text h4 {
+    scroll-margin-top: 0.5rem;
+}
+
 /* for writing image container */
 .center-image {
     width: 100%;
