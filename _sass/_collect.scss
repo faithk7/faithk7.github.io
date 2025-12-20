@@ -15,8 +15,10 @@
 
 /* Collect page: disable the default .l-center scroll container;
    let the collect tile container decide whether scrolling is needed. */
-body[data-page*="collect"] .l-center {
-    overflow: hidden;
+@media (min-width: 768px) {
+    body[data-page*="collect"] .l-center {
+        overflow: hidden;
+    }
 }
 
 .o-collection-title {
@@ -87,6 +89,42 @@ body[data-page*="collect"] .l-center {
     margin-bottom: 0;
     margin-left: 20%;
     position: relative;
+}
+
+@media (max-width: 767px) {
+    .c-collection-container {
+        display: block;
+        height: auto;
+        min-height: 0;
+        overflow: visible;
+    }
+
+    .o-collection-title {
+        position: static;
+        margin-bottom: var(--space-sm);
+    }
+
+    .c-collection-nav-container {
+        position: static;
+        transform: none;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: var(--space-sm);
+        width: 100%;
+        max-width: none;
+        border-right: 0;
+        padding-right: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .c-collection-tile-container {
+        margin-left: 0;
+        height: auto;
+        overflow: visible;
+        padding-top: var(--space-md);
+    }
 }
 
 .c-collection-tile-container.is-stage-active {

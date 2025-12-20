@@ -1,9 +1,10 @@
 .col-stories {
     padding: 0;
     margin: 0;
-    overflow: hidden;
+    overflow-y: auto;
     background: black;
     font-size: 2.2vh;
+    min-height: 100vh;
 
     header,
     main,
@@ -43,7 +44,7 @@
 
     main {
         display: flex;
-        height: 100vh;
+        min-height: 100vh;
         align-items: center;
         text-align: center;
         justify-content: space-around;
@@ -53,5 +54,19 @@
         max-height: 96vh;
         max-width: 98vw;
         border-radius: 0.5vh;
+    }
+}
+
+@supports (height: 100dvh) {
+    .col-stories {
+        min-height: 100dvh;
+    }
+
+    .col-stories main {
+        min-height: 100dvh;
+    }
+
+    .col-stories main img {
+        max-height: 96dvh;
     }
 }

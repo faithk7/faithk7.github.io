@@ -148,13 +148,16 @@ a.o-setting-icon:hover {
 
     .c-navbar-icon {
         display: block;
-        width: 20px;
-        height: 20px;
+        width: 44px;
+        height: 44px;
         position: fixed;
-        top: 10px;
-        right: 10px;
+        top: 6px;
+        right: 6px;
         z-index: 1001;
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .c-navbar-container {
@@ -178,5 +181,19 @@ a.o-setting-icon:hover {
 
     .c-navbar.show + .c-navbar-icon {
         display: none;
+    }
+}
+
+.c-navbar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 900;
+}
+
+@media (max-width: 445px) {
+    .c-navbar.show ~ .c-navbar-overlay {
+        display: block;
     }
 }

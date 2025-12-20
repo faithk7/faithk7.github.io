@@ -45,7 +45,7 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
-    background-attachment: fixed;
+    background-attachment: scroll;
     filter: invert(1) brightness(1.2) opacity(0.15);
     z-index: 0;
     will-change: transform;
@@ -55,6 +55,12 @@
 :root[data-theme="light"] .c-about-container::before {
     background-image: url(/assets/kokoro.webp);
     filter: brightness(0.7) opacity(0.5);
+}
+
+@media (min-width: 768px) {
+    .c-about-container::before {
+        background-attachment: fixed;
+    }
 }
 
 
