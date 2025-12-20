@@ -1,6 +1,7 @@
 /* Styles specific to collection.html */
 
 .c-collection-container {
+    --collect-title-offset: calc(var(--space-lg) + 2.5rem);
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: auto 1fr;
@@ -25,6 +26,8 @@ body[data-page*="collect"] .l-center {
     align-self: flex-start;
     font-family: var(--titleFont);
     position: fixed;
+    top: var(--space-md);
+    z-index: 5;
 }
 
 .c-collection-nav-container {
@@ -74,6 +77,9 @@ body[data-page*="collect"] .l-center {
     height: 100%;
     overflow-y: auto;
     padding: var(--space-sm);
+    padding-top: var(--collect-title-offset);
+    padding-bottom: calc(var(--space-lg) + var(--space-sm));
+    scroll-padding-block: var(--collect-title-offset) calc(var(--space-lg) + var(--space-sm));
     background-color: inherit;
     min-height: 0;
     align-self: stretch;
