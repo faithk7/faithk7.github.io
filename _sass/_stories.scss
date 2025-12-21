@@ -1,6 +1,5 @@
 .col-stories,
 .stories {
-    /* Default theme variables (assumed to be light) */
     --backgroundColor: #fdfdfd;
     --textColor: #404040;
     --secondaryTextColor: #404040;
@@ -18,7 +17,6 @@
     --photoBackground: #f4f4f4;
     --storyHoverColor: #d8b4ff;
 
-    /* TODO: think of better way to remove them later; repetitive with the above */
     --backgroundColorLight: #fdfdfd;
     --textColorLight: #404040;
     --secondaryTextColorLight: #404040;
@@ -36,7 +34,6 @@
     --photoBackgroundLight: #f4f4f4;
     --storyHoverColorLight: #d8b4ff;
 
-    /* TODO: think of better way to remove them later; repetitive with below; Dark theme variables */
     --backgroundColorDark: #151615;
     --textColorDark: #dbdfdf;
     --secondaryTextColorDark: #cfd5d5;

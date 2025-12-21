@@ -1,11 +1,11 @@
 .toc-container {
-    position: absolute; /* Position the TOC absolutely */
-    top: 0;             /* Align it to the top */
-    left: 0;            /* Align it to the left */
+    position: absolute;
+    top: 0;
+    left: 0;
     margin: var(--space-sm);
-    margin-top: var(--space-md);          /* Remove any default margin */
-    padding: var(--space-sm);      /* Add some padding for aesthetics */
-    z-index: 1000;      /* Ensure it is on top of other elements */
+    margin-top: var(--space-md);
+    padding: var(--space-sm);
+    z-index: 1000;
     list-style: none;
     font-family: monospace;
 }
@@ -108,7 +108,6 @@ a {
     scroll-margin-top: 0.5rem;
 }
 
-/* for writing image container */
 .center-image {
     width: 100%;
     height: auto;
@@ -126,7 +125,6 @@ a {
     color: var(--writing-text-secondary);
 }
 
-/* Add a container class to handle the overall padding */
 .c-writing-post-container {
-    padding-bottom: var(--space-lg); /* Add padding to ensure the border is visible */
+    padding-bottom: var(--space-lg);
 }

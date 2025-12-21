@@ -20,11 +20,8 @@ layout: default
     </div>
 </div>
 
-<!-- JavaScript moved to bottom -->
 <script defer>
-    // Initialize when DOM is ready
     document.addEventListener("DOMContentLoaded", function () {
-        // Open external links in .o-writing-post-text in a new tab (and set rel for security)
         document.querySelectorAll('.o-writing-post-text a[href]').forEach(function (link) {
             try {
                 var url = new URL(link.getAttribute('href'), location.href);
@@ -32,13 +29,11 @@ layout: default
                 link.setAttribute('target', '_blank');
                 link.setAttribute('rel', 'noopener noreferrer');
             } catch (_) {
-                // ignore malformed href
             }
         });
 
-        // Smooth scroll with offset for TOC links; use delegation for reliability
         var isScrolling = false;
-        var scrollOffset = 5; // Fixed 5px offset from viewport top
+        var scrollOffset = 5;
 
         function supportsSmoothScroll() {
             return 'scrollBehavior' in document.documentElement.style;
@@ -71,7 +66,7 @@ layout: default
         }
 
         function scrollToHash(hash) {
-            if (isScrolling) return; // Prevent multiple simultaneous scrolls
+            if (isScrolling) return;
 
             var id = (hash || '').replace(/^#/, '');
             if (!id) return;
@@ -91,7 +86,6 @@ layout: default
                 setScrollTop(scrollTarget, targetPosition);
             }
 
-            // Reset the scrolling flag after animation completes
             setTimeout(function () {
                 isScrolling = false;
             }, 600);
@@ -101,7 +95,6 @@ layout: default
             var link = e.target && e.target.closest && e.target.closest('.toc-container a[href*="#"]');
             if (!link) return;
             var href = link.getAttribute('href') || '';
-            // If the link points to another page, let browser handle it
             try {
                 var url = new URL(href, location.href);
                 if (url.pathname !== location.pathname) return;
@@ -110,7 +103,6 @@ layout: default
                 var hash = href.indexOf('#') >= 0 ? href.slice(href.indexOf('#')) : '';
             }
             if (!hash) return;
-            // Only prevent default if target exists on this page
             var id = hash.replace(/^#/, '');
             var target = document.getElementById(decodeURIComponent(id));
             if (!target) return;
@@ -123,7 +115,6 @@ layout: default
             }
         });
 
-        // Also handle direct hash on load and after hash changes
         if (location.hash) {
             setTimeout(function () { scrollToHash(location.hash); }, 0);
         }

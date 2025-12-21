@@ -6,13 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% assign story_description = page.description | default: page.content | strip_html | strip_newlines | truncate: 120 %}
     <meta name="description" content="{{ story_description }}">
-    <!-- Resource hints for performance -->
     <link rel="dns-prefetch" href="https://unpkg.com">
     <link rel="dns-prefetch" href="https://open-heart.lastk7.workers.dev">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
-    <!-- Metadata and resources -->
     <link rel="alternate" type="application/rss+xml" href="/notes.xml">
     <link rel="icon" href="/assets/fav.svg" type="image/svg+xml" sizes="24x24">
     <link href="/stylesheets/main.css" rel="stylesheet" type="text/css">
@@ -25,7 +23,6 @@
     {% endif %}
     <meta content="{{ page.title }} - {{ site.title }}" property="og:title">
     <meta content="{{ page.title }} - {{ site.title }}" name="twitter:title">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap" rel="stylesheet">
 </head>
 

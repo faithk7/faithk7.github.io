@@ -1,5 +1,3 @@
-/* Styles specific to collection.html */
-
 .c-collection-container {
     --collect-title-offset: calc(var(--space-lg) + 2.5rem);
     display: grid;
@@ -13,8 +11,6 @@
     overflow: hidden; /* prevent inner layout from creating extra scroll space */
 }
 
-/* Collect page: disable the default .l-center scroll container;
-   let the collect tile container decide whether scrolling is needed. */
 @media (min-width: 768px) {
     body[data-page*="collect"] .l-center {
         overflow: hidden;
@@ -164,7 +160,6 @@
 .o-collection-item {
     font-size: 1.125rem;
     margin-bottom: var(--space-sm);
-    /* Removed collect icon bullets (collect-icon-black/white.svg) */
     padding-left: 0;
 }
 
@@ -191,7 +186,6 @@ body[data-page*="collect"] .c-collection-section.active {
     margin-bottom: var(--space-lg);
 }
 
-/* Video popup and overlay styles */
 .c-video-popup-iframe {
     width: 80%;
     height: 80%;
@@ -252,7 +246,6 @@ body[data-page*="collect"] .c-collection-section.active {
     transform: scale(0.95);
 }
 
-/* VPN Banner Styles */
 .c-vpn-banner {
     position: fixed;
     top: 0;

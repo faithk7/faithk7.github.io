@@ -1,5 +1,3 @@
-/* Styles specific to writing-index.html */
-
 .o-writing-index-title {
     font-family: var(--titleFont);
 }
@@ -7,7 +5,6 @@
 .c-writing-index-container {
     margin: var(--space-md);
     position: relative;
-    /* Ensure the container is positioned relative for the pseudo-element */
 }
 
 .c-tag-container-meta {
@@ -98,7 +95,6 @@
     animation: a-underline-text-left-right 0.5s forwards;
 }
 
-/* for selected tag */
 .selected-tag {
     color: var(--writing-tag-text);
     background-image: linear-gradient(to top, var(--writing-tag-text) 1px, transparent 1px);

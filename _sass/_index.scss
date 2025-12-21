@@ -1,10 +1,3 @@
-/* Home Page Styles */
-
-/* Removed invalid nested .l-container selector (L4-14)
- * The nested selector would never match (requires .l-container .l-container)
- * Grid layout is already defined in _default.scss
- */
-
 .c-center-container {
     display: flex;
     justify-content: center;
@@ -19,7 +12,6 @@
 }
 
 
-/* for mobile in portrait mode */
 @media (max-width: 932px) and (orientation: portrait) {
     .c-index-container {
         z-index: 100;
@@ -28,7 +20,6 @@
     }
 }
 
-/* for mobile in landscape mode; TODO: not working, fix later */
 @media (max-width: 932px) and (orientation: landscape) {
     .c-center-container {
         margin-top: 0;
@@ -131,7 +122,6 @@ h1.o-name {
     color: var(--color-text-secondary);
 }
 
-/* reload button styling and hover reveal */
 .o-quote-reload {
     appearance: none;
     border: 1px solid currentColor;
@@ -156,7 +146,6 @@ h1.o-name {
 }
 
 
-/* the styling for c-index-art-container */
 .c-index-art-container {
     position: fixed;
     width: 20vw;
@@ -180,24 +169,19 @@ h1.o-name {
     display: block;
 }
 
-/* Consolidated mobile styles (merged duplicate media queries) */
 @media (max-width: 1032px) {
     .o-summary {
         font-size: 1rem;
     }
 
     .c-quote-container {
-        display: none; /* Hide quote container on mobile */
+        display: none;
     }
 
     .c-index-art-container {
-        display: none; /* Hide decorative art on mobile */
+        display: none;
     }
 }
-
-/* Removed unused .spider-lily selector (no element uses this class) */
-
-/* Removed empty media query placeholder */
 
 .c-index-art {
     width: 100%;

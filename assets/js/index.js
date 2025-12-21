@@ -66,17 +66,12 @@ function relativeDate(date) {
     }
 }
 
-// Quote reload: render vertical multi-line text with first line at leftmost
 const quoteContainer = document.querySelector('[data-quote]')
 if (quoteContainer) {
     const reloadBtn = quoteContainer.querySelector('[data-quote-reload]')
     const initialQuoteEl = quoteContainer.querySelector('[data-quote-text]')
     const theme = initialQuoteEl?.getAttribute('data-theme') ?? ''
 
-    /**
-     * Parse embedded quotes from script tag to avoid runtime fetch.
-     * Returns an array like [{ id, text }]
-     */
     function getEmbeddedQuotes() {
         try {
             const script = document.getElementById('quotes-data')
@@ -88,10 +83,6 @@ if (quoteContainer) {
         }
     }
 
-    /**
-     * Render a quote string vertically. Multi-line text is split by newline; each line
-     * becomes its own vertical column. Flex row ensures the first line appears at the leftmost.
-     */
     function renderVerticalQuote(text) {
         const lines = String(text).split(/\r?\n/).map(s => s.trim()).filter(Boolean)
         const btn = reloadBtn
@@ -119,7 +110,6 @@ if (quoteContainer) {
             const j = Math.floor(Math.random() * (i + 1))
                 ;[remainingIndices[i], remainingIndices[j]] = [remainingIndices[j], remainingIndices[i]]
         }
-        // Avoid immediate repeat across cycles when there are 2+ quotes
         if (
             quotes.length > 1 &&
             lastIndex !== -1 &&
@@ -150,11 +140,9 @@ if (quoteContainer) {
         }
     }
 
-    // Initialize with the existing text content in the DOM
     if (initialQuoteEl && initialQuoteEl.textContent) {
         renderVerticalQuote(initialQuoteEl.textContent)
     }
 
-    // Wire up reload button
     if (reloadBtn) reloadBtn.addEventListener('click', reloadQuote)
 }

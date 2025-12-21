@@ -46,7 +46,6 @@ head_include: head.html
     {% endfor %}
 </div>
 
-<!-- JavaScript moved to bottom -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         document.addEventListener('click', function (e) {
@@ -59,7 +58,6 @@ head_include: head.html
     function filterPosts(tag) {
         var posts = document.querySelectorAll('.c-writing-item-container');
 
-        // Filter posts
         posts.forEach(function (post) {
             var postTags = post.getAttribute('data-tags').split(' ');
             if (postTags.includes(tag) || tag === '') {
@@ -69,7 +67,6 @@ head_include: head.html
             }
         });
 
-        // Update tag underline
         updateTagUnderline(tag);
     }
 

@@ -1,5 +1,3 @@
-/* Styles specific to about.html */
-
 .c-about-container p {
     line-height: 1.5em;
     text-align: justify;
@@ -33,7 +31,6 @@
     padding-bottom: var(--space-lg);
 }
 
-/* About page background art (moved from former head-about.html inline <style>) */
 .c-about-container::before {
     content: "";
     position: fixed;
