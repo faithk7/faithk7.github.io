@@ -1,6 +1,5 @@
 const statusEl = document.querySelector('[data-status-loading]')
 
-// Add null check for statusEl
 if (!statusEl) {
     console.warn('[status] Status element not found')
 } else {
@@ -22,7 +21,6 @@ if (!statusEl) {
                 const textEl = document.querySelector('[data-status-text]')
                 const datetimeEl = document.querySelector('[data-status-datetime]')
                 
-                // Null checks for status elements
                 if (textEl && datetimeEl) {
                     textEl.textContent = text
                     datetimeEl.textContent = `(${date})`
@@ -33,7 +31,6 @@ if (!statusEl) {
         }
         statusEl.removeAttribute('data-status-loading')
     } catch (e) {
-        // Gracefully handle errors
         if (statusEl.parentNode) {
             statusEl.remove()
         }
@@ -87,7 +84,6 @@ if (quoteContainer) {
         const lines = String(text).split(/\r?\n/).map(s => s.trim()).filter(Boolean)
         const btn = reloadBtn
 
-        // Clear all existing quote columns but preserve the reload button
         quoteContainer.querySelectorAll('.o-quote').forEach(el => el.remove())
 
         for (const line of lines) {
@@ -95,7 +91,6 @@ if (quoteContainer) {
             col.className = 'o-quote'
             if (theme !== '') col.setAttribute('data-theme', theme)
             col.textContent = line
-            // Append each line before the button so columns appear from left to right
             quoteContainer.insertBefore(col, btn)
         }
     }
