@@ -183,7 +183,7 @@ body[data-page*="collect"] .c-collection-section.active {
 }
 
 .o-collection-item:nth-last-of-type(1) {
-    margin-bottom: var(--space-lg);
+    margin-bottom: calc(var(--space-xl) + var(--space-sm));
 }
 
 .c-video-popup-iframe {
