@@ -1,4 +1,3 @@
-// Constants for magic numbers and configuration
 const CONFIG = {
     FETCH_TIMEOUT_MS: 2500,
     ANIMATION_DELAY_MS: 25,
@@ -13,10 +12,6 @@ const VPN_CONFIG = {
     TARGET_COUNTRY_NAME: 'china'
 };
 
-/**
- * Display user-visible error message
- * @param {string} message - Error message to display
- */
 function showUserError(message) {
     const container = document.querySelector('.c-collection-tile-container');
     if (!container) return;
@@ -97,10 +92,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             };
 
-            // Mouse click event
             navItem.addEventListener('click', selectNavItem);
 
-            // Keyboard event (Enter or Space)
             navItem.addEventListener('keydown', function (e) {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
@@ -109,7 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-        // Set initial active section based on pre-selected nav or first nav item
         let defaultNav = document.querySelector('.o-collection-nav-icon.selected');
         if (!defaultNav && navItems.length > 0) {
             defaultNav = navItems[0];
@@ -139,7 +131,6 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         `;
 
-        // Create the canvas for image processing
         const imageCanvas = document.createElement('canvas');
         imageCanvas.id = 'imageCanvas';
         imageCanvas.style.display = 'none';
@@ -185,7 +176,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     },
                     onError: function (error) {
                         console.warn('[collect] Error reading audio metadata:', error);
-                        // Continue without cover image
                         coverImage.style.display = 'none';
                     }
 
@@ -193,15 +183,11 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .catch(error => {
                 console.error('[collect] Failed to fetch audio file:', error);
-                // Audio player can still work without metadata
             });
 
         /**
-         * Extract dominant color using sampling for better performance
-         * Instead of checking every pixel, sample a subset for much faster processing
          */
         function extractDominantColor(img) {
-            // Use smaller canvas for sampling to improve performance
             const maxDimension = 100;
             const scaleFactor = Math.min(maxDimension / img.width, maxDimension / img.height);
             const scaledWidth = Math.floor(img.width * scaleFactor);
@@ -216,7 +202,6 @@ document.addEventListener("DOMContentLoaded", function () {
             const data = imageData.data;
 
             let r = 0, g = 0, b = 0;
-            // Sample every 5th pixel for even faster processing
             const sampleRate = 5;
             let sampledPixels = 0;
 
@@ -242,10 +227,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function showVideoPopup(videoUrl) {
-        // Store currently focused element to restore later
         const previousFocus = document.activeElement;
         
-        // Create the iframe element
         const iframe = document.createElement('iframe');
         iframe.allowFullscreen = true;
         iframe.src = videoUrl;
@@ -253,32 +236,25 @@ document.addEventListener("DOMContentLoaded", function () {
         iframe.className = 'c-video-popup-iframe';
         iframe.setAttribute('title', 'Video player');
 
-        // Create the overlay
         const overlay = document.createElement('div');
         overlay.className = 'c-video-popup-overlay';
         overlay.setAttribute('role', 'dialog');
         overlay.setAttribute('aria-label', 'Video popup');
         overlay.setAttribute('aria-modal', 'true');
         
-        // Function to close popup
         const closePopup = () => {
             if (iframe.parentNode) document.body.removeChild(iframe);
             if (overlay.parentNode) document.body.removeChild(overlay);
-            // Restore focus
             if (previousFocus) previousFocus.focus();
-            // Remove all event listeners
             document.removeEventListener('keydown', handleKeydown, true);
             window.removeEventListener('keydown', handleKeydown, true);
             document.removeEventListener('fullscreenchange', handleFullscreenChange);
         };
         
-        // Click overlay to close
         overlay.addEventListener('click', closePopup);
         
-        // Track if we're in fullscreen
         let wasInFullscreen = false;
         
-        // ESC key to close - use capture phase to intercept before iframe
         const handleKeydown = (e) => {
             if (e.key === 'Escape') {
                 e.preventDefault();
@@ -287,42 +263,33 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         };
         
-        // Handle fullscreen changes - close popup when exiting fullscreen via ESC
         const handleFullscreenChange = () => {
             const isFullscreen = !!document.fullscreenElement;
-            // If we were in fullscreen and now we're not, user likely pressed ESC
             if (wasInFullscreen && !isFullscreen) {
-                // Small delay to let fullscreen exit complete
                 setTimeout(closePopup, 100);
             }
             wasInFullscreen = isFullscreen;
         };
         
-        // Listen on both document and window in capture phase
         document.addEventListener('keydown', handleKeydown, true);
         window.addEventListener('keydown', handleKeydown, true);
         document.addEventListener('fullscreenchange', handleFullscreenChange);
 
-        // Append the iframe and overlay to the body
         document.body.appendChild(overlay);
         document.body.appendChild(iframe);
         
-        // Focus iframe to allow video player keyboard controls
         iframe.focus();
     }
 
-    // Detect if visitor is in China and suggest VPN via banner and icon
     (function checkAndSuggestVpnForChina() {
-        // 1. Check dismissal
         if (localStorage.getItem(VPN_CONFIG.DISMISS_KEY) === '1') return;
 
-        // 2. Check session cache
         const cachedResult = sessionStorage.getItem(VPN_CONFIG.SESSION_CACHE_KEY);
         if (cachedResult === 'CN') {
             renderVpnWarning();
             return;
         } else if (cachedResult === 'OTHER') {
-            return; // Not in CN, previously checked
+            return;
         }
 
         const controller = new AbortController();
@@ -343,12 +310,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             })
             .catch((err) => {
-                // Silently ignore on failure
                 try { console.warn('[collect] VPN check failed', (err && (err.name || err.message)) || err); } catch (_) { }
             });
 
         function renderVpnWarning() {
-            // Banner
             const banner = document.createElement('div');
             banner.className = 'c-vpn-banner';
             banner.setAttribute('role', 'status');
@@ -377,11 +342,9 @@ document.addEventListener("DOMContentLoaded", function () {
             banner.appendChild(closeBtn);
             document.body.appendChild(banner);
 
-            // Prevent overlap with fixed banner
             const currentPaddingTop = parseInt(getComputedStyle(document.body).paddingTop || '0', 10) || 0;
-            document.body.style.paddingTop = (currentPaddingTop + 40) + 'px'; // Approx height since offsetHeight is 0 before paint
+            document.body.style.paddingTop = (currentPaddingTop + 40) + 'px';
 
-            // Icon next to page title if exists
             try {
                 const titleEl = document.querySelector('.o-collection-title');
                 if (titleEl && !titleEl.querySelector('.vpn-hint-icon')) {

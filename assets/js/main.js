@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         updateFavicon();
 
-        // Listen for changes in theme preference
         prefersDark.addEventListener('change', updateFavicon);
     }
 });
