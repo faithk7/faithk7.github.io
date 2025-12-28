@@ -1,5 +1,5 @@
 .c-collection-container {
-    --collect-title-offset: calc(var(--space-lg) + 4rem);
+    --collect-title-offset: calc(2.5rem + var(--space-md) * 2);
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: auto 1fr;
@@ -13,19 +13,20 @@
 
 @media (min-width: 768px) {
     body[data-page*="collect"] .l-center {
-        overflow: hidden;
+        overflow: auto;
+        padding-top: 0;
     }
 }
 
 .o-collection-title {
     grid-column: 1 / -1;
     font-size: 2rem;
-    margin-bottom: var(--space-md);
+    margin: var(--space-md) 0 var(--space-md) 0;
+    padding: 0;
+    text-align: left;
     align-self: flex-start;
     font-family: var(--titleFont);
-    position: fixed;
-    top: var(--space-md);
-    z-index: 5;
+    position: static;
 }
 
 .c-collection-nav-container {
@@ -70,14 +71,14 @@
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     height: 100%;
     overflow-y: auto;
     padding: var(--space-sm);
-    padding-top: var(--collect-title-offset);
+    padding-top: var(--space-md);
     padding-bottom: calc(var(--space-lg) + var(--space-sm));
-    scroll-padding-block: var(--collect-title-offset) calc(var(--space-lg) + var(--space-sm));
+    scroll-padding-block: var(--space-md) calc(var(--space-lg) + var(--space-sm));
     background-color: inherit;
     min-height: 0;
     align-self: stretch;
