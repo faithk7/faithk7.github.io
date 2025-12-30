@@ -102,21 +102,6 @@ a.o-setting-icon:hover {
     }
 
     .c-navbar {
-        width: 5.3rem;
-    }
-
-    .c-navbar-container {
-        margin-top: 10px;
-        margin-right: 10px;
-    }
-
-    .c-navbar-items {
-        padding-left: 0;
-    }
-}
-
-@media (max-width: 445px) {
-    .c-navbar {
         display: none;
         width: 100%;
     }
@@ -184,7 +169,7 @@ a.o-setting-icon:hover {
     z-index: 900;
 }
 
-@media (max-width: 445px) {
+@media (max-width: 1032px) {
     .c-navbar.show ~ .c-navbar-overlay {
         display: block;
     }
