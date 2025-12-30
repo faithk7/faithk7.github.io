@@ -76,9 +76,9 @@
     height: 100%;
     overflow-y: auto;
     padding: var(--space-sm);
-    padding-top: var(--space-md);
+    padding-top: var(--space-sm);
     padding-bottom: calc(var(--space-lg) + var(--space-sm));
-    scroll-padding-block: var(--space-md) calc(var(--space-lg) + var(--space-sm));
+    scroll-padding-block: var(--space-sm) calc(var(--space-lg) + var(--space-sm));
     background-color: inherit;
     min-height: 0;
     align-self: stretch;
