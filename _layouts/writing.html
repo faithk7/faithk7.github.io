@@ -44,24 +44,33 @@ layout: default
 
             isScrolling = true;
 
-            try {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            } catch (e) {
-                // Fallback for older browsers
-                target.scrollIntoView(true);
-            }
+            // Wait for any images/content to load and layout to stabilize
+            requestAnimationFrame(function() {
+                requestAnimationFrame(function() {
+                    try {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    } catch (e) {
+                        // Fallback for older browsers
+                        target.scrollIntoView(true);
+                    }
 
-            setTimeout(function () {
-                isScrolling = false;
-            }, 300);
+                    setTimeout(function () {
+                        isScrolling = false;
+                    }, 800);
+                });
+            });
         }
 
         document.addEventListener('click', function (e) {
             var link = e.target && e.target.closest && e.target.closest('.toc-container a[href*="#"]');
             if (!link) return;
+            
+            e.preventDefault();
+            e.stopPropagation();
+            
             var href = link.getAttribute('href') || '';
             try {
                 var url = new URL(href, location.href);
@@ -74,7 +83,7 @@ layout: default
             var id = hash.replace(/^#/, '');
             var target = document.getElementById(decodeURIComponent(id));
             if (!target) return;
-            e.preventDefault();
+            
             scrollToHash(hash);
             if (history && history.replaceState) {
                 history.replaceState(null, '', hash);
