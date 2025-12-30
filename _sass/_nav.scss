@@ -152,8 +152,9 @@ a.o-setting-icon:hover {
     }
 
     .o-navbar-item > a:not(.o-setting-icon) {
-        padding: var(--space-sm) var(--space-xs);
-        line-height: 1.5;
+        padding: var(--space-xs ) var(--space-xs);
+        line-height: 1;
+        display: inline-block;
     }
 
     .c-navbar.show + .c-navbar-icon {
