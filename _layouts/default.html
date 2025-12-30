@@ -4,6 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- DNS Prefetch & Preconnect for external resources -->
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://instant.page">
+    <link rel="dns-prefetch" href="https://ipapi.co">
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
     {% seo %}
     {% if page.head_include %}
     {% include {{ page.head_include }} %}
