@@ -56,6 +56,10 @@
     margin-bottom: var(--space-md);
 }
 
+:root[data-theme="light"] .c-writing-item-container {
+    border-color: rgba(45, 27, 27, 0.35);
+}
+
 .o-writing-note-date {
     display: inline-block;
     margin: 0;
