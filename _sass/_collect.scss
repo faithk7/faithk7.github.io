@@ -57,9 +57,14 @@
     cursor: pointer;
     background: transparent;
     border: 0;
-    padding: 0;
+    padding: var(--space-sm);
     color: inherit;
     font-family: inherit;
+    min-width: 48px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .o-collection-nav-icon.selected {
@@ -160,8 +165,10 @@
 
 .o-collection-item {
     font-size: 1.125rem;
-    margin-bottom: var(--space-sm);
-    padding-left: 0;
+    margin-bottom: var(--space-xs);
+    padding: var(--space-xs) 0;
+    display: inline-block;
+    line-height: 1.8;
 }
 
 body[data-page*="collect"] a.o-collection-item {
