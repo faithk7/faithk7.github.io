@@ -57,14 +57,9 @@
     cursor: pointer;
     background: transparent;
     border: 0;
-    padding: var(--space-sm);
+    padding: 0;
     color: inherit;
     font-family: inherit;
-    min-width: 48px;
-    min-height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .o-collection-nav-icon.selected {
@@ -121,11 +116,25 @@
         overflow-y: hidden;
     }
 
+    .o-collection-nav-icon {
+        padding: var(--space-sm);
+        min-width: 48px;
+        min-height: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .c-collection-tile-container {
         margin-left: 0;
         height: auto;
         overflow: visible;
         padding-top: var(--space-md);
+    }
+
+    .o-collection-item {
+        padding: var(--space-xs) 0;
+        line-height: 1.8;
     }
 }
 
@@ -165,10 +174,8 @@
 
 .o-collection-item {
     font-size: 1.125rem;
-    margin-bottom: var(--space-xs);
-    padding: var(--space-xs) 0;
-    display: inline-block;
-    line-height: 1.8;
+    margin-bottom: var(--space-sm);
+    padding-left: 0;
 }
 
 body[data-page*="collect"] a.o-collection-item {

@@ -53,9 +53,6 @@
     background-position: 0% 100%;
     transition: color 0.3s;
     font-size: 0.8rem;
-    display: inline-block;
-    padding: var(--space-sm) var(--space-xs);
-    line-height: 1.5;
 }
 
 .o-navbar-item > a:not(.o-setting-icon):hover {
@@ -138,11 +135,11 @@ a.o-setting-icon:hover {
 
     .c-navbar-icon {
         display: block;
-        width: 26px;
-        height: 18px;
+        width: 32px;
+        height: 32px;
         position: fixed;
-        top: 16px;
-        right: 10px;
+        top: 12px;
+        right: 12px;
         z-index: 1001;
         cursor: pointer;
         display: flex;
@@ -166,6 +163,12 @@ a.o-setting-icon:hover {
 
     .c-navbar-items li {
         align-self: flex-end;
+        margin-bottom: var(--space-sm);
+    }
+
+    .o-navbar-item > a:not(.o-setting-icon) {
+        padding: var(--space-sm) var(--space-xs);
+        line-height: 1.5;
     }
 
     .c-navbar.show + .c-navbar-icon {

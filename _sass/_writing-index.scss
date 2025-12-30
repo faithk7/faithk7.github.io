@@ -83,15 +83,12 @@
     font-family: var(--tagFont);
     border: 0px;
     background: transparent;
-    padding: var(--space-sm) var(--space-xs);
+    padding: 0;
     color: var(--writing-tag-text);
     margin-left: 0px;
-    margin-right: var(--space-xs);
+    margin-right: var(--space-sm);
     margin-bottom: var(--space-xs);
     cursor: pointer;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
 }
 
 .o-tag:hover {
@@ -144,7 +141,20 @@
 
 h3.o-post-title a {
     color: var(--titleColor);
-    display: inline-block;
-    padding: var(--space-xs) 0;
-    line-height: 1.6;
+}
+
+/* Mobile touch optimization */
+@media (max-width: 767px) {
+    .o-tag {
+        padding: var(--space-sm) var(--space-xs);
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    h3.o-post-title a {
+        display: inline-block;
+        padding: var(--space-xs) 0;
+        line-height: 1.6;
+    }
 }
