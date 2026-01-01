@@ -99,6 +99,19 @@ a {
         font-family: Georgia, 'Times New Roman', Times, serif;
         margin-bottom: var(--space-lg); /* Add margin to ensure content doesn't touch the border */
     }
+
+    ul, ol {
+        line-height: 1.0;
+        // margin-bottom: var(--space-sm);
+    }
+
+    li {
+        margin-bottom: var(--space-sm); /* Add spacing between list items */
+    }
+
+    li:last-child {
+        margin-bottom: 0; /* Remove margin from last item */
+    }
 }
 
 .o-writing-post-text h1,
