@@ -136,6 +136,19 @@ if (quoteContainer) {
     }
 
     if (initialQuoteEl && initialQuoteEl.textContent) {
+        const initialText = initialQuoteEl.textContent.trim()
+        const initialIdx = quotes.findIndex(q => q.text.trim() === initialText)
+        if (initialIdx !== -1) {
+            lastIndex = initialIdx
+            // Initialize remaining indices and exclude the already displayed quote
+            remainingIndices = Array.from({ length: quotes.length }, (_, i) => i)
+                .filter(i => i !== initialIdx)
+            // Shuffle the remaining indices
+            for (let i = remainingIndices.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1))
+                ;[remainingIndices[i], remainingIndices[j]] = [remainingIndices[j], remainingIndices[i]]
+            }
+        }
         renderVerticalQuote(initialQuoteEl.textContent)
     }
 
