@@ -14,7 +14,7 @@ head_include: head.html
     {%- comment -%} Post count: {{ sorted_posts.size }} {%- endcomment -%}
 
     <div id="tag-container" class="c-tag-container-meta">
-        <button type="button" class="o-tag selected-tag" id="all-tag" data-tag="">all</button><span
+        <a href="#" role="button" class="o-tag selected-tag" id="all-tag" data-tag="">all</a><span
             style="margin-left: 3px; margin-right: 7px">|</span>
         {% assign tags = "" %}
         {% for post in sorted_posts %}
@@ -25,7 +25,7 @@ head_include: head.html
         {% assign unique_tags = tags | split: "," | uniq | sort %}
         {% for tag in unique_tags reversed %}
         {% if tag != "" %}
-        <button type="button" class="o-tag" data-tag="{{ tag }}">{{ tag }}</button>
+        <a href="#" role="button" class="o-tag" data-tag="{{ tag }}">{{ tag }}</a>
         {% endif %}
         {% endfor %}
     </div>
@@ -38,7 +38,7 @@ head_include: head.html
             <div class="o-writing-note-date">{{ post.date | date: "%B %d, %Y" }}</div>
             <div class="c-hashtag-container-post">
                 {% for tag in post.tags %}
-                <button type="button" class="o-post-tag" data-tag="{{ tag }}">{{ tag }}</button>
+                <a href="#" role="button" class="o-post-tag" data-tag="{{ tag }}">{{ tag }}</a>
                 {% endfor %}
             </div>
         </div>
@@ -49,9 +49,11 @@ head_include: head.html
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         document.addEventListener('click', function (e) {
-            var btn = e.target && e.target.closest && e.target.closest('button[data-tag]');
-            if (!btn) return;
-            filterPosts(btn.getAttribute('data-tag') || '');
+            var el = e.target && e.target.closest && e.target.closest('[data-tag]');
+            if (!el) return;
+            // Prevent "#" navigation for <a> tags used as buttons
+            if (el.tagName && el.tagName.toLowerCase() === 'a') e.preventDefault();
+            filterPosts(el.getAttribute('data-tag') || '');
         });
     });
 

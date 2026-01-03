@@ -74,19 +74,18 @@
 
 .o-tag {
     display: inline-block;
-    border-radius: var(--radius-sm);
     font-size: 1rem;
     line-height: 1.5em;
     font-family: serif, Times;
     text-decoration: none;
-    background-image: linear-gradient(to top, var(--writing-tag-text) 1px, transparent 1px);
-    background-size: 0px;
+    background-image: linear-gradient(to right, var(--writing-tag-text), var(--writing-tag-text));
+    background-size: 0% 1px;
     background-repeat: no-repeat;
     background-position: 0% 100%;
     transition: color 0.3s;
     font-family: var(--tagFont);
     border: 0px;
-    background: transparent;
+    background-color: transparent;
     padding: 0;
     color: var(--writing-tag-text);
     margin-left: 0px;
@@ -95,15 +94,12 @@
     cursor: pointer;
 }
 
-.o-tag:hover {
-    animation: a-underline-text-left-right 0.5s forwards;
+.o-tag.selected-tag {
+    color: var(--writing-tag-text);
+    background-size: 100% 1px;
+    animation: none;
 }
 
-.selected-tag {
-    color: var(--writing-tag-text);
-    background-image: linear-gradient(to top, var(--writing-tag-text) 1px, transparent 1px);
-    background-size: 100%;
-}
 
 .o-tag::before {
     content: "#";
