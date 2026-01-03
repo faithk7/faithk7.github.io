@@ -157,6 +157,10 @@
 
     &.active {
         display: flex;
+        /* Vertically center the active list when it fits in the viewport;
+           if the list is taller than the container, auto margins collapse and it starts at top. */
+        margin-top: auto;
+        margin-bottom: auto;
     }
 }
 
