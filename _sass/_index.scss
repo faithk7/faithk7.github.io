@@ -98,6 +98,7 @@ h1.o-name {
 .c-quote-container {
     --quote-reload-size: 1.5rem;
     --quote-reload-left: 0.5em;
+    --quote-reload-bottom: -1.85rem;
     position: absolute;
     top: 35%;
     right: var(--space-md);
@@ -144,7 +145,7 @@ h1.o-name {
     cursor: pointer;
     position: absolute;
     left: var(--quote-reload-left);
-    bottom: calc(-1 * (var(--quote-reload-size) + 0.35rem));
+    bottom: var(--quote-reload-bottom);
     transform: translateX(-50%);
     user-select: none;
 }
