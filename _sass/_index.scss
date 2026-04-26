@@ -96,6 +96,8 @@ h1.o-name {
 }
 
 .c-quote-container {
+    --quote-reload-size: 1.5rem;
+    --quote-reload-left: 0.5em;
     position: absolute;
     top: 35%;
     right: var(--space-md);
@@ -129,14 +131,21 @@ h1.o-name {
     color: inherit;
     font: inherit;
     line-height: 1;
-    padding: 0.2rem 0.35rem;
+    width: var(--quote-reload-size);
+    height: var(--quote-reload-size);
+    padding: 0 0 0.08rem;
     border-radius: var(--radius-sm);
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     opacity: 0;
     transition: opacity 0.15s ease-in-out;
     cursor: pointer;
     position: absolute;
-    left: 1px;
-    bottom: -2.0em; /* place 0.5em below the quote container */
+    left: var(--quote-reload-left);
+    bottom: calc(-1 * (var(--quote-reload-size) + 0.35rem));
+    transform: translateX(-50%);
     user-select: none;
 }
 

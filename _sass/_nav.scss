@@ -86,8 +86,8 @@
 }
 
 a.o-setting-icon {
-    height: 1.25rem;
-    width: 1.25rem;
+    height: 1.4rem;
+    width: 1.4rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -97,7 +97,13 @@ a.o-setting-icon:hover {
     animation: none;
 }
 
-.o-setting-icon svg {
+a.o-setting-icon svg {
+    width: 1.4rem;
+    height: 1.4rem;
+    display: block;
+}
+
+#dark-mode-toggle svg {
     width: 1.25rem;
     height: 1.25rem;
     display: block;

@@ -93,6 +93,30 @@ if (quoteContainer) {
             col.textContent = line
             quoteContainer.insertBefore(col, btn)
         }
+
+        scheduleReloadButtonAlignment()
+    }
+
+    function alignReloadButton() {
+        if (!reloadBtn) return
+
+        const quoteEls = Array.from(quoteContainer.querySelectorAll('.o-quote'))
+        if (quoteEls.length === 0) return
+
+        const containerRect = quoteContainer.getBoundingClientRect()
+        const leftmostQuote = quoteEls.reduce((leftmost, quoteEl) => {
+            return quoteEl.getBoundingClientRect().left < leftmost.getBoundingClientRect().left
+                ? quoteEl
+                : leftmost
+        })
+        const quoteRect = leftmostQuote.getBoundingClientRect()
+        const leftmostCenter = quoteRect.left - containerRect.left + quoteRect.width / 2
+
+        quoteContainer.style.setProperty('--quote-reload-left', `${leftmostCenter}px`)
+    }
+
+    function scheduleReloadButtonAlignment() {
+        requestAnimationFrame(alignReloadButton)
     }
 
     const quotes = getEmbeddedQuotes()
@@ -153,4 +177,6 @@ if (quoteContainer) {
     }
 
     if (reloadBtn) reloadBtn.addEventListener('click', reloadQuote)
+    window.addEventListener('resize', scheduleReloadButtonAlignment)
+    document.fonts?.ready?.then(scheduleReloadButtonAlignment)
 }
