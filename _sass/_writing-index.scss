@@ -148,6 +148,26 @@ h3.o-post-title a {
     color: var(--titleColor);
 }
 
+:root[data-theme="dark"] h3.o-post-title a {
+    color: var(--titleColor);
+}
+
+:root[data-theme="dark"] .o-tag {
+    color: var(--writing-tag-text);
+}
+
+:root[data-theme="dark"] .o-tag.selected-tag {
+    color: var(--writing-tag-text);
+}
+
+:root[data-theme="dark"] #all-tag {
+    color: var(--writing-tag-active);
+}
+
+:root[data-theme="dark"] .o-post-tag {
+    color: var(--writing-text-secondary);
+}
+
 /* Mobile touch optimization */
 @media (max-width: 767px) {
     .o-tag {

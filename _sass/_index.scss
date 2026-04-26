@@ -159,6 +159,7 @@ h1.o-name {
     user-select: none;
     background: transparent;
     color: inherit;
+    overflow: visible;
 }
 
 .c-index-art-container object {
@@ -191,6 +192,19 @@ h1.o-name {
     display: block;
     filter: invert(0);
     color: var(--color-text-secondary);
+    transition: filter 0.8s ease;
+}
+
+@keyframes bloom-dark {
+    0%   { filter: invert(1); }
+    50%  { filter: invert(1) brightness(0.3) sepia(1) saturate(6) hue-rotate(270deg); }
+    100% { filter: invert(1) brightness(0.2) sepia(1) saturate(12) hue-rotate(320deg); }
+}
+
+@keyframes bloom-light {
+    0%   { filter: invert(0); }
+    50%  { filter: invert(0.3) sepia(1) saturate(8) hue-rotate(270deg); }
+    100% { filter: invert(0.35) sepia(1) saturate(10) hue-rotate(310deg); }
 }
 
 :root[data-theme="dark"] .c-index-art {
@@ -198,14 +212,26 @@ h1.o-name {
     color: var(--color-text-secondary);
 }
 
+:root[data-theme="dark"] .c-index-art-container:hover .c-index-art {
+    animation: bloom-dark 0.5s ease forwards;
+}
+
 :root[data-theme="light"] .c-index-art {
     filter: invert(0);
     color: var(--color-text-secondary);
+}
+
+:root[data-theme="light"] .c-index-art-container:hover .c-index-art {
+    animation: bloom-light 0.5s ease forwards;
 }
 
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) .c-index-art {
         filter: invert(1);
         color: var(--color-text-secondary);
+    }
+
+    :root:not([data-theme="light"]) .c-index-art-container:hover .c-index-art {
+        animation: bloom-dark 0.5s ease forwards;
     }
 }
