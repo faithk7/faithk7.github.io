@@ -10,7 +10,7 @@ layout: default
     <div class="c-writing-post-tag-container">
         {% for tag in page.tags %}
         <span class="o-writing-post-tag" data-theme="light">{{ tag }}</span>
-        {% unless forloop.last %}<span style="margin-left: 2px; margin-right: 2px;"> / </span>{% endunless %}
+        {% unless forloop.last %}<span class="o-tag-separator"> / </span>{% endunless %}
         {% endfor %}
     </div>
     <div class="c-writing-post-container">

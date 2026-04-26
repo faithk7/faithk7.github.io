@@ -4,7 +4,7 @@
     --color-surface-muted: #2c2c2c;
     --color-border: #555555; /* Unifying #555, darkgray */
     --color-text-primary: #dddddd;
-    --color-text-secondary: #ffffff; /* Some text is pure white */
+    --color-text-secondary: #f0f0f0;
     --color-text-muted: #a3a3a3;
     --color-accent-1: #388dc2; /* Link blue */
     --color-accent-2: #e093e0; /* Highlight pink/purple */
@@ -57,7 +57,7 @@
     --color-text-secondary: #000000;
     --color-text-muted: #666666;
     --color-accent-1: #126ba2;
-    --color-accent-2: #bd41bd;
+    --color-accent-2: #9e2f9e;
 
     --linkColor: var(--color-accent-1);
     /* Nav Page Vars */
@@ -67,7 +67,7 @@
     --writing-text-primary: var(--color-text-primary);
     --writing-text-secondary: var(--color-text-muted);
     --writing-border-color: var(--color-border); /* was #666666 */
-    --writing-tag-active: #a55df1;
+    --writing-tag-active: #7b35c1;
     --writing-tag-text: #000000;
     /* Collect Page Vars */
     --collect-border-color: #000000;
@@ -105,17 +105,12 @@ body {
     color: var(--color-text-secondary);
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1rem;
-    /* 16px */
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* for the medium size screen like macbook air */
-/* Using transform: scale() instead of non-standard zoom property */
 @media (min-width: 1000px) and (max-width: 1440px) and (orientation: landscape) {
-    body {
-        transform: scale(0.8);
-        transform-origin: top left;
-        width: 125%; /* Compensate for scaling: 100% / 0.8 = 125% */
-        height: 125%;
+    .l-container {
+        grid-template-columns: 4fr 8fr 4fr;
     }
 }
 

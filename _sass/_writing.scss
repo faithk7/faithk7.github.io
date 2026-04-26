@@ -88,11 +88,17 @@ a {
     transition: color 0.5s;
 }
 
+.o-tag-separator {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
 .o-writing-post-text {
     font-size: 1rem;
     color: var(--writing-text-primary);
     border-bottom: 0.0625rem solid var(--writing-border-color);
     font-weight: 400;
+    max-width: 65ch;
 
     p {
         line-height: 2.0;

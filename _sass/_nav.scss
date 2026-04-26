@@ -1,9 +1,9 @@
 .c-navbar {
     position: absolute;
     top: var(--space-sm);
-    right: var(--space-xs);
+    right: var(--space-md);
     max-height: calc(100% - (2 * var(--space-md)));
-    overflow-y: auto;
+    overflow: visible;
     width: 12.5rem;
     z-index: 100;
 }
@@ -17,6 +17,7 @@
 
 .c-navbar-container {
     display: block;
+    position: relative;
     margin-top: var(--space-md);
     border-left: 1px solid var(--nav-border-color);
     padding-left: var(--space-sm);
@@ -34,6 +35,9 @@
 
 .o-navbar-item {
     margin: var(--space-sm) 0;
+}
+
+.c-navbar-items {
 }
 
 .o-navbar-item:nth-of-type(1) {
@@ -69,38 +73,46 @@
 }
 
 #dark-mode-toggle {
-    position: absolute;
-    top: 1.0625rem;
-    right: 6.25rem;
-    height: 1rem;
-    width: 1rem;
+    height: 1.25rem;
+    width: 1.25rem;
+    padding: 0;
     background-color: transparent;
     border: none;
     outline: none;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 a.o-setting-icon {
-    position: absolute;
-    top: 0.9375rem;
-    right: 4.0625rem;
-    height: 1rem;
-    width: 1rem;
+    height: 1.25rem;
+    width: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 a.o-setting-icon:hover {
     animation: none;
 }
 
+.o-setting-icon svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: block;
+}
+
+.c-navbar-actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
 @media (max-width: 1032px) {
-    #dark-mode-toggle {
-        display: none;
-    }
-
-    a.o-setting-icon {
-        display: none;
-    }
-
     .c-navbar {
         display: none;
         width: 100%;
@@ -119,17 +131,22 @@ a.o-setting-icon:hover {
     }
 
     .c-navbar-icon {
-        display: block;
-        width: 28px;
-        height: 28px;
+        display: flex;
+        width: 20px;
+        height: 20px;
         position: fixed;
-        top: 28px;
-        right: 12px;
+        top: 16px;
+        right: 16px;
         z-index: 1001;
         cursor: pointer;
-        display: flex;
         align-items: center;
         justify-content: center;
+        color: var(--nav-text-color);
+    }
+
+    .c-navbar-icon svg {
+        width: 20px;
+        height: 20px;
     }
 
     .c-navbar-container {
@@ -139,6 +156,11 @@ a.o-setting-icon:hover {
         flex-direction: column;
         align-items: flex-end;
         border-left: none;
+    }
+
+    .c-navbar-actions {
+        position: static;
+        margin-bottom: var(--space-md);
     }
 
     .c-navbar-items {
