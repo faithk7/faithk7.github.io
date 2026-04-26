@@ -125,9 +125,14 @@ a.o-setting-icon:hover {
         right: 0;
         height: 100%;
         width: 100%;
-        background-color: transparent;
-        backdrop-filter: blur(3px);
+        background-color: rgba(18, 18, 18, 0.4);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
         z-index: 1000;
+    }
+
+    :root[data-theme="light"] .c-navbar.show {
+        background-color: rgba(240, 240, 240, 0.4);
     }
 
     .c-navbar-icon {

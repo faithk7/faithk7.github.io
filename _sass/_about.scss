@@ -3,8 +3,6 @@
     text-align: left;
     font-weight: 500;
     font-family: 'Courier New', Courier, monospace;
-    max-width: 65ch;
-    margin-inline: auto;
 }
 
 .c-about-container a {
@@ -26,7 +24,8 @@
 }
 
 .c-about-container {
-    margin: var(--space-md);
+    margin: var(--space-md) auto;
+    max-width: 65ch;
     z-index: 1;
     position: relative;
     user-select: text;

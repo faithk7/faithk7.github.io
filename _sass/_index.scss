@@ -98,7 +98,7 @@ h1.o-name {
 .c-quote-container {
     position: absolute;
     top: 35%;
-    right: 0%;
+    right: var(--space-md);
     z-index: 200;
     width: 12.5rem;
     display: flex;
