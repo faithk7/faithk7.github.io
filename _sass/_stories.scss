@@ -1,77 +1,30 @@
 .col-stories,
 .stories {
-    --backgroundColor: #fdfdfd;
-    --textColor: #404040;
-    --secondaryTextColor: #404040;
-    --mutedTextColor: #707070;
-    --subtleBackgroundColor: #f5f5f5;
+    --backgroundColor: var(--color-surface);
+    --textColor: var(--color-text-primary);
+    --secondaryTextColor: var(--color-text-secondary);
+    --mutedTextColor: var(--color-text-muted);
+    --subtleBackgroundColor: var(--color-surface-muted);
+    --linkColor: var(--color-accent-1);
+    --borderColor: var(--color-border);
+    --hrColor: var(--color-border);
+    --activeColor: #74d274;
+    --storyHoverColor: #d8b4ff;
+    --heartedBackgroundColor: #652222;
+    --selectionBackgroundColor: #19446b;
+    --langBackgroundColor: var(--color-surface-muted);
+    --langShadowColor: rgba(11, 12, 11, 0.2);
+    --logoColor: #555;
+    --photoBackground: #1a1a1a;
+}
+
+:root[data-theme="light"] .col-stories,
+:root[data-theme="light"] .stories {
     --heartedBackgroundColor: #ffe2e2;
     --selectionBackgroundColor: #ffc;
-    --linkColor: #2357cd;
-    --borderColor: #666666;
-    --hrColor: #888;
-    --activeColor: #74d274;
-    --langBackgroundColor: #eee;
     --langShadowColor: transparent;
     --logoColor: #ccc;
     --photoBackground: #f4f4f4;
-    --storyHoverColor: #d8b4ff;
-
-    --backgroundColorLight: #fdfdfd;
-    --textColorLight: #404040;
-    --secondaryTextColorLight: #404040;
-    --mutedTextColorLight: #707070;
-    --subtleBackgroundColorLight: #f5f5f5;
-    --heartedBackgroundColorLight: #ffe2e2;
-    --selectionBackgroundColorLight: #ffc;
-    --linkColorLight: #2357cd;
-    --borderColorLight: #666666;
-    --hrColorLight: #888;
-    --activeColorLight: #74d274;
-    --langBackgroundColorLight: #eee;
-    --langShadowColorLight: transparent;
-    --logoColorLight: #ccc;
-    --photoBackgroundLight: #f4f4f4;
-    --storyHoverColorLight: #d8b4ff;
-
-    --backgroundColorDark: #151615;
-    --textColorDark: #dbdfdf;
-    --secondaryTextColorDark: #cfd5d5;
-    --mutedTextColorDark: #b4b6b8;
-    --subtleBackgroundColorDark: #3a3b3b;
-    --heartedBackgroundColorDark: #652222;
-    --selectionBackgroundColorDark: #19446b;
-    --linkColorDark: #6eb8ff;
-    --borderColorDark: #888888;
-    --hrColorDark: #888;
-    --activeColorDark: #74d274;
-    --langBackgroundColorDark: #2c2c2c;
-    --langShadowColorDark: rgba(11, 12, 11, 0.2);
-    --logoColorDark: #555;
-    --photoBackgroundDark: #1a1a1a;
-    --storyHoverColorDark: #d8b4ff;
-}
-
-@media (prefers-color-scheme: dark) {
-    .col-stories,
-    .stories {
-        --backgroundColor: #151615;
-        --textColor: #dbdfdf;
-        --secondaryTextColor: #cfd5d5;
-        --mutedTextColor: #b4b6b8;
-        --subtleBackgroundColor: #3a3b3b;
-        --heartedBackgroundColor: #652222;
-        --selectionBackgroundColor: #19446b;
-        --linkColor: #6eb8ff;
-        --borderColor: #414141;
-        --hrColor: #888;
-        --activeColor: #74d274;
-        --langBackgroundColor: #2c2c2c;
-        --langShadowColor: rgba(11, 12, 11, 0.2);
-        --logoColor: #555;
-        --photoBackground: #1a1a1a;
-        --storyHoverColor: #d8b4ff;
-    }
 }
 
 .stories {
@@ -116,20 +69,6 @@ open-stories::part(button) {
     cursor: pointer;
 }
 
-:root[data-theme="light"] open-stories::part(button) {
-    box-shadow: inset 0 0 0 2px var(--backgroundColorLight);
-    border-color: var(--borderColorLight);
-    color: var(--textColorLight);
-    background: var(--subtleBackgroundColorLight);
-}
-
-:root[data-theme="dark"] open-stories::part(button) {
-    box-shadow: inset 0 0 0 2px var(--backgroundColorDark);
-    border-color: var(--borderColorDark);
-    color: var(--textColorDark);
-    background: var(--subtleBackgroundColorDark);
-}
-
 
 @media (max-width: 932px) {
     open-stories::part(button) {
@@ -169,21 +108,13 @@ open-stories.is-empty::part(button) {
     opacity: 0.5;
     overflow: hidden;
     position: relative;
-    border-color: #333333;
-}
-
-:root[data-theme="light"] open-stories.is-empty::part(button) {
-    border-color: #444444;
-}
-
-:root[data-theme="dark"] open-stories.is-empty::part(button) {
-    border-color: #7b7a7a;
+    border-color: var(--borderColor);
 }
 
 open-stories.is-empty::part(button):before {
     display: block;
     content: '';
-    border-left: 1px solid #3e3e3e;
+    border-left: 1px solid var(--borderColor);
     position: absolute;
     transform: rotate(-45deg);
     top: 0;
@@ -191,8 +122,4 @@ open-stories.is-empty::part(button):before {
     width: 150%;
     height: 150%;
     transform-origin: top left;
-}
-
-:root[data-theme="dark"] open-stories.is-empty::part(button):before {
-    border-left-color: #a9a9a9;
 }
