@@ -343,7 +343,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.body.appendChild(banner);
 
             const currentPaddingTop = parseInt(getComputedStyle(document.body).paddingTop || '0', 10) || 0;
-            document.body.style.paddingTop = (currentPaddingTop + 40) + 'px';
+            document.body.style.paddingTop = (currentPaddingTop + banner.offsetHeight) + 'px';
 
             try {
                 const titleEl = document.querySelector('.o-collection-title');

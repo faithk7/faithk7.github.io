@@ -286,11 +286,12 @@ body[data-page*="collect"] .c-collection-section.active {
     z-index: 2000;
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    background: #FEF3C7; /* amber-100 */
-    border-bottom: 1px solid #F59E0B; /* amber-500 */
-    color: #92400E; /* amber-700 */
+    gap: 6px;
+    padding: 3px 12px;
+    background: #FEF3C7;
+    border-bottom: 1px solid #F59E0B;
+    color: #92400E;
+    font-size: 0.75rem;
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -301,8 +302,9 @@ body[data-page*="collect"] .c-collection-section.active {
 .c-vpn-banner-close {
     border: none;
     background: transparent;
-    font-size: 18px;
+    font-size: 14px;
     cursor: pointer;
     color: inherit;
     padding: 0 4px;
+    line-height: 1;
 }
