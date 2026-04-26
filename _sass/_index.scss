@@ -213,7 +213,7 @@ h1.o-name {
 }
 
 :root[data-theme="dark"] .c-index-art-container:hover .c-index-art {
-    animation: bloom-dark 0.5s ease forwards;
+    filter: invert(1) brightness(0.2) sepia(1) saturate(12) hue-rotate(320deg);
 }
 
 :root[data-theme="light"] .c-index-art {
@@ -222,7 +222,7 @@ h1.o-name {
 }
 
 :root[data-theme="light"] .c-index-art-container:hover .c-index-art {
-    animation: bloom-light 0.5s ease forwards;
+    filter: invert(0.35) sepia(1) saturate(10) hue-rotate(310deg);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -232,6 +232,6 @@ h1.o-name {
     }
 
     :root:not([data-theme="light"]) .c-index-art-container:hover .c-index-art {
-        animation: bloom-dark 0.5s ease forwards;
+        filter: invert(1) brightness(0.2) sepia(1) saturate(12) hue-rotate(320deg);
     }
 }
