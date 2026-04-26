@@ -17,6 +17,7 @@ jekyll-minifier:
   exclude:
     - "*.min.js"
     - "*.min.css"
+    - "assets/js/index.js"
   preserve_php: true
   remove_spaces_inside_tags: true
   remove_multi_spaces: true
