@@ -15,7 +15,7 @@ head_include: head.html
 
     <div id="tag-container" class="c-tag-container-meta">
         <a href="#" role="button" class="o-tag selected-tag" id="all-tag" data-tag="">all</a><span
-            style="margin-left: 3px; margin-right: 7px">|</span>
+            class="o-tag-divider">|</span>
         {% assign tags = "" %}
         {% for post in sorted_posts %}
         {% for tag in post.tags %}

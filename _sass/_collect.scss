@@ -208,6 +208,11 @@ body[data-page*="collect"] .c-collection-section.active {
 }
 
 .c-video-popup-iframe {
+    --popup-bg: #fff;
+    --popup-border: var(--color-border);
+    --popup-shadow: rgba(0, 0, 0, 0.5);
+    --popup-radius: var(--radius-md);
+
     width: 80%;
     height: 80%;
     position: fixed;
@@ -215,11 +220,11 @@ body[data-page*="collect"] .c-collection-section.active {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: var(--popup-bg);
+    border: 1px solid var(--popup-border);
+    box-shadow: 0 0 10px var(--popup-shadow);
     overflow: hidden;
-    border-radius: 15px;
+    border-radius: var(--popup-radius);
 }
 
 .c-video-popup-overlay {
@@ -234,6 +239,12 @@ body[data-page*="collect"] .c-collection-section.active {
 }
 
 .c-video-popup-close {
+    --close-bg: rgba(255, 255, 255, 0.9);
+    --close-bg-hover: #fff;
+    --close-fg: var(--color-text-primary);
+    --close-border: var(--color-border);
+    --close-outline: var(--color-text-muted);
+
     position: fixed;
     top: 5%;
     right: 10%;
@@ -241,8 +252,8 @@ body[data-page*="collect"] .c-collection-section.active {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 2px solid #333;
+    background-color: var(--close-bg);
+    border: 2px solid var(--close-border);
     cursor: pointer;
     font-size: 24px;
     font-weight: bold;
@@ -250,16 +261,16 @@ body[data-page*="collect"] .c-collection-section.active {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #333;
+    color: var(--close-fg);
     transition: all 0.2s;
     user-select: none;
 }
 
 .c-video-popup-close:hover,
 .c-video-popup-close:focus {
-    background-color: #fff;
+    background-color: var(--close-bg-hover);
     transform: scale(1.1);
-    outline: 2px solid #666;
+    outline: 2px solid var(--close-outline);
     outline-offset: 2px;
 }
 
