@@ -11,7 +11,7 @@ plugins:
 jekyll-minifier:
   uglifier_args:
     harmony: true
-  compress_css: true
+  compress_css: false
   compress_javascript: true
   compress_html: true
   exclude:
