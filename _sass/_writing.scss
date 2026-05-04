@@ -1,20 +1,37 @@
 .toc-container {
+    --toc-indent: calc(var(--space-md) - 1.5px);
     position: absolute;
     top: 0;
     left: 0;
     margin: var(--space-sm);
+    margin-left: calc(var(--space-sm) - 1.5px);
     margin-top: var(--space-md);
-    padding: var(--space-sm);
+    padding: var(--space-xs) 0 var(--space-xs) var(--toc-indent);
     z-index: 1000;
     list-style: none;
     font-family: monospace;
+    border-left: 1px solid var(--writing-border-color);
+    max-width: 14rem;
+    max-height: calc(100vh - var(--space-lg) * 2);
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.toc-container li {
+    position: relative;
+}
+
+.toc-container::-webkit-scrollbar {
+    display: none;
 }
 
 .toc-container::before {
     content: "目录";
-    text-decoration: underline;
     display: block;
     margin-bottom: var(--space-sm);
+    color: var(--writing-text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.4;
 }
 
 @media (max-width: 1032px) {
@@ -25,18 +42,63 @@
 
 .toc-container ul {
     list-style: none;
+    margin: 0;
+    padding-left: var(--toc-indent);
 }
 
 .toc-container li {
-    margin-bottom: var(--space-xs);
+    margin: 0;
 }
 
 .toc-container ul li:first-child {
-    margin-top: var(--space-xs);
+    margin-top: 0;
 }
 
 .toc-container ul li {
-    margin-bottom: var(--space-xs);
+    margin-bottom: 0;
+}
+
+.toc-container a {
+    position: relative;
+    display: block;
+    padding: 0.35rem 0;
+    color: var(--writing-text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.35;
+    text-decoration: none;
+    transition: color 160ms ease;
+}
+
+.toc-container a:hover,
+.toc-container a:focus-visible {
+    color: var(--writing-text-primary);
+}
+
+.toc-container a.is-active {
+    color: var(--writing-text-primary);
+}
+
+.toc-container a.is-active::before {
+    content: "";
+    position: absolute;
+    top: 0.25rem;
+    bottom: 0.25rem;
+    left: calc(-1 * var(--toc-indent) - 1px);
+    width: 3px;
+    border-radius: 999px;
+    background-color: var(--writing-text-primary);
+}
+
+.toc-container > li > ul > li > a.is-active::before {
+    left: calc(-2 * var(--toc-indent) - 1px);
+}
+
+.toc-container > li > ul > li > ul > li > a.is-active::before {
+    left: calc(-3 * var(--toc-indent) - 1px);
+}
+
+.toc-container > li > ul > li > ul > li > ul > li > a.is-active::before {
+    left: calc(-4 * var(--toc-indent) - 1px);
 }
 
 a {

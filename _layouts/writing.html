@@ -102,5 +102,51 @@ layout: default
             setTimeout(function () { scrollToHash(location.hash); }, 0);
         }
         window.addEventListener('hashchange', function () { scrollToHash(location.hash); });
+
+        var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.toc-container a[href*="#"]'));
+        var tocById = {};
+        tocLinks.forEach(function (link) {
+            var hash = '';
+            try {
+                hash = new URL(link.getAttribute('href') || '', location.href).hash;
+            } catch (_) {
+                var href = link.getAttribute('href') || '';
+                hash = href.indexOf('#') >= 0 ? href.slice(href.indexOf('#')) : '';
+            }
+            var id = decodeURIComponent(hash.replace(/^#/, ''));
+            if (id) tocById[id] = link;
+        });
+
+        function setActiveTocLink(id) {
+            tocLinks.forEach(function (link) {
+                link.classList.toggle('is-active', link === tocById[id]);
+            });
+        }
+
+        if ('IntersectionObserver' in window && tocLinks.length) {
+            var visibleHeadings = {};
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        visibleHeadings[entry.target.id] = entry.boundingClientRect.top;
+                    } else {
+                        delete visibleHeadings[entry.target.id];
+                    }
+                });
+
+                var currentId = Object.keys(visibleHeadings).sort(function (a, b) {
+                    return visibleHeadings[a] - visibleHeadings[b];
+                })[0];
+                if (currentId) setActiveTocLink(currentId);
+            }, {
+                rootMargin: '-15% 0px -70% 0px',
+                threshold: 0
+            });
+
+            Object.keys(tocById).forEach(function (id) {
+                var heading = document.getElementById(id);
+                if (heading) observer.observe(heading);
+            });
+        }
     });
 </script>
