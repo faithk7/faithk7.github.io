@@ -39,13 +39,21 @@ layout: default
         });
 
         var isScrolling = false;
+        var updateActiveTocLink = null;
 
         function scrollToHash(hash) {
             if (isScrolling) return;
 
-            var id = (hash || '').replace(/^#/, '');
+            var normalizedHash = '';
+            try {
+                normalizedHash = decodeURIComponent(hash || '');
+            } catch (_) {
+                normalizedHash = hash || '';
+            }
+
+            var id = normalizedHash.replace(/^#/, '');
             if (!id) return;
-            var target = document.getElementById(decodeURIComponent(id));
+            var target = document.getElementById(id);
             if (!target) return;
 
             isScrolling = true;
@@ -65,6 +73,7 @@ layout: default
 
                     setTimeout(function () {
                         isScrolling = false;
+                        if (updateActiveTocLink) updateActiveTocLink();
                     }, 800);
                 });
             });
@@ -123,30 +132,34 @@ layout: default
             });
         }
 
-        if ('IntersectionObserver' in window && tocLinks.length) {
-            var visibleHeadings = {};
-            var observer = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        visibleHeadings[entry.target.id] = entry.boundingClientRect.top;
-                    } else {
-                        delete visibleHeadings[entry.target.id];
+        if (tocLinks.length) {
+            var headings = Object.keys(tocById).map(function (id) {
+                return document.getElementById(id);
+            }).filter(Boolean);
+
+            var scrollRoot = document.querySelector('.l-center');
+
+            updateActiveTocLink = function () {
+                if (!headings.length) return;
+
+                var rootRect = scrollRoot ? scrollRoot.getBoundingClientRect() : { top: 0, height: window.innerHeight };
+                var readingLine = rootRect.top + Math.min(rootRect.height * 0.22, 180);
+                var currentHeading = headings[0];
+
+                headings.forEach(function (heading) {
+                    if (heading.getBoundingClientRect().top <= readingLine) {
+                        currentHeading = heading;
                     }
                 });
 
-                var currentId = Object.keys(visibleHeadings).sort(function (a, b) {
-                    return visibleHeadings[a] - visibleHeadings[b];
-                })[0];
-                if (currentId) setActiveTocLink(currentId);
-            }, {
-                rootMargin: '-15% 0px -70% 0px',
-                threshold: 0
-            });
+                if (currentHeading && currentHeading.id) {
+                    setActiveTocLink(currentHeading.id);
+                }
+            };
 
-            Object.keys(tocById).forEach(function (id) {
-                var heading = document.getElementById(id);
-                if (heading) observer.observe(heading);
-            });
+            updateActiveTocLink();
+            (scrollRoot || window).addEventListener('scroll', updateActiveTocLink, { passive: true });
+            window.addEventListener('resize', updateActiveTocLink);
         }
     });
 </script>

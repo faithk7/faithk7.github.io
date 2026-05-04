@@ -58,7 +58,9 @@
     margin-bottom: 0;
 }
 
-.toc-container a {
+.toc-container a,
+.toc-container a:link,
+.toc-container a:visited {
     position: relative;
     display: block;
     padding: 0.35rem 0;
@@ -70,11 +72,14 @@
 }
 
 .toc-container a:hover,
-.toc-container a:focus-visible {
+.toc-container a:focus-visible,
+.toc-container a:visited:hover,
+.toc-container a:visited:focus-visible {
     color: var(--writing-text-primary);
 }
 
-.toc-container a.is-active {
+.toc-container a.is-active,
+.toc-container a.is-active:visited {
     color: var(--writing-text-primary);
 }
 
