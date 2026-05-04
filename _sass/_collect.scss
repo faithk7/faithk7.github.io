@@ -148,10 +148,6 @@
     }
 }
 
-.c-collection-tile-container.is-stage-active {
-    padding-top: var(--space-md);
-}
-
 .c-collection-section {
     display: none;
     flex-direction: column;
@@ -171,14 +167,6 @@
         margin-top: auto;
         margin-bottom: auto;
     }
-}
-
-.c-collection-section[data-section="stage"] {
-    min-height: 100%;
-}
-
-.c-collection-tile-container.is-stage-active .c-collection-section[data-section="stage"] {
-    justify-content: center;
 }
 
 .c-collection-item-container {
