@@ -25,7 +25,7 @@
             }
         })();
     </script>
-    <link rel="stylesheet" href="{{ '/stylesheets/main.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/stylesheets/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     <link id="favicon" rel="icon" href="/assets/site-logo.png" type="image/png">
 
     <script type="application/ld+json">
@@ -106,7 +106,7 @@
         </div>
     </div>
 
-    <script src="/assets/js/main.js" defer></script>
+    <script src="/assets/js/main.js?v={{ site.time | date: '%s' }}" defer></script>
 
     <script src="https://instant.page/5.2.0" type="module"
         integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z" crossorigin="anonymous"></script>

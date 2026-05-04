@@ -40,7 +40,7 @@ feed:
 
 title: "Kai Qu"
 description: "Kai Qu's home page on the World Wide Web"
-url: "https://k7m.xyz"
+url: "https://k7y.space"
 author:
   name: "Kai Qu"
   email: "kqy7yu@gmail.com"
@@ -52,7 +52,7 @@ social:
   links:
     - "https://github.com/faithk7"
     - "https://www.linkedin.com/in/kqu1106/"
-    - "https://k7m.xyz/cv"
+    - "https://k7y.space/cv"
     - "https://www.kaggle.com/faithk7u"
 
 compress_html:

@@ -38,11 +38,11 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Cache HTML files with revalidation
+# HTML pages: always revalidate so users see the latest changes
 [[headers]]
   for = "/*.html"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, stale-while-revalidate=86400"
+    Cache-Control = "no-cache"
     ETag = "strong"
 
 # Cache JSON files for 1 day
