@@ -5,7 +5,7 @@ if (!statusEl) {
 } else {
     try {
         statusEl.hidden = false
-        const response = await fetch('https://k7m.xyz/status-quo/index.txt')
+        const response = await fetch('https://k7y.space/status-quo/index.txt')
         
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`)

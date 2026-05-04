@@ -1,10 +1,10 @@
-# robots.txt for https://k7m.xyz
+# robots.txt for https://k7y.space
 
 User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://k7m.xyz/sitemap.xml
+Sitemap: https://k7y.space/sitemap.xml
 
 # Crawl-delay for polite bots
 Crawl-delay: 1
