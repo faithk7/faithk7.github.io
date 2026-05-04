@@ -8,7 +8,9 @@
 
 [build.processing.css]
   bundle = true
-  minify = true
+  # Netlify CSS minification removes required whitespace inside calc(),
+  # which breaks production layout rules such as the collect page sizing.
+  minify = false
 
 [build.processing.js]
   bundle = false
