@@ -49,9 +49,10 @@
     height: auto;
     min-height: fit-content;
     align-self: center;
+    justify-self: center;
     width: auto;
     max-width: 200px;
-    position: fixed;
+    position: sticky;
     top: 50%;
     transform: translateY(-50%);
 }
