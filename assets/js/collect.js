@@ -241,20 +241,22 @@ document.addEventListener("DOMContentLoaded", function () {
         overlay.setAttribute('role', 'dialog');
         overlay.setAttribute('aria-label', 'Video popup');
         overlay.setAttribute('aria-modal', 'true');
-        
+        overlay.tabIndex = -1;
+
         const closePopup = () => {
             if (iframe.parentNode) document.body.removeChild(iframe);
             if (overlay.parentNode) document.body.removeChild(overlay);
             if (previousFocus) previousFocus.focus();
             document.removeEventListener('keydown', handleKeydown, true);
             window.removeEventListener('keydown', handleKeydown, true);
+            window.removeEventListener('blur', handleWindowBlur, true);
             document.removeEventListener('fullscreenchange', handleFullscreenChange);
         };
-        
+
         overlay.addEventListener('click', closePopup);
-        
+
         let wasInFullscreen = false;
-        
+
         const handleKeydown = (e) => {
             if (e.key === 'Escape') {
                 e.preventDefault();
@@ -262,7 +264,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 closePopup();
             }
         };
-        
+
+        // When iframe steals keyboard focus (cross-origin, so ESC would be swallowed),
+        // reclaim focus on the overlay so ESC always works in the parent page.
+        const handleWindowBlur = () => {
+            setTimeout(() => {
+                if (overlay.parentNode && !document.fullscreenElement) overlay.focus();
+            }, 0);
+        };
+
         const handleFullscreenChange = () => {
             const isFullscreen = !!document.fullscreenElement;
             if (wasInFullscreen && !isFullscreen) {
@@ -270,15 +280,16 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             wasInFullscreen = isFullscreen;
         };
-        
+
         document.addEventListener('keydown', handleKeydown, true);
         window.addEventListener('keydown', handleKeydown, true);
+        window.addEventListener('blur', handleWindowBlur, true);
         document.addEventListener('fullscreenchange', handleFullscreenChange);
 
         document.body.appendChild(overlay);
         document.body.appendChild(iframe);
-        
-        iframe.focus();
+
+        overlay.focus();
     }
 
     (function checkAndSuggestVpnForChina() {
