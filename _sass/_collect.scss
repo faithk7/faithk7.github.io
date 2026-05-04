@@ -13,8 +13,14 @@
 
 @media (min-width: 768px) {
     body[data-page*="collect"] .l-center {
-        overflow: auto;
+        overflow: hidden;
         padding-top: 0;
+        height: 100dvh;
+    }
+
+    body[data-page*="collect"] .c-collection-container {
+        height: calc(100% - var(--vpn-h, 0px));
+        min-height: 0;
     }
 }
 

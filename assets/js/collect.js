@@ -335,6 +335,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 localStorage.setItem(VPN_CONFIG.DISMISS_KEY, '1');
                 if (banner && banner.parentNode) banner.parentNode.removeChild(banner);
                 document.body.style.paddingTop = '';
+                document.documentElement.style.removeProperty('--vpn-h');
             });
 
             banner.appendChild(icon);
@@ -344,6 +345,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const currentPaddingTop = parseInt(getComputedStyle(document.body).paddingTop || '0', 10) || 0;
             document.body.style.paddingTop = (currentPaddingTop + banner.offsetHeight) + 'px';
+            document.documentElement.style.setProperty('--vpn-h', banner.offsetHeight + 'px');
 
             try {
                 const titleEl = document.querySelector('.o-collection-title');
