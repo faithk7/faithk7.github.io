@@ -228,10 +228,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function showVideoPopup(videoUrl) {
         const previousFocus = document.activeElement;
+        const apiUrl = new URL(videoUrl, window.location.href);
+        apiUrl.searchParams.set('enablejsapi', '1');
+        apiUrl.searchParams.set('origin', window.location.origin);
+        const playerOrigin = apiUrl.origin;
+        let lastKnownTime = 0;
         
         const iframe = document.createElement('iframe');
         iframe.allowFullscreen = true;
-        iframe.src = videoUrl;
+        iframe.src = apiUrl.toString();
         iframe.loading = "eager";
         iframe.className = 'c-video-popup-iframe';
         iframe.setAttribute('title', 'Video player');
@@ -243,10 +248,48 @@ document.addEventListener("DOMContentLoaded", function () {
         overlay.setAttribute('aria-modal', 'true');
         overlay.tabIndex = -1;
 
+        const postPlayerMessage = (payload) => {
+            if (!iframe.contentWindow) return;
+            iframe.contentWindow.postMessage(JSON.stringify(payload), playerOrigin);
+        };
+
+        const handleSeek = (delta) => {
+            const nextTime = Math.max(0, lastKnownTime + delta);
+            lastKnownTime = nextTime;
+            postPlayerMessage({
+                event: 'command',
+                func: 'seekTo',
+                args: [nextTime, true]
+            });
+        };
+
+        const ytMsgHandler = (e) => {
+            if (e.origin !== playerOrigin || e.source !== iframe.contentWindow) return;
+
+            let data = e.data;
+            if (typeof data !== 'string') return;
+
+            try {
+                data = JSON.parse(data);
+            } catch (_) {
+                return;
+            }
+
+            if (data && data.info && typeof data.info.currentTime === 'number') {
+                lastKnownTime = data.info.currentTime;
+            }
+        };
+
+        iframe.addEventListener('load', () => {
+            postPlayerMessage({ event: 'listening', id: 1 });
+            postPlayerMessage({ event: 'command', func: 'addEventListener', args: ['onStateChange'] });
+        });
+
         const closePopup = () => {
             if (iframe.parentNode) document.body.removeChild(iframe);
             if (overlay.parentNode) document.body.removeChild(overlay);
             if (previousFocus) previousFocus.focus();
+            window.removeEventListener('message', ytMsgHandler);
             document.removeEventListener('keydown', handleKeydown, true);
             window.removeEventListener('keydown', handleKeydown, true);
             window.removeEventListener('blur', handleWindowBlur, true);
@@ -262,6 +305,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 e.preventDefault();
                 e.stopPropagation();
                 closePopup();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                e.stopPropagation();
+                handleSeek(-5);
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                e.stopPropagation();
+                handleSeek(5);
             }
         };
 
@@ -281,6 +332,7 @@ document.addEventListener("DOMContentLoaded", function () {
             wasInFullscreen = isFullscreen;
         };
 
+        window.addEventListener('message', ytMsgHandler);
         document.addEventListener('keydown', handleKeydown, true);
         window.addEventListener('keydown', handleKeydown, true);
         window.addEventListener('blur', handleWindowBlur, true);
