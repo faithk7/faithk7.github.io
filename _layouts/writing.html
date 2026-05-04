@@ -112,6 +112,7 @@ layout: default
         }
         window.addEventListener('hashchange', function () { scrollToHash(location.hash); });
 
+        var tocContainer = document.querySelector('.toc-container');
         var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.toc-container a[href*="#"]'));
         var tocById = {};
         tocLinks.forEach(function (link) {
@@ -127,6 +128,10 @@ layout: default
         });
 
         function setActiveTocLink(id) {
+            if (tocContainer) {
+                tocContainer.classList.toggle('is-at-title', !id);
+            }
+
             tocLinks.forEach(function (link) {
                 link.classList.toggle('is-active', link === tocById[id]);
             });
@@ -143,8 +148,16 @@ layout: default
                 if (!headings.length) return;
 
                 var rootRect = scrollRoot ? scrollRoot.getBoundingClientRect() : { top: 0, height: window.innerHeight };
+                var rootPaddingTop = scrollRoot ? (parseFloat(window.getComputedStyle(scrollRoot).paddingTop) || 0) : 0;
+                var firstHeadingLine = rootRect.top + Math.min(rootPaddingTop, 32);
                 var readingLine = rootRect.top + Math.min(rootRect.height * 0.22, 180);
-                var currentHeading = headings[0];
+                var firstHeading = headings[0];
+                var currentHeading = null;
+
+                if (firstHeading && firstHeading.getBoundingClientRect().top > firstHeadingLine) {
+                    setActiveTocLink(null);
+                    return;
+                }
 
                 headings.forEach(function (heading) {
                     if (heading.getBoundingClientRect().top <= readingLine) {
@@ -154,6 +167,8 @@ layout: default
 
                 if (currentHeading && currentHeading.id) {
                     setActiveTocLink(currentHeading.id);
+                } else {
+                    setActiveTocLink(null);
                 }
             };
 
