@@ -143,16 +143,19 @@ a.o-setting-icon svg {
 
     .c-navbar-icon {
         display: flex;
-        width: 20px;
-        height: 20px;
+        width: 44px;
+        height: 44px;
         position: fixed;
-        top: 16px;
-        right: 16px;
+        top: 12px;
+        right: 12px;
         z-index: 1001;
         cursor: pointer;
         align-items: center;
         justify-content: center;
-        color: var(--nav-text-color);
+        color: #ffffff;
+        background-color: var(--color-surface);
+        border: none;
+        border-radius: 10px;
     }
 
     .c-navbar-icon svg {
@@ -171,7 +174,13 @@ a.o-setting-icon svg {
 
     .c-navbar-actions {
         position: static;
-        margin-bottom: var(--space-md);
+        align-self: flex-end;
+        margin-top: var(--space-md);
+        gap: var(--space-sm);
+    }
+
+    .c-navbar.show ~ .c-navbar-actions {
+        display: none;
     }
 
     .c-navbar-items {

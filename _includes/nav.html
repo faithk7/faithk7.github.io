@@ -1,5 +1,12 @@
 <nav class="c-navbar" id="site-nav">
     <div class="c-navbar-container">
+        <ul class="c-navbar-items">
+            <li class="o-navbar-item{% if page.url == '/' or page.url == '/index.html' %} is-active{% endif %}"><a href="{{ '/' | relative_url }}">Home</a></li>
+            <li class="o-navbar-item{% if page.url == '/note' or page.url == '/note/' or page.url == '/note.html' %} is-active{% endif %}"><a href="{{ '/note' | relative_url }}">Note</a></li>
+            <li class="o-navbar-item{% if page.layout == 'writing' or page.url == '/writing-index' or page.url == '/writing-index/' or page.url == '/writing-index.html' %} is-active{% endif %}"><a href="{{ '/writing-index' | relative_url }}">Writing</a></li>
+            <li class="o-navbar-item{% if page.url == '/collect' or page.url == '/collect/' or page.url == '/collect.html' %} is-active{% endif %}"><a href="{{ '/collect' | relative_url }}">Collect</a></li>
+            <li class="o-navbar-item{% if page.url == '/about' or page.url == '/about/' or page.url == '/about.html' %} is-active{% endif %}"><a href="{{ '/about' | relative_url }}">About</a></li>
+        </ul>
         <div class="c-navbar-actions">
             <button id="dark-mode-toggle" class="o-setting-icon" aria-label="Toggle dark mode">
                 {% include svg_html/dark_mode_toggle.html %}
@@ -8,13 +15,6 @@
                 {% include svg_html/rss.html %}
             </a>
         </div>
-        <ul class="c-navbar-items">
-            <li class="o-navbar-item{% if page.url == '/' or page.url == '/index.html' %} is-active{% endif %}"><a href="{{ '/' | relative_url }}">Home</a></li>
-            <li class="o-navbar-item{% if page.url == '/note' or page.url == '/note/' or page.url == '/note.html' %} is-active{% endif %}"><a href="{{ '/note' | relative_url }}">Note</a></li>
-            <li class="o-navbar-item{% if page.layout == 'writing' or page.url == '/writing-index' or page.url == '/writing-index/' or page.url == '/writing-index.html' %} is-active{% endif %}"><a href="{{ '/writing-index' | relative_url }}">Writing</a></li>
-            <li class="o-navbar-item{% if page.url == '/collect' or page.url == '/collect/' or page.url == '/collect.html' %} is-active{% endif %}"><a href="{{ '/collect' | relative_url }}">Collect</a></li>
-            <li class="o-navbar-item{% if page.url == '/about' or page.url == '/about/' or page.url == '/about.html' %} is-active{% endif %}"><a href="{{ '/about' | relative_url }}">About</a></li>
-        </ul>
     </div>
 </nav>
 <button type="button" class="c-navbar-icon" id="nav-toggle" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false">
