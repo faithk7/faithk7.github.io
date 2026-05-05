@@ -80,7 +80,7 @@
 .o-tag {
     display: inline-block;
     font-size: 1rem;
-    line-height: 1.2em;
+    line-height: 1.5em;
     font-family: serif, Times;
     text-decoration: none;
     background-image: linear-gradient(to right, var(--writing-tag-text), var(--writing-tag-text));
@@ -95,7 +95,7 @@
     color: var(--writing-tag-text);
     margin-left: 0px;
     margin-right: var(--space-sm);
-    margin-bottom: 0;
+    margin-bottom: var(--space-xs);
     cursor: pointer;
 }
 
