@@ -80,7 +80,7 @@
 .o-tag {
     display: inline-block;
     font-size: 1rem;
-    line-height: 1.5em;
+    line-height: 1.2em;
     font-family: serif, Times;
     text-decoration: none;
     background-image: linear-gradient(to right, var(--writing-tag-text), var(--writing-tag-text));
@@ -95,7 +95,7 @@
     color: var(--writing-tag-text);
     margin-left: 0px;
     margin-right: var(--space-sm);
-    margin-bottom: var(--space-xs);
+    margin-bottom: 0;
     cursor: pointer;
 }
 
@@ -170,9 +170,16 @@ h3.o-post-title a {
 
 /* Mobile touch optimization */
 @media (max-width: 767px) {
+    .c-tag-container-meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        row-gap: 6px;
+    }
+
     .o-tag {
-        padding: var(--space-sm) var(--space-xs);
-        min-height: 44px;
+        padding: 4px var(--space-xs);
+        min-height: 32px;
         display: inline-flex;
         align-items: center;
     }
