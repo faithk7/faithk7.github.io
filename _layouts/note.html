@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | escape }}">
+<head>
+    <meta charset="UTF-8">
+    {% seo %}
+    {% if page.noindex %}<meta name="robots" content="noindex, follow">{% endif %}
+</head>
+<body>{{ content }}</body>
+</html>

@@ -23,10 +23,13 @@ jobs:
           ref: "main"
       - uses: actions/setup-node@v3
         with:
-          node-version: 17.7
+          node-version: 22
 
       - name: Run script
-        run: node .github/workflows/scripts/media.js '${{ inputs.filepath }}' '${{ inputs.filedata }}'
+        env:
+          MEDIA_FILEPATH: ${{ inputs.filepath }}
+          MEDIA_FILEDATA: ${{ inputs.filedata }}
+        run: node .github/scripts/media.js "$MEDIA_FILEPATH" "$MEDIA_FILEDATA"
 
       - name: Push changes
         run: |

@@ -1,5 +1,6 @@
 ---
-title: "关于读书 | Kai Qu"
+title: "关于读书"
+description: "从重新拾起小说到养成五年的阅读习惯，记录读书如何成为随身携带的避难所，以及阅读经历带来的变化。"
 date: 2024-09-11
 tags: [reflection, 2024]
 layout: writing
@@ -20,7 +21,7 @@ permalink: /writing/about_reading.html
 
 2024-现在：更深入地了解了书的优势和局限性，以及体会到了它对我的正面或负面影响：拓宽了思维的边界和想象力，可过多思想的涌入与行动的匮乏让我的情绪与价值观很不稳定。虽然不变的还是很喜欢读书，但同时也意识到只读书是不行的。实践跟阅读同样重要，阅读提供的是思想和指导方向，而行动则是验证理论。阅读的目的性也更强一些，模式是目的和行动指导阅读。
 
-![微信阅读记录](https://bk7.k7m.xyz/reading_record.webp){: .center-image }
+![微信阅读记录](https://bk7.k7m.xyz/reading_record.webp){: .center-image decoding="async" }
 _微信阅读记录_{: .image-caption}
 
 ## 自己阅读的方法

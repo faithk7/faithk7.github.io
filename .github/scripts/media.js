@@ -23,13 +23,12 @@ const date = new Date(json.uploaded)
 const content = `---
 layout: story
 date: ${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()} ${date.getHours()}:${date.getMinutes()}
-tags: [ ${json.meta.tags.join(', ')} ]
-title: Story
-image: ${json.variants[0]}
-caption: |
-  ${json.meta.caption}
-alt: |
-  ${json.meta.alt}
+tags: ${JSON.stringify(json.meta.tags)}
+title: ${JSON.stringify(json.meta.alt || json.meta.caption || `Photo — ${json.id}`)}
+description: ${JSON.stringify(json.meta.caption || json.meta.alt || 'A photograph by Kai Qu.')}
+image: ${JSON.stringify(json.variants[0])}
+caption: ${JSON.stringify(json.meta.caption)}
+alt: ${JSON.stringify(json.meta.alt)}
 ---
 
 ![${json.meta.alt}](${json.variants[0]})

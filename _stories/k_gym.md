@@ -2,14 +2,19 @@
 layout: story
 date: 2024/12/6 5:42
 tags: [ self, Highlight ]
-title: Story
-image: https://pk7.k7m.xyz/pk7/k_gym.webp
+title: Sometimes lonely
+description: "A personal photograph, captioned k."
+image:
+  path: https://55dbd1d.webp.li/pk7/k_gym.jpg
+  width: 4284
+  height: 5440
+  alt: "Sometimes lonely."
 caption: |
   k
 alt: |
   Sometimes lonely.
 ---
 
-![Sometimes lonely.](https://pk7.k7m.xyz/pk7/k_gym.webp)
+![Sometimes lonely.](https://55dbd1d.webp.li/pk7/k_gym.jpg)
 
 k

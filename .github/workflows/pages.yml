@@ -27,10 +27,20 @@ jobs:
           ruby-version: "3.4"
           bundler-cache: true
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Check story metadata generation
+        run: node --test .github/scripts/media.test.mjs
+
       - name: Build site
         run: bundle exec jekyll build --destination ./_site
         env:
           JEKYLL_ENV: production
+
+      - name: Check generated SEO metadata
+        run: python3 scripts/check_seo.py
 
       - uses: actions/upload-pages-artifact@v3
 

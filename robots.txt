@@ -6,9 +6,6 @@ Allow: /
 # Sitemaps
 Sitemap: https://k7y.space/sitemap.xml
 
-# Crawl-delay for polite bots
-Crawl-delay: 1
-
 # Disallow admin/temp directories if any
 Disallow: /temp/
 Disallow: /.git/

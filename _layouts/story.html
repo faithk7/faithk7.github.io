@@ -1,28 +1,18 @@
 <!doctype html>
-<html lang="{% if page.path contains 'zh-TW' %}zh-TW{% elsif page.path contains 'de-DE' %}de-DE{% else %}en{% endif %}">
+<html lang="{{ page.lang | default: site.lang | escape }}">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% assign story_description = page.description | default: page.content | strip_html | strip_newlines | truncate: 120 %}
-    <meta name="description" content="{{ story_description }}">
+    {% seo %}
     <link rel="dns-prefetch" href="https://unpkg.com">
     <link rel="dns-prefetch" href="https://open-heart.lastk7.workers.dev">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
-    <link rel="alternate" type="application/rss+xml" href="/notes.xml">
-    <link rel="icon" href="/assets/fav.svg" type="image/svg+xml" sizes="24x24">
+    <link rel="alternate" type="application/rss+xml" title="Kai Qu's writing" href="{{ '/feed.xml' | relative_url }}">
+    <link rel="icon" href="/assets/site-logo.png" type="image/png">
     <link href="/stylesheets/main.css?v={{ site.time | date: '%s' }}" rel="stylesheet" type="text/css">
-    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
-    <meta content="{{ story_description }}" property="og:description">
-    <meta content="{{ story_description }}" name="twitter:description">
-    {% if page.image %}
-    <meta content="{{ page.image }}" property="og:image">
-    <meta content="{{ page.image }}" property="twitter:image">
-    {% endif %}
-    <meta content="{{ page.title }} - {{ site.title }}" property="og:title">
-    <meta content="{{ page.title }} - {{ site.title }}" name="twitter:title">
     <link href="https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap" rel="stylesheet">
 </head>
 
@@ -31,7 +21,7 @@
         <div class="story-meta">
             <a href="/" aria-label="Home">&leftarrow;</a>
             <h1 class="text entry-title">
-                {{ page.title }}, {{ page.date | date: "%Y/%m/%d %H:%M" }}
+                {{ page.title | escape }}, {{ page.date | date: "%Y/%m/%d %H:%M" }}
             </h1>
             <open-heart class="text-open-heart monospace"
                 href="https://open-heart.lastk7.workers.dev/?id={{ page.url }}" emoji="❤️"
@@ -45,7 +35,8 @@
     </header>
     <main>
         {% if page.image %}
-        <img src="{{ page.image }}" alt="{{ page.alt }}" class="story-image">
+        {% assign story_image = page.image.path | default: page.image %}
+        <img src="{{ story_image | escape }}" alt="{{ page.alt | strip | escape }}" class="story-image" decoding="async"{% if page.image.width and page.image.height %} width="{{ page.image.width }}" height="{{ page.image.height }}"{% endif %}>
         {% endif %}
     </main>
 

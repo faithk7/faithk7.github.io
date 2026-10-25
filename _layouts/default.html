@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://bk7.k7m.xyz" crossorigin>
     <link rel="preconnect" href="https://nk7.k7m.xyz" crossorigin>
     {% seo %}
+    {% if page.noindex %}<meta name="robots" content="noindex, follow">{% endif %}
     {% if page.head_include %}
     {% include {{ page.head_include }} %}
     {% endif %}
@@ -60,38 +61,6 @@
     }
     </script>
 
-    {% if page.layout == 'writing' and page.date %}
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "{{ page.title | replace: '| Kai Qu', '' | strip }}",
-      "author": {
-        "@type": "Person",
-        "name": "Kai Qu",
-        "url": "https://k7y.space"
-      },
-      "datePublished": "{{ page.date | date_to_xmlschema }}",
-      "dateModified": "{{ page.date | date_to_xmlschema }}",
-      "description": "{{ page.description | default: page.excerpt | strip_html | truncatewords: 50 }}",
-      "url": "{{ page.url | absolute_url }}",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "{{ page.url | absolute_url }}"
-      },
-      "publisher": {
-        "@type": "Person",
-        "name": "Kai Qu",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://k7y.space/assets/site-logo.png"
-        }
-      }{% if page.keywords or page.tags %},
-      "keywords": "{{ page.keywords | default: page.tags | join: ', ' }}"{% endif %}{% if page.lang %},
-      "inLanguage": "{{ page.lang }}"{% endif %}
-    }
-    </script>
-    {% endif %}
 </head>
 
 <body data-page="{{ page.url }}" data-layout="{{ page.layout }}">
